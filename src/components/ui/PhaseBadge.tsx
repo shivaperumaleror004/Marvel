@@ -2,7 +2,7 @@ import React from 'react';
 import { Phase } from '../../types';
 
 interface PhaseBadgeProps {
-  phase: Phase;
+  phase?: Phase;
   className?: string;
 }
 
@@ -20,6 +20,7 @@ const PHASE_COLORS: Partial<Record<Phase, string>> = {
 };
 
 export const PhaseBadge: React.FC<PhaseBadgeProps> = ({ phase, className = '' }) => {
+  if (!phase) return null;
   const colorClass = PHASE_COLORS[phase] || 'bg-gray-800 text-gray-300 border-gray-700';
   
   return (

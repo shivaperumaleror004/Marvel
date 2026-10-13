@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Play, Plus, Check, Clock, Film } from 'lucide-react';
+import { Play, Plus, Check, Clock, Film, Sparkles, Video } from 'lucide-react';
 import { Movie } from '../../types';
 import { PhaseBadge } from './PhaseBadge';
 import { RatingBadge } from './RatingBadge';
 import { useWatchlist } from '../../hooks/useWatchlist';
 import { useWatchProgress } from '../../hooks/useWatchProgress';
+import { FALLBACK_POSTER } from '../../services/tmdb';
 
 interface MovieCardProps {
   movie: Movie;
@@ -24,7 +25,8 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onSelect, onWatch }
     setImgError(false);
   }, [movie.poster]);
 
-  const fallbackPoster = 'https://images.unsplash.com/photo-1635863138275-d9b33299680b?q=80&w=800&auto=format&fit=crop';
+  const isOneShot = movie.id.startsWith('one-shot-');
+  const isSpecial = movie.id === 'werewolf-by-night' || movie.id === 'gotg-holiday-special';
 
   return (
     <div
@@ -34,7 +36,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onSelect, onWatch }
       {/* Poster Image */}
       <div className="relative aspect-[2/3] w-full overflow-hidden bg-slate-950">
         <img
-          src={imgError ? fallbackPoster : movie.poster}
+          src={imgError ? FALLBACK_POSTER : (movie.poster || FALLBACK_POSTER)}
           alt={movie.title}
           onError={() => setImgError(true)}
           loading="lazy"
@@ -43,7 +45,29 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onSelect, onWatch }
 
         {/* Phase & Rating Badges */}
         <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between gap-1 z-10">
-          <PhaseBadge phase={movie.phase} />
+          <div className="flex items-center gap-1">
+            {movie.isMcu && movie.phase && <PhaseBadge phase={movie.phase} />}
+            {!movie.isMcu && movie.studioId && (
+              <span className="px-1.5 py-0.5 rounded bg-slate-950/90 border border-slate-700/80 text-[9px] font-mono font-bold text-gray-300 uppercase tracking-wider backdrop-blur-md">
+                {movie.studioId === '20th-century-fox' ? 'FOX' :
+                 movie.studioId === 'sony-pictures' ? 'SONY' :
+                 movie.studioId === 'new-line-cinema' ? 'NEW LINE' :
+                 movie.studioId === 'universal-pictures' ? 'UNIVERSAL' :
+                 movie.studioId === 'lionsgate' ? 'LIONSGATE' :
+                 movie.studioId === 'marvel-animation' ? 'ANIMATION' : 'MARVEL'}
+              </span>
+            )}
+            {isOneShot && (
+              <span className="px-1.5 py-0.5 rounded bg-blue-950/90 border border-blue-600/70 text-[9px] font-mono font-black text-blue-400 uppercase tracking-wider">
+                ONE-SHOT
+              </span>
+            )}
+            {isSpecial && (
+              <span className="px-1.5 py-0.5 rounded bg-purple-950/90 border border-purple-600/70 text-[9px] font-mono font-black text-purple-400 uppercase tracking-wider">
+                SPECIAL
+              </span>
+            )}
+          </div>
           {movie.rating && <RatingBadge rating={movie.rating} />}
         </div>
 
@@ -100,7 +124,6 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onSelect, onWatch }
                     ? 'bg-red-950/80 border-red-600 text-red-400'
                     : 'bg-black/60 border-white/20 text-gray-300 hover:border-white/50'
                 }`}
-                title={isSaved ? 'Remove from My List' : 'Add to My List'}
               >
                 {isSaved ? <Check className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
               </button>

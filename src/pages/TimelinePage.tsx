@@ -3,25 +3,24 @@ import {
   Compass,
   Play,
   Film,
-  Tv,
   Info,
   Calendar,
   Sparkles,
   Search,
-  CheckCircle,
   Clock,
-  Layers,
   ChevronRight,
   Shield,
   Star,
-  ExternalLink,
   Users
 } from 'lucide-react';
-import { createTimelineNodes, getTimelineNodesByOrder } from '../data/timeline';
-import { TimelineNode, Phase, Saga, Continuity, TimelineMediaType } from '../types';
+import {
+  createTimelineNodes,
+  createMarvelMoviesTimelineNodes,
+  getTimelineNodesByOrder
+} from '../data/timeline';
+import { TimelineNode } from '../types';
 import { PhaseBadge } from '../components/ui/PhaseBadge';
 import { ContinuityBadge } from '../components/ui/ContinuityBadge';
-import { RatingBadge } from '../components/ui/RatingBadge';
 import { PageTransition } from '../components/ui/PageTransition';
 import { useMedia } from '../context/MediaContext';
 import { FALLBACK_POSTER, FALLBACK_BACKDROP } from '../services/tmdb';
@@ -31,24 +30,84 @@ interface TimelinePageProps {
   onWatchNode: (node: TimelineNode) => void;
 }
 
+type TimelineScope =
+  | 'master-movies'
+  | 'mcu-sacred'
+  | 'fox-xmen'
+  | 'sony-spider'
+  | 'blade';
+
 export const TimelinePage: React.FC<TimelinePageProps> = ({ onSelectNode, onWatchNode }) => {
   const { movies, series } = useMedia();
 
   // Core interactive states
-  const [orderMode, setOrderMode] = useState<'release' | 'chronological'>('chronological');
+  const [timelineScope, setTimelineScope] = useState<TimelineScope>('master-movies');
+  const [orderMode, setOrderMode] = useState<'release' | 'chronological'>('release');
   const [selectedPhaseFilter, setSelectedPhaseFilter] = useState<string>('All');
   const [selectedCategoryFilter, setSelectedCategoryFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedNodeModal, setSelectedNodeModal] = useState<TimelineNode | null>(null);
 
-  // Merge live TMDB enriched data with curated timeline master records
-  const dynamicNodes = useMemo(() => createTimelineNodes(movies, series), [movies, series]);
-  const orderedNodes = useMemo(() => getTimelineNodesByOrder(orderMode, dynamicNodes), [orderMode, dynamicNodes]);
+  // Nodes generator based on scope
+  const activeScopeNodes = useMemo(() => {
+    if (timelineScope === 'master-movies') {
+      // Feature-length movies only across all studios (1986 to present)
+      const featureMovies = movies.filter(m => m.type !== 'one-shot' && m.type !== 'special');
+      const nodes = createMarvelMoviesTimelineNodes(featureMovies);
+      return nodes.sort((a, b) => {
+        if (orderMode === 'release') return a.releaseOrder - b.releaseOrder;
+        return a.chronologicalOrder - b.chronologicalOrder;
+      });
+    }
 
-  // Comprehensive multi-filter and search pipeline
+    if (timelineScope === 'mcu-sacred') {
+      // Curated MCU sequence (1 to 59 + 60/61 upcoming)
+      const dynamicMcu = createTimelineNodes(movies, series);
+      return getTimelineNodesByOrder(orderMode, dynamicMcu);
+    }
+
+    if (timelineScope === 'fox-xmen') {
+      const foxMovies = movies.filter(
+        m => m.franchise?.includes('X-Men') || m.franchise?.includes('Wolverine') || m.franchise?.includes('Deadpool')
+      );
+      const nodes = createMarvelMoviesTimelineNodes(foxMovies);
+      return nodes.sort((a, b) => {
+        if (orderMode === 'release') return a.releaseOrder - b.releaseOrder;
+        return a.chronologicalOrder - b.chronologicalOrder;
+      });
+    }
+
+    if (timelineScope === 'sony-spider') {
+      const sonyMovies = movies.filter(
+        m =>
+          m.studioId === 'sony-pictures' ||
+          m.franchise?.includes('Spider-Man') ||
+          m.franchise?.includes('Venom') ||
+          m.franchise?.includes('Spider-Verse')
+      );
+      const nodes = createMarvelMoviesTimelineNodes(sonyMovies);
+      return nodes.sort((a, b) => {
+        if (orderMode === 'release') return a.releaseOrder - b.releaseOrder;
+        return a.chronologicalOrder - b.chronologicalOrder;
+      });
+    }
+
+    if (timelineScope === 'blade') {
+      const bladeMovies = movies.filter(m => m.franchise?.includes('Blade'));
+      const nodes = createMarvelMoviesTimelineNodes(bladeMovies);
+      return nodes.sort((a, b) => {
+        if (orderMode === 'release') return a.releaseOrder - b.releaseOrder;
+        return a.chronologicalOrder - b.chronologicalOrder;
+      });
+    }
+
+    return [];
+  }, [timelineScope, orderMode, movies, series]);
+
+  // Search & Filter pipeline
   const filteredNodes = useMemo(() => {
-    return orderedNodes.filter(node => {
-      // 1. Search Query Filter (Title, overview, characters, cast actors)
+    return activeScopeNodes.filter(node => {
+      // 1. Search Query
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase().trim();
         const matchesTitle = node.title.toLowerCase().includes(q);
@@ -56,18 +115,17 @@ export const TimelinePage: React.FC<TimelinePageProps> = ({ onSelectNode, onWatc
         const matchesCharacter = node.characters?.some(c => c.toLowerCase().includes(q));
         const matchesCast = node.cast?.some(c => c.name.toLowerCase().includes(q) || c.role.toLowerCase().includes(q));
         const matchesNotes = node.timelineNotes?.toLowerCase().includes(q);
-
         if (!matchesTitle && !matchesOverview && !matchesCharacter && !matchesCast && !matchesNotes) {
           return false;
         }
       }
 
-      // 2. Phase Filter
+      // 2. Phase Filter (Applicable only to MCU or All)
       if (selectedPhaseFilter !== 'All') {
         if (node.phase !== selectedPhaseFilter) return false;
       }
 
-      // 3. Category / Media Type / Continuity Filter
+      // 3. Media & Continuity Filter
       if (selectedCategoryFilter === 'movies') {
         if (node.type !== 'movie') return false;
       } else if (selectedCategoryFilter === 'series') {
@@ -86,9 +144,16 @@ export const TimelinePage: React.FC<TimelinePageProps> = ({ onSelectNode, onWatc
 
       return true;
     });
-  }, [orderedNodes, searchQuery, selectedPhaseFilter, selectedCategoryFilter]);
+  }, [activeScopeNodes, searchQuery, selectedPhaseFilter, selectedCategoryFilter]);
 
-  // Categorize for sectional grouping
+  // Sectional grouping for Master Movie Timeline (By Era)
+  const eraPioneerNodes = useMemo(() => filteredNodes.filter(n => n.year < 2000 && !n.isUpcoming), [filteredNodes]);
+  const eraRenaissanceNodes = useMemo(() => filteredNodes.filter(n => n.year >= 2000 && n.year <= 2007 && !n.isUpcoming), [filteredNodes]);
+  const eraGoldenAgeNodes = useMemo(() => filteredNodes.filter(n => n.year >= 2008 && n.year <= 2019 && !n.isUpcoming), [filteredNodes]);
+  const eraModernNodes = useMemo(() => filteredNodes.filter(n => n.year >= 2020 && !n.isUpcoming), [filteredNodes]);
+  const upcomingNodes = useMemo(() => filteredNodes.filter(n => n.isUpcoming), [filteredNodes]);
+
+  // Sectional grouping for MCU Curated Timeline
   const infinitySagaNodes = useMemo(() => filteredNodes.filter(n => n.saga === 'Infinity Saga'), [filteredNodes]);
   const multiverseSagaNodes = useMemo(() => filteredNodes.filter(n => n.saga === 'Multiverse Saga'), [filteredNodes]);
   const defendersAndTvNodes = useMemo(
@@ -103,33 +168,33 @@ export const TimelinePage: React.FC<TimelinePageProps> = ({ onSelectNode, onWatc
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/10 pb-8">
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-red-500 uppercase tracking-widest">
-              <Compass className="w-4 h-4 animate-spin-slow" />
-              <span>MARVEL CINEMATIC CONTINUITY ARCHIVE</span>
+              <Compass className="w-4 h-4 animate-spin-slow text-red-500" />
+              <span>THE DEFINITIVE MARVEL TIMELINE</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">
-              MCU Interactive Timeline
+              {timelineScope === 'master-movies' && 'Master Marvel Movies Timeline'}
+              {timelineScope === 'mcu-sacred' && 'MCU Interactive Timeline'}
+              {timelineScope === 'fox-xmen' && 'Fox X-Men Universe Timeline'}
+              {timelineScope === 'sony-spider' && 'Sony Spider-Man & SSU Timeline'}
+              {timelineScope === 'blade' && 'Blade Vampire Trilogy Timeline'}
             </h1>
             <p className="text-sm text-gray-400 max-w-2xl leading-relaxed">
-              Explore the entire verified Marvel Cinematic Universe from ancient Wakanda through the Infinity Saga,
-              The Defenders, and the Multiverse Incursions. Verified across canon continuity and release history.
+              {timelineScope === 'master-movies' &&
+                'Explore all 91+ verified Marvel feature films across all studios in master release order from 1986 to present day. Strictly feature-length movies based on Marvel properties.'}
+              {timelineScope === 'mcu-sacred' &&
+                'The curated Marvel Cinematic Universe Sacred Timeline and Multiverse incursions. Strictly preserves curated chronological order (1–59) and release order.'}
+              {timelineScope === 'fox-xmen' &&
+                'Chronological and release timeline for 20th Century Fox mutant cinema from 1962 (First Class) to 2029 (Logan).'}
+              {timelineScope === 'sony-spider' &&
+                'Sam Raimi Spider-Man, Marc Webb The Amazing Spider-Man, Sony’s Spider-Man Universe, and the Spider-Verse animated multiverse.'}
+              {timelineScope === 'blade' &&
+                'New Line Cinema’s R-rated vampire hunter trilogy starring Wesley Snipes as the Daywalker.'}
             </p>
           </div>
 
           {/* Viewing Mode Toggle (Release Order vs Chronological Order) */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
             <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-slate-900 border border-white/10">
-              <button
-                id="timeline-mode-chronological"
-                onClick={() => setOrderMode('chronological')}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all ${
-                  orderMode === 'chronological'
-                    ? 'bg-red-600 text-white shadow-[0_0_15px_rgba(230,36,41,0.5)]'
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                <Clock className="w-3.5 h-3.5" />
-                <span>Chronological Order</span>
-              </button>
               <button
                 id="timeline-mode-release"
                 onClick={() => setOrderMode('release')}
@@ -140,23 +205,66 @@ export const TimelinePage: React.FC<TimelinePageProps> = ({ onSelectNode, onWatc
                 }`}
               >
                 <Calendar className="w-3.5 h-3.5" />
-                <span>Release Order</span>
+                <span>Release Order (Master)</span>
+              </button>
+              <button
+                id="timeline-mode-chronological"
+                onClick={() => setOrderMode('chronological')}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all ${
+                  orderMode === 'chronological'
+                    ? 'bg-red-600 text-white shadow-[0_0_15px_rgba(230,36,41,0.5)]'
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                <Clock className="w-3.5 h-3.5" />
+                <span>In-Universe Chronology</span>
               </button>
             </div>
           </div>
         </div>
 
-        {/* Search & Filter Toolbar */}
+        {/* Timeline Scope Selector Pills */}
+        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-none border-b border-white/5 pb-4">
+          {[
+            { id: 'master-movies', label: 'All Marvel Movies (Master Release)', icon: Film },
+            { id: 'mcu-sacred', label: 'MCU Curated Timeline', icon: Compass },
+            { id: 'fox-xmen', label: 'Fox X-Men Universe', icon: Shield },
+            { id: 'sony-spider', label: 'Sony Spider-Man / SSU', icon: Sparkles },
+            { id: 'blade', label: 'Blade Vampire Universe', icon: Sparkles }
+          ].map(scope => {
+            const isActive = timelineScope === scope.id;
+            const Icon = scope.icon;
+            return (
+              <button
+                key={scope.id}
+                onClick={() => {
+                  setTimelineScope(scope.id as TimelineScope);
+                  if (scope.id === 'master-movies') setOrderMode('release');
+                  if (scope.id === 'mcu-sacred') setOrderMode('chronological');
+                }}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold uppercase transition-all whitespace-nowrap border ${
+                  isActive
+                    ? 'bg-red-600 text-white border-red-500 shadow-[0_0_15px_rgba(230,36,41,0.4)]'
+                    : 'bg-slate-900/90 text-gray-400 border-white/10 hover:border-white/30 hover:text-white'
+                }`}
+              >
+                <Icon className="w-3.5 h-3.5" />
+                <span>{scope.label}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Search & Toolbar */}
         <div className="space-y-4">
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-            {/* Search Input */}
             <div className="relative flex-1">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search titles, actors, characters (e.g. Iron Man, Robert Downey Jr., Daredevil)..."
+                placeholder="Search titles, actors, characters in this timeline..."
                 className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors"
               />
               {searchQuery && (
@@ -169,81 +277,84 @@ export const TimelinePage: React.FC<TimelinePageProps> = ({ onSelectNode, onWatc
               )}
             </div>
 
-            {/* Quick Count Badge */}
-            <div className="hidden md:flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/60 border border-white/10 text-xs font-mono text-gray-300">
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/60 border border-white/10 text-xs font-mono text-gray-300 shrink-0">
               <span className="text-red-400 font-bold">{filteredNodes.length}</span>
               <span>of</span>
-              <span className="text-white font-bold">{orderedNodes.length} Titles</span>
+              <span className="text-white font-bold">{activeScopeNodes.length} Entries</span>
             </div>
           </div>
 
-          {/* Phase Filter Buttons */}
-          <div className="space-y-2">
-            <div className="text-[11px] font-mono text-gray-400 uppercase tracking-wider font-semibold">
-              Filter by Release Era & Phase:
+          {/* Phase Filter Buttons (When in MCU mode) */}
+          {timelineScope === 'mcu-sacred' && (
+            <div className="space-y-2">
+              <div className="text-[11px] font-mono text-gray-400 uppercase tracking-wider font-semibold">
+                Filter by MCU Phase:
+              </div>
+              <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-none">
+                {['All', 'Phase 1', 'Phase 2', 'Phase 3', 'Phase 4', 'Phase 5', 'Phase 6', 'Defenders', 'Marvel Television'].map(phase => {
+                  const isActive = selectedPhaseFilter === phase;
+                  return (
+                    <button
+                      key={phase}
+                      onClick={() => setSelectedPhaseFilter(phase)}
+                      className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold uppercase transition-all border whitespace-nowrap ${
+                        isActive
+                          ? 'bg-red-600 text-white border-red-500 shadow-[0_0_15px_rgba(230,36,41,0.4)]'
+                          : 'bg-slate-900/90 text-gray-400 border-white/10 hover:border-white/30 hover:text-white'
+                      }`}
+                    >
+                      {phase}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-            <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-none">
-              {['All', 'Phase 1', 'Phase 2', 'Phase 3', 'Phase 4', 'Phase 5', 'Phase 6', 'Defenders', 'Marvel Television'].map(phase => {
-                const isActive = selectedPhaseFilter === phase;
-                return (
-                  <button
-                    key={phase}
-                    onClick={() => setSelectedPhaseFilter(phase)}
-                    className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold uppercase transition-all border whitespace-nowrap ${
-                      isActive
-                        ? 'bg-red-600 text-white border-red-500 shadow-[0_0_15px_rgba(230,36,41,0.4)]'
-                        : 'bg-slate-900/90 text-gray-400 border-white/10 hover:border-white/30 hover:text-white'
-                    }`}
-                  >
-                    {phase}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+          )}
 
-          {/* Category & Canon Continuity Filters */}
-          <div className="space-y-2">
-            <div className="text-[11px] font-mono text-gray-400 uppercase tracking-wider font-semibold">
-              Filter by Media & Continuity:
+          {/* Media & Continuity Filter (When in MCU mode) */}
+          {timelineScope === 'mcu-sacred' && (
+            <div className="space-y-2">
+              <div className="text-[11px] font-mono text-gray-400 uppercase tracking-wider font-semibold">
+                Filter by Format & Continuity:
+              </div>
+              <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-none">
+                {[
+                  { id: 'all', label: 'All Content' },
+                  { id: 'movies', label: 'Feature Films Only' },
+                  { id: 'series', label: 'TV & Streaming Series' },
+                  { id: 'one-shots', label: 'Marvel One-Shots' },
+                  { id: 'specials', label: 'Special Presentations' },
+                  { id: 'sacred', label: 'Sacred Timeline Only' },
+                  { id: 'multiverse', label: 'Multiverse & Alternates' },
+                  { id: 'upcoming', label: 'Upcoming Releases' }
+                ].map(cat => {
+                  const isActive = selectedCategoryFilter === cat.id;
+                  return (
+                    <button
+                      key={cat.id}
+                      onClick={() => setSelectedCategoryFilter(cat.id)}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-mono font-semibold transition-all border whitespace-nowrap ${
+                        isActive
+                          ? 'bg-white/15 text-white border-white/40 shadow-sm'
+                          : 'bg-slate-950/60 text-gray-400 border-white/5 hover:border-white/20 hover:text-gray-200'
+                      }`}
+                    >
+                      {cat.label}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-            <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-none">
-              {[
-                { id: 'all', label: 'All Content' },
-                { id: 'movies', label: 'Theatrical Films' },
-                { id: 'series', label: 'TV & Streaming Series' },
-                { id: 'one-shots', label: 'Marvel One-Shots' },
-                { id: 'specials', label: 'Special Presentations' },
-                { id: 'sacred', label: 'Sacred Timeline Only' },
-                { id: 'multiverse', label: 'Multiverse & Alternates' },
-                { id: 'upcoming', label: 'Upcoming Releases' }
-              ].map(cat => {
-                const isActive = selectedCategoryFilter === cat.id;
-                return (
-                  <button
-                    key={cat.id}
-                    onClick={() => setSelectedCategoryFilter(cat.id)}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-mono font-semibold transition-all border whitespace-nowrap ${
-                      isActive
-                        ? 'bg-white/15 text-white border-white/40 shadow-sm'
-                        : 'bg-slate-950/60 text-gray-400 border-white/5 hover:border-white/20 hover:text-gray-200'
-                    }`}
-                  >
-                    {cat.label}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+          )}
         </div>
 
-        {/* Empty state when no titles match search/filters */}
+        {/* Empty state */}
         {filteredNodes.length === 0 && (
           <div className="rounded-2xl border border-white/10 bg-slate-900/50 p-12 text-center space-y-4">
             <Shield className="w-12 h-12 text-gray-500 mx-auto" />
             <h3 className="text-xl font-bold text-white">No titles match your filter</h3>
             <p className="text-sm text-gray-400 max-w-md mx-auto">
-              Try resetting your search query or selecting a different phase or media category filter.
+              Try resetting your search query or selecting a different timeline scope.
             </p>
             <button
               onClick={() => {
@@ -258,111 +369,297 @@ export const TimelinePage: React.FC<TimelinePageProps> = ({ onSelectNode, onWatc
           </div>
         )}
 
-        {/* SECTION 1: THE INFINITY SAGA (Phases 1 - 3) */}
-        {infinitySagaNodes.length > 0 && (
+        {/* ============================================================ */}
+        {/* RENDER MODE A: MASTER MARVEL MOVIES TIMELINE (Era Breakdown) */}
+        {/* ============================================================ */}
+        {timelineScope === 'master-movies' && (
+          <div className="space-y-12">
+            {/* ERA 1: PIONEER MARVEL CINEMA */}
+            {eraPioneerNodes.length > 0 && (
+              <div className="space-y-6">
+                <div className="flex items-center justify-between border-b border-indigo-500/20 pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="h-6 w-1 bg-indigo-500 rounded-full shadow-[0_0_10px_#6366F1]" />
+                    <h2 className="text-xl sm:text-2xl font-black text-indigo-400 uppercase tracking-wider">
+                      Pioneer Marvel Cinema (1986–1999)
+                    </h2>
+                  </div>
+                  <span className="text-xs font-mono text-indigo-400/80 font-bold">
+                    {eraPioneerNodes.length} Movies
+                  </span>
+                </div>
+                <div className="relative pl-6 sm:pl-8 border-l-2 border-indigo-500/30 space-y-5">
+                  {eraPioneerNodes.map(node => (
+                    <TimelineCard
+                      key={node.id}
+                      node={node}
+                      orderMode={orderMode}
+                      onOpenModal={() => setSelectedNodeModal(node)}
+                      onWatchNode={() => onWatchNode(node)}
+                      accentColor="indigo"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* ERA 2: MODERN SUPERHERO RENAISSANCE */}
+            {eraRenaissanceNodes.length > 0 && (
+              <div className="space-y-6">
+                <div className="flex items-center justify-between border-b border-amber-500/20 pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="h-6 w-1 bg-amber-500 rounded-full shadow-[0_0_10px_#F5B800]" />
+                    <h2 className="text-xl sm:text-2xl font-black text-amber-400 uppercase tracking-wider">
+                      The Modern Superhero Renaissance (2000–2007)
+                    </h2>
+                  </div>
+                  <span className="text-xs font-mono text-amber-400/80 font-bold">
+                    {eraRenaissanceNodes.length} Movies
+                  </span>
+                </div>
+                <div className="relative pl-6 sm:pl-8 border-l-2 border-amber-500/30 space-y-5">
+                  {eraRenaissanceNodes.map(node => (
+                    <TimelineCard
+                      key={node.id}
+                      node={node}
+                      orderMode={orderMode}
+                      onOpenModal={() => setSelectedNodeModal(node)}
+                      onWatchNode={() => onWatchNode(node)}
+                      accentColor="amber"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* ERA 3: THE GOLDEN AGE */}
+            {eraGoldenAgeNodes.length > 0 && (
+              <div className="space-y-6">
+                <div className="flex items-center justify-between border-b border-rose-500/20 pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="h-6 w-1 bg-rose-500 rounded-full shadow-[0_0_10px_#F43F5E]" />
+                    <h2 className="text-xl sm:text-2xl font-black text-rose-400 uppercase tracking-wider">
+                      The Golden Era of Marvel Cinema (2008–2019)
+                    </h2>
+                  </div>
+                  <span className="text-xs font-mono text-rose-400/80 font-bold">
+                    {eraGoldenAgeNodes.length} Movies
+                  </span>
+                </div>
+                <div className="relative pl-6 sm:pl-8 border-l-2 border-rose-500/30 space-y-5">
+                  {eraGoldenAgeNodes.map(node => (
+                    <TimelineCard
+                      key={node.id}
+                      node={node}
+                      orderMode={orderMode}
+                      onOpenModal={() => setSelectedNodeModal(node)}
+                      onWatchNode={() => onWatchNode(node)}
+                      accentColor="rose"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* ERA 4: THE MULTIVERSE & MODERN ERA */}
+            {eraModernNodes.length > 0 && (
+              <div className="space-y-6">
+                <div className="flex items-center justify-between border-b border-red-500/20 pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="h-6 w-1 bg-red-600 rounded-full shadow-[0_0_10px_#E62429]" />
+                    <h2 className="text-xl sm:text-2xl font-black text-red-500 uppercase tracking-wider">
+                      The Multiverse & Modern Era (2020–Present)
+                    </h2>
+                  </div>
+                  <span className="text-xs font-mono text-red-400/80 font-bold">
+                    {eraModernNodes.length} Movies
+                  </span>
+                </div>
+                <div className="relative pl-6 sm:pl-8 border-l-2 border-red-600/30 space-y-5">
+                  {eraModernNodes.map(node => (
+                    <TimelineCard
+                      key={node.id}
+                      node={node}
+                      orderMode={orderMode}
+                      onOpenModal={() => setSelectedNodeModal(node)}
+                      onWatchNode={() => onWatchNode(node)}
+                      accentColor="red"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* UPCOMING FEATURE FILMS */}
+            {upcomingNodes.length > 0 && (
+              <div className="space-y-6">
+                <div className="flex items-center justify-between border-b border-orange-500/20 pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="h-6 w-1 bg-orange-500 rounded-full shadow-[0_0_10px_#F97316]" />
+                    <h2 className="text-xl sm:text-2xl font-black text-orange-400 uppercase tracking-wider">
+                      Upcoming Theatrical Releases
+                    </h2>
+                  </div>
+                  <span className="text-xs font-mono text-orange-400/80 font-bold">
+                    {upcomingNodes.length} Films
+                  </span>
+                </div>
+                <div className="relative pl-6 sm:pl-8 border-l-2 border-orange-500/30 space-y-5">
+                  {upcomingNodes.map(node => (
+                    <TimelineCard
+                      key={node.id}
+                      node={node}
+                      orderMode={orderMode}
+                      onOpenModal={() => setSelectedNodeModal(node)}
+                      onWatchNode={() => onWatchNode(node)}
+                      accentColor="orange"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* ============================================================ */}
+        {/* RENDER MODE B: MCU CURATED TIMELINE (Sacred Timeline & Sagas) */}
+        {/* ============================================================ */}
+        {timelineScope === 'mcu-sacred' && (
+          <div className="space-y-12">
+            {infinitySagaNodes.length > 0 && (
+              <div className="space-y-6">
+                <div className="flex items-center justify-between border-b border-amber-500/20 pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="h-6 w-1 bg-amber-500 rounded-full shadow-[0_0_10px_#F5B800]" />
+                    <h2 className="text-xl sm:text-2xl font-black text-amber-400 uppercase tracking-wider">
+                      The Infinity Saga (Phases 1 - 3)
+                    </h2>
+                  </div>
+                  <span className="text-xs font-mono text-amber-400/80 font-bold">
+                    {infinitySagaNodes.length} Titles
+                  </span>
+                </div>
+                <div className="relative pl-6 sm:pl-8 border-l-2 border-amber-500/30 space-y-5">
+                  {infinitySagaNodes.map(node => (
+                    <TimelineCard
+                      key={node.id}
+                      node={node}
+                      orderMode={orderMode}
+                      onOpenModal={() => setSelectedNodeModal(node)}
+                      onWatchNode={() => onWatchNode(node)}
+                      accentColor="amber"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {defendersAndTvNodes.length > 0 && (
+              <div className="space-y-6">
+                <div className="flex items-center justify-between border-b border-rose-500/20 pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="h-6 w-1 bg-rose-500 rounded-full shadow-[0_0_10px_#F43F5E]" />
+                    <h2 className="text-xl sm:text-2xl font-black text-rose-400 uppercase tracking-wider">
+                      The Defenders Saga & Marvel Television
+                    </h2>
+                  </div>
+                  <span className="text-xs font-mono text-rose-400/80 font-bold">
+                    {defendersAndTvNodes.length} Titles
+                  </span>
+                </div>
+                <div className="relative pl-6 sm:pl-8 border-l-2 border-rose-500/30 space-y-5">
+                  {defendersAndTvNodes.map(node => (
+                    <TimelineCard
+                      key={node.id}
+                      node={node}
+                      orderMode={orderMode}
+                      onOpenModal={() => setSelectedNodeModal(node)}
+                      onWatchNode={() => onWatchNode(node)}
+                      accentColor="rose"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {multiverseSagaNodes.length > 0 && (
+              <div className="space-y-6">
+                <div className="flex items-center justify-between border-b border-red-500/20 pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="h-6 w-1 bg-red-600 rounded-full shadow-[0_0_10px_#E62429]" />
+                    <h2 className="text-xl sm:text-2xl font-black text-red-500 uppercase tracking-wider">
+                      The Multiverse Saga (Phases 4 - 6)
+                    </h2>
+                  </div>
+                  <span className="text-xs font-mono text-red-400/80 font-bold">
+                    {multiverseSagaNodes.length} Titles
+                  </span>
+                </div>
+                <div className="relative pl-6 sm:pl-8 border-l-2 border-red-600/30 space-y-5">
+                  {multiverseSagaNodes.map(node => (
+                    <TimelineCard
+                      key={node.id}
+                      node={node}
+                      orderMode={orderMode}
+                      onOpenModal={() => setSelectedNodeModal(node)}
+                      onWatchNode={() => onWatchNode(node)}
+                      accentColor="red"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* ============================================================ */}
+        {/* RENDER MODE C: OTHER CONTINUITIES (X-Men, Spider-Man, Blade) */}
+        {/* ============================================================ */}
+        {['fox-xmen', 'sony-spider', 'blade'].includes(timelineScope) && (
           <div className="space-y-6">
-            <div className="flex items-center justify-between border-b border-amber-500/20 pb-3">
+            <div className="flex items-center justify-between border-b border-cyan-500/20 pb-3">
               <div className="flex items-center gap-3">
-                <div className="h-6 w-1 bg-amber-500 rounded-full shadow-[0_0_10px_#F5B800]" />
-                <h2 className="text-xl sm:text-2xl font-black text-amber-400 uppercase tracking-wider">
-                  The Infinity Saga (Phases 1 - 3)
+                <div className="h-6 w-1 bg-cyan-500 rounded-full shadow-[0_0_10px_#06B6D4]" />
+                <h2 className="text-xl sm:text-2xl font-black text-cyan-400 uppercase tracking-wider">
+                  {timelineScope === 'fox-xmen' && 'Fox Mutant Continuity'}
+                  {timelineScope === 'sony-spider' && 'Sony Marvel Cinematic Continuity'}
+                  {timelineScope === 'blade' && 'Blade Vampire Saga Continuity'}
                 </h2>
               </div>
-              <span className="text-xs font-mono text-amber-400/80 font-bold">
-                {infinitySagaNodes.length} Titles
+              <span className="text-xs font-mono text-cyan-400/80 font-bold">
+                {filteredNodes.length} Entries
               </span>
             </div>
-
-            <div className="relative pl-6 sm:pl-8 border-l-2 border-amber-500/30 space-y-5">
-              {infinitySagaNodes.map((node) => (
+            <div className="relative pl-6 sm:pl-8 border-l-2 border-cyan-500/30 space-y-5">
+              {filteredNodes.map(node => (
                 <TimelineCard
                   key={node.id}
                   node={node}
                   orderMode={orderMode}
                   onOpenModal={() => setSelectedNodeModal(node)}
                   onWatchNode={() => onWatchNode(node)}
-                  accentColor="amber"
+                  accentColor="cyan"
                 />
               ))}
             </div>
           </div>
         )}
 
-        {/* SECTION 2: THE DEFENDERS SAGA & MARVEL TELEVISION */}
-        {defendersAndTvNodes.length > 0 && (
-          <div className="space-y-6 pt-4">
-            <div className="flex items-center justify-between border-b border-rose-500/20 pb-3">
-              <div className="flex items-center gap-3">
-                <div className="h-6 w-1 bg-rose-500 rounded-full shadow-[0_0_10px_#F43F5E]" />
-                <h2 className="text-xl sm:text-2xl font-black text-rose-400 uppercase tracking-wider">
-                  The Defenders Saga & Marvel Television
-                </h2>
-              </div>
-              <span className="text-xs font-mono text-rose-400/80 font-bold">
-                {defendersAndTvNodes.length} Titles
-              </span>
-            </div>
-
-            <div className="relative pl-6 sm:pl-8 border-l-2 border-rose-500/30 space-y-5">
-              {defendersAndTvNodes.map((node) => (
-                <TimelineCard
-                  key={node.id}
-                  node={node}
-                  orderMode={orderMode}
-                  onOpenModal={() => setSelectedNodeModal(node)}
-                  onWatchNode={() => onWatchNode(node)}
-                  accentColor="rose"
-                />
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* SECTION 3: THE MULTIVERSE SAGA (Phases 4 - 6) */}
-        {multiverseSagaNodes.length > 0 && (
-          <div className="space-y-6 pt-4">
-            <div className="flex items-center justify-between border-b border-red-500/20 pb-3">
-              <div className="flex items-center gap-3">
-                <div className="h-6 w-1 bg-red-600 rounded-full shadow-[0_0_10px_#E62429]" />
-                <h2 className="text-xl sm:text-2xl font-black text-red-500 uppercase tracking-wider">
-                  The Multiverse Saga (Phases 4 - 6)
-                </h2>
-              </div>
-              <span className="text-xs font-mono text-red-400/80 font-bold">
-                {multiverseSagaNodes.length} Titles
-              </span>
-            </div>
-
-            <div className="relative pl-6 sm:pl-8 border-l-2 border-red-600/30 space-y-5">
-              {multiverseSagaNodes.map((node) => (
-                <TimelineCard
-                  key={node.id}
-                  node={node}
-                  orderMode={orderMode}
-                  onOpenModal={() => setSelectedNodeModal(node)}
-                  onWatchNode={() => onWatchNode(node)}
-                  accentColor="red"
-                />
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Detailed Title Modal */}
+        {/* Detail Modal */}
         {selectedNodeModal && (
           <TimelineDetailModal
             node={selectedNodeModal}
             orderMode={orderMode}
             onClose={() => setSelectedNodeModal(null)}
             onWatchNode={() => {
-              const target = selectedNodeModal;
+              const node = selectedNodeModal;
               setSelectedNodeModal(null);
-              onWatchNode(target);
+              onWatchNode(node);
             }}
             onSelectFullMedia={() => {
-              const target = selectedNodeModal;
+              const node = selectedNodeModal;
               setSelectedNodeModal(null);
-              onSelectNode(target);
+              onSelectNode(node);
             }}
           />
         )}
@@ -371,12 +668,16 @@ export const TimelinePage: React.FC<TimelinePageProps> = ({ onSelectNode, onWatc
   );
 };
 
+// ======================================================================
+// TimelineCard Component
+// ======================================================================
+
 interface TimelineCardProps {
   node: TimelineNode;
   orderMode: 'release' | 'chronological';
   onOpenModal: () => void;
   onWatchNode: () => void;
-  accentColor: 'amber' | 'rose' | 'red';
+  accentColor: 'amber' | 'rose' | 'red' | 'indigo' | 'orange' | 'cyan';
 }
 
 const TimelineCard: React.FC<TimelineCardProps> = ({
@@ -386,20 +687,32 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
   onWatchNode,
   accentColor
 }) => {
-  const isPlayable = node.screenScapeAvailable;
+  const isPlayable = node.screenScapeAvailable && !node.isUpcoming;
 
   const dotBorderClass =
     accentColor === 'amber'
-      ? 'border-amber-500 group-hover:bg-amber-500 shadow-[0_0_8px_#F5B800]'
+      ? 'border-amber-500 shadow-[0_0_8px_#F5B800]'
       : accentColor === 'rose'
-      ? 'border-rose-500 group-hover:bg-rose-500 shadow-[0_0_8px_#F43F5E]'
-      : 'border-red-600 group-hover:bg-red-600 shadow-[0_0_8px_#E62429]';
+      ? 'border-rose-500 shadow-[0_0_8px_#F43F5E]'
+      : accentColor === 'indigo'
+      ? 'border-indigo-500 shadow-[0_0_8px_#6366F1]'
+      : accentColor === 'orange'
+      ? 'border-orange-500 shadow-[0_0_8px_#F97316]'
+      : accentColor === 'cyan'
+      ? 'border-cyan-500 shadow-[0_0_8px_#06B6D4]'
+      : 'border-red-500 shadow-[0_0_8px_#E62429]';
 
   const hoverBorderClass =
     accentColor === 'amber'
       ? 'hover:border-amber-500/60'
       : accentColor === 'rose'
       ? 'hover:border-rose-500/60'
+      : accentColor === 'indigo'
+      ? 'hover:border-indigo-500/60'
+      : accentColor === 'orange'
+      ? 'hover:border-orange-500/60'
+      : accentColor === 'cyan'
+      ? 'hover:border-cyan-500/60'
       : 'hover:border-red-600/60';
 
   const orderNumber = orderMode === 'release' ? node.releaseOrder : node.chronologicalOrder;
@@ -436,27 +749,32 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
       {/* Details & Metadata */}
       <div className="flex-1 space-y-1.5 min-w-0">
         <div className="flex flex-wrap items-center gap-2">
-          <PhaseBadge phase={node.phase} />
+          {node.phase && <PhaseBadge phase={node.phase} />}
           <ContinuityBadge continuity={node.continuity} />
-          <span className="text-[11px] font-mono text-amber-400 font-bold">
+          <span className="text-[11px] font-mono text-red-400 font-bold">
             #{orderNumber}
           </span>
+          {node.studio && (
+            <span className="px-2 py-0.5 rounded bg-white/10 border border-white/10 text-[10px] font-mono text-gray-200 font-semibold">
+              {node.studio}
+            </span>
+          )}
+          {node.universeDesignation && (
+            <span className="px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800/60 text-[10px] font-mono text-cyan-300 font-bold">
+              {node.universeDesignation}
+            </span>
+          )}
           <span className="text-xs font-mono text-gray-400 font-semibold">{node.year}</span>
           <span className="text-[10px] font-mono text-gray-400 uppercase tracking-wider">
             [{node.type}]
           </span>
-          {node.seasonNumber && (
-            <span className="text-[10px] font-mono text-indigo-400 font-semibold">
-              Season {node.seasonNumber}
-            </span>
-          )}
         </div>
 
         <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-red-400 transition-colors truncate">
           {node.title}
         </h3>
 
-        {/* Chronological In-Universe Story Context Note */}
+        {/* Timeline Note / Story Placement */}
         {node.timelineNotes && (
           <p className="text-[11px] font-mono text-gray-400 line-clamp-1 italic">
             {node.timelineNotes}
@@ -467,7 +785,7 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
           {node.overview}
         </p>
 
-        {/* Principal Characters and Portraying Actors */}
+        {/* Cast */}
         {node.cast && node.cast.length > 0 && (
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-gray-400 pt-1">
             <span className="font-mono text-gray-500 flex items-center gap-1">
@@ -524,6 +842,10 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
   );
 };
 
+// ======================================================================
+// TimelineDetailModal Component
+// ======================================================================
+
 interface TimelineDetailModalProps {
   node: TimelineNode;
   orderMode: 'release' | 'chronological';
@@ -539,7 +861,7 @@ const TimelineDetailModal: React.FC<TimelineDetailModalProps> = ({
   onWatchNode,
   onSelectFullMedia
 }) => {
-  const isPlayable = node.screenScapeAvailable;
+  const isPlayable = node.screenScapeAvailable && !node.isUpcoming;
 
   return (
     <div
@@ -548,144 +870,110 @@ const TimelineDetailModal: React.FC<TimelineDetailModalProps> = ({
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border border-white/20 bg-slate-900 shadow-2xl space-y-6"
+        className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-white/20 bg-slate-900 shadow-2xl"
       >
-        {/* Backdrop Banner Header */}
-        <div className="relative h-48 sm:h-60 w-full overflow-hidden rounded-t-3xl bg-slate-950">
+        {/* Backdrop Banner */}
+        <div className="relative h-48 sm:h-64 w-full overflow-hidden bg-slate-950">
           <img
-            src={node.backdrop || node.poster || FALLBACK_BACKDROP}
+            src={node.backdrop || FALLBACK_BACKDROP}
             alt={node.title}
+            className="h-full w-full object-cover"
             onError={(e) => {
               (e.target as HTMLImageElement).src = FALLBACK_BACKDROP;
             }}
-            className="w-full h-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
-
-          {/* Quick Badges in Header */}
-          <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-            <PhaseBadge phase={node.phase} />
-            <ContinuityBadge continuity={node.continuity} />
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" />
 
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 h-8 w-8 rounded-full bg-black/60 backdrop-blur border border-white/20 text-gray-300 hover:text-white flex items-center justify-center transition-colors"
+            className="absolute top-4 right-4 p-2 rounded-full bg-black/60 text-white hover:bg-black/90 transition-colors"
           >
             ✕
           </button>
-        </div>
 
-        {/* Content Body */}
-        <div className="px-6 pb-6 space-y-5 -mt-16 sm:-mt-20 relative z-10">
-          <div className="flex gap-4 items-end">
-            <img
-              src={node.poster || FALLBACK_POSTER}
-              alt={node.title}
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = FALLBACK_POSTER;
-              }}
-              className="h-36 sm:h-44 w-24 sm:w-30 rounded-xl object-cover border-2 border-white/20 shadow-2xl bg-slate-950 flex-shrink-0"
-            />
-            <div className="space-y-1 min-w-0">
-              <span className="text-xs font-mono font-bold text-red-400">
-                Chronological #{node.chronologicalOrder} • Release #{node.releaseOrder}
-              </span>
-              <h2 className="text-xl sm:text-2xl font-black text-white leading-tight">
+          <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
+            <div>
+              <div className="flex flex-wrap items-center gap-2 mb-1">
+                {node.phase && <PhaseBadge phase={node.phase} />}
+                <ContinuityBadge continuity={node.continuity} />
+                <span className="text-xs font-mono text-red-400 font-bold">
+                  {orderMode === 'release' ? `Release #${node.releaseOrder}` : `Chronology #${node.chronologicalOrder}`}
+                </span>
+                {node.universeDesignation && (
+                  <span className="px-2 py-0.5 rounded bg-cyan-950 border border-cyan-800 text-[10px] font-mono text-cyan-300 font-bold">
+                    {node.universeDesignation}
+                  </span>
+                )}
+              </div>
+              <h2 className="text-xl sm:text-3xl font-black text-white uppercase tracking-tight">
                 {node.title}
               </h2>
-              {node.tagline && (
-                <p className="text-xs font-mono text-gray-400 italic">
-                  "{node.tagline}"
-                </p>
-              )}
-              <div className="flex flex-wrap items-center gap-2 pt-1 text-xs text-gray-400 font-mono">
-                <span>Released: {node.releaseDate}</span>
-                {node.rating && <RatingBadge rating={node.rating} />}
-              </div>
             </div>
           </div>
+        </div>
 
-          {/* Timeline In-Universe Continuity Analysis */}
+        {/* Modal Body */}
+        <div className="p-6 space-y-4 max-h-[60vh] overflow-y-auto">
+          {/* Metadata Row */}
+          <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-gray-400 border-b border-white/10 pb-3">
+            <span>Release Date: <strong className="text-white">{node.releaseDate}</strong></span>
+            {node.studio && <span>Studio: <strong className="text-white">{node.studio}</strong></span>}
+            {node.distributor && <span>Distributor: <strong className="text-white">{node.distributor}</strong></span>}
+            {node.franchise && <span>Franchise: <strong className="text-white">{node.franchise}</strong></span>}
+            {node.rating && <span>Rating: <strong className="text-amber-400">★ {node.rating.toFixed(1)}/10</strong></span>}
+          </div>
+
+          {/* Timeline Notes */}
           {node.timelineNotes && (
-            <div className="p-3.5 rounded-xl bg-slate-950/80 border border-amber-500/30 text-xs font-mono space-y-1">
-              <div className="text-[10px] text-amber-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
-                <Compass className="w-3.5 h-3.5" />
-                <span>CANON CONTINUITY PLACEMENT</span>
-              </div>
-              <p className="text-gray-300 leading-relaxed font-sans text-xs">
-                {node.timelineNotes}
-              </p>
+            <div className="p-3 rounded-xl bg-red-950/40 border border-red-800/40 text-xs font-mono text-red-200">
+              <strong className="text-red-400 block mb-1">STORY CONTINUITY CONTEXT:</strong>
+              {node.timelineNotes}
             </div>
           )}
 
           {/* Overview */}
-          <div className="space-y-1">
-            <h4 className="text-xs font-mono font-bold text-gray-400 uppercase tracking-wider">
-              SYNOPSIS
-            </h4>
-            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
-              {node.overview}
-            </p>
+          <div>
+            <h4 className="text-xs font-mono uppercase text-gray-400 font-bold mb-1">Synopsis</h4>
+            <p className="text-sm text-gray-300 leading-relaxed">{node.overview}</p>
           </div>
 
-          {/* Principal Characters & Portraying Actors */}
+          {/* Cast */}
           {node.cast && node.cast.length > 0 && (
-            <div className="space-y-2">
-              <h4 className="text-xs font-mono font-bold text-gray-400 uppercase tracking-wider flex items-center gap-1.5">
-                <Users className="w-3.5 h-3.5" />
-                <span>PRINCIPAL CAST & CHARACTERS</span>
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {node.cast.map((member, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-2.5 p-2 rounded-xl bg-slate-950/60 border border-white/5"
-                  >
-                    <div className="h-8 w-8 rounded-full bg-red-950/80 border border-red-700/50 flex items-center justify-center font-bold text-red-300 text-xs flex-shrink-0">
-                      {member.name.charAt(0)}
-                    </div>
-                    <div className="text-xs min-w-0">
-                      <div className="text-white font-semibold truncate">{member.name}</div>
-                      <div className="text-gray-400 text-[11px] truncate">{member.role}</div>
-                    </div>
+            <div>
+              <h4 className="text-xs font-mono uppercase text-gray-400 font-bold mb-2">Principal Cast</h4>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {node.cast.map((c, i) => (
+                  <div key={i} className="p-2 rounded-lg bg-black/40 border border-white/5 text-xs">
+                    <div className="font-semibold text-white truncate">{c.name}</div>
+                    <div className="text-gray-400 text-[10px] truncate">{c.role}</div>
                   </div>
                 ))}
               </div>
             </div>
           )}
 
-          {/* Footer Actions */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-white/10">
+          {/* Action Buttons */}
+          <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+            {isPlayable ? (
+              <button
+                onClick={onWatchNode}
+                className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-red-600 text-xs font-bold text-white uppercase hover:bg-red-500 transition-all shadow-[0_0_20px_rgba(230,36,41,0.4)]"
+              >
+                <Play className="w-4 h-4 fill-current" />
+                <span>Launch ScreenScape Player</span>
+              </button>
+            ) : (
+              <div className="flex-1 py-3 text-center rounded-xl bg-slate-800 text-xs font-mono text-gray-400">
+                Playback will unlock upon theatrical release
+              </div>
+            )}
             <button
               onClick={onSelectFullMedia}
-              className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-800 text-xs font-bold text-gray-300 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 px-4 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-mono text-white transition-colors"
             >
-              <ExternalLink className="w-3.5 h-3.5" />
-              <span>OPEN IN MEDIA HUB</span>
+              <span>Full Details</span>
+              <ChevronRight className="w-4 h-4" />
             </button>
-
-            <div className="flex items-center gap-2 w-full sm:w-auto">
-              <button
-                onClick={onClose}
-                className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-slate-800 text-xs font-bold text-gray-400 hover:text-white"
-              >
-                CLOSE
-              </button>
-              {isPlayable ? (
-                <button
-                  onClick={onWatchNode}
-                  className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-6 py-2.5 rounded-xl bg-red-600 text-xs font-bold text-white hover:bg-red-500 shadow-lg transition-colors"
-                >
-                  <Play className="w-4 h-4 fill-current" />
-                  <span>WATCH IN SCREENSCAPE</span>
-                </button>
-              ) : (
-                <div className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-orange-950/80 border border-orange-700/60 text-orange-400 text-xs font-mono font-bold text-center">
-                  CONFIRMED UPCOMING
-                </div>
-              )}
-            </div>
           </div>
         </div>
       </div>

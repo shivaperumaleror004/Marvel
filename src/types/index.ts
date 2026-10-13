@@ -50,6 +50,58 @@ export type CastMember = {
   avatar?: string;
 };
 
+export type StudioId =
+  | 'marvel-studios'
+  | 'sony-pictures'
+  | '20th-century-fox'
+  | 'new-line-cinema'
+  | 'universal-pictures'
+  | 'lionsgate'
+  | 'marvel-animation'
+  | 'marvel-television'
+  | 'standalone-marvel';
+
+export type UniverseId =
+  | 'earth-616'        // Main MCU / Sacred Timeline
+  | 'earth-96283'      // Raimi Spider-Man Trilogy
+  | 'earth-120703'     // Webb The Amazing Spider-Man
+  | 'earth-688'        // Sony's Spider-Man Universe (Venom, Morbius, Kraven)
+  | 'earth-10005'      // Fox Original X-Men Timeline
+  | 'earth-trn414'     // Fox Revised X-Men / Deadpool Timeline
+  | 'earth-121698'     // Fox Fantastic Four (2005/2007)
+  | 'earth-trn562'     // Fox Fant4stic (2015)
+  | 'earth-26320'      // New Line Blade Trilogy
+  | 'earth-trn012'     // Ghost Rider Universe
+  | 'earth-sv'         // Spider-Verse Multiverse
+  | 'earth-92131'      // X-Men '97 & 90s Animated Universe
+  | 'earth-8096'       // Avengers: EMH / Wolverine & X-Men
+  | 'earth-12041'      // Ultimate Spider-Man / Avengers Assemble
+  | 'earth-26496'      // The Spectacular Spider-Man
+  | 'earth-828038'     // Retro-60s Alternate Universe (Fantastic Four: First Steps)
+  | 'standalone-marvel'// Standalone Marvel Universe
+  | 'marvel-legacy-tv' // Agents of S.H.I.E.L.D., Inhumans, Runaways, Cloak & Dagger, Legion, The Gifted
+  | 'multiverse';
+
+export interface StudioInfo {
+  id: StudioId;
+  name: string;
+  shortName: string;
+  description: string;
+  foundedYear: number;
+  featuredFranchises: string[];
+  bannerUrl?: string;
+}
+
+export interface UniverseInfo {
+  id: UniverseId;
+  designation: string;
+  name: string;
+  description: string;
+  primaryStudio: string;
+  keyHeroes: string[];
+  bannerUrl?: string;
+}
+
 export type Movie = {
   id: string;
   title: string;
@@ -60,8 +112,8 @@ export type Movie = {
   poster: string;
   backdrop: string;
   rating: number; // e.g. 8.4
-  phase: Phase;
-  saga: Saga;
+  phase?: Phase;
+  saga?: Saga;
   genres: string[];
   director: string;
   cast: CastMember[];
@@ -73,6 +125,26 @@ export type Movie = {
   watchConfig?: WatchConfig;
   trailerUrl?: string;
   tagline?: string;
+  type?: 'movie' | 'one-shot' | 'special';
+  studio?: string;
+  studioId?: StudioId;
+  distributor?: string;
+  franchise?: string;
+  universe?: string;
+  universeId?: UniverseId;
+  universeDesignation?: string;
+  movieType?: 'live-action' | 'animation' | 'short' | 'special';
+  mcuRelationship?: 'canon-mcu' | 'multiverse-crossover' | 'non-mcu' | 'legacy' | 'sony-collaboration';
+  isAnimation?: boolean;
+  isMcu?: boolean;
+  isLegacy?: boolean;
+  isCollaboration?: boolean;
+  isUpcoming?: boolean;
+  isReleased?: boolean;
+  releaseStatus?: 'released' | 'upcoming';
+  mcuChronologyOrder?: number;
+  universeChronologyOrder?: number;
+  verificationStatus?: 'verified' | 'unverified';
   mcuConnections?: {
     prevId?: string;
     prevTitle?: string;
@@ -125,6 +197,17 @@ export type Series = {
   watchSource?: string;
   watchConfig?: WatchConfig;
   tagline?: string;
+  studio?: string;
+  studioId?: StudioId;
+  distributor?: string;
+  franchise?: string;
+  universe?: string;
+  universeId?: UniverseId;
+  universeDesignation?: string;
+  isAnimation?: boolean;
+  isMcu?: boolean;
+  isLegacy?: boolean;
+  releaseStatus?: 'released' | 'upcoming';
 };
 
 export type Character = {
@@ -165,9 +248,17 @@ export type TimelineNode = {
   timelineNotes?: string;
   characters?: string[];
   cast?: CastMember[];
-  relatedTitles?: string[];
   screenScapeAvailable: boolean;
   isUpcoming?: boolean;
+  studio?: string;
+  studioId?: StudioId;
+  distributor?: string;
+  franchise?: string;
+  universe?: string;
+  universeId?: UniverseId;
+  universeDesignation?: string;
+  movieType?: 'live-action' | 'animation' | 'short' | 'special';
+  mcuRelationship?: 'canon-mcu' | 'multiverse-crossover' | 'non-mcu' | 'legacy' | 'sony-collaboration';
 };
 
 export type WatchProgress = {

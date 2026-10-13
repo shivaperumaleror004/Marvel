@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Play, Plus, Check, Tv } from 'lucide-react';
+import { Play, Plus, Check, Tv, Film } from 'lucide-react';
 import { Series } from '../../types';
 import { PhaseBadge } from './PhaseBadge';
 import { RatingBadge } from './RatingBadge';
 import { useWatchlist } from '../../hooks/useWatchlist';
+import { FALLBACK_POSTER } from '../../services/tmdb';
 
 interface SeriesCardProps {
   series: Series;
@@ -21,8 +22,8 @@ export const SeriesCard: React.FC<SeriesCardProps> = ({ series, onSelect, onWatc
     setImgError(false);
   }, [series.poster]);
 
-  const fallbackPoster = 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop';
-  const totalSeasons = series.seasons.length;
+  const totalSeasons = series.seasons?.length || 1;
+  const totalEpisodes = series.seasons?.reduce((sum, s) => sum + (s.episodes?.length || 0), 0) || 0;
 
   return (
     <div
@@ -31,7 +32,7 @@ export const SeriesCard: React.FC<SeriesCardProps> = ({ series, onSelect, onWatc
     >
       <div className="relative aspect-[2/3] w-full overflow-hidden bg-slate-950">
         <img
-          src={imgError ? fallbackPoster : series.poster}
+          src={imgError ? FALLBACK_POSTER : (series.poster || FALLBACK_POSTER)}
           alt={series.title}
           onError={() => setImgError(true)}
           loading="lazy"
@@ -49,12 +50,13 @@ export const SeriesCard: React.FC<SeriesCardProps> = ({ series, onSelect, onWatc
               {series.title}
             </h3>
 
-            <div className="mt-1 flex items-center gap-2 text-xs font-mono text-gray-300">
+            <div className="mt-1 flex flex-wrap items-center gap-2 text-xs font-mono text-gray-300">
               <span>{series.releaseYear}</span>
               <span>•</span>
               <span className="flex items-center gap-1 text-red-400 font-semibold">
                 <Tv className="w-3 h-3" />
                 {totalSeasons} {totalSeasons === 1 ? 'Season' : 'Seasons'}
+                {totalEpisodes > 0 && ` (${totalEpisodes} Eps)`}
               </span>
             </div>
 

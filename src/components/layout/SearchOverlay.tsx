@@ -57,15 +57,31 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onClose]);
 
-  // Debounced search via TMDB API and local cache
+  // Instant local search + debounced TMDB API search
   useEffect(() => {
-    const q = query.trim();
+    const q = query.trim().toLowerCase();
     if (!q) {
       setMatchedMovies([]);
       setMatchedSeries([]);
       setIsSearching(false);
       return;
     }
+
+    // Immediate local match for instant UI responsiveness
+    const localMovies = cachedMovies.filter(m =>
+      m.title.toLowerCase().includes(q) ||
+      m.franchise?.toLowerCase().includes(q) ||
+      m.characters?.some(c => c.toLowerCase().includes(q)) ||
+      m.cast?.some(c => c.name.toLowerCase().includes(q))
+    );
+    const localSeries = cachedSeries.filter(s =>
+      s.title.toLowerCase().includes(q) ||
+      s.franchise?.toLowerCase().includes(q) ||
+      s.characters?.some(c => c.toLowerCase().includes(q)) ||
+      s.cast?.some(c => c.name.toLowerCase().includes(q))
+    );
+    setMatchedMovies(localMovies);
+    setMatchedSeries(localSeries);
 
     setIsSearching(true);
     const timer = setTimeout(async () => {
@@ -76,24 +92,34 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({
         ]);
 
         // Merge with locally cached enriched data for maximum poster fidelity
-        const mergedMovies = movieResults.map(m => {
+        const movieMap = new Map<string, Movie>();
+        localMovies.forEach(m => movieMap.set(m.id, m));
+        movieResults.forEach(m => {
           const cached = cachedMovies.find(cm => cm.id === m.id || cm.tmdbId === m.tmdbId);
-          return cached ? { ...m, poster: cached.poster || m.poster, backdrop: cached.backdrop || m.backdrop } : m;
+          const finalMovie = cached ? { ...m, poster: cached.poster || m.poster, backdrop: cached.backdrop || m.backdrop } : m;
+          if (!movieMap.has(finalMovie.id)) {
+            movieMap.set(finalMovie.id, finalMovie);
+          }
         });
 
-        const mergedSeries = seriesResults.map(s => {
+        const seriesMap = new Map<string, Series>();
+        localSeries.forEach(s => seriesMap.set(s.id, s));
+        seriesResults.forEach(s => {
           const cached = cachedSeries.find(cs => cs.id === s.id || cs.tmdbId === s.tmdbId);
-          return cached ? { ...s, poster: cached.poster || s.poster, backdrop: cached.backdrop || s.backdrop } : s;
+          const finalSeries = cached ? { ...s, poster: cached.poster || s.poster, backdrop: cached.backdrop || s.backdrop } : s;
+          if (!seriesMap.has(finalSeries.id)) {
+            seriesMap.set(finalSeries.id, finalSeries);
+          }
         });
 
-        setMatchedMovies(mergedMovies);
-        setMatchedSeries(mergedSeries);
+        setMatchedMovies(Array.from(movieMap.values()));
+        setMatchedSeries(Array.from(seriesMap.values()));
       } catch (e) {
         console.warn('Search query failed:', e);
       } finally {
         setIsSearching(false);
       }
-    }, 250);
+    }, 300);
 
     return () => clearTimeout(timer);
   }, [query, cachedMovies, cachedSeries]);

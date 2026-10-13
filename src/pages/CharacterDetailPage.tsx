@@ -7,6 +7,8 @@ import { CHARACTERS_DATA } from '../data/characters';
 import { PageTransition } from '../components/ui/PageTransition';
 import { MovieCard } from '../components/ui/MovieCard';
 
+import { FALLBACK_POSTER, FALLBACK_BACKDROP } from '../services/tmdb';
+
 interface CharacterDetailPageProps {
   character: Character;
   onBack: () => void;
@@ -32,8 +34,9 @@ export const CharacterDetailPage: React.FC<CharacterDetailPageProps> = ({
         {/* Backdrop Header */}
         <div className="relative min-h-[45vh] lg:min-h-[55vh] w-full overflow-hidden">
           <img
-            src={character.backdrop}
+            src={character.backdrop || FALLBACK_BACKDROP}
             alt={character.alias}
+            onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_BACKDROP; }}
             className="h-full w-full object-cover object-top opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
@@ -57,8 +60,9 @@ export const CharacterDetailPage: React.FC<CharacterDetailPageProps> = ({
             <div className="w-64 sm:w-80 flex-shrink-0 mx-auto md:mx-0 rounded-2xl overflow-hidden border-2 border-red-600 bg-slate-900 shadow-[0_20px_50px_rgba(230,36,41,0.3)]">
               <div className="relative aspect-[3/4] w-full">
                 <img
-                  src={character.portrait}
+                  src={character.portrait || FALLBACK_POSTER}
                   alt={character.alias}
+                  onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_POSTER; }}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-3 left-3 bg-red-600 px-2.5 py-1 text-[10px] font-mono font-bold text-white uppercase rounded shadow">

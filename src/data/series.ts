@@ -2,767 +2,3553 @@ import type { Series } from '../types';
 
 export const SERIES_DATA: Series[] = [
   {
-    id: 'loki',
-    title: 'Loki',
-    year: 2021,
-    releaseYear: '2021 - 2023',
-    overview: 'The mercurial villain Loki resumes his role as the God of Mischief in a new series that takes place after the events of Avengers: Endgame. Recruited by the Time Variance Authority, he navigates the complex Sacred Timeline.',
-    poster: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop',
-    backdrop: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1600&auto=format&fit=crop',
-    rating: 8.2,
-    phase: 'Phase 4',
-    saga: 'Multiverse Saga',
-    genres: ['Action', 'Sci-Fi', 'Fantasy'],
-    creator: 'Michael Waldron',
-    releaseOrder: 25,
-    chronologicalOrder: 25,
-    tagline: 'Loki\'s time has come.',
-    tmdbId: 84958,
-    watchConfig: {
-      tmdbId: 84958,
-      type: 'tv',
-      watchProvider: 'screenscape',
-      language: 'eng'
-    },
-    cast: [
-      { name: 'Tom Hiddleston', role: 'Loki' },
-      { name: 'Owen Wilson', role: 'Mobius M. Mobius' },
-      { name: 'Sophia Di Martino', role: 'Sylvie' },
-      { name: 'Gugu Mbatha-Raw', role: 'Ravonna Renslayer' },
-      { name: 'Ke Huy Quan', role: 'O.B.' }
+    "id": "loki",
+    "title": "Loki",
+    "year": 2021,
+    "releaseYear": "2021 - 2023",
+    "overview": "The mercurial villain Loki resumes his role as the God of Mischief in a series that takes place after the events of Avengers: Endgame. Recruited by the Time Variance Authority, he navigates the complex Sacred Timeline and eventually becomes the God of Stories at the center of the Multiverse.",
+    "poster": "https://image.tmdb.org/t/p/w780/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+    "rating": 8.2,
+    "phase": "Phase 4",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Action",
+      "Sci-Fi",
+      "Fantasy",
+      "Adventure"
     ],
-    characters: ['loki'],
-    seasons: [
+    "creator": "Michael Waldron",
+    "tagline": "Loki's time has come.",
+    "releaseOrder": 44,
+    "chronologicalOrder": 47,
+    "tmdbId": 84958,
+    "cast": [
       {
-        seasonNumber: 1,
-        title: 'Season 1',
-        overview: 'After stealing the Tesseract during Avengers: Endgame, Loki is brought to the mysterious Time Variance Authority.',
-        poster: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop',
-        episodes: [
+        "name": "Tom Hiddleston",
+        "role": "Loki"
+      },
+      {
+        "name": "Owen Wilson",
+        "role": "Mobius M. Mobius"
+      },
+      {
+        "name": "Sophia Di Martino",
+        "role": "Sylvie"
+      },
+      {
+        "name": "Ke Huy Quan",
+        "role": "Ouroboros / O.B."
+      }
+    ],
+    "characters": [
+      "loki"
+    ],
+    "watchConfig": {
+      "tmdbId": 84958,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Loki Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+        "episodes": [
           {
-            id: 'loki_s1_e1',
-            seasonNumber: 1,
-            episodeNumber: 1,
-            title: 'Glorious Purpose',
-            runtime: 51,
-            overview: 'Loki is apprehended by the Time Variance Authority (TVA) after escaping with the Tesseract in 2012.',
-            still: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=800&auto=format&fit=crop',
-            airDate: '2021-06-09',
-            episodeWatchConfig: {
-              season: 1,
-              episode: 1,
-              watchProvider: 'screenscape',
-              tmdbId: 84958
-            }
-          },
-          {
-            id: 'loki_s1_e2',
-            seasonNumber: 1,
-            episodeNumber: 2,
-            title: 'The Variant',
-            runtime: 54,
-            overview: 'Mobius puts Loki to work, but not everyone at the TVA is thrilled about the God of Mischief\'s presence.',
-            still: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop',
-            airDate: '2021-06-16',
-            episodeWatchConfig: {
-              season: 1,
-              episode: 2,
-              watchProvider: 'screenscape',
-              tmdbId: 84958
-            }
-          },
-          {
-            id: 'loki_s1_e6',
-            seasonNumber: 1,
-            episodeNumber: 6,
-            title: 'For All Time. Always.',
-            runtime: 46,
-            overview: 'The clock is ticking in the season finale as Loki and Sylvie face the mastermind behind the Citadel at the End of Time.',
-            still: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop',
-            airDate: '2021-07-14',
-            episodeWatchConfig: {
-              season: 1,
-              episode: 6,
-              watchProvider: 'screenscape',
-              tmdbId: 84958
+            "id": "loki_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Loki Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+            "airDate": "2021-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 84958,
+              "watchProvider": "screenscape"
             }
           }
         ]
       },
       {
-        seasonNumber: 2,
-        title: 'Season 2',
-        overview: 'Loki navigates an ever-expanding, increasingly dangerous Multiverse in search of Sylvie, Judge Renslayer, and Miss Minutes.',
-        poster: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=800&auto=format&fit=crop',
-        episodes: [
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Loki Season 2",
+        "poster": "https://image.tmdb.org/t/p/w780/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+        "episodes": [
           {
-            id: 'loki_s2_e1',
-            seasonNumber: 2,
-            episodeNumber: 1,
-            title: 'Ouroboros',
-            runtime: 45,
-            overview: 'Loki finds himself time-slipping violently across past, present, and future inside TVA headquarters.',
-            still: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop',
-            airDate: '2023-10-05',
-            episodeWatchConfig: {
-              season: 2,
-              episode: 1,
-              watchProvider: 'screenscape',
-              tmdbId: 84958
-            }
-          },
-          {
-            id: 'loki_s2_e6',
-            seasonNumber: 2,
-            episodeNumber: 6,
-            title: 'Glorious Purpose (Part II)',
-            runtime: 56,
-            overview: 'Loki learns the true burden of his glorious purpose as he takes his throne at the center of all time.',
-            still: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop',
-            airDate: '2023-11-09',
-            episodeWatchConfig: {
-              season: 2,
-              episode: 6,
-              watchProvider: 'screenscape',
-              tmdbId: 84958
+            "id": "loki_s2_e1",
+            "seasonNumber": 2,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Loki Season 2",
+            "still": "https://image.tmdb.org/t/p/w1280/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+            "airDate": "2021-01-01",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 1,
+              "tmdbId": 84958,
+              "watchProvider": "screenscape"
             }
           }
         ]
       }
-    ]
+    ],
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "Thor & Loki",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": false,
+    "releaseStatus": "released"
   },
   {
-    id: 'wandavision',
-    title: 'WandaVision',
-    year: 2021,
-    releaseYear: '2021',
-    overview: 'Blends the style of classic sitcoms with the MCU, in which Wanda Maximoff and Vision - two super-powered beings living ideal suburban lives - begin to suspect that everything is not as it seems.',
-    poster: 'https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=800&auto=format&fit=crop',
-    backdrop: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1600&auto=format&fit=crop',
-    rating: 7.9,
-    phase: 'Phase 4',
-    saga: 'Multiverse Saga',
-    genres: ['Drama', 'Sci-Fi', 'Mystery'],
-    creator: 'Jac Schaeffer',
-    releaseOrder: 23,
-    chronologicalOrder: 26,
-    tagline: 'A love like no other.',
-    tmdbId: 85271,
-    watchConfig: {
-      tmdbId: 85271,
-      type: 'tv',
-      watchProvider: 'screenscape',
-      language: 'eng'
-    },
-    cast: [
-      { name: 'Elizabeth Olsen', role: 'Wanda Maximoff / Scarlet Witch' },
-      { name: 'Paul Bettany', role: 'Vision' },
-      { name: 'Kathryn Hahn', role: 'Agatha Harkness' },
-      { name: 'Teyonah Parris', role: 'Monica Rambeau' }
+    "id": "wandavision",
+    "title": "WandaVision",
+    "year": 2021,
+    "releaseYear": "2021",
+    "overview": "Living idealized suburban lives in the town of Westview, Wanda Maximoff and Vision begin to suspect that their reality is not what it seems.",
+    "poster": "https://image.tmdb.org/t/p/w780/ijWWwINc8h71NQ8j1LTJMFSj5wr.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/glKDjt.jpg",
+    "rating": 8.2,
+    "phase": "Phase 4",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Sci-Fi",
+      "Mystery",
+      "Drama",
+      "Comedy"
     ],
-    characters: ['scarlet-witch', 'vision'],
-    seasons: [
+    "creator": "Jac Schaeffer",
+    "tagline": "A visionary new age of television.",
+    "releaseOrder": 43,
+    "chronologicalOrder": 49,
+    "tmdbId": 85271,
+    "cast": [
       {
-        seasonNumber: 1,
-        title: 'Season 1',
-        overview: 'Wanda and Vision live out classic sitcom decades in Westview.',
-        poster: 'https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=800&auto=format&fit=crop',
-        episodes: [
+        "name": "Elizabeth Olsen",
+        "role": "Wanda Maximoff / Scarlet Witch"
+      },
+      {
+        "name": "Paul Bettany",
+        "role": "Vision"
+      },
+      {
+        "name": "Kathryn Hahn",
+        "role": "Agatha Harkness"
+      },
+      {
+        "name": "Teyonah Parris",
+        "role": "Monica Rambeau"
+      }
+    ],
+    "characters": [
+      "scarlet-witch",
+      "vision"
+    ],
+    "watchConfig": {
+      "tmdbId": 85271,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "WandaVision Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/ijWWwINc8h71NQ8j1LTJMFSj5wr.jpg",
+        "episodes": [
           {
-            id: 'wandavision_s1_e1',
-            seasonNumber: 1,
-            episodeNumber: 1,
-            title: 'Filmed Before a Live Studio Audience',
-            runtime: 30,
-            overview: 'Wanda and Vision try to conceal their powers during a dinner with Vision\'s boss and his wife.',
-            still: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=800&auto=format&fit=crop',
-            airDate: '2021-01-15',
-            episodeWatchConfig: {
-              season: 1,
-              episode: 1,
-              watchProvider: 'screenscape',
-              tmdbId: 85271
-            }
-          },
-          {
-            id: 'wandavision_s1_e9',
-            seasonNumber: 1,
-            episodeNumber: 9,
-            title: 'The Series Finale',
-            runtime: 50,
-            overview: 'The climax of WandaVision unfold as Wanda embraces her destiny as the Scarlet Witch.',
-            still: 'https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=800&auto=format&fit=crop',
-            airDate: '2021-03-05',
-            episodeWatchConfig: {
-              season: 1,
-              episode: 9,
-              watchProvider: 'screenscape',
-              tmdbId: 85271
+            "id": "wandavision_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of WandaVision Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/glKDjt.jpg",
+            "airDate": "2021-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 85271,
+              "watchProvider": "screenscape"
             }
           }
         ]
       }
-    ]
+    ],
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "MCU Series",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": false,
+    "releaseStatus": "released"
   },
   {
-    id: 'the-falcon-and-the-winter-soldier',
-    title: 'The Falcon and the Winter Soldier',
-    year: 2021,
-    releaseYear: '2021',
-    overview: 'Following the events of Avengers: Endgame, Sam Wilson/Falcon and Bucky Barnes/Winter Soldier team up in a global adventure that tests their abilities—and their patience.',
-    poster: 'https://images.unsplash.com/photo-1569003339405-ea396a5a8a90?q=80&w=800&auto=format&fit=crop',
-    backdrop: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1600&auto=format&fit=crop',
-    rating: 7.1,
-    phase: 'Phase 4',
-    saga: 'Multiverse Saga',
-    genres: ['Action', 'Adventure', 'Drama'],
-    creator: 'Malcolm Spellman',
-    releaseOrder: 24,
-    chronologicalOrder: 27,
-    tagline: 'Honor the legacy.',
-    tmdbId: 88396, // Or TV ID for TFATWS (88396/92782)
-    watchConfig: {
-      tmdbId: 88396,
-      type: 'tv',
-      watchProvider: 'screenscape',
-      language: 'eng'
-    },
-    cast: [
-      { name: 'Anthony Mackie', role: 'Sam Wilson / Falcon' },
-      { name: 'Sebastian Stan', role: 'Bucky Barnes / Winter Soldier' },
-      { name: 'Wyatt Russell', role: 'John Walker / U.S. Agent' }
+    "id": "the-falcon-and-the-winter-soldier",
+    "title": "The Falcon and the Winter Soldier",
+    "year": 2021,
+    "releaseYear": "2021",
+    "overview": "Following the events of Avengers: Endgame, Sam Wilson and Bucky Barnes team up on a global adventure that tests their abilities and their patience as Sam grapples with the mantle of Captain America.",
+    "poster": "https://image.tmdb.org/t/p/w780/6kbAMLteGO8yyewYau6bJ683sw7.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/6kbAMLteGO8yyewYau6bJ683sw7.jpg",
+    "rating": 7.7,
+    "phase": "Phase 4",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama"
     ],
-    characters: ['captain-america'],
-    seasons: [
+    "creator": "Malcolm Spellman",
+    "tagline": "Honor the legacy.",
+    "releaseOrder": 44,
+    "chronologicalOrder": 50,
+    "tmdbId": 88396,
+    "cast": [
       {
-        seasonNumber: 1,
-        title: 'Season 1',
-        overview: 'Sam Wilson struggles with taking up the mantle of Captain America.',
-        poster: 'https://images.unsplash.com/photo-1569003339405-ea396a5a8a90?q=80&w=800&auto=format&fit=crop',
-        episodes: [
+        "name": "Anthony Mackie",
+        "role": "Sam Wilson / Captain America"
+      },
+      {
+        "name": "Sebastian Stan",
+        "role": "Bucky Barnes / Winter Soldier"
+      },
+      {
+        "name": "Wyatt Russell",
+        "role": "John Walker / U.S. Agent"
+      },
+      {
+        "name": "Daniel Brühl",
+        "role": "Baron Helmut Zemo"
+      }
+    ],
+    "characters": [
+      "falcon",
+      "winter-soldier"
+    ],
+    "watchConfig": {
+      "tmdbId": 88396,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The Falcon and the Winter Soldier Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/6kbAMLteGO8yyewYau6bJ683sw7.jpg",
+        "episodes": [
           {
-            id: 'fatws_s1_e1',
-            seasonNumber: 1,
-            episodeNumber: 1,
-            title: 'New World Order',
-            runtime: 50,
-            overview: 'Sam Wilson hands over Captain America\'s shield while Bucky Barnes tries to make amends.',
-            still: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop',
-            airDate: '2021-03-19',
-            episodeWatchConfig: {
-              season: 1,
-              episode: 1,
-              watchProvider: 'screenscape',
-              tmdbId: 88396
+            "id": "the-falcon-and-the-winter-soldier_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of The Falcon and the Winter Soldier Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/6kbAMLteGO8yyewYau6bJ683sw7.jpg",
+            "airDate": "2021-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 88396,
+              "watchProvider": "screenscape"
             }
           }
         ]
       }
-    ]
+    ],
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "MCU Series",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": false,
+    "releaseStatus": "released"
   },
   {
-    id: 'what-if',
-    title: 'What If...?',
-    year: 2021,
-    releaseYear: '2021 - 2024',
-    overview: 'Exploring pivotal moments from the Marvel Cinematic Universe and turning them on their head, leading the audience into uncharted territory through alternate timelines.',
-    poster: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop',
-    backdrop: 'https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1600&auto=format&fit=crop',
-    rating: 7.4,
-    phase: 'Phase 4',
-    saga: 'Multiverse Saga',
-    genres: ['Animation', 'Action', 'Sci-Fi'],
-    creator: 'A.C. Bradley',
-    releaseOrder: 26,
-    chronologicalOrder: 29,
-    tagline: 'Enter the multiverse of infinite possibilities.',
-    tmdbId: 91363,
-    watchConfig: {
-      tmdbId: 91363,
-      type: 'tv',
-      watchProvider: 'screenscape',
-      language: 'eng'
-    },
-    cast: [
-      { name: 'Jeffrey Wright', role: 'The Watcher' }
+    "id": "what-if",
+    "title": "What If...?",
+    "year": 2021,
+    "releaseYear": "2021 - 2024",
+    "overview": "Taking inspiration from the comic books of the same name, each episode of this animated anthology explores a pivotal moment from the Marvel Cinematic Universe and turns it on its head, leading the audience into uncharted multiversal territory.",
+    "poster": "https://image.tmdb.org/t/p/w780/lztz5XBMG1x6Y5ubz7CxfPFsAcW.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/lztz5XBMG1x6Y5ubz7CxfPFsAcW.jpg",
+    "rating": 7.9,
+    "phase": "Phase 4",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Animation",
+      "Action",
+      "Sci-Fi"
     ],
-    characters: ['iron-man', 'thor', 'captain-america'],
-    seasons: [
+    "creator": "A.C. Bradley",
+    "tagline": "One question changes everything.",
+    "releaseOrder": 45,
+    "chronologicalOrder": 48,
+    "tmdbId": 91363,
+    "cast": [
       {
-        seasonNumber: 1,
-        title: 'Season 1',
-        overview: 'Alternate realities across the Marvel Multiverse.',
-        poster: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop',
-        episodes: [
+        "name": "Jeffrey Wright",
+        "role": "The Watcher (Voice)"
+      },
+      {
+        "name": "Hayley Atwell",
+        "role": "Captain Carter (Voice)"
+      }
+    ],
+    "characters": [
+      "the-watcher"
+    ],
+    "watchConfig": {
+      "tmdbId": 91363,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "What If...? Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/lztz5XBMG1x6Y5ubz7CxfPFsAcW.jpg",
+        "episodes": [
           {
-            id: 'what_if_s1_e1',
-            seasonNumber: 1,
-            episodeNumber: 1,
-            title: 'What If... Captain Carter Were The First Avenger?',
-            runtime: 34,
-            overview: 'When Steve Rogers is injured, Peggy Carter takes the super soldier serum.',
-            still: 'https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=800&auto=format&fit=crop',
-            airDate: '2021-08-11',
-            episodeWatchConfig: {
-              season: 1,
-              episode: 1,
-              watchProvider: 'screenscape',
-              tmdbId: 91363
+            "id": "what-if_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of What If...? Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/lztz5XBMG1x6Y5ubz7CxfPFsAcW.jpg",
+            "airDate": "2021-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 91363,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "What If...? Season 2",
+        "poster": "https://image.tmdb.org/t/p/w780/lztz5XBMG1x6Y5ubz7CxfPFsAcW.jpg",
+        "episodes": [
+          {
+            "id": "what-if_s2_e1",
+            "seasonNumber": 2,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of What If...? Season 2",
+            "still": "https://image.tmdb.org/t/p/w1280/lztz5XBMG1x6Y5ubz7CxfPFsAcW.jpg",
+            "airDate": "2021-01-01",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 1,
+              "tmdbId": 91363,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Season 3",
+        "overview": "What If...? Season 3",
+        "poster": "https://image.tmdb.org/t/p/w780/lztz5XBMG1x6Y5ubz7CxfPFsAcW.jpg",
+        "episodes": [
+          {
+            "id": "what-if_s3_e1",
+            "seasonNumber": 3,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of What If...? Season 3",
+            "still": "https://image.tmdb.org/t/p/w1280/lztz5XBMG1x6Y5ubz7CxfPFsAcW.jpg",
+            "airDate": "2021-01-01",
+            "episodeWatchConfig": {
+              "season": 3,
+              "episode": 1,
+              "tmdbId": 91363,
+              "watchProvider": "screenscape"
             }
           }
         ]
       }
-    ]
+    ],
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Disney+",
+    "franchise": "Marvel Animation",
+    "universe": "Multiverse",
+    "universeId": "multiverse",
+    "universeDesignation": "Multiverse",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": true,
+    "releaseStatus": "released"
   },
   {
-    id: 'hawkeye',
-    title: 'Hawkeye',
-    year: 2021,
-    releaseYear: '2021',
-    overview: 'Former Avenger Clint Barton has a seemingly simple mission: get back to his family for Christmas. Possible? With the help of Kate Bishop, a 22-year-old archer with dreams of becoming a superhero.',
-    poster: 'https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?q=80&w=800&auto=format&fit=crop',
-    backdrop: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1600&auto=format&fit=crop',
-    rating: 7.5,
-    phase: 'Phase 4',
-    saga: 'Multiverse Saga',
-    genres: ['Action', 'Adventure', 'Crime'],
-    creator: 'Jonathan Igla',
-    releaseOrder: 27,
-    chronologicalOrder: 31,
-    tagline: 'This holiday season, target accuracy is everything.',
-    tmdbId: 88329,
-    watchConfig: {
-      tmdbId: 88329,
-      type: 'tv',
-      watchProvider: 'screenscape',
-      language: 'eng'
-    },
-    cast: [
-      { name: 'Jeremy Renner', role: 'Clint Barton / Hawkeye' },
-      { name: 'Hailee Steinfeld', role: 'Kate Bishop' },
-      { name: 'Florence Pugh', role: 'Yelena Belova' }
+    "id": "hawkeye",
+    "title": "Hawkeye",
+    "year": 2021,
+    "releaseYear": "2021",
+    "overview": "Former Avenger Clint Barton must work with 22-year-old skilled archer Kate Bishop to unravel a criminal conspiracy in New York City just in time for Christmas.",
+    "poster": "https://image.tmdb.org/t/p/w780/ct5pNE5dDHryHLDnxyZPYcqO1sz.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/pq.jpg",
+    "rating": 7.6,
+    "phase": "Phase 4",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Crime"
     ],
-    characters: ['hawkeye'],
-    seasons: [
+    "creator": "Jonathan Igla",
+    "tagline": "This holiday season, the best gifts have strings attached.",
+    "releaseOrder": 49,
+    "chronologicalOrder": 56,
+    "tmdbId": 88329,
+    "cast": [
       {
-        seasonNumber: 1,
-        title: 'Season 1',
-        overview: 'Clint Barton teams up with Kate Bishop during Christmas in NYC.',
-        poster: 'https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?q=80&w=800&auto=format&fit=crop',
-        episodes: [
+        "name": "Jeremy Renner",
+        "role": "Clint Barton / Hawkeye"
+      },
+      {
+        "name": "Hailee Steinfeld",
+        "role": "Kate Bishop"
+      },
+      {
+        "name": "Florence Pugh",
+        "role": "Yelena Belova"
+      },
+      {
+        "name": "Vincent D'Onofrio",
+        "role": "Wilson Fisk / Kingpin"
+      }
+    ],
+    "characters": [
+      "hawkeye"
+    ],
+    "watchConfig": {
+      "tmdbId": 88329,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Hawkeye Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/ct5pNE5dDHryHLDnxyZPYcqO1sz.jpg",
+        "episodes": [
           {
-            id: 'hawkeye_s1_e1',
-            seasonNumber: 1,
-            episodeNumber: 1,
-            title: 'Never Meet Your Heroes',
-            runtime: 47,
-            overview: 'Clint Barton\'s NYC holiday trip with his kids is interrupted when Kate Bishop gets involved with the Ronin suit.',
-            still: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=800&auto=format&fit=crop',
-            airDate: '2021-11-24',
-            episodeWatchConfig: {
-              season: 1,
-              episode: 1,
-              watchProvider: 'screenscape',
-              tmdbId: 88329
+            "id": "hawkeye_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Hawkeye Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/pq.jpg",
+            "airDate": "2021-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 88329,
+              "watchProvider": "screenscape"
             }
           }
         ]
       }
-    ]
+    ],
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "MCU Series",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": false,
+    "releaseStatus": "released"
   },
   {
-    id: 'moon-knight',
-    title: 'Moon Knight',
-    year: 2022,
-    releaseYear: '2022',
-    overview: 'Steven Grant discovers he\'s been granted the powers of an Egyptian moon god. But he soon finds out that these newfound powers can be both a blessing and a curse for his troubled life.',
-    poster: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop',
-    backdrop: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1600&auto=format&fit=crop',
-    rating: 7.3,
-    phase: 'Phase 4',
-    saga: 'Multiverse Saga',
-    genres: ['Action', 'Adventure', 'Fantasy'],
-    creator: 'Jeremy Slater',
-    releaseOrder: 29,
-    chronologicalOrder: 32,
-    tagline: 'Embrace the chaos.',
-    tmdbId: 92749,
-    watchConfig: {
-      tmdbId: 92749,
-      type: 'tv',
-      watchProvider: 'screenscape',
-      language: 'eng'
-    },
-    cast: [
-      { name: 'Oscar Isaac', role: 'Steven Grant / Marc Spector / Moon Knight' },
-      { name: 'Ethan Hawke', role: 'Arthur Harrow' },
-      { name: 'May Calamawy', role: 'Layla El-Faouly' }
+    "id": "moon-knight",
+    "title": "Moon Knight",
+    "year": 2022,
+    "releaseYear": "2022",
+    "overview": "Mild-mannered museum gift-shop employee Steven Grant discovers he has dissociative identity disorder and shares a body with ruthless mercenary Marc Spector, the chosen avatar of Egyptian moon god Khonshu.",
+    "poster": "https://image.tmdb.org/t/p/w780/9K3lbMf8TKvL9xGEbzi7TggWCNQ.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/xG.jpg",
+    "rating": 7.9,
+    "phase": "Phase 4",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Sci-Fi"
     ],
-    characters: [],
-    seasons: [
+    "creator": "Jeremy Slater",
+    "tagline": "Embrace the chaos.",
+    "releaseOrder": 50,
+    "chronologicalOrder": 57,
+    "tmdbId": 92749,
+    "cast": [
       {
-        seasonNumber: 1,
-        title: 'Season 1',
-        overview: 'Steven Grant uncovers his alter ego Marc Spector and the avatar of Khonshu.',
-        poster: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop',
-        episodes: [
+        "name": "Oscar Isaac",
+        "role": "Marc Spector / Steven Grant / Moon Knight"
+      },
+      {
+        "name": "Ethan Hawke",
+        "role": "Arthur Harrow"
+      },
+      {
+        "name": "May Calamawy",
+        "role": "Layla El-Faouly"
+      }
+    ],
+    "characters": [
+      "moon-knight"
+    ],
+    "watchConfig": {
+      "tmdbId": 92749,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Moon Knight Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/9K3lbMf8TKvL9xGEbzi7TggWCNQ.jpg",
+        "episodes": [
           {
-            id: 'moon_knight_s1_e1',
-            seasonNumber: 1,
-            episodeNumber: 1,
-            title: 'The Goldfish Problem',
-            runtime: 45,
-            overview: 'Mild-mannered gift shop employee Steven Grant experiences blackouts and memories of another life.',
-            still: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=800&auto=format&fit=crop',
-            airDate: '2022-03-30',
-            episodeWatchConfig: {
-              season: 1,
-              episode: 1,
-              watchProvider: 'screenscape',
-              tmdbId: 92749
+            "id": "moon-knight_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Moon Knight Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/xG.jpg",
+            "airDate": "2022-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 92749,
+              "watchProvider": "screenscape"
             }
           }
         ]
       }
-    ]
+    ],
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "MCU Series",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": false,
+    "releaseStatus": "released"
   },
   {
-    id: 'ms-marvel',
-    title: 'Ms. Marvel',
-    year: 2022,
-    releaseYear: '2022',
-    overview: 'Kamala Khan, a Muslim American teenager growing up in Jersey City. An avid gamer and a voracious fan-fiction scribe, Kamala is a Super Hero mega-fan with an oversized imagination, particularly when it comes to Captain Marvel.',
-    poster: 'https://images.unsplash.com/photo-1604200213928-ba3cf4fc8436?q=80&w=800&auto=format&fit=crop',
-    backdrop: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=1600&auto=format&fit=crop',
-    rating: 6.3,
-    phase: 'Phase 4',
-    saga: 'Multiverse Saga',
-    genres: ['Action', 'Adventure', 'Comedy'],
-    creator: 'Bisha K. Ali',
-    releaseOrder: 30,
-    chronologicalOrder: 33,
-    tagline: 'Future is cosmic.',
-    tmdbId: 92783,
-    watchConfig: {
-      tmdbId: 92783,
-      type: 'tv',
-      watchProvider: 'screenscape',
-      language: 'eng'
-    },
-    cast: [
-      { name: 'Iman Vellani', role: 'Kamala Khan / Ms. Marvel' },
-      { name: 'Matt Lintz', role: 'Bruno Carrelli' },
-      { name: 'Yasmeen Fletcher', role: 'Nakia Bahadir' }
+    "id": "ms-marvel",
+    "title": "Ms. Marvel",
+    "year": 2022,
+    "releaseYear": "2022",
+    "overview": "Jersey City mega-fan Kamala Khan discovers an ancient family bangle that unlocks cosmic hard-light powers, setting her on a superhero journey.",
+    "poster": "https://image.tmdb.org/t/p/w780/3HWWh92kZbD7odwJX7nKmXNZsYo.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cd.jpg",
+    "rating": 7.2,
+    "phase": "Phase 4",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Sci-Fi"
     ],
-    characters: [],
-    seasons: [
+    "creator": "Bisha K. Ali",
+    "tagline": "Future is in her hands.",
+    "releaseOrder": 52,
+    "chronologicalOrder": 59,
+    "tmdbId": 92782,
+    "cast": [
       {
-        seasonNumber: 1,
-        title: 'Season 1',
-        overview: 'Kamala gets cosmic light powers from a heirloom bangle.',
-        poster: 'https://images.unsplash.com/photo-1604200213928-ba3cf4fc8436?q=80&w=800&auto=format&fit=crop',
-        episodes: [
+        "name": "Iman Vellani",
+        "role": "Kamala Khan / Ms. Marvel"
+      },
+      {
+        "name": "Matt Lintz",
+        "role": "Bruno Carrelli"
+      }
+    ],
+    "characters": [
+      "ms-marvel"
+    ],
+    "watchConfig": {
+      "tmdbId": 92782,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Ms. Marvel Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/3HWWh92kZbD7odwJX7nKmXNZsYo.jpg",
+        "episodes": [
           {
-            id: 'ms_marvel_s1_e1',
-            seasonNumber: 1,
-            episodeNumber: 1,
-            title: 'Generation Why',
-            runtime: 47,
-            overview: 'Kamala Khan attends AvengerCon dressed as Captain Marvel and unlocks unexpected superpowers.',
-            still: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=800&auto=format&fit=crop',
-            airDate: '2022-06-08',
-            episodeWatchConfig: {
-              season: 1,
-              episode: 1,
-              watchProvider: 'screenscape',
-              tmdbId: 92783
+            "id": "ms-marvel_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Ms. Marvel Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/cd.jpg",
+            "airDate": "2022-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 92782,
+              "watchProvider": "screenscape"
             }
           }
         ]
       }
-    ]
+    ],
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "MCU Series",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": false,
+    "releaseStatus": "released"
   },
   {
-    id: 'she-hulk',
-    title: 'She-Hulk: Attorney at Law',
-    year: 2022,
-    releaseYear: '2022',
-    overview: 'Jennifer Walters navigates the complicated life of a single, 30-something attorney who also happens to be a green 6-foot-7-inch superpowered hulk.',
-    poster: 'https://images.unsplash.com/photo-1568832359672-e36cf5d74f54?q=80&w=800&auto=format&fit=crop',
-    backdrop: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1600&auto=format&fit=crop',
-    rating: 5.3,
-    phase: 'Phase 4',
-    saga: 'Multiverse Saga',
-    genres: ['Action', 'Comedy', 'Sci-Fi'],
-    creator: 'Jessica Gao',
-    releaseOrder: 31,
-    chronologicalOrder: 34,
-    tagline: 'Lawyer. Hulk. Icon.',
-    tmdbId: 92782,
-    watchConfig: {
-      tmdbId: 92782,
-      type: 'tv',
-      watchProvider: 'screenscape',
-      language: 'eng'
-    },
-    cast: [
-      { name: 'Tatiana Maslany', role: 'Jennifer Walters / She-Hulk' },
-      { name: 'Mark Ruffalo', role: 'Bruce Banner / Smart Hulk' },
-      { name: 'Charlie Cox', role: 'Matt Murdock / Daredevil' }
+    "id": "she-hulk",
+    "title": "She-Hulk: Attorney at Law",
+    "year": 2022,
+    "releaseYear": "2022",
+    "overview": "Jennifer Walters navigates the complicated life of a single, 30-something attorney who also happens to be a green 6-foot-7-inch superpowered Hulk.",
+    "poster": "https://image.tmdb.org/t/p/w780/5xz2orV8f0usyrfGNshcoXHmiaV.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/hG.jpg",
+    "rating": 6.8,
+    "phase": "Phase 4",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Comedy",
+      "Sci-Fi",
+      "Action"
     ],
-    characters: ['hulk'],
-    seasons: [
+    "creator": "Jessica Gao",
+    "tagline": "Lawyer by day. Hulk by choice.",
+    "releaseOrder": 53,
+    "chronologicalOrder": 58,
+    "tmdbId": 92783,
+    "cast": [
       {
-        seasonNumber: 1,
-        title: 'Season 1',
-        overview: 'Jennifer balances her superhero cases with her fourth-wall breaking social life.',
-        poster: 'https://images.unsplash.com/photo-1568832359672-e36cf5d74f54?q=80&w=800&auto=format&fit=crop',
-        episodes: [
+        "name": "Tatiana Maslany",
+        "role": "Jennifer Walters / She-Hulk"
+      },
+      {
+        "name": "Mark Ruffalo",
+        "role": "Bruce Banner / Smart Hulk"
+      },
+      {
+        "name": "Charlie Cox",
+        "role": "Matt Murdock / Daredevil"
+      }
+    ],
+    "characters": [
+      "she-hulk"
+    ],
+    "watchConfig": {
+      "tmdbId": 92783,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "She-Hulk: Attorney at Law Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/5xz2orV8f0usyrfGNshcoXHmiaV.jpg",
+        "episodes": [
           {
-            id: 'she_hulk_s1_e1',
-            seasonNumber: 1,
-            episodeNumber: 1,
-            title: 'A Normal Amount of Rage',
-            runtime: 35,
-            overview: 'Jennifer Walters\' life changes forever after a car accident exposes her to Bruce Banner\'s gamma-irradiated blood.',
-            still: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=800&auto=format&fit=crop',
-            airDate: '2022-08-18',
-            episodeWatchConfig: {
-              season: 1,
-              episode: 1,
-              watchProvider: 'screenscape',
-              tmdbId: 92782
+            "id": "she-hulk_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of She-Hulk: Attorney at Law Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/hG.jpg",
+            "airDate": "2022-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 92783,
+              "watchProvider": "screenscape"
             }
           }
         ]
       }
-    ]
+    ],
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "MCU Series",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": false,
+    "releaseStatus": "released"
   },
   {
-    id: 'secret-invasion',
-    title: 'Secret Invasion',
-    year: 2023,
-    releaseYear: '2023',
-    overview: 'Nick Fury learns of a secret invasion of Earth by a faction of shapeshifting Skrulls. Fury joins his allies to stop the Skrull threat.',
-    poster: 'https://images.unsplash.com/photo-1635863138275-d9b33299680b?q=80&w=800&auto=format&fit=crop',
-    backdrop: 'https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?q=80&w=1600&auto=format&fit=crop',
-    rating: 5.9,
-    phase: 'Phase 5',
-    saga: 'Multiverse Saga',
-    genres: ['Action', 'Adventure', 'Drama', 'Mystery'],
-    creator: 'Kyle Bradstreet',
-    releaseOrder: 32,
-    chronologicalOrder: 35,
-    tagline: 'Trust no one.',
-    tmdbId: 114472,
-    watchConfig: {
-      tmdbId: 114472,
-      type: 'tv',
-      watchProvider: 'screenscape',
-      language: 'eng'
-    },
-    cast: [
-      { name: 'Samuel L. Jackson', role: 'Nick Fury' },
-      { name: 'Ben Mendelsohn', role: 'Talos' },
-      { name: 'Emilia Clarke', role: 'G\'iah' },
-      { name: 'Olivia Colman', role: 'Sonya Falsworth' }
+    "id": "secret-invasion",
+    "title": "Secret Invasion",
+    "year": 2023,
+    "releaseYear": "2023",
+    "overview": "Nick Fury learns of a clandestine invasion of Earth by a faction of shapeshifting Skrulls operating within the highest levels of global power.",
+    "poster": "https://image.tmdb.org/t/p/w780/3rINdUPSy9AklJg74jWHOyUXuZd.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/fA.jpg",
+    "rating": 6.5,
+    "phase": "Phase 5",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Action",
+      "Drama",
+      "Sci-Fi"
     ],
-    characters: ['nick-fury'],
-    seasons: [
+    "creator": "Kyle Bradstreet",
+    "tagline": "Who do you trust?",
+    "releaseOrder": 60,
+    "chronologicalOrder": 66,
+    "tmdbId": 114472,
+    "cast": [
       {
-        seasonNumber: 1,
-        title: 'Season 1',
-        overview: 'Nick Fury uncovers a secret Skrull plot infiltrating Earth\'s governments.',
-        poster: 'https://images.unsplash.com/photo-1635863138275-d9b33299680b?q=80&w=800&auto=format&fit=crop',
-        episodes: [
+        "name": "Samuel L. Jackson",
+        "role": "Nick Fury"
+      },
+      {
+        "name": "Ben Mendelsohn",
+        "role": "Talos"
+      },
+      {
+        "name": "Emilia Clarke",
+        "role": "G'iah"
+      },
+      {
+        "name": "Olivia Colman",
+        "role": "Sonya Falsworth"
+      }
+    ],
+    "characters": [
+      "nick-fury"
+    ],
+    "watchConfig": {
+      "tmdbId": 114472,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Secret Invasion Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/3rINdUPSy9AklJg74jWHOyUXuZd.jpg",
+        "episodes": [
           {
-            id: 'secret_invasion_s1_e1',
-            seasonNumber: 1,
-            episodeNumber: 1,
-            title: 'Resurrection',
-            runtime: 54,
-            overview: 'Nick Fury returns to Earth to investigate a rogue Skrull faction planning to ignite war.',
-            still: 'https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?q=80&w=800&auto=format&fit=crop',
-            airDate: '2023-06-21',
-            episodeWatchConfig: {
-              season: 1,
-              episode: 1,
-              watchProvider: 'screenscape',
-              tmdbId: 114472
+            "id": "secret-invasion_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Secret Invasion Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/fA.jpg",
+            "airDate": "2023-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 114472,
+              "watchProvider": "screenscape"
             }
           }
         ]
       }
-    ]
+    ],
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "MCU Series",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": false,
+    "releaseStatus": "released"
   },
   {
-    id: 'echo',
-    title: 'Echo',
-    year: 2024,
-    releaseYear: '2024',
-    overview: 'Maya Lopez must face her past, reconnect with her Native American roots, and embrace the meaning of family and community if she ever hopes to move forward after Wilson Fisk.',
-    poster: 'https://images.unsplash.com/photo-1569003339405-ea396a5a8a90?q=80&w=800&auto=format&fit=crop',
-    backdrop: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1600&auto=format&fit=crop',
-    rating: 6.1,
-    phase: 'Phase 5',
-    saga: 'Multiverse Saga',
-    genres: ['Action', 'Crime', 'Drama'],
-    creator: 'Marion Dayre',
-    releaseOrder: 33,
-    chronologicalOrder: 36,
-    tagline: 'No place left to hide.',
-    tmdbId: 125928,
-    watchConfig: {
-      tmdbId: 125928,
-      type: 'tv',
-      watchProvider: 'screenscape',
-      language: 'eng'
-    },
-    cast: [
-      { name: 'Alaqua Cox', role: 'Maya Lopez / Echo' },
-      { name: 'Vincent D\'Onofrio', role: 'Wilson Fisk / Kingpin' },
-      { name: 'Charlie Cox', role: 'Matt Murdock / Daredevil' }
+    "id": "echo",
+    "title": "Echo",
+    "year": 2024,
+    "releaseYear": "2024",
+    "overview": "Pursued by Wilson Fisk's criminal empire, Maya Lopez returns to her Oklahoma hometown to reconnect with her Choctaw heritage and family.",
+    "poster": "https://image.tmdb.org/t/p/w780/vFyJH630cF68LohVYjQW49074Sy.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/vFyJH630cF68LohVYjQW49074Sy.jpg",
+    "rating": 7.2,
+    "phase": "Phase 5",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
     ],
-    characters: [],
-    seasons: [
+    "creator": "Marion Dayre",
+    "tagline": "No good deed goes unpunished.",
+    "releaseOrder": 65,
+    "chronologicalOrder": 70,
+    "tmdbId": 122226,
+    "cast": [
       {
-        seasonNumber: 1,
-        title: 'Season 1',
-        overview: 'Maya Lopez flees to Oklahoma while pursued by Kingpin\'s empire.',
-        poster: 'https://images.unsplash.com/photo-1569003339405-ea396a5a8a90?q=80&w=800&auto=format&fit=crop',
-        episodes: [
+        "name": "Alaqua Cox",
+        "role": "Maya Lopez / Echo"
+      },
+      {
+        "name": "Vincent D'Onofrio",
+        "role": "Wilson Fisk / Kingpin"
+      },
+      {
+        "name": "Charlie Cox",
+        "role": "Matt Murdock / Daredevil"
+      }
+    ],
+    "characters": [],
+    "watchConfig": {
+      "tmdbId": 122226,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Echo Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/vFyJH630cF68LohVYjQW49074Sy.jpg",
+        "episodes": [
           {
-            id: 'echo_s1_e1',
-            seasonNumber: 1,
-            episodeNumber: 1,
-            title: 'Chafa',
-            runtime: 49,
-            overview: 'Maya Lopez\'s origin story and her tragic ties to Wilson Fisk in New York.',
-            still: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop',
-            airDate: '2024-01-09',
-            episodeWatchConfig: {
-              season: 1,
-              episode: 1,
-              watchProvider: 'screenscape',
-              tmdbId: 125928
+            "id": "echo_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Echo Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/vFyJH630cF68LohVYjQW49074Sy.jpg",
+            "airDate": "2024-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 122226,
+              "watchProvider": "screenscape"
             }
           }
         ]
       }
-    ]
+    ],
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "MCU Series",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": false,
+    "releaseStatus": "released"
   },
   {
-    id: 'agatha-all-along',
-    title: 'Agatha All Along',
-    year: 2024,
-    releaseYear: '2024',
-    overview: 'A spell-bound Agatha Harkness regains freedom thanks to a mysterious goth teen. Intrigued by his plea, she embarks upon the Witches\' Road to reclaim her lost powers.',
-    poster: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop',
-    backdrop: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1600&auto=format&fit=crop',
-    rating: 7.7,
-    phase: 'Phase 5',
-    saga: 'Multiverse Saga',
-    genres: ['Action', 'Comedy', 'Fantasy', 'Mystery'],
-    creator: 'Jac Schaeffer',
-    releaseOrder: 35,
-    chronologicalOrder: 38,
-    tagline: 'Don\'t cross the witches.',
-    tmdbId: 138502,
-    watchConfig: {
-      tmdbId: 138502,
-      type: 'tv',
-      watchProvider: 'screenscape',
-      language: 'eng'
-    },
-    cast: [
-      { name: 'Kathryn Hahn', role: 'Agatha Harkness' },
-      { name: 'Joe Locke', role: 'Billy Maximoff / Wiccan' },
-      { name: 'Aubrey Plaza', role: 'Rio Vidal / Death' },
-      { name: 'Patti LuPone', role: 'Lilia Calderu' }
+    "id": "agatha-all-along",
+    "title": "Agatha All Along",
+    "year": 2024,
+    "releaseYear": "2024",
+    "overview": "Freed from Wanda's spell by a mysterious teen (Billy Maximoff), powerless witch Agatha Harkness gathers a desperate coven to face the trials of the Witches' Road.",
+    "poster": "https://image.tmdb.org/t/p/w780/mGsxKwXUjojitRv2E9qMTbxbBRd.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/mGsxKwXUjojitRv2E9qMTbxbBRd.jpg",
+    "rating": 8.1,
+    "phase": "Phase 5",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Fantasy",
+      "Comedy",
+      "Mystery"
     ],
-    characters: ['scarlet-witch'],
-    seasons: [
+    "creator": "Jac Schaeffer",
+    "tagline": "Cross the Road.",
+    "releaseOrder": 67,
+    "chronologicalOrder": 72,
+    "tmdbId": 138501,
+    "cast": [
       {
-        seasonNumber: 1,
-        title: 'Season 1',
-        overview: 'Agatha gathers a coven to walk the perilous Witches\' Road.',
-        poster: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop',
-        episodes: [
+        "name": "Kathryn Hahn",
+        "role": "Agatha Harkness"
+      },
+      {
+        "name": "Joe Locke",
+        "role": "Billy Maximoff / Teen"
+      },
+      {
+        "name": "Aubrey Plaza",
+        "role": "Rio Vidal / Death"
+      }
+    ],
+    "characters": [],
+    "watchConfig": {
+      "tmdbId": 138501,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Agatha All Along Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/mGsxKwXUjojitRv2E9qMTbxbBRd.jpg",
+        "episodes": [
           {
-            id: 'agatha_s1_e1',
-            seasonNumber: 1,
-            episodeNumber: 1,
-            title: 'Seekest Thou the Road',
-            runtime: 42,
-            overview: 'Agatha Harkness breaks free from Wanda\'s spell in Westview with the help of Teen.',
-            still: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=800&auto=format&fit=crop',
-            airDate: '2024-09-18',
-            episodeWatchConfig: {
-              season: 1,
-              episode: 1,
-              watchProvider: 'screenscape',
-              tmdbId: 138502
+            "id": "agatha-all-along_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Agatha All Along Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/mGsxKwXUjojitRv2E9qMTbxbBRd.jpg",
+            "airDate": "2024-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 138501,
+              "watchProvider": "screenscape"
             }
           }
         ]
       }
-    ]
+    ],
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "MCU Series",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": false,
+    "releaseStatus": "released"
   },
   {
-    id: 'daredevil-born-again',
-    title: 'Daredevil: Born Again',
-    year: 2025,
-    releaseYear: '2025',
-    overview: 'Matt Murdock, a blind lawyer with heightened abilities who fights for justice through his bustling law firm, while former mob boss Wilson Fisk pursues his own political endeavors in New York.',
-    poster: 'https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?q=80&w=800&auto=format&fit=crop',
-    backdrop: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=1600&auto=format&fit=crop',
-    rating: 8.5,
-    phase: 'Phase 5',
-    saga: 'Multiverse Saga',
-    genres: ['Action', 'Crime', 'Drama'],
-    creator: 'Dario Scardapane',
-    releaseOrder: 36,
-    chronologicalOrder: 39,
-    tagline: 'Justice returns to Hell\'s Kitchen.',
-    tmdbId: 202720,
-    watchConfig: {
-      tmdbId: 202720,
-      type: 'tv',
-      watchProvider: 'screenscape',
-      language: 'eng'
-    },
-    cast: [
-      { name: 'Charlie Cox', role: 'Matt Murdock / Daredevil' },
-      { name: 'Vincent D\'Onofrio', role: 'Wilson Fisk / Kingpin' },
-      { name: 'Jon Bernthal', role: 'Frank Castle / The Punisher' },
-      { name: 'Deborah Ann Woll', role: 'Karen Page' }
+    "id": "daredevil-born-again",
+    "title": "Daredevil: Born Again",
+    "year": 2025,
+    "releaseYear": "2025 - 2026",
+    "overview": "Blind lawyer Matt Murdock and criminal mastermind Wilson Fisk attempt to put their alter egos behind them in New York, but inevitable forces pull them back into an all-out street-level war.",
+    "poster": "https://image.tmdb.org/t/p/w780/xDUoAsU8lQHOOoRkFiBuarmACDN.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/xDUoAsU8lQHOOoRkFiBuarmACDN.jpg",
+    "rating": 8.5,
+    "phase": "Phase 5",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
     ],
-    characters: [],
-    seasons: [
+    "creator": "Dario Scardapane",
+    "tagline": "The devil you know.",
+    "releaseOrder": 71,
+    "chronologicalOrder": 76,
+    "tmdbId": 202555,
+    "cast": [
       {
-        seasonNumber: 1,
-        title: 'Season 1',
-        overview: 'Matt Murdock and Wilson Fisk collision course in New York City politics and vigilante street wars.',
-        poster: 'https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?q=80&w=800&auto=format&fit=crop',
-        episodes: [
+        "name": "Charlie Cox",
+        "role": "Matt Murdock / Daredevil"
+      },
+      {
+        "name": "Vincent D'Onofrio",
+        "role": "Wilson Fisk / Kingpin"
+      },
+      {
+        "name": "Jon Bernthal",
+        "role": "Frank Castle / The Punisher"
+      }
+    ],
+    "characters": [
+      "daredevil"
+    ],
+    "watchConfig": {
+      "tmdbId": 202555,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Daredevil: Born Again Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/xDUoAsU8lQHOOoRkFiBuarmACDN.jpg",
+        "episodes": [
           {
-            id: 'daredevil_ba_s1_e1',
-            seasonNumber: 1,
-            episodeNumber: 1,
-            title: 'Devil\'s Work',
-            runtime: 54,
-            overview: 'Matt Murdock defends Hell\'s Kitchen against corruption while Wilson Fisk launches his mayor campaign.',
-            still: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=800&auto=format&fit=crop',
-            airDate: '2025-03-04',
-            episodeWatchConfig: {
-              season: 1,
-              episode: 1,
-              watchProvider: 'screenscape',
-              tmdbId: 202720
+            "id": "daredevil-born-again_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Daredevil: Born Again Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/xDUoAsU8lQHOOoRkFiBuarmACDN.jpg",
+            "airDate": "2025-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 202555,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Daredevil: Born Again Season 2",
+        "poster": "https://image.tmdb.org/t/p/w780/xDUoAsU8lQHOOoRkFiBuarmACDN.jpg",
+        "episodes": [
+          {
+            "id": "daredevil-born-again_s2_e1",
+            "seasonNumber": 2,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Daredevil: Born Again Season 2",
+            "still": "https://image.tmdb.org/t/p/w1280/xDUoAsU8lQHOOoRkFiBuarmACDN.jpg",
+            "airDate": "2025-01-01",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 1,
+              "tmdbId": 202555,
+              "watchProvider": "screenscape"
             }
           }
         ]
       }
-    ]
+    ],
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "Daredevil",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "i-am-groot",
+    "title": "I Am Groot",
+    "year": 2022,
+    "releaseYear": "2022 - 2023",
+    "overview": "A collection of original shorts featuring Baby Groot growing up among the stars and getting into mischief aboard the Guardians' starships.",
+    "poster": "https://image.tmdb.org/t/p/w780/3QfQYECgu6DX5UUWCBvv1Fl0BAJ.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/3QfQYECgu6DX5UUWCBvv1Fl0BAJ.jpg",
+    "rating": 7.2,
+    "phase": "Phase 4",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Sci-Fi"
+    ],
+    "creator": "Kirsten Lepore",
+    "tagline": "A hero of few words.",
+    "releaseOrder": 49,
+    "chronologicalOrder": 21,
+    "tmdbId": 232125,
+    "cast": [
+      {
+        "name": "Vin Diesel",
+        "role": "Baby Groot (Voice)"
+      },
+      {
+        "name": "Bradley Cooper",
+        "role": "Rocket (Voice)"
+      }
+    ],
+    "characters": [],
+    "watchConfig": {
+      "tmdbId": 232125,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "I Am Groot Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/3QfQYECgu6DX5UUWCBvv1Fl0BAJ.jpg",
+        "episodes": [
+          {
+            "id": "i-am-groot_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of I Am Groot Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/3QfQYECgu6DX5UUWCBvv1Fl0BAJ.jpg",
+            "airDate": "2022-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 232125,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "I Am Groot Season 2",
+        "poster": "https://image.tmdb.org/t/p/w780/3QfQYECgu6DX5UUWCBvv1Fl0BAJ.jpg",
+        "episodes": [
+          {
+            "id": "i-am-groot_s2_e1",
+            "seasonNumber": 2,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of I Am Groot Season 2",
+            "still": "https://image.tmdb.org/t/p/w1280/3QfQYECgu6DX5UUWCBvv1Fl0BAJ.jpg",
+            "airDate": "2022-01-01",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 1,
+              "tmdbId": 232125,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      }
+    ],
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Disney+",
+    "franchise": "Marvel Animation",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": true,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "eyes-of-wakanda",
+    "title": "Eyes of Wakanda",
+    "year": 2025,
+    "releaseYear": "2025",
+    "overview": "Throughout Wakandan history, brave War Dogs and Hatut Zaraze warriors have been tasked with traveling the world to retrieve dangerous vibranium artifacts.",
+    "poster": "https://image.tmdb.org/t/p/w780/yuOfb1MgnaGPa4guzV0n1IFYVGN.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/yuOfb1MgnaGPa4guzV0n1IFYVGN.jpg",
+    "rating": 7.8,
+    "phase": "Phase 5",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Animation",
+      "Action",
+      "Sci-Fi"
+    ],
+    "creator": "Todd Harris",
+    "tagline": "The secret keepers of Wakanda.",
+    "releaseOrder": 80,
+    "chronologicalOrder": 1,
+    "tmdbId": 241388,
+    "cast": [
+      {
+        "name": "Winston Duke",
+        "role": "M'Baku (Voice)"
+      }
+    ],
+    "characters": [
+      "black-panther"
+    ],
+    "watchConfig": {
+      "tmdbId": 241388,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Eyes of Wakanda Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/yuOfb1MgnaGPa4guzV0n1IFYVGN.jpg",
+        "episodes": [
+          {
+            "id": "eyes-of-wakanda_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Eyes of Wakanda Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/yuOfb1MgnaGPa4guzV0n1IFYVGN.jpg",
+            "airDate": "2025-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 241388,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      }
+    ],
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Disney+",
+    "franchise": "Marvel Animation",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": true,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "your-friendly-neighborhood-spider-man",
+    "title": "Your Friendly Neighborhood Spider-Man",
+    "year": 2025,
+    "releaseYear": "2025",
+    "overview": "Follows Peter Parker on his way to becoming Spider-Man in an alternate timeline where Norman Osborn becomes his mentor instead of Tony Stark.",
+    "poster": "https://image.tmdb.org/t/p/w780/kjcsNeqF52YUQ2rUBGLMHwLkxvR.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/kjcsNeqF52YUQ2rUBGLMHwLkxvR.jpg",
+    "rating": 7.6,
+    "phase": "Phase 5",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Animation",
+      "Action",
+      "Sci-Fi"
+    ],
+    "creator": "Jeff Trammell",
+    "tagline": "An origin with a twist.",
+    "releaseOrder": 69,
+    "chronologicalOrder": 74,
+    "tmdbId": 138503,
+    "cast": [
+      {
+        "name": "Hudson Thames",
+        "role": "Peter Parker / Spider-Man (Voice)"
+      },
+      {
+        "name": "Colman Domingo",
+        "role": "Norman Osborn (Voice)"
+      }
+    ],
+    "characters": [
+      "spider-man"
+    ],
+    "watchConfig": {
+      "tmdbId": 138503,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Your Friendly Neighborhood Spider-Man Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/kjcsNeqF52YUQ2rUBGLMHwLkxvR.jpg",
+        "episodes": [
+          {
+            "id": "your-friendly-neighborhood-spider-man_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Your Friendly Neighborhood Spider-Man Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/kjcsNeqF52YUQ2rUBGLMHwLkxvR.jpg",
+            "airDate": "2025-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 138503,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      }
+    ],
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Disney+",
+    "franchise": "Marvel Animation",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": true,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "marvel-zombies",
+    "title": "Marvel Zombies",
+    "year": 2025,
+    "releaseYear": "2025",
+    "overview": "A new generation of uninfected heroes battles against an ever-spreading zombie plague consuming alternate MCU heroes and villains alike.",
+    "poster": "https://image.tmdb.org/t/p/w780/mwKj9ERGFXsWot0nXgQ5yMQf9I7.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/mwKj9ERGFXsWot0nXgQ5yMQf9I7.jpg",
+    "rating": 7.7,
+    "phase": "Phase 5",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Animation",
+      "Action",
+      "Horror"
+    ],
+    "creator": "Zeb Wells",
+    "tagline": "A dead universe rises.",
+    "releaseOrder": 75,
+    "chronologicalOrder": 80,
+    "tmdbId": 138505,
+    "cast": [
+      {
+        "name": "Iman Vellani",
+        "role": "Kamala Khan (Voice)"
+      },
+      {
+        "name": "Hailee Steinfeld",
+        "role": "Kate Bishop (Voice)"
+      }
+    ],
+    "characters": [],
+    "watchConfig": {
+      "tmdbId": 138505,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Marvel Zombies Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/mwKj9ERGFXsWot0nXgQ5yMQf9I7.jpg",
+        "episodes": [
+          {
+            "id": "marvel-zombies_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Marvel Zombies Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/mwKj9ERGFXsWot0nXgQ5yMQf9I7.jpg",
+            "airDate": "2025-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 138505,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      }
+    ],
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Disney+",
+    "franchise": "Marvel Animation",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": true,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "ironheart",
+    "title": "Ironheart",
+    "year": 2025,
+    "releaseYear": "2025",
+    "overview": "Brilliant MIT inventor Riri Williams returns to Chicago where high-tech ingenuity clashes directly with dark occult magic wielded by Parker Robbins (The Hood).",
+    "poster": "https://image.tmdb.org/t/p/w780/dOh6MJpdlQhYpLBhzhNQeYGKTZ5.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/ih.jpg",
+    "rating": 7.3,
+    "phase": "Phase 5",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "creator": "Chinaka Hodge",
+    "tagline": "Tech versus magic.",
+    "releaseOrder": 73,
+    "chronologicalOrder": 78,
+    "tmdbId": 114471,
+    "cast": [
+      {
+        "name": "Dominique Thorne",
+        "role": "Riri Williams / Ironheart"
+      },
+      {
+        "name": "Anthony Ramos",
+        "role": "Parker Robbins / The Hood"
+      }
+    ],
+    "characters": [],
+    "watchConfig": {
+      "tmdbId": 114471,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Ironheart Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/dOh6MJpdlQhYpLBhzhNQeYGKTZ5.jpg",
+        "episodes": [
+          {
+            "id": "ironheart_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Ironheart Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/ih.jpg",
+            "airDate": "2025-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 114471,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      }
+    ],
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "MCU Series",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "wonder-man",
+    "title": "Wonder Man",
+    "year": 2025,
+    "releaseYear": "2025",
+    "overview": "Hollywood actor and stuntman Simon Williams navigates the bizarre world of superhero entertainment alongside legendary washed-up thespian Trevor Slattery.",
+    "poster": "https://image.tmdb.org/t/p/w780/6yy9nQlFt2l6UVWzrfhszFCaZ5C.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/wm.jpg",
+    "rating": 7.5,
+    "phase": "Phase 5",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Comedy",
+      "Action",
+      "Drama"
+    ],
+    "creator": "Destin Daniel Cretton",
+    "tagline": "Behind the red carpet.",
+    "releaseOrder": 76,
+    "chronologicalOrder": 81,
+    "tmdbId": 198178,
+    "cast": [
+      {
+        "name": "Yahya Abdul-Mateen II",
+        "role": "Simon Williams / Wonder Man"
+      },
+      {
+        "name": "Ben Kingsley",
+        "role": "Trevor Slattery"
+      }
+    ],
+    "characters": [],
+    "watchConfig": {
+      "tmdbId": 198178,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Wonder Man Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/6yy9nQlFt2l6UVWzrfhszFCaZ5C.jpg",
+        "episodes": [
+          {
+            "id": "wonder-man_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Wonder Man Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/wm.jpg",
+            "airDate": "2025-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 198178,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      }
+    ],
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "MCU Series",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isLegacy": false,
+    "isAnimation": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "daredevil",
+    "title": "Daredevil",
+    "year": 2015,
+    "releaseYear": "2015 - 2018",
+    "overview": "Blinded as a young boy, Matt Murdock fights for justice by day as a lawyer and by night as the vigilante Daredevil in Hell's Kitchen, New York.",
+    "poster": "https://image.tmdb.org/t/p/w780/QWbPaDxiB6LW2LjASknzYBvjMj.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/pPALpad1Fh14g7ejyQjqKzlhrBw.jpg",
+    "rating": 8.6,
+    "phase": "Defenders",
+    "saga": "The Defenders Saga",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "creator": "Drew Goddard",
+    "tagline": "Justice is blind.",
+    "releaseOrder": 17,
+    "chronologicalOrder": 23,
+    "tmdbId": 61889,
+    "cast": [
+      {
+        "name": "Charlie Cox",
+        "role": "Matt Murdock / Daredevil"
+      },
+      {
+        "name": "Vincent D'Onofrio",
+        "role": "Wilson Fisk / Kingpin"
+      },
+      {
+        "name": "Jon Bernthal",
+        "role": "Frank Castle / The Punisher"
+      },
+      {
+        "name": "Deborah Ann Woll",
+        "role": "Karen Page"
+      }
+    ],
+    "characters": [
+      "daredevil"
+    ],
+    "watchConfig": {
+      "tmdbId": 61889,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Daredevil Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/QWbPaDxiB6LW2LjASknzYBvjMj.jpg",
+        "episodes": [
+          {
+            "id": "daredevil_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Daredevil Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/pPALpad1Fh14g7ejyQjqKzlhrBw.jpg",
+            "airDate": "2015-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 61889,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Daredevil Season 2",
+        "poster": "https://image.tmdb.org/t/p/w780/QWbPaDxiB6LW2LjASknzYBvjMj.jpg",
+        "episodes": [
+          {
+            "id": "daredevil_s2_e1",
+            "seasonNumber": 2,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Daredevil Season 2",
+            "still": "https://image.tmdb.org/t/p/w1280/pPALpad1Fh14g7ejyQjqKzlhrBw.jpg",
+            "airDate": "2015-01-01",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 1,
+              "tmdbId": 61889,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Season 3",
+        "overview": "Daredevil Season 3",
+        "poster": "https://image.tmdb.org/t/p/w780/QWbPaDxiB6LW2LjASknzYBvjMj.jpg",
+        "episodes": [
+          {
+            "id": "daredevil_s3_e1",
+            "seasonNumber": 3,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Daredevil Season 3",
+            "still": "https://image.tmdb.org/t/p/w1280/pPALpad1Fh14g7ejyQjqKzlhrBw.jpg",
+            "airDate": "2015-01-01",
+            "episodeWatchConfig": {
+              "season": 3,
+              "episode": 1,
+              "tmdbId": 61889,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      }
+    ],
+    "studio": "Marvel Television / ABC Studios",
+    "studioId": "marvel-television",
+    "distributor": "Netflix / Disney+",
+    "franchise": "Daredevil",
+    "universe": "Marvel Television Expanded Canon",
+    "universeId": "marvel-legacy-tv",
+    "universeDesignation": "Marvel Television",
+    "isMcu": false,
+    "isLegacy": true,
+    "isAnimation": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "jessica-jones",
+    "title": "Jessica Jones",
+    "year": 2015,
+    "releaseYear": "2015 - 2019",
+    "overview": "Haunted by trauma, private investigator Jessica Jones uses her super-strength to battle mind-controlling tormentor Kilgrave and uncover dark secrets in New York City.",
+    "poster": "https://image.tmdb.org/t/p/w780/oxnWofiE9fHOgUfs9NJa6nG6NTR.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+    "rating": 8.2,
+    "phase": "Defenders",
+    "saga": "The Defenders Saga",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "creator": "Melissa Rosenberg",
+    "tagline": "No cape. No tights. Just trouble.",
+    "releaseOrder": 18,
+    "chronologicalOrder": 24,
+    "tmdbId": 38472,
+    "cast": [
+      {
+        "name": "Krysten Ritter",
+        "role": "Jessica Jones"
+      },
+      {
+        "name": "David Tennant",
+        "role": "Kilgrave"
+      },
+      {
+        "name": "Mike Colter",
+        "role": "Luke Cage"
+      }
+    ],
+    "characters": [],
+    "watchConfig": {
+      "tmdbId": 38472,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Jessica Jones Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/oxnWofiE9fHOgUfs9NJa6nG6NTR.jpg",
+        "episodes": [
+          {
+            "id": "jessica-jones_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Jessica Jones Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2015-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Jessica Jones Season 2",
+        "poster": "https://image.tmdb.org/t/p/w780/oxnWofiE9fHOgUfs9NJa6nG6NTR.jpg",
+        "episodes": [
+          {
+            "id": "jessica-jones_s2_e1",
+            "seasonNumber": 2,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Jessica Jones Season 2",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2015-01-01",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 1,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Season 3",
+        "overview": "Jessica Jones Season 3",
+        "poster": "https://image.tmdb.org/t/p/w780/oxnWofiE9fHOgUfs9NJa6nG6NTR.jpg",
+        "episodes": [
+          {
+            "id": "jessica-jones_s3_e1",
+            "seasonNumber": 3,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Jessica Jones Season 3",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2015-01-01",
+            "episodeWatchConfig": {
+              "season": 3,
+              "episode": 1,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      }
+    ],
+    "studio": "Marvel Television / ABC Studios",
+    "studioId": "marvel-television",
+    "distributor": "Netflix / Disney+",
+    "franchise": "MCU Series",
+    "universe": "Marvel Television Expanded Canon",
+    "universeId": "marvel-legacy-tv",
+    "universeDesignation": "Marvel Television",
+    "isMcu": false,
+    "isLegacy": true,
+    "isAnimation": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "luke-cage",
+    "title": "Luke Cage",
+    "year": 2016,
+    "releaseYear": "2016 - 2018",
+    "overview": "A bulletproof former convict fights to clear his name and defend Harlem from crime boss Cornell Cottonmouth Stokes, Mariah Dillard, and Bushmaster.",
+    "poster": "https://image.tmdb.org/t/p/w780/yzM1hMB3PUJqbISX0f421b3xOjB.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/yzM1hMB3PUJqbISX0f421b3xOjB.jpg",
+    "rating": 7.7,
+    "phase": "Defenders",
+    "saga": "The Defenders Saga",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "creator": "Cheo Hodari Coker",
+    "tagline": "You can't break a bulletproof man.",
+    "releaseOrder": 25,
+    "chronologicalOrder": 28,
+    "tmdbId": 62126,
+    "cast": [
+      {
+        "name": "Mike Colter",
+        "role": "Luke Cage"
+      },
+      {
+        "name": "Mahershala Ali",
+        "role": "Cornell \"Cottonmouth\" Stokes"
+      },
+      {
+        "name": "Simone Missick",
+        "role": "Misty Knight"
+      }
+    ],
+    "characters": [],
+    "watchConfig": {
+      "tmdbId": 62126,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Luke Cage Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/yzM1hMB3PUJqbISX0f421b3xOjB.jpg",
+        "episodes": [
+          {
+            "id": "luke-cage_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Luke Cage Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/yzM1hMB3PUJqbISX0f421b3xOjB.jpg",
+            "airDate": "2016-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 62126,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Luke Cage Season 2",
+        "poster": "https://image.tmdb.org/t/p/w780/yzM1hMB3PUJqbISX0f421b3xOjB.jpg",
+        "episodes": [
+          {
+            "id": "luke-cage_s2_e1",
+            "seasonNumber": 2,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Luke Cage Season 2",
+            "still": "https://image.tmdb.org/t/p/w1280/yzM1hMB3PUJqbISX0f421b3xOjB.jpg",
+            "airDate": "2016-01-01",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 1,
+              "tmdbId": 62126,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      }
+    ],
+    "studio": "Marvel Television / ABC Studios",
+    "studioId": "marvel-television",
+    "distributor": "Netflix / Disney+",
+    "franchise": "MCU Series",
+    "universe": "Marvel Television Expanded Canon",
+    "universeId": "marvel-legacy-tv",
+    "universeDesignation": "Marvel Television",
+    "isMcu": false,
+    "isLegacy": true,
+    "isAnimation": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "iron-fist",
+    "title": "Iron Fist",
+    "year": 2017,
+    "releaseYear": "2017 - 2018",
+    "overview": "After 15 years presumed dead, Danny Rand returns to NYC to reclaim his family company with the mystical martial-arts power of the Iron Fist.",
+    "poster": "https://image.tmdb.org/t/p/w780/4l6KD9HhtD6nCDEfg10Lp6C6zah.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cuckn6IFp9OKu9H8AgD0iEANxhc.jpg",
+    "rating": 6.9,
+    "phase": "Defenders",
+    "saga": "The Defenders Saga",
+    "genres": [
+      "Action",
+      "Crime",
+      "Fantasy"
+    ],
+    "creator": "Scott Buck",
+    "tagline": "His fist is like unto a thing of iron.",
+    "releaseOrder": 28,
+    "chronologicalOrder": 29,
+    "tmdbId": 62127,
+    "cast": [
+      {
+        "name": "Finn Jones",
+        "role": "Danny Rand / Iron Fist"
+      },
+      {
+        "name": "Jessica Henwick",
+        "role": "Colleen Wing"
+      }
+    ],
+    "characters": [],
+    "watchConfig": {
+      "tmdbId": 62127,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Iron Fist Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/4l6KD9HhtD6nCDEfg10Lp6C6zah.jpg",
+        "episodes": [
+          {
+            "id": "iron-fist_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Iron Fist Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/cuckn6IFp9OKu9H8AgD0iEANxhc.jpg",
+            "airDate": "2017-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 62127,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Iron Fist Season 2",
+        "poster": "https://image.tmdb.org/t/p/w780/4l6KD9HhtD6nCDEfg10Lp6C6zah.jpg",
+        "episodes": [
+          {
+            "id": "iron-fist_s2_e1",
+            "seasonNumber": 2,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Iron Fist Season 2",
+            "still": "https://image.tmdb.org/t/p/w1280/cuckn6IFp9OKu9H8AgD0iEANxhc.jpg",
+            "airDate": "2017-01-01",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 1,
+              "tmdbId": 62127,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      }
+    ],
+    "studio": "Marvel Television / ABC Studios",
+    "studioId": "marvel-television",
+    "distributor": "Netflix / Disney+",
+    "franchise": "MCU Series",
+    "universe": "Marvel Television Expanded Canon",
+    "universeId": "marvel-legacy-tv",
+    "universeDesignation": "Marvel Television",
+    "isMcu": false,
+    "isLegacy": true,
+    "isAnimation": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "the-defenders",
+    "title": "The Defenders",
+    "year": 2017,
+    "releaseYear": "2017",
+    "overview": "Daredevil, Jessica Jones, Luke Cage, and Iron Fist unite as an unconventional team to save New York City from the ancient cabal of The Hand.",
+    "poster": "https://image.tmdb.org/t/p/w780/49XzINhH4LFsgz7cx6TOPcHUJUL.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/ycAWXhAhyaE7g3JBAaierK4LgNg.jpg",
+    "rating": 7.9,
+    "phase": "Defenders",
+    "saga": "The Defenders Saga",
+    "genres": [
+      "Action",
+      "Crime",
+      "Adventure"
+    ],
+    "creator": "Marco Ramirez",
+    "tagline": "Defend your street.",
+    "releaseOrder": 31,
+    "chronologicalOrder": 30,
+    "tmdbId": 62285,
+    "cast": [
+      {
+        "name": "Charlie Cox",
+        "role": "Matt Murdock / Daredevil"
+      },
+      {
+        "name": "Krysten Ritter",
+        "role": "Jessica Jones"
+      },
+      {
+        "name": "Mike Colter",
+        "role": "Luke Cage"
+      },
+      {
+        "name": "Finn Jones",
+        "role": "Danny Rand / Iron Fist"
+      }
+    ],
+    "characters": [
+      "daredevil"
+    ],
+    "watchConfig": {
+      "tmdbId": 62285,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The Defenders Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/49XzINhH4LFsgz7cx6TOPcHUJUL.jpg",
+        "episodes": [
+          {
+            "id": "the-defenders_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of The Defenders Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/ycAWXhAhyaE7g3JBAaierK4LgNg.jpg",
+            "airDate": "2017-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 62285,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      }
+    ],
+    "studio": "Marvel Television / ABC Studios",
+    "studioId": "marvel-television",
+    "distributor": "Netflix / Disney+",
+    "franchise": "MCU Series",
+    "universe": "Marvel Television Expanded Canon",
+    "universeId": "marvel-legacy-tv",
+    "universeDesignation": "Marvel Television",
+    "isMcu": false,
+    "isLegacy": true,
+    "isAnimation": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "the-punisher",
+    "title": "The Punisher",
+    "year": 2017,
+    "releaseYear": "2017 - 2019",
+    "overview": "After exacting revenge on those responsible for his family's murder, Frank Castle uncovers a far deeper military conspiracy as The Punisher.",
+    "poster": "https://image.tmdb.org/t/p/w780/tM6xqRKXoloH9UchaJEyyRE9O1w.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/9czVEnJemvP6gcJlMEjUeuISL1c.jpg",
+    "rating": 8.5,
+    "phase": "Defenders",
+    "saga": "The Defenders Saga",
+    "genres": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "creator": "Steve Lightfoot",
+    "tagline": "Truth must be taken.",
+    "releaseOrder": 32,
+    "chronologicalOrder": 35,
+    "tmdbId": 67178,
+    "cast": [
+      {
+        "name": "Jon Bernthal",
+        "role": "Frank Castle / The Punisher"
+      },
+      {
+        "name": "Ben Barnes",
+        "role": "Billy Russo"
+      }
+    ],
+    "characters": [],
+    "watchConfig": {
+      "tmdbId": 67178,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The Punisher Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/tM6xqRKXoloH9UchaJEyyRE9O1w.jpg",
+        "episodes": [
+          {
+            "id": "the-punisher_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of The Punisher Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/9czVEnJemvP6gcJlMEjUeuISL1c.jpg",
+            "airDate": "2017-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 67178,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "The Punisher Season 2",
+        "poster": "https://image.tmdb.org/t/p/w780/tM6xqRKXoloH9UchaJEyyRE9O1w.jpg",
+        "episodes": [
+          {
+            "id": "the-punisher_s2_e1",
+            "seasonNumber": 2,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of The Punisher Season 2",
+            "still": "https://image.tmdb.org/t/p/w1280/9czVEnJemvP6gcJlMEjUeuISL1c.jpg",
+            "airDate": "2017-01-01",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 1,
+              "tmdbId": 67178,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      }
+    ],
+    "studio": "Marvel Television / ABC Studios",
+    "studioId": "marvel-television",
+    "distributor": "Netflix / Disney+",
+    "franchise": "MCU Series",
+    "universe": "Marvel Television Expanded Canon",
+    "universeId": "marvel-legacy-tv",
+    "universeDesignation": "Marvel Television",
+    "isMcu": false,
+    "isLegacy": true,
+    "isAnimation": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "agent-carter",
+    "title": "Agent Carter",
+    "year": 2015,
+    "releaseYear": "2015 - 2016",
+    "overview": "In 1946, Peggy Carter must balance routine office work for the SSR with secretly aiding Howard Stark, who has been framed for treason, before investigating Zero Matter in Los Angeles.",
+    "poster": "https://image.tmdb.org/t/p/w780/fe79VYyLp5ZBstpJ4oukpuUT3B.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/MaQ7hbNsiJ30p14UgRdEnXDGMH.jpg",
+    "rating": 7.6,
+    "phase": "Marvel Television",
+    "saga": "Marvel Television",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "creator": "Christopher Markus & Stephen McFeely",
+    "tagline": "Sometimes the best man for the job is a woman.",
+    "releaseOrder": 15,
+    "chronologicalOrder": 4,
+    "tmdbId": 61550,
+    "cast": [
+      {
+        "name": "Hayley Atwell",
+        "role": "Peggy Carter"
+      },
+      {
+        "name": "James D'Arcy",
+        "role": "Edwin Jarvis"
+      },
+      {
+        "name": "Dominic Cooper",
+        "role": "Howard Stark"
+      }
+    ],
+    "characters": [],
+    "watchConfig": {
+      "tmdbId": 61550,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Agent Carter Season 1",
+        "poster": "https://image.tmdb.org/t/p/w780/fe79VYyLp5ZBstpJ4oukpuUT3B.jpg",
+        "episodes": [
+          {
+            "id": "agent-carter_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Agent Carter Season 1",
+            "still": "https://image.tmdb.org/t/p/w1280/MaQ7hbNsiJ30p14UgRdEnXDGMH.jpg",
+            "airDate": "2015-01-01",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 1,
+              "tmdbId": 61550,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Agent Carter Season 2",
+        "poster": "https://image.tmdb.org/t/p/w780/fe79VYyLp5ZBstpJ4oukpuUT3B.jpg",
+        "episodes": [
+          {
+            "id": "agent-carter_s2_e1",
+            "seasonNumber": 2,
+            "episodeNumber": 1,
+            "title": "Episode 1",
+            "runtime": 50,
+            "overview": "Episode 1 of Agent Carter Season 2",
+            "still": "https://image.tmdb.org/t/p/w1280/MaQ7hbNsiJ30p14UgRdEnXDGMH.jpg",
+            "airDate": "2015-01-01",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 1,
+              "tmdbId": 61550,
+              "watchProvider": "screenscape"
+            }
+          }
+        ]
+      }
+    ],
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "MCU Series",
+    "universe": "Earth-616 / Earth-199999",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": false,
+    "isLegacy": true,
+    "isAnimation": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "agents-of-shield",
+    "title": "Marvel's Agents of S.H.I.E.L.D.",
+    "year": 2013,
+    "releaseYear": "2013",
+    "overview": "Agent Phil Coulson of S.H.I.E.L.D. (Strategic Homeland Intervention, Enforcement and Logistics Division) puts together a team of agents to investigate the new, the strange and the unknown around the globe, protecting the ordinary from the extraordinary.",
+    "poster": "https://image.tmdb.org/t/p/w780/gHUCCMy1vvj58tzE3dZqeC9SXus.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/iWopHyAvuIDjGX10Yc3nn6UEebW.jpg",
+    "rating": 7.5,
+    "phase": "Marvel Television",
+    "saga": "Multiverse",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi",
+      "Drama"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Season one begins where the “Marvel's The Avengers” left off. It's just after the battle of New York, and now that the existence of superheroes and aliens has become public knowledge, the world is trying to come to grips with this new reality. Agent Phil Coulson is back in action and now has his eye on a mysterious group called The Rising Tide. In order to track this unseen, unknown enemy, he has assembled a small, highly select group of Agents from the worldwide law-enforcement organization known as S.H.I.E.L.D.",
+        "poster": "https://image.tmdb.org/t/p/w780/1CaKyPcZvzzMSwbNFJObxNsxTkK.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "In the second season, Coulson and his team look to restore trust from the government and public following S.H.I.E.L.D.'s collapse. ",
+        "poster": "https://image.tmdb.org/t/p/w780/p8Qy60OIf0OaJ29KPw6ld51MSP7.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Season 3",
+        "overview": "Many months after their war with a rogue group of Inhumans, the team is still reeling. Coulson is again trying to put the pieces of his once revered organization back together while also dealing with the loss of his hand. His confidante and second in command, Agent Melinda May, has yet to return from an impromptu vacation with ex-husband Andrew; deadly superspy Agent Bobbi Morse is recovering from her traumatic torture at the hands of Grant Ward; Fitz is obsessed with discovering the truth behind the mysterious disappearance of Simmons; and all are on high-alert for the next move from Ward and Hydra.",
+        "poster": "https://image.tmdb.org/t/p/w780/y0cxxcvCk9lEG4DEorTz5GxC9sj.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 4,
+        "title": "Season 4",
+        "overview": "Vengeance runs rampant this season as Coulson is a mere agent again, and Daisy has gone rogue after being under Hive's control. How will S.H.I.E.L.D. deal with the arrival of The Ghost Rider?",
+        "poster": "https://image.tmdb.org/t/p/w780/mgyMzTTIFVdKoejD0gKIyaCgWOP.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 5,
+        "title": "Season 5",
+        "overview": "Agent Coulson and the team escaped LMD Aida’s Framework and awakened in the real world. Little did they know that Aida was now fully human – and with multiple Inhuman abilities – with the dangerous notion that, with Fitz by her side, she could change the world. After defeating her with the aid of Ghost Rider, the team went out for a celebration but were interrupted by a mysterious man who rendered them frozen. The next thing we see is Coulson onboard a ship … in space. Coulson will discover that some, but not all, of his S.H.I.E.L.D. colleagues were taken with him and placed onboard the ship. As they come in contact with some of the vessel’s inhabitants, it becomes abundantly clear that something has gone terribly awry, and the team will need to figure out their role and delve deeper into this nightmarish mystery to try to right what has gone incredibly wrong.",
+        "poster": "https://image.tmdb.org/t/p/w780/pwZedE4CB3E73lvH9A5yRaszll0.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 6,
+        "title": "Season 6",
+        "overview": "Last season, the team leaped forward in time to a dystopian future they soon realized must be prevented. While facing multiple timelines and new enemies from faraway planets, they found family, friends, teammates and the courage to pull off their biggest challenge yet. Their next challenge? Coming to grips with the knowledge that bending the laws of space and time may have saved the planet, but it couldn’t save Fitz or Coulson.",
+        "poster": "https://image.tmdb.org/t/p/w780/QU0NjcvDonZLKhjRuxRv6AVo5l.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 7,
+        "title": "Season 7",
+        "overview": "Coulson and the Agents of S.H.I.E.L.D. are thrust backward in time and stranded in 1931 New York City. With the all-new Zephyr set to time-jump at any moment, the team must hurry to find out exactly what happened. If they fail, it would mean disaster for the past, present and future of the world.",
+        "poster": "https://image.tmdb.org/t/p/w780/qM95u55G8xVyfgoSZ2qTlY3MDl6.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Joss Whedon, Jed Whedon, Maurissa Tancharoen",
+    "cast": [],
+    "characters": [
+      "phil-coulson",
+      "daisy-johnson"
+    ],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 1403,
+    "watchConfig": {
+      "tmdbId": 1403,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Television",
+    "studioId": "marvel-television",
+    "distributor": "ABC / Marvel Television",
+    "franchise": "Agents of S.H.I.E.L.D.",
+    "universe": "Marvel Television Expanded Canon",
+    "universeId": "marvel-legacy-tv",
+    "universeDesignation": "Marvel Television Expanded Canon",
+    "isAnimation": false,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "inhumans",
+    "title": "Marvel's Inhumans",
+    "year": 2017,
+    "releaseYear": "2017",
+    "overview": "After the Royal Family of Inhumans is splintered by a military coup, they barely escape to Hawaii where their surprising interactions with the lush world and humanity around them may prove to not only save them, but Earth itself.",
+    "poster": "https://image.tmdb.org/t/p/w780/zKfGip55oJ9tdzhyd9ayGyFFhuo.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/5W9YCPMDF5TCudct2guf6b8iRFz.jpg",
+    "rating": 5.8,
+    "phase": "Marvel Television",
+    "saga": "Multiverse",
+    "genres": [
+      "Drama",
+      "Sci-Fi & Fantasy",
+      "Action & Adventure"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "After the Royal Family of Inhumans is splintered by a military coup, they barely escape to Hawaii where their surprising interactions with the lush world and humanity around them may prove to not only save them, but Earth itself.",
+        "poster": "https://image.tmdb.org/t/p/w780/doCIoaV9ffAJbK3TW2AsGp4ytOQ.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 68716,
+    "watchConfig": {
+      "tmdbId": 68716,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Television",
+    "studioId": "marvel-television",
+    "distributor": "Marvel Television",
+    "franchise": "Inhumans",
+    "universe": "Marvel Television Expanded Canon",
+    "universeId": "marvel-legacy-tv",
+    "universeDesignation": "Marvel Television Expanded Canon",
+    "isAnimation": false,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "runaways",
+    "title": "Marvel's Runaways",
+    "year": 2017,
+    "releaseYear": "2017",
+    "overview": "Every teenager thinks their parents are evil. What if you found out they actually were? Six diverse teenagers who can barely stand each other must unite against a common foe – their parents.",
+    "poster": "https://image.tmdb.org/t/p/w780/hnHEhbzh0F7kN3Ah1lzRjtQuW16.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/pHURd96EW167jUd2Jf8XpgTiLJV.jpg",
+    "rating": 7.3,
+    "phase": "Marvel Television",
+    "saga": "Multiverse",
+    "genres": [
+      "Action & Adventure",
+      "Drama",
+      "Sci-Fi & Fantasy"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Every teenager thinks their parents are evil. What if you found out they actually were? Six diverse teenagers who can barely stand each other must unite against a common foe – their parents.",
+        "poster": "https://image.tmdb.org/t/p/w780/hMsaGkDyCM3Y3EWcdYK5Uu8qEok.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "The Runaways have left their homes (and evil parents) behind and now have to learn to live on their own. As they scavenge for food, search for shelter, and take care of one another, our kids begin to realize that, for better or worse, they’re stuck with each other. And it’s up to them to take down PRIDE once and for all. But someone sent a mysterious message to Jonah… Is there a mole in the Runaways? Meanwhile PRIDE is focused on finding their children, and Jonah has his own dangerous plan in mind.",
+        "poster": "https://image.tmdb.org/t/p/w780/r2e50wFzTsMgsSVLAyIB8uX1EGu.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Season 3",
+        "overview": "The Runaways frantically search for their captured friends Chase, Gert and Karolina. The kids go head to head with an unstoppable enemy who has targeted Leslie - or more accurately, the child she's carrying. Nico draws them all into a dark realm where its ruler Morgan le Fay, is much more nefarious than anyone the kids have yet to face.",
+        "poster": "https://image.tmdb.org/t/p/w780/m83skvEvoFQoo1szIMpFQ6kbCe6.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 67466,
+    "watchConfig": {
+      "tmdbId": 67466,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Television",
+    "studioId": "marvel-television",
+    "distributor": "Marvel Television",
+    "franchise": "Runaways",
+    "universe": "Marvel Television Expanded Canon",
+    "universeId": "marvel-legacy-tv",
+    "universeDesignation": "Marvel Television Expanded Canon",
+    "isAnimation": false,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "cloak-and-dagger",
+    "title": "Marvel's Cloak & Dagger",
+    "year": 2018,
+    "releaseYear": "2018",
+    "overview": "Two teenagers from very different backgrounds awaken to newly acquired superpowers which mysteriously link them to one another.",
+    "poster": "https://image.tmdb.org/t/p/w780/pYnRJuBPEqZO1o4fcxBTgmKNHfy.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/4amkATUf2mh5QL9OQ3WmHQqx9wk.jpg",
+    "rating": 7.1,
+    "phase": "Marvel Television",
+    "saga": "Multiverse",
+    "genres": [
+      "Action & Adventure",
+      "Drama",
+      "Sci-Fi & Fantasy"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Two teenagers from very different backgrounds awaken to newly acquired superpowers which mysteriously link them to one another.",
+        "poster": "https://image.tmdb.org/t/p/w780/nluzawv8wEo0AeECpnLo3wO2YLZ.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Season two turns the heat up on our young heroes as Tyrone and Tandy try to find their place as more active heroes in this world. As they learn and grow emotionally, so will their skills. With enhanced powers and a decision to make about the type of heroes they want to be, they make the choice to run into the danger, head first. They tackle a heartless vigilante and uncover an evil that’s been preying on the young women of the city, as the show takes on more serious topics like gang violence and human trafficking.",
+        "poster": "https://image.tmdb.org/t/p/w780/pYnRJuBPEqZO1o4fcxBTgmKNHfy.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 66190,
+    "watchConfig": {
+      "tmdbId": 66190,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Television",
+    "studioId": "marvel-television",
+    "distributor": "Marvel Television",
+    "franchise": "Cloak & Dagger",
+    "universe": "Marvel Television Expanded Canon",
+    "universeId": "marvel-legacy-tv",
+    "universeDesignation": "Marvel Television Expanded Canon",
+    "isAnimation": false,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "legion",
+    "title": "Legion",
+    "year": 2017,
+    "releaseYear": "2017",
+    "overview": "David Haller, AKA Legion, is a troubled young man who may be more than human. Diagnosed as schizophrenic, David has been in and out of psychiatric hospitals for years. But after a strange encounter with a fellow patient, he’s confronted with the possibility that the voices he hears and the visions he sees might be real.",
+    "poster": "https://image.tmdb.org/t/p/w780/xhJtYVTsdXQCIlB5hAXkMCPUG9y.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/2t9ROV4QPkJF7iBAW8z0ReqDUoB.jpg",
+    "rating": 7.5,
+    "phase": "Marvel Television",
+    "saga": "Multiverse",
+    "genres": [
+      "Action & Adventure",
+      "Sci-Fi & Fantasy",
+      "Drama"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Troubled by unsettling visions, young David Haller begins piecing together his fragmented memories and realizes he may have special powers.",
+        "poster": "https://image.tmdb.org/t/p/w780/au5hsZ20QzOVXSOWgx7umAhHC6A.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "With David and Oliver missing and Farouk on the loose, the team forms an unlikely alliance with their former enemy Clark and his well-funded government is on a new path to attaining infinite and world-ending power.",
+        "poster": "https://image.tmdb.org/t/p/w780/wMPFWmM7VLu2AwBzpF3JiWTnTkt.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Season 3",
+        "overview": "As Farouk and Syd embark on a search, David gains a following, teams up with a time traveler named Switch and prepares to wage war.",
+        "poster": "https://image.tmdb.org/t/p/w780/4THIqrWWYdsxy6zkfzzYvWnXR6Z.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 67195,
+    "watchConfig": {
+      "tmdbId": 67195,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "FX Networks / Marvel Television",
+    "studioId": "marvel-television",
+    "distributor": "FX Networks / Marvel Television",
+    "franchise": "X-Men",
+    "universe": "Alternate Timeline",
+    "universeId": "multiverse",
+    "universeDesignation": "Alternate Timeline",
+    "isAnimation": false,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "the-gifted",
+    "title": "The Gifted",
+    "year": 2017,
+    "releaseYear": "2017",
+    "overview": "A suburban couple's ordinary lives are rocked by the sudden discovery that their children possess mutant powers. Forced to go on the run from a hostile government, the family joins up with an underground network of mutants and must fight to survive.",
+    "poster": "https://image.tmdb.org/t/p/w780/nshCqszjTNuqhrB53vrSqWO18sE.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/18inwHlpKnK9mt02wFBJoIVKXI.jpg",
+    "rating": 7.6,
+    "phase": "Marvel Television",
+    "saga": "Multiverse",
+    "genres": [
+      "Sci-Fi & Fantasy",
+      "Action & Adventure",
+      "Drama"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "A suburban couple's ordinary lives are rocked by the sudden discovery that their children possess mutant powers. Forced to go on the run from a hostile government, the family joins up with an underground network of mutants and must fight to survive.",
+        "poster": "https://image.tmdb.org/t/p/w780/nYkGYVzn4Df3V5fZS9xYyKZn551.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "A suburban couple's ordinary lives are rocked by the sudden discovery that their children possess mutant powers. Forced to go on the run from a hostile government, the family joins up with an underground network of mutants and must fight to survive.",
+        "poster": "https://image.tmdb.org/t/p/w780/bUL8MBcB4OeVA2YkA3q1AMbpJL1.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 69629,
+    "watchConfig": {
+      "tmdbId": 69629,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "20th Century Fox / Marvel Television",
+    "studioId": "marvel-television",
+    "distributor": "20th Century Fox / Marvel Television",
+    "franchise": "X-Men",
+    "universe": "Earth-TRN414",
+    "universeId": "earth-trn414",
+    "universeDesignation": "Earth-TRN414",
+    "isAnimation": false,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "helstrom",
+    "title": "Taddy Taddy Po",
+    "year": 2017,
+    "releaseYear": "2017",
+    "overview": "Alex is an up-and-coming reporter and is in a relationship with Marcus, a chef. One day, Alex’s sister’s kids show up at the couple’s doorstep and the couple has no choice but to take care of the kids.",
+    "poster": "https://image.tmdb.org/t/p/w780/8bk6gFKRPxK3JeKkre3u58MPr8Y.jpg",
+    "backdrop": "",
+    "rating": 7.5,
+    "phase": "Marvel Television",
+    "saga": "Multiverse",
+    "genres": [
+      "Comedy"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Alex is an up-and-coming reporter and is in a relationship with Marcus, a chef. One day, Alex’s sister’s kids show up at the couple’s doorstep and the couple has no choice but to take care of the kids.",
+        "poster": "https://image.tmdb.org/t/p/w780/8bk6gFKRPxK3JeKkre3u58MPr8Y.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 89903,
+    "watchConfig": {
+      "tmdbId": 89903,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Television",
+    "studioId": "marvel-television",
+    "distributor": "Marvel Television",
+    "franchise": "Helstrom",
+    "universe": "Alternate Timeline",
+    "universeId": "multiverse",
+    "universeDesignation": "Alternate Timeline",
+    "isAnimation": false,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "x-men-97",
+    "title": "X-Men '97",
+    "year": 2024,
+    "releaseYear": "2024",
+    "overview": "The X-Men, a band of mutants who use their uncanny gifts to protect a world that hates and fears them, are challenged like never before, forced to face a dangerous and unexpected new future.",
+    "poster": "https://image.tmdb.org/t/p/w780/2HKBc5UiFw8JrruHq8S1Y7TnlW0.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/jIyEmnBrZtl6SEWyBoMO2hZnzMa.jpg",
+    "rating": 8.7,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Picking up where 'X-Men' left off, the X-Men are in a period of transition, struggling with the loss of Professor X. And while their world is in a strained state of calm when it comes to mutant-human relations—everyone knows that's likely temporary.",
+        "poster": "https://image.tmdb.org/t/p/w780/383PV0WolYYQvTriH0NfvMUA28R.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Season 2 continues with the heroic mutant team of X-Men, divided and thrown across different eras in time as they struggle to navigate their return home. Meanwhile, back in the 1990s, suspicious foes and new strains of mutant intolerance are on the rise in the wake of the X-Men's absence.",
+        "poster": "https://image.tmdb.org/t/p/w780/2HKBc5UiFw8JrruHq8S1Y7TnlW0.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 138502,
+    "watchConfig": {
+      "tmdbId": 138502,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Marvel Animation",
+    "franchise": "X-Men",
+    "universe": "Earth-92131",
+    "universeId": "earth-92131",
+    "universeDesignation": "Earth-92131",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "x-men-animated",
+    "title": "Jackass",
+    "year": 2000,
+    "releaseYear": "2000",
+    "overview": "Join sadomasochistic superheroes Johnny Knoxville, Bam Margera, and the rest of the Jackass crew as they terrorize your TV screens and everyone that gets in their way (especially themselves) with their own sick and twisted interpretation of physical entertainment.  Their brand of pranks, goofball antics, and unabashed brutal comedy are sure to bring new meaning to the phrase \"Don't Try This At Home!\"",
+    "poster": "https://image.tmdb.org/t/p/w780/q8O8ElquAya9SugLNH6N5TWNE4h.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/ahBt2NR6C3GZQYhhAptOAjnVno8.jpg",
+    "rating": 6.8,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Comedy"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Volume 1",
+        "overview": "Join sadomasochistic superheroes Johnny Knoxville, Bam Margera, and the rest of the Jackass crew as they terrorize your TV screens and everyone that gets in their way (especially themselves) with their own sick and twisted interpretation of physical entertainment.  Their brand of pranks, goofball antics, and unabashed brutal comedy are sure to bring new meaning to the phrase \"Don't Try This At Home!\"",
+        "poster": "https://image.tmdb.org/t/p/w780/rwcnUg3dog5zE1bWie0K4FWm1d4.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Volume 2",
+        "overview": "Join sadomasochistic superheroes Johnny Knoxville, Bam Margera, and the rest of the Jackass crew as they terrorize your TV screens and everyone that gets in their way (especially themselves) with their own sick and twisted interpretation of physical entertainment.  Their brand of pranks, goofball antics, and unabashed brutal comedy are sure to bring new meaning to the phrase \"Don't Try This At Home!\"",
+        "poster": "https://image.tmdb.org/t/p/w780/4difhiRFiynhtcLNwpP0akyUGoI.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Volume 3",
+        "overview": "Join sadomasochistic superheroes Johnny Knoxville, Bam Margera, and the rest of the Jackass crew as they terrorize your TV screens and everyone that gets in their way (especially themselves) with their own sick and twisted interpretation of physical entertainment.  Their brand of pranks, goofball antics, and unabashed brutal comedy are sure to bring new meaning to the phrase \"Don't Try This At Home!\"",
+        "poster": "https://image.tmdb.org/t/p/w780/sYituHYGl9YBgdwkIxh0TfL0SWg.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 1795,
+    "watchConfig": {
+      "tmdbId": 1795,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Entertainment",
+    "studioId": "marvel-animation",
+    "distributor": "Marvel Entertainment",
+    "franchise": "X-Men",
+    "universe": "Earth-92131",
+    "universeId": "earth-92131",
+    "universeDesignation": "Earth-92131",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "spider-man-animated",
+    "title": "Spider-Man",
+    "year": 1994,
+    "releaseYear": "1994",
+    "overview": "Bitten by a neogenetic spider, Peter Parker develops spider-like superpowers. He uses these to fight crime while trying to balance it with the struggles of his personal life.",
+    "poster": "https://image.tmdb.org/t/p/w780/1BX1HZZqDoLDx9Ry4oET6dA9293.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/tszlsbfyTOPSZe2z6K4mwHtcnmI.jpg",
+    "rating": 8.3,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Bitten by a neogenetic spider, Peter Parker develops spider-like superpowers. He uses these to fight crime while trying to balance it with the struggles of his personal life.",
+        "poster": "https://image.tmdb.org/t/p/w780/f1Dy2F8of9uZiSz6Z3kTlzpWz6L.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Bitten by a neogenetic spider, Peter Parker develops spider-like superpowers. He uses these to fight crime while trying to balance it with the struggles of his personal life.",
+        "poster": "https://image.tmdb.org/t/p/w780/qIDlAgHTlVxc0Htyi5TPUSuePNJ.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Season 3",
+        "overview": "Bitten by a neogenetic spider, Peter Parker develops spider-like superpowers. He uses these to fight crime while trying to balance it with the struggles of his personal life.",
+        "poster": "https://image.tmdb.org/t/p/w780/hCUkmIr50UnOuU9MasUZ7s0y3vf.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 4,
+        "title": "Season 4",
+        "overview": "Bitten by a neogenetic spider, Peter Parker develops spider-like superpowers. He uses these to fight crime while trying to balance it with the struggles of his personal life.",
+        "poster": "https://image.tmdb.org/t/p/w780/lQFu9auCwZLUTJigBZsSL2Kwp80.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 5,
+        "title": "Season 5",
+        "overview": "Bitten by a neogenetic spider, Peter Parker develops spider-like superpowers. He uses these to fight crime while trying to balance it with the struggles of his personal life.",
+        "poster": "https://image.tmdb.org/t/p/w780/naOSAwubTLs2PSrJIAyNPNz7cVh.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 888,
+    "watchConfig": {
+      "tmdbId": 888,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Entertainment",
+    "studioId": "marvel-animation",
+    "distributor": "Marvel Entertainment",
+    "franchise": "Spider-Man",
+    "universe": "Earth-92131",
+    "universeId": "earth-92131",
+    "universeDesignation": "Earth-92131",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "x-men-evolution",
+    "title": "Biker Mice from Mars",
+    "year": 1993,
+    "releaseYear": "1993",
+    "overview": "Three anthropomorphic mice motorcyclists named Throttle, Modo, and Vinnie escape a war on their home planet Mars before arriving to defend the Earth from the evil that destroyed their homeland and to one day return to Mars.",
+    "poster": "https://image.tmdb.org/t/p/w780/gBnbkQ7t6Ctri0A4nKDYWqIVF3f.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/7O1f7OWj61quryRpuGIGj4Y7jq7.jpg",
+    "rating": 6.4,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Kids",
+      "Animation",
+      "Action & Adventure",
+      "Comedy",
+      "Sci-Fi & Fantasy"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Three anthropomorphic mice motorcyclists named Throttle, Modo, and Vinnie escape a war on their home planet Mars before arriving to defend the Earth from the evil that destroyed their homeland and to one day return to Mars.",
+        "poster": "https://image.tmdb.org/t/p/w780/zmQnJ2uJumT23NhWBQZK90bGwZH.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Three anthropomorphic mice motorcyclists named Throttle, Modo, and Vinnie escape a war on their home planet Mars before arriving to defend the Earth from the evil that destroyed their homeland and to one day return to Mars.",
+        "poster": "https://image.tmdb.org/t/p/w780/il87CqF3vkHn2ya7ClshemPuzfw.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Season 3",
+        "overview": "Three anthropomorphic mice motorcyclists named Throttle, Modo, and Vinnie escape a war on their home planet Mars before arriving to defend the Earth from the evil that destroyed their homeland and to one day return to Mars.",
+        "poster": "https://image.tmdb.org/t/p/w780/upuYC6HcDDsNRYWcAikk8LV8Pvg.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 3320,
+    "watchConfig": {
+      "tmdbId": 3320,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Entertainment",
+    "studioId": "marvel-animation",
+    "distributor": "Marvel Entertainment",
+    "franchise": "X-Men",
+    "universe": "Alternate Timeline",
+    "universeId": "multiverse",
+    "universeDesignation": "Alternate Timeline",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "wolverine-and-the-x-men",
+    "title": "Something Wilder",
+    "year": 1994,
+    "releaseYear": "1994",
+    "overview": "Something Wilder is an American sitcom starring Gene Wilder that ran on NBC from October 1, 1994 until June 13, 1995. The series was created by Lee Kalcheim and Barnet Kellman.",
+    "poster": "https://image.tmdb.org/t/p/w780/dd6OCAVO7WRrw68fA76LdHW5Sj8.jpg",
+    "backdrop": "",
+    "rating": 9,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Comedy"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Something Wilder is an American sitcom starring Gene Wilder that ran on NBC from October 1, 1994 until June 13, 1995. The series was created by Lee Kalcheim and Barnet Kellman.",
+        "poster": "https://image.tmdb.org/t/p/w780/k6SgSaeNiV0hRioVy9PHeaU9ZKR.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 16298,
+    "watchConfig": {
+      "tmdbId": 16298,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Marvel Animation",
+    "franchise": "Wolverine",
+    "universe": "Earth-8096",
+    "universeId": "earth-8096",
+    "universeDesignation": "Earth-8096",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "spectacular-spider-man",
+    "title": "Ultraman Gaia",
+    "year": 1998,
+    "releaseYear": "1998",
+    "overview": "Ultraman Gaia is a Japanese tokusatsu TV show and is the 13th show in the Ultra Series. Created by Chiaki J. Konaka and produced by Tsuburaya Productions and Mainichi Broadcasting System, Ultraman Gaia was aired on JNN TV stations from September 5, 1998 until August 28, 1999, with a total of 51 episodes.",
+    "poster": "https://image.tmdb.org/t/p/w780/vy3WvKpc3qev0AGQWLJBoaUIE4N.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/6AAOeb66yBqpz0baQCRdRlOh9Ix.jpg",
+    "rating": 8.3,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Sci-Fi & Fantasy",
+      "Action & Adventure",
+      "Drama"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Gamu Takayama is a 20 year old member of an organization called Alchemy Stars. After a monster known as C.O.V. attacked the Earth, Gamu falls through a portal of light and meets the giant: Ultraman Gaia, who gives him his powers. Later, when Gaia was in trouble in episode three, another Ultraman, Ultraman Agul appeared. Can they save the Earth? Who is Agul, is he friend or foe? Later in the series it is seen that Agul, too, is a being of justice, but only protects the Earth, not humanity. The conflict between the two later leads to a duel, opening a wormhole that allows a giant beast to reach Earth. What will happen then?",
+        "poster": "https://image.tmdb.org/t/p/w780/25H00qcrLMfhehsfcTRhdJfkTuD.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 4426,
+    "watchConfig": {
+      "tmdbId": 4426,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Sony Pictures Television",
+    "studioId": "sony-pictures",
+    "distributor": "Sony Pictures Television",
+    "franchise": "Spider-Man",
+    "universe": "Earth-26496",
+    "universeId": "earth-26496",
+    "universeDesignation": "Earth-26496",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "ultimate-spider-man",
+    "title": "Marvel's Ultimate Spider-Man",
+    "year": 2012,
+    "releaseYear": "2012",
+    "overview": "While being trained by S.H.I.E.L.D., Spider-Man battles evil with a new team of teen colleagues.",
+    "poster": "https://image.tmdb.org/t/p/w780/jK3pc8XOQT8UgdvSjMFk8xLQOxE.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/gXeCzYmCRBlpbbhhKrYM1ZpIDAA.jpg",
+    "rating": 7.7,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Comedy",
+      "Sci-Fi & Fantasy"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "While being trained by S.H.I.E.L.D., Spider-Man battles evil with a new team of teen colleagues.",
+        "poster": "https://image.tmdb.org/t/p/w780/p276PkRJ5Wexq91DA5RkbxTYMDn.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "While being trained by S.H.I.E.L.D., Spider-Man battles evil with a new team of teen colleagues.",
+        "poster": "https://image.tmdb.org/t/p/w780/eXtlDP6kgUyYw0G2L9AxSWUp14Q.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Season 3: Web-Warriors",
+        "overview": "While being trained by S.H.I.E.L.D., Spider-Man battles evil with a new team of teen colleagues.",
+        "poster": "https://image.tmdb.org/t/p/w780/iicBAyyU56hr2pgNA5YCnTIu9tJ.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 4,
+        "title": "Season 4: vs the Sinister 6",
+        "overview": "Peter Parker finds himself in prime position – he’s a successful hero after fighting alongside The Avengers, a S.H.I.E.L.D. Academy leader and has a great relationship with his Aunt May. However, when Spidey discovers that his greatest enemies – Doctor Octopus, Hydra and the all-new Sinister 6 – have teamed up to destroy him and S.H.I.E.L.D., he creates a special new team of Spiders.",
+        "poster": "https://image.tmdb.org/t/p/w780/fgmcIYoUjo14yIErawolG6pv8Nf.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 34391,
+    "watchConfig": {
+      "tmdbId": 34391,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Marvel Animation",
+    "franchise": "Spider-Man",
+    "universe": "Earth-12041",
+    "universeId": "earth-12041",
+    "universeDesignation": "Earth-12041",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "avengers-earths-mightiest-heroes",
+    "title": "Teen Wolf",
+    "year": 2011,
+    "releaseYear": "2011",
+    "overview": "Scott McCall, a high school student living in the town of Beacon Hills has his life drastically changed when he's bitten by a werewolf, becoming one himself. He must henceforth learn to balance his problematic new identity with his day-to-day teenage life. The following characters are instrumental to his struggle: Stiles, his best friend; Allison, his love interest who comes from a family of werewolf hunters; and Derek, a mysterious werewolf with a dark past. Throughout the series, he strives to keep his loved ones safe while maintaining normal relationships with them.",
+    "poster": "https://image.tmdb.org/t/p/w780/wjKBTcNy1xihmExqJI8kM2qvavP.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/1F2RnXLc0fmRt7iWfBK4mNVsjno.jpg",
+    "rating": 8.4,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Sci-Fi & Fantasy",
+      "Drama",
+      "Comedy"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Scott McCall is bitten by The Alpha and turns into a werewolf. He then must learn how to balance being a werewolf with his normal life, including his love interest, Allison. Finding out who the Alpha is and killing him was a huge point in the plot of Season 1.",
+        "poster": "https://image.tmdb.org/t/p/w780/sXz3t61MDvJwHnVplZR7pY3QEGc.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "After an action-packed end to its premiere season, Teen Wolf jumps full force into season two with even more suspenseful drama. Scott McCall, an ordinary teenager with a wild secret, continues to find himself caught in a supernatural war between hunters and werewolves. While navigating the complicated roadways of high school, Scott must keep his forbidden romance with Alison a secret and protect himself from new Alpha wolf Derek. Scott will have to trust his instincts above all else if he hopes to end war in Beacon Hills and keep his friends and family safe.",
+        "poster": "https://image.tmdb.org/t/p/w780/jB3EEi9ay0vpjlnMTV48GfO39l6.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Season 3",
+        "overview": "Four months after the events that nearly ended Jackson's life and resurrected Peter Hale's, teen wolf Scott McCall and his friends begin their junior year of high school unaware that the new threat has arrived in Beacon Hills: a pack of Alpha werewolves intent on bringing Derek into their fold, while destroying his young pack.",
+        "poster": "https://image.tmdb.org/t/p/w780/ek2tpyvRNCa8PsY6PgPHy2rqa3l.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 4,
+        "title": "Season 4",
+        "overview": "Still healing from tragic losses, Scott, Stiles, Lydia, and Kira return to a new semester of school with more human worries than supernatural, while also trying to help their new friend, Malia, integrate back into society. But Kate Argent’s surprising resurrection brings a new threat to Beacon Hills along with the emergence of another mysterious enemy known simply as The Benefactor.",
+        "poster": "https://image.tmdb.org/t/p/w780/54DTUiNu3UfRNipLTZz6zFTqd8c.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 5,
+        "title": "Season 5",
+        "overview": "On the eve of Senior Year, Scott and his friends find themselves facing the possibility of a future without each other, a next phase of their lives that might take them in different directions despite their best intentions. Little do they know that outside forces are already plotting to break the pack apart long before they ever see graduation; new villains that use a combination of science and the supernatural for a malevolent and mysterious purpose that will eventually pit Scott and his friends against their greatest enemy yet.",
+        "poster": "https://image.tmdb.org/t/p/w780/isQhfBNoARLkAvlpqcNHqLNiveD.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 6,
+        "title": "Season 6",
+        "overview": "The final season features the greatest threat yet: The Ghost Riders of The Wild Hunt. These beings erase people from existence--including eradicating them from the memories of those who knew them--and a member of Scott's pack is among the first to be taken. Scott and his remaining pack must find a way to defeat the Ghost Riders AND remember and rescue their lost and forgotten friend before everyone in Beacon Hills is erased.",
+        "poster": "https://image.tmdb.org/t/p/w780/zf0yGqdpRv2ZWqoEOe5c2e53WMW.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 34524,
+    "watchConfig": {
+      "tmdbId": 34524,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Marvel Animation",
+    "franchise": "Avengers",
+    "universe": "Earth-8096",
+    "universeId": "earth-8096",
+    "universeDesignation": "Earth-8096",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "avengers-assemble",
+    "title": "Marvel's Avengers",
+    "year": 2013,
+    "releaseYear": "2013",
+    "overview": "The further adventures of the Marvel Universe's mightiest general membership superhero team. With an all-star roster consisting of Iron Man, Captain America, Thor, Hulk, Hawkeye, Falcon and, occasionally--when she feels like it and only when she feels like it--Black Widow, the Avengers are a team in the truest sense. The Avengers save the world from the biggest threats imaginable--threats no single super hero could withstand.",
+    "poster": "https://image.tmdb.org/t/p/w780/aVYPq7FSvsdNQOXVIFnndXJPCXn.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/hutyHRPoY0woAZCJtLmosJHuTjQ.jpg",
+    "rating": 7.5,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Action & Adventure",
+      "Animation",
+      "Sci-Fi & Fantasy"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The further adventures of the Marvel Universe's mightiest general membership superhero team. With an all-star roster consisting of Iron Man, Captain America, Thor, Hulk, Hawkeye, Falcon and, occasionally--when she feels like it and only when she feels like it--Black Widow, the Avengers are a team in the truest sense. The Avengers save the world from the biggest threats imaginable--threats no single super hero could withstand.",
+        "poster": "https://image.tmdb.org/t/p/w780/3hDR6u7vy0UgFp64KwzWCj73TKm.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "The first half of the second season deals with the team facing Thanos, as he competes with them to obtain the Infinity Stones, followed by a five-episode arc detailing the return of Ultron, who plans to exterminate the human race. The rest of the season details the arrival of the Squadron Supreme and their confrontation with the Avengers.",
+        "poster": "https://image.tmdb.org/t/p/w780/5xXLD7bR8RpXYAxlo9eIfC6VHSo.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Ultron Revolution",
+        "overview": "In season 3, Ultron returns after his apparent demise and seeks revenge on the Avengers. The Avengers must defeat him as well as new threats like Baron Zemo's Masters of Evil and Kang the Conqueror. Vision, Black Panther, Captain Marvel, Ms. Marvel, and the Inhumans are also introduced.",
+        "poster": "https://image.tmdb.org/t/p/w780/tfwczYRkDmhHjpd5Pmzog8ZsWJD.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 4,
+        "title": "Secret Wars",
+        "overview": "The further adventures of the Marvel Universe's mightiest general membership superhero team. With an all-star roster consisting of Iron Man, Captain America, Thor, Hulk, Hawkeye, Falcon and, occasionally--when she feels like it and only when she feels like it--Black Widow, the Avengers are a team in the truest sense. The Avengers save the world from the biggest threats imaginable--threats no single super hero could withstand.",
+        "poster": "https://image.tmdb.org/t/p/w780/k8Nv5b6WQUlyR6U6DLr2E5hpJ4b.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 5,
+        "title": "Black Panther's Quest",
+        "overview": "The further adventures of the Marvel Universe's mightiest general membership superhero team. With an all-star roster consisting of Iron Man, Captain America, Thor, Hulk, Hawkeye, Falcon and, occasionally--when she feels like it and only when she feels like it--Black Widow, the Avengers are a team in the truest sense. The Avengers save the world from the biggest threats imaginable--threats no single super hero could withstand.",
+        "poster": "https://image.tmdb.org/t/p/w780/rw9kT0ogOPmVbSlyxUFOp0jxspA.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 59427,
+    "watchConfig": {
+      "tmdbId": 59427,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Marvel Animation",
+    "franchise": "Avengers",
+    "universe": "Earth-12041",
+    "universeId": "earth-12041",
+    "universeDesignation": "Earth-12041",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "spider-man-2017",
+    "title": "Marvel's Spider-Man",
+    "year": 2017,
+    "releaseYear": "2017",
+    "overview": "An insecure but courageous and intelligent teen named Peter Parker, a new student of Midtown High, is bitten by a radioactive spider and given powers. He becomes a hero named Spider-Man after the death of his uncle and he must adapt to this new way of life.",
+    "poster": "https://image.tmdb.org/t/p/w780/dKdcyyHUR5WTMnrbPdYN5y9xPVp.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/qDum1yhNftUMaIB3pPiZ7PLsIto.jpg",
+    "rating": 7.5,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Sci-Fi & Fantasy",
+      "Comedy",
+      "Family"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "An insecure but courageous and intelligent teen named Peter Parker, a new student of Midtown High, is bitten by a radioactive spider and given powers. He becomes a hero named Spider-Man after the death of his uncle and he must adapt to this new way of life.",
+        "poster": "https://image.tmdb.org/t/p/w780/3GLe7l5rBCn1qB0gKuaQgDvv9hN.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "An insecure but courageous and intelligent teen named Peter Parker, a new student of Midtown High, is bitten by a radioactive spider and given powers. He becomes a hero named Spider-Man after the death of his uncle and he must adapt to this new way of life.",
+        "poster": "https://image.tmdb.org/t/p/w780/467Madt1P0ZF1pYOvd55cjn4OCo.jpg",
+        "episodes": []
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Maximum Venom",
+        "overview": "Now going into his third year at Horizon High, Peter is confident he can handle anything that comes his way, but he's pushed to his breaking point when Venom summons an earth-shattering threat from its home planet.",
+        "poster": "https://image.tmdb.org/t/p/w780/gGgLtVOVL0AObZh2ydndWwV7JDR.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 72705,
+    "watchConfig": {
+      "tmdbId": 72705,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Marvel Animation",
+    "franchise": "Spider-Man",
+    "universe": "Earth-12041",
+    "universeId": "earth-12041",
+    "universeDesignation": "Earth-12041",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "iron-man-armored-adventures",
+    "title": "The Spooks of Bottle Bay",
+    "year": 2015,
+    "releaseYear": "2015",
+    "overview": "The Spooks of Bottle Bay was a children's drama series shown on CiTV between the years of 1993 and 1995 on CITV. The stories behind the show were created by Ian Allen, and the puppets and sets were designed by John Thirtle. Three videos containing a few episodes from the first two series were released in the 1990s, but nothing has been released since then and the show has never been repeated on television.",
+    "poster": "",
+    "backdrop": "",
+    "rating": 3,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Spooks of bottle bay season 1",
+        "overview": "The Spooks of Bottle Bay was a children's drama series shown on CiTV between the years of 1993 and 1995 on CITV. The stories behind the show were created by Ian Allen, and the puppets and sets were designed by John Thirtle. Three videos containing a few episodes from the first two series were released in the 1990s, but nothing has been released since then and the show has never been repeated on television.",
+        "poster": "",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 15720,
+    "watchConfig": {
+      "tmdbId": 15720,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Marvel Animation",
+    "franchise": "Iron Man",
+    "universe": "Alternate Timeline",
+    "universeId": "multiverse",
+    "universeDesignation": "Alternate Timeline",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "hit-monkey",
+    "title": "Akira Hamura: The World’s Most Unfortunate Private Investigator",
+    "year": 2020,
+    "releaseYear": "2020",
+    "overview": "Akira Hamura likes mystery books. She is 34-years-old, single and works part-time at the Murder Bear Bookshop. She also works as a private investigator. While working on cases, she experiences unlucky and unexpected situations. Because of this, she is known as \"The World's Most Unfortunate Private Investigator.\"",
+    "poster": "https://image.tmdb.org/t/p/w780/aL2lE6zTseAUEgGaK4EtyOYfK5k.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/aiz3iXC1UlZwEIKOKa6EtcQzpeH.jpg",
+    "rating": 7,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Mystery",
+      "Crime"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Akira Hamura likes mystery books. She is 34-years-old, single and works part-time at the Murder Bear Bookshop. She also works as a private investigator. While working on cases, she experiences unlucky and unexpected situations. Because of this, she is known as \"The World's Most Unfortunate Private Investigator.\"",
+        "poster": "https://image.tmdb.org/t/p/w780/tqvlaCN3G5z4Gkr4brRa3Fc0qnh.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 121544,
+    "watchConfig": {
+      "tmdbId": 121544,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Television / 20th TV",
+    "studioId": "marvel-animation",
+    "distributor": "Marvel Television / 20th TV",
+    "franchise": "Hit-Monkey",
+    "universe": "Alternate Timeline",
+    "universeId": "multiverse",
+    "universeDesignation": "Alternate Timeline",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": false,
+    "releaseStatus": "released"
+  },
+  {
+    "id": "modok",
+    "title": "STAR☆jewel",
+    "year": 2011,
+    "releaseYear": "2011",
+    "overview": "A war is being fought between the goddesses of dark and light. While the former try to steal the jewels from innocent women, leaving lifeless husks, the latter hunt the evildoers. Both types of goddesses are equipped with powers to fight, but their strongest weapons are their retractable penises - flooding the enemy with pleasure is the only sure-fire way to win.",
+    "poster": "https://image.tmdb.org/t/p/w780/hEFNAzECoRoDPPPjhmXK7ccNY0F.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/4JNZUPApUkgqZESacnZW3725Chg.jpg",
+    "rating": 5.5,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "A war is being fought between the goddesses of dark and light. While the former try to steal the jewels from innocent women, leaving lifeless husks, the latter hunt the evildoers. Both types of goddesses are equipped with powers to fight, but their strongest weapons are their retractable penises - flooding the enemy with pleasure is the only sure-fire way to win.",
+        "poster": "https://image.tmdb.org/t/p/w780/qsTKVRfTy9L7v7mGO7lH1bxkMFA.jpg",
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 950,
+    "chronologicalOrder": 950,
+    "tmdbId": 98107,
+    "watchConfig": {
+      "tmdbId": 98107,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "studio": "Marvel Television",
+    "studioId": "marvel-animation",
+    "distributor": "Marvel Television",
+    "franchise": "M.O.D.O.K.",
+    "universe": "Alternate Timeline",
+    "universeId": "multiverse",
+    "universeDesignation": "Alternate Timeline",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": false,
+    "releaseStatus": "released"
   }
 ];

@@ -1,15 +1,15 @@
 import { MOVIES_DATA } from '../data/movies';
 import { SERIES_DATA } from '../data/series';
 import type { Movie, Series, CastMember, Season, Episode } from '../types';
-import { isMarvelContent } from '../utils/marvelWhitelist';
+import { isMarvelContent, MARVEL_MOVIE_TMDB_IDS } from '../utils/marvelWhitelist';
 
 // TMDB Official API Configuration
 export const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
 export const TMDB_IMAGE_BASE = 'https://image.tmdb.org/t/p';
 
-// Default Fallback Assets (Dark cinematic aesthetic)
-export const FALLBACK_POSTER = 'https://images.unsplash.com/photo-1635863138275-d9b33299680b?q=80&w=800&auto=format&fit=crop';
-export const FALLBACK_BACKDROP = 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1600&auto=format&fit=crop';
+// Default Fallback Assets (Marvel Cinematic Studio aesthetic)
+export const FALLBACK_POSTER = 'https://image.tmdb.org/t/p/w780/78lPtwv72eTNqFW9COBYI0dWDJa.jpg';
+export const FALLBACK_BACKDROP = 'https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg';
 export const FALLBACK_STILL = 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop';
 export const FALLBACK_AVATAR = 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop';
 
@@ -273,6 +273,70 @@ export async function getSeasonDetails(tmdbId: number, seasonNumber: number): Pr
 }
 
 /**
+ * Retrieve individual episode details from TMDB
+ */
+export async function getEpisodeDetails(tmdbId: number, seasonNumber: number, episodeNumber: number): Promise<any | null> {
+  return tmdbFetch(`/tv/${tmdbId}/season/${seasonNumber}/episode/${episodeNumber}`);
+}
+
+/**
+ * Dynamically fetch complete season episodes from TMDB with caching
+ */
+export async function fetchCompleteSeasonEpisodes(
+  series: Series,
+  seasonNumber: number
+): Promise<Episode[]> {
+  if (!series.tmdbId) {
+    const localSeason = series.seasons.find(s => s.seasonNumber === seasonNumber);
+    return localSeason?.episodes || [];
+  }
+
+  const cacheKey = `tmdb_season_eps_${series.tmdbId}_s${seasonNumber}`;
+  try {
+    const cached = sessionStorage.getItem(cacheKey);
+    if (cached) {
+      return JSON.parse(cached);
+    }
+  } catch {}
+
+  try {
+    const data = await getSeasonDetails(series.tmdbId, seasonNumber);
+    if (!data || !data.episodes || data.episodes.length === 0) {
+      const localSeason = series.seasons.find(s => s.seasonNumber === seasonNumber);
+      return localSeason?.episodes || [];
+    }
+
+    const episodes: Episode[] = data.episodes.map(tmdbEp => ({
+      id: `${series.id}_s${seasonNumber}_e${tmdbEp.episode_number}`,
+      seasonNumber: seasonNumber,
+      episodeNumber: tmdbEp.episode_number,
+      title: tmdbEp.name || `Episode ${tmdbEp.episode_number}`,
+      runtime: tmdbEp.runtime || 45,
+      overview: tmdbEp.overview || 'No episode overview available.',
+      still: tmdbEp.still_path ? getTmdbStillUrl(tmdbEp.still_path, 'w300') : series.backdrop,
+      airDate: tmdbEp.air_date || '',
+      episodeWatchConfig: {
+        season: seasonNumber,
+        episode: tmdbEp.episode_number,
+        tmdbId: series.tmdbId,
+        watchProvider: 'screenscape',
+        language: 'eng'
+      }
+    }));
+
+    try {
+      sessionStorage.setItem(cacheKey, JSON.stringify(episodes));
+    } catch {}
+
+    return episodes;
+  } catch (err) {
+    console.warn(`Failed to fetch season ${seasonNumber} for ${series.title}:`, err);
+    const localSeason = series.seasons.find(s => s.seasonNumber === seasonNumber);
+    return localSeason?.episodes || [];
+  }
+}
+
+/**
  * Fetch popular movies from TMDB
  */
 export async function fetchPopularMovies(): Promise<any[]> {
@@ -333,26 +397,38 @@ export async function searchMovies(query: string): Promise<Movie[]> {
 
   if (raw && raw.results && raw.results.length > 0) {
     const liveMatches: Movie[] = raw.results
-      .filter((item: any) => isMarvelContent({ tmdbId: item.id, title: item.title }))
+      .filter((item: any) =>
+        MARVEL_MOVIE_TMDB_IDS.has(item.id) ||
+        MOVIES_DATA.some(m => m.tmdbId === item.id || m.title.toLowerCase() === (item.title || '').toLowerCase())
+      )
       .map((item: any) => {
-        // Check if there is an existing local entry to inherit phase/saga/connections
+        // Inherit verified metadata from local curated records
         const local = MOVIES_DATA.find(m => m.tmdbId === item.id || m.title.toLowerCase() === item.title.toLowerCase());
         const year = item.release_date ? parseInt(item.release_date.substring(0, 4), 10) : (local?.year || 2024);
 
         return {
           id: local ? local.id : `tmdb_m_${item.id}`,
-          title: item.title,
+          title: local?.title || item.title,
           year,
           releaseDate: item.release_date || local?.releaseDate || `${year}-01-01`,
-          runtime: local?.runtime || 120,
+          runtime: local?.runtime || item.runtime || 120,
           overview: item.overview || local?.overview || '',
-          poster: getTmdbPosterUrl(item.poster_path, 'w500'),
-          backdrop: getTmdbBackdropUrl(item.backdrop_path, 'w1280'),
+          poster: item.poster_path ? getTmdbPosterUrl(item.poster_path, 'w500') : (local?.poster || FALLBACK_POSTER),
+          backdrop: item.backdrop_path ? getTmdbBackdropUrl(item.backdrop_path, 'w1280') : (local?.backdrop || FALLBACK_BACKDROP),
           rating: item.vote_average ? Math.round(item.vote_average * 10) / 10 : (local?.rating || 7.5),
-          phase: local?.phase || 'Phase 5',
-          saga: local?.saga || 'Multiverse Saga',
-          genres: local?.genres || ['Action', 'Sci-Fi'],
-          director: local?.director || 'Marvel Studios',
+          phase: local?.phase,
+          saga: local?.saga,
+          studio: local?.studio,
+          studioId: local?.studioId,
+          universe: local?.universe,
+          universeId: local?.universeId,
+          franchise: local?.franchise,
+          movieType: local?.movieType || 'live-action',
+          isMcu: local?.isMcu || false,
+          isAnimation: local?.isAnimation || false,
+          isLegacy: local?.isLegacy || false,
+          genres: local?.genres || (item.genres?.map((g: any) => g.name) || ['Action', 'Sci-Fi']),
+          director: local?.director || 'Marvel',
           cast: local?.cast || [],
           characters: local?.characters || [],
           releaseOrder: local?.releaseOrder || 99,
@@ -464,6 +540,21 @@ export async function enrichMovieWithTmdb(movie: Movie, isDetail: boolean = fals
   try {
     const tmdbData = await getMovieDetails(movie.tmdbId, isDetail);
     if (!tmdbData) return movie;
+
+    // Catalogue Integrity Guard: Validate that the fetched movie from TMDB actually corresponds to this Marvel title.
+    // Prevents non-Marvel movies from corrupting the catalogue (e.g. Battle: Los Angeles, Virgin Territory, Marine Boy, It Follows).
+    const normCur = movie.title.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const normTmdb = (tmdbData.title || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const isVerifiedMatch =
+      MARVEL_MOVIE_TMDB_IDS.has(movie.tmdbId) ||
+      normCur.includes(normTmdb) ||
+      normTmdb.includes(normCur) ||
+      (movie.franchise && normTmdb.includes(movie.franchise.toLowerCase().replace(/[^a-z0-9]/g, '')));
+
+    if (!isVerifiedMatch) {
+      console.warn(`[TMDB Guard] Rejected mismatch: "${tmdbData.title}" does not match Marvel movie "${movie.title}" (TMDB ID: ${movie.tmdbId})`);
+      return movie;
+    }
 
     // Extract official trailer from videos if available (in detail mode)
     let trailerUrl = movie.trailerUrl;

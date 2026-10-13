@@ -7,6 +7,9 @@ import { SearchOverlay } from './components/layout/SearchOverlay';
 import { HomePage } from './pages/HomePage';
 import { MoviesPage } from './pages/MoviesPage';
 import { SeriesPage } from './pages/SeriesPage';
+import { AnimationPage } from './pages/AnimationPage';
+import { StudiosPage } from './pages/StudiosPage';
+import { UniversesPage } from './pages/UniversesPage';
 import { MovieDetailPage } from './pages/MovieDetailPage';
 import { SeriesDetailPage } from './pages/SeriesDetailPage';
 import { WatchPage } from './pages/WatchPage';
@@ -332,6 +335,33 @@ function MarvelHubContent() {
           />
         )}
 
+        {activeTab === 'animation' && (
+          <AnimationPage
+            onSelectMovie={handleSelectMovie}
+            onWatchMovie={handleWatchMovie}
+            onSelectSeries={handleSelectSeries}
+            onWatchSeries={handleWatchSeries}
+          />
+        )}
+
+        {activeTab === 'studios' && (
+          <StudiosPage
+            onSelectMovie={handleSelectMovie}
+            onWatchMovie={handleWatchMovie}
+            onSelectSeries={handleSelectSeries}
+            onWatchSeries={handleWatchSeries}
+          />
+        )}
+
+        {activeTab === 'universes' && (
+          <UniversesPage
+            onSelectMovie={handleSelectMovie}
+            onWatchMovie={handleWatchMovie}
+            onSelectSeries={handleSelectSeries}
+            onWatchSeries={handleWatchSeries}
+          />
+        )}
+
         {activeTab === 'movie-detail' && selectedMovie && (
           <MovieDetailPage
             movie={selectedMovie}
@@ -356,6 +386,9 @@ function MarvelHubContent() {
             movie={watchTarget.movie}
             series={watchTarget.series}
             episode={watchTarget.episode}
+            onSelectEpisode={(series, episode) => {
+              setWatchTarget(prev => prev ? { ...prev, series, episode } : null);
+            }}
             onBack={() => {
               if (watchTarget.mediaType === 'movie' && watchTarget.movie) {
                 handleSelectMovie(watchTarget.movie);
