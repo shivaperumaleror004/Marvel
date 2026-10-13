@@ -5,9 +5,8 @@ import { MovieCarousel } from '../components/home/MovieCarousel';
 import { SeriesCarousel } from '../components/home/SeriesCarousel';
 import { TimelinePreview } from '../components/home/TimelinePreview';
 import { PageTransition } from '../components/ui/PageTransition';
-import { MOVIES_DATA } from '../data/movies';
-import { SERIES_DATA } from '../data/series';
 import { Movie, Series, TimelineNode, WatchProgress } from '../types';
+import { useMedia } from '../context/MediaContext';
 
 interface HomePageProps {
   onSelectMovie: (movie: Movie) => void;
@@ -28,17 +27,20 @@ export const HomePage: React.FC<HomePageProps> = ({
   onOpenTimelinePage,
   onSelectTimelineNode
 }) => {
-  const featuredMovie = MOVIES_DATA[0]; // Iron Man
+  const { movies, series } = useMedia();
+  const featuredMovie = movies[0];
 
   return (
     <PageTransition>
       <div className="space-y-4">
-        {/* Cinematic Hero */}
-        <Hero
-          movie={featuredMovie}
-          onWatch={onWatchMovie}
-          onSelect={onSelectMovie}
-        />
+        {/* Cinematic Hero with Real TMDB Backdrop */}
+        {featuredMovie && (
+          <Hero
+            movie={featuredMovie}
+            onWatch={onWatchMovie}
+            onSelect={onSelectMovie}
+          />
+        )}
 
         {/* Continue Watching Section */}
         <ContinueWatchingRow onResume={onResumeProgress} />
@@ -46,7 +48,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         {/* Marvel Movies Carousel */}
         <MovieCarousel
           title="Marvel Cinematic Movies"
-          movies={MOVIES_DATA}
+          movies={movies}
           onSelectMovie={onSelectMovie}
           onWatchMovie={onWatchMovie}
         />
@@ -54,7 +56,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         {/* Marvel Series Carousel */}
         <SeriesCarousel
           title="Marvel Original Series"
-          series={SERIES_DATA}
+          series={series}
           onSelectSeries={onSelectSeries}
           onWatchSeries={onWatchSeries}
         />

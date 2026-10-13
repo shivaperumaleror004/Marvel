@@ -35,22 +35,47 @@ export const MARVEL_MOVIE_TMDB_IDS = new Set<number>([
   533535, // Deadpool & Wolverine
   609681, // The Marvels
   822119, // Captain America: Brave New World
+  986056, // Thunderbolts*
   617127, // The Fantastic Four: First Steps
-  1003596 // Avengers: Doomsday
+  1003596, // Avengers: Doomsday
+  1003598, // Avengers: Secret Wars
+  // Marvel Specials & One-Shots (categorized as Movie in TMDB)
+  894205, // Werewolf by Night
+  774752, // The Guardians of the Galaxy Holiday Special
+  76122,  // The Consultant
+  76121,  // A Funny Thing Happened on the Way to Thor's Hammer
+  119569, // Item 47
+  211387, // Agent Carter (One-Shot)
+  253412  // All Hail the King
 ]);
 
 export const MARVEL_SERIES_TMDB_IDS = new Set<number>([
-  88396,  // Loki
+  84958,  // Loki
+  88396,  // The Falcon and the Winter Soldier
   85271,  // WandaVision
-  92782,  // The Falcon and the Winter Soldier / She-Hulk
   91363,  // What If...?
   88329,  // Hawkeye
   92749,  // Moon Knight
-  92783,  // Ms. Marvel
+  92782,  // Ms. Marvel
+  92783,  // She-Hulk: Attorney at Law
   114472, // Secret Invasion
   125928, // Echo
   138502, // Agatha All Along
-  202720  // Daredevil: Born Again
+  202720, // Daredevil: Born Again
+  232125, // I Am Groot
+  241388, // Eyes of Wakanda
+  114471, // Ironheart
+  138503, // Your Friendly Neighborhood Spider-Man
+  138505, // Marvel Zombies
+  198178, // Wonder Man
+  // Defenders Saga & Marvel Television
+  61889,  // Daredevil
+  38472,  // Jessica Jones
+  67070,  // Luke Cage
+  62127,  // Iron Fist
+  62285,  // The Defenders
+  67178,  // The Punisher
+  61550   // Agent Carter (TV)
 ]);
 
 export const MARVEL_LOCAL_IDS = new Set<string>([

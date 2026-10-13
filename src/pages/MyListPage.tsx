@@ -2,8 +2,7 @@ import React from 'react';
 import { Bookmark, Film, Tv, Shield, Play, Trash2 } from 'lucide-react';
 import { useWatchlist } from '../hooks/useWatchlist';
 import { useWatchProgress } from '../hooks/useWatchProgress';
-import { MOVIES_DATA } from '../data/movies';
-import { SERIES_DATA } from '../data/series';
+import { useMedia } from '../context/MediaContext';
 import { Movie, Series, WatchProgress } from '../types';
 import { MovieCard } from '../components/ui/MovieCard';
 import { SeriesCard } from '../components/ui/SeriesCard';
@@ -28,11 +27,12 @@ export const MyListPage: React.FC<MyListPageProps> = ({
   onResumeProgress,
   onExploreCatalogue
 }) => {
+  const { movies, series } = useMedia();
   const { watchlist, clearWatchlist } = useWatchlist();
   const { continueWatching } = useWatchProgress();
 
-  const savedMovies = MOVIES_DATA.filter(m => isMarvelContent(m) && watchlist.includes(m.id));
-  const savedSeries = SERIES_DATA.filter(s => isMarvelContent(s) && watchlist.includes(s.id));
+  const savedMovies = movies.filter(m => isMarvelContent(m) && watchlist.includes(m.id));
+  const savedSeries = series.filter(s => isMarvelContent(s) && watchlist.includes(s.id));
 
   const isEmpty = savedMovies.length === 0 && savedSeries.length === 0 && continueWatching.length === 0;
 

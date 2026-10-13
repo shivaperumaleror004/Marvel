@@ -20,6 +20,10 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onSelect, onWatch }
   const isSaved = isInWatchlist(movie.id);
   const progress = getProgress(movie.id);
 
+  React.useEffect(() => {
+    setImgError(false);
+  }, [movie.poster]);
+
   const fallbackPoster = 'https://images.unsplash.com/photo-1635863138275-d9b33299680b?q=80&w=800&auto=format&fit=crop';
 
   return (

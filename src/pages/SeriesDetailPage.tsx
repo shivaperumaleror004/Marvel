@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import { Play, Plus, Check, Star, Clock, ArrowLeft, Tv, User, RotateCcw } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Play, Plus, Check, Clock, ArrowLeft, Tv, User, RotateCcw } from 'lucide-react';
 import { Series, Episode } from '../types';
 import { PhaseBadge } from '../components/ui/PhaseBadge';
 import { RatingBadge } from '../components/ui/RatingBadge';
 import { useWatchlist } from '../hooks/useWatchlist';
 import { useWatchProgress } from '../hooks/useWatchProgress';
 import { PageTransition } from '../components/ui/PageTransition';
+import { useMedia } from '../context/MediaContext';
+import { enrichSeasonEpisodes, FALLBACK_POSTER, FALLBACK_BACKDROP, FALLBACK_STILL, FALLBACK_AVATAR } from '../services/tmdb';
 
 interface SeriesDetailPageProps {
   series: Series;
@@ -14,18 +16,42 @@ interface SeriesDetailPageProps {
 }
 
 export const SeriesDetailPage: React.FC<SeriesDetailPageProps> = ({
-  series,
+  series: initialSeries,
   onBack,
   onWatchEpisode
 }) => {
+  const { enrichSeriesDetail } = useMedia();
+  const [series, setSeries] = useState<Series>(initialSeries);
   const { isInWatchlist, toggleWatchlist } = useWatchlist();
   const { getProgress } = useWatchProgress();
   const [selectedSeasonNumber, setSelectedSeasonNumber] = useState<number>(
-    series.seasons[0]?.seasonNumber || 1
+    initialSeries.seasons[0]?.seasonNumber || 1
   );
+
+  // Sync state if initialSeries changes & fetch deeper details from TMDB
+  useEffect(() => {
+    setSeries(initialSeries);
+    if (initialSeries.tmdbId) {
+      enrichSeriesDetail(initialSeries).then(enriched => {
+        setSeries(enriched);
+      });
+    }
+  }, [initialSeries, enrichSeriesDetail]);
 
   const isSaved = isInWatchlist(series.id);
   const selectedSeason = series.seasons.find(s => s.seasonNumber === selectedSeasonNumber) || series.seasons[0];
+
+  // Fetch live TMDB episode thumbnails and titles for selected season
+  useEffect(() => {
+    if (series.tmdbId && selectedSeason && selectedSeason.episodes.length > 0) {
+      enrichSeasonEpisodes(series.tmdbId, selectedSeason.seasonNumber, selectedSeason.episodes).then(updatedEps => {
+        setSeries(prev => ({
+          ...prev,
+          seasons: prev.seasons.map(s => (s.seasonNumber === selectedSeason.seasonNumber ? { ...s, episodes: updatedEps } : s))
+        }));
+      });
+    }
+  }, [series.tmdbId, selectedSeason?.seasonNumber]);
 
   const formatTime = (seconds: number) => {
     const m = Math.floor(seconds / 60);
@@ -39,8 +65,9 @@ export const SeriesDetailPage: React.FC<SeriesDetailPageProps> = ({
         {/* Backdrop Header */}
         <div className="relative min-h-[50vh] lg:min-h-[60vh] w-full overflow-hidden">
           <img
-            src={series.backdrop}
+            src={series.backdrop || FALLBACK_BACKDROP}
             alt={series.title}
+            onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_BACKDROP; }}
             className="h-full w-full object-cover object-top opacity-35 filter blur-none"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
@@ -63,8 +90,9 @@ export const SeriesDetailPage: React.FC<SeriesDetailPageProps> = ({
             {/* Poster Left */}
             <div className="w-64 sm:w-80 flex-shrink-0 mx-auto md:mx-0 rounded-2xl overflow-hidden border border-white/20 bg-slate-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
               <img
-                src={series.poster}
+                src={series.poster || FALLBACK_POSTER}
                 alt={series.title}
+                onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_POSTER; }}
                 className="w-full object-cover aspect-[2/3]"
               />
             </div>
@@ -192,11 +220,12 @@ export const SeriesDetailPage: React.FC<SeriesDetailPageProps> = ({
                       onClick={() => onWatchEpisode(series, ep)}
                       className="group cursor-pointer rounded-2xl border border-white/10 bg-slate-900/80 p-4 hover:border-red-600/60 hover:bg-slate-900 transition-all flex flex-col sm:flex-row gap-4 items-start sm:items-center"
                     >
-                      {/* Episode Still / Thumbnail */}
+                      {/* Episode Still / Thumbnail with TMDB image */}
                       <div className="relative aspect-video w-full sm:w-48 flex-shrink-0 overflow-hidden rounded-xl bg-slate-950">
                         <img
-                          src={ep.still}
+                          src={ep.still || FALLBACK_STILL}
                           alt={ep.title}
+                          onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_STILL; }}
                           className="h-full w-full object-cover transition-transform group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -265,16 +294,25 @@ export const SeriesDetailPage: React.FC<SeriesDetailPageProps> = ({
             )}
           </div>
 
-          {/* Cast Grid */}
+          {/* Cast Grid with TMDB Profile Photos */}
           {series.cast.length > 0 && (
             <div className="space-y-4">
               <h3 className="text-xl font-extrabold text-white uppercase tracking-wider">Cast & Creators</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
                 {series.cast.map(c => (
                   <div key={c.name} className="p-3 rounded-xl border border-white/10 bg-slate-900/80 flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-red-400 border border-white/10">
-                      <User className="w-5 h-5" />
-                    </div>
+                    {c.avatar ? (
+                      <img
+                        src={c.avatar}
+                        alt={c.name}
+                        onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_AVATAR; }}
+                        className="h-10 w-10 rounded-full object-cover border border-white/20 flex-shrink-0"
+                      />
+                    ) : (
+                      <div className="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-red-400 border border-white/10 flex-shrink-0">
+                        <User className="w-5 h-5" />
+                      </div>
+                    )}
                     <div className="min-w-0">
                       <h4 className="text-xs font-bold text-white truncate">{c.name}</h4>
                       <p className="text-[11px] font-mono text-gray-400 truncate">{c.role}</p>

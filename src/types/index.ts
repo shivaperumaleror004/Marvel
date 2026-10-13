@@ -1,6 +1,30 @@
-export type Phase = 'Phase 1' | 'Phase 2' | 'Phase 3' | 'Phase 4' | 'Phase 5' | 'Phase 6';
+export type Phase =
+  | 'Phase 1'
+  | 'Phase 2'
+  | 'Phase 3'
+  | 'Phase 4'
+  | 'Phase 5'
+  | 'Phase 6'
+  | 'Defenders'
+  | 'Marvel Television'
+  | 'Legacy'
+  | 'Upcoming';
 
-export type Saga = 'Infinity Saga' | 'Multiverse Saga';
+export type Saga =
+  | 'Infinity Saga'
+  | 'Multiverse Saga'
+  | 'The Defenders Saga'
+  | 'Marvel Television'
+  | 'Multiverse'
+  | 'Upcoming';
+
+export type Continuity =
+  | 'Sacred Timeline'
+  | 'Multiverse'
+  | 'Alternate Timeline'
+  | 'Adjacent Canon';
+
+export type TimelineMediaType = 'movie' | 'series' | 'one-shot' | 'special';
 
 export type WatchProviderType = 'screenscape' | 'custom' | string;
 
@@ -123,18 +147,27 @@ export type Character = {
 export type TimelineNode = {
   id: string;
   title: string;
-  type: 'movie' | 'series';
+  type: TimelineMediaType;
   phase: Phase;
   saga: Saga;
+  continuity: Continuity;
   year: number;
   releaseDate: string;
   releaseOrder: number;
   chronologicalOrder: number;
+  tmdbId?: number;
   poster: string;
   backdrop: string;
   overview: string;
   tagline?: string;
   rating?: number;
+  seasonNumber?: number;
+  timelineNotes?: string;
+  characters?: string[];
+  cast?: CastMember[];
+  relatedTitles?: string[];
+  screenScapeAvailable: boolean;
+  isUpcoming?: boolean;
 };
 
 export type WatchProgress = {

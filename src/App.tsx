@@ -17,11 +17,10 @@ import { MyListPage } from './pages/MyListPage';
 import { SettingsPage } from './pages/SettingsPage';
 
 import { Movie, Series, Episode, Character, TimelineNode, WatchProgress } from './types';
-import { MOVIES_DATA } from './data/movies';
-import { SERIES_DATA } from './data/series';
-import { CHARACTERS_DATA } from './data/characters';
+import { MediaProvider, useMedia } from './context/MediaContext';
 
-export function App() {
+function MarvelHubContent() {
+  const { movies, series: seriesList } = useMedia();
   const [activeTab, setActiveTab] = useState<string>('home');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -100,31 +99,189 @@ export function App() {
   };
 
   const handleSelectTimelineNode = (node: TimelineNode) => {
-    if (node.type === 'movie') {
-      const movie = MOVIES_DATA.find(m => m.id === node.id);
-      if (movie) handleSelectMovie(movie);
+    if (node.type === 'movie' || node.type === 'one-shot' || node.type === 'special') {
+      const movie = movies.find(m => m.id === node.id);
+      if (movie) {
+        handleSelectMovie(movie);
+      } else {
+        // Synthesize movie for detail page
+        handleSelectMovie({
+          id: node.id,
+          title: node.title,
+          year: node.year,
+          releaseDate: node.releaseDate,
+          runtime: 120,
+          overview: node.overview,
+          poster: node.poster,
+          backdrop: node.backdrop,
+          rating: node.rating || 7.5,
+          phase: node.phase,
+          saga: node.saga,
+          genres: ['Action', 'Adventure', 'Sci-Fi'],
+          director: 'Marvel Studios',
+          cast: node.cast || [],
+          characters: node.characters || [],
+          releaseOrder: node.releaseOrder,
+          chronologicalOrder: node.chronologicalOrder,
+          tmdbId: node.tmdbId,
+          watchConfig: {
+            tmdbId: node.tmdbId || 0,
+            type: 'movie',
+            watchProvider: 'screenscape',
+            language: 'eng'
+          }
+        });
+      }
     } else {
-      const series = SERIES_DATA.find(s => s.id === node.id);
-      if (series) handleSelectSeries(series);
+      const series = seriesList.find(s => s.id === node.id);
+      if (series) {
+        handleSelectSeries(series);
+      } else {
+        handleSelectSeries({
+          id: node.id,
+          title: node.title,
+          year: node.year,
+          releaseYear: `${node.year}`,
+          overview: node.overview,
+          poster: node.poster,
+          backdrop: node.backdrop,
+          rating: node.rating || 7.5,
+          phase: node.phase,
+          saga: node.saga,
+          genres: ['Action', 'Adventure', 'Sci-Fi'],
+          creator: 'Marvel Studios',
+          cast: node.cast || [],
+          characters: node.characters || [],
+          releaseOrder: node.releaseOrder,
+          chronologicalOrder: node.chronologicalOrder,
+          tmdbId: node.tmdbId,
+          watchConfig: {
+            tmdbId: node.tmdbId || 0,
+            type: 'tv',
+            watchProvider: 'screenscape',
+            language: 'eng'
+          },
+          seasons: [
+            {
+              seasonNumber: node.seasonNumber || 1,
+              title: `Season ${node.seasonNumber || 1}`,
+              overview: node.overview,
+              poster: node.poster,
+              episodes: [
+                {
+                  id: `${node.id}_s${node.seasonNumber || 1}_e1`,
+                  seasonNumber: node.seasonNumber || 1,
+                  episodeNumber: 1,
+                  title: 'Episode 1',
+                  runtime: 50,
+                  overview: node.overview,
+                  still: node.backdrop,
+                  airDate: node.releaseDate,
+                  episodeWatchConfig: {
+                    season: node.seasonNumber || 1,
+                    episode: 1,
+                    tmdbId: node.tmdbId
+                  }
+                }
+              ]
+            }
+          ]
+        });
+      }
     }
   };
 
   const handleWatchTimelineNode = (node: TimelineNode) => {
-    if (node.type === 'movie') {
-      const movie = MOVIES_DATA.find(m => m.id === node.id);
-      if (movie) handleWatchMovie(movie);
+    if (!node.screenScapeAvailable) return;
+    if (node.type === 'movie' || node.type === 'one-shot' || node.type === 'special') {
+      const movie = movies.find(m => m.id === node.id) || {
+        id: node.id,
+        title: node.title,
+        year: node.year,
+        releaseDate: node.releaseDate,
+        runtime: 120,
+        overview: node.overview,
+        poster: node.poster,
+        backdrop: node.backdrop,
+        rating: node.rating || 7.5,
+        phase: node.phase,
+        saga: node.saga,
+        genres: ['Action', 'Adventure', 'Sci-Fi'],
+        director: 'Marvel Studios',
+        cast: node.cast || [],
+        characters: node.characters || [],
+        releaseOrder: node.releaseOrder,
+        chronologicalOrder: node.chronologicalOrder,
+        tmdbId: node.tmdbId,
+        watchConfig: {
+          tmdbId: node.tmdbId || 0,
+          type: 'movie',
+          watchProvider: 'screenscape',
+          language: 'eng'
+        }
+      };
+      handleWatchMovie(movie);
     } else {
-      const series = SERIES_DATA.find(s => s.id === node.id);
-      if (series) handleWatchSeries(series);
+      const series = seriesList.find(s => s.id === node.id) || {
+        id: node.id,
+        title: node.title,
+        year: node.year,
+        releaseYear: `${node.year}`,
+        overview: node.overview,
+        poster: node.poster,
+        backdrop: node.backdrop,
+        rating: node.rating || 7.5,
+        phase: node.phase,
+        saga: node.saga,
+        genres: ['Action', 'Adventure', 'Sci-Fi'],
+        creator: 'Marvel Studios',
+        cast: node.cast || [],
+        characters: node.characters || [],
+        releaseOrder: node.releaseOrder,
+        chronologicalOrder: node.chronologicalOrder,
+        tmdbId: node.tmdbId,
+        watchConfig: {
+          tmdbId: node.tmdbId || 0,
+          type: 'tv',
+          watchProvider: 'screenscape',
+          language: 'eng'
+        },
+        seasons: [
+          {
+            seasonNumber: node.seasonNumber || 1,
+            title: `Season ${node.seasonNumber || 1}`,
+            overview: node.overview,
+            poster: node.poster,
+            episodes: [
+              {
+                id: `${node.id}_s${node.seasonNumber || 1}_e1`,
+                seasonNumber: node.seasonNumber || 1,
+                episodeNumber: 1,
+                title: 'Episode 1',
+                runtime: 50,
+                overview: node.overview,
+                still: node.backdrop,
+                airDate: node.releaseDate,
+                episodeWatchConfig: {
+                  season: node.seasonNumber || 1,
+                  episode: 1,
+                  tmdbId: node.tmdbId
+                }
+              }
+            ]
+          }
+        ]
+      };
+      handleWatchSeries(series);
     }
   };
 
   const handleResumeProgress = (progress: WatchProgress) => {
     if (progress.mediaType === 'movie') {
-      const movie = MOVIES_DATA.find(m => m.id === progress.mediaId);
+      const movie = movies.find(m => m.id === progress.mediaId);
       if (movie) handleWatchMovie(movie);
     } else if (progress.mediaType === 'series' && progress.seriesId) {
-      const series = SERIES_DATA.find(s => s.id === progress.seriesId);
+      const series = seriesList.find(s => s.id === progress.seriesId);
       if (series) {
         const episode = series.seasons
           .find(s => s.seasonNumber === progress.seasonNumber)
@@ -269,6 +426,14 @@ export function App() {
       {/* Footer */}
       <Footer />
     </div>
+  );
+}
+
+export function App() {
+  return (
+    <MediaProvider>
+      <MarvelHubContent />
+    </MediaProvider>
   );
 }
 

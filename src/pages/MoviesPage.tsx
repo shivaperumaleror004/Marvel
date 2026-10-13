@@ -1,10 +1,11 @@
 import React, { useState, useMemo } from 'react';
-import { Film, Filter, ArrowUpDown } from 'lucide-react';
-import { MOVIES_DATA } from '../data/movies';
-import { Movie, Phase } from '../types';
+import { Film, ArrowUpDown, Loader2 } from 'lucide-react';
+import { Movie } from '../types';
 import { MovieCard } from '../components/ui/MovieCard';
 import { PageTransition } from '../components/ui/PageTransition';
 import { isMarvelContent } from '../utils/marvelWhitelist';
+import { useMedia } from '../context/MediaContext';
+import { GridSkeleton } from '../components/ui/SkeletonLoader';
 
 interface MoviesPageProps {
   onSelectMovie: (movie: Movie) => void;
@@ -15,11 +16,12 @@ const PHASES = ['All', 'Phase 1', 'Phase 2', 'Phase 3', 'Phase 4', 'Phase 5', 'P
 type SortOption = 'release' | 'chronological' | 'alphabetical' | 'rating';
 
 export const MoviesPage: React.FC<MoviesPageProps> = ({ onSelectMovie, onWatchMovie }) => {
+  const { movies, isLoading } = useMedia();
   const [selectedPhase, setSelectedPhase] = useState<string>('All');
   const [sortBy, setSortBy] = useState<SortOption>('release');
 
   const filteredMovies = useMemo(() => {
-    let result = MOVIES_DATA.filter(isMarvelContent);
+    let result = movies.filter(isMarvelContent);
 
     if (selectedPhase !== 'All') {
       result = result.filter(m => m.phase === selectedPhase);
@@ -34,7 +36,7 @@ export const MoviesPage: React.FC<MoviesPageProps> = ({ onSelectMovie, onWatchMo
     });
 
     return result;
-  }, [selectedPhase, sortBy]);
+  }, [movies, selectedPhase, sortBy]);
 
   return (
     <PageTransition>
@@ -45,12 +47,13 @@ export const MoviesPage: React.FC<MoviesPageProps> = ({ onSelectMovie, onWatchMo
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-red-500 uppercase tracking-widest">
               <Film className="w-4 h-4" />
               <span>THE CINEMATIC ARCHIVE</span>
+              {isLoading && <Loader2 className="w-3.5 h-3.5 animate-spin text-gray-400" />}
             </div>
             <h1 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight mt-1">
               Marvel Movies
             </h1>
             <p className="text-sm text-gray-400 mt-1">
-              Showing {filteredMovies.length} MCU blockbuster films across phases.
+              Showing {filteredMovies.length} MCU blockbuster films loaded with TMDB official imagery & ratings.
             </p>
           </div>
 
@@ -94,16 +97,20 @@ export const MoviesPage: React.FC<MoviesPageProps> = ({ onSelectMovie, onWatchMo
         </div>
 
         {/* Poster Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-6">
-          {filteredMovies.map(movie => (
-            <MovieCard
-              key={movie.id}
-              movie={movie}
-              onSelect={onSelectMovie}
-              onWatch={onWatchMovie}
-            />
-          ))}
-        </div>
+        {filteredMovies.length === 0 && isLoading ? (
+          <GridSkeleton count={10} />
+        ) : (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-6">
+            {filteredMovies.map(movie => (
+              <MovieCard
+                key={movie.id}
+                movie={movie}
+                onSelect={onSelectMovie}
+                onWatch={onWatchMovie}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </PageTransition>
   );

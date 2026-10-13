@@ -20,9 +20,13 @@ export const Hero: React.FC<HeroProps> = ({ movie, onWatch, onSelect }) => {
       {/* Background Image with Dark Cinematic Gradient Overlay & Subtle Parallax */}
       <div className="absolute inset-0 z-0">
         <img
-          src={movie.backdrop}
+          src={movie.backdrop || 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1600&auto=format&fit=crop'}
           alt={movie.title}
           onLoad={() => setImgLoaded(true)}
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1600&auto=format&fit=crop';
+            setImgLoaded(true);
+          }}
           className={`h-full w-full object-cover object-top transition-all duration-1000 transform scale-105 ${
             imgLoaded ? 'opacity-40 filter blur-none' : 'opacity-0 filter blur-lg'
           }`}

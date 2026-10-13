@@ -17,9 +17,9 @@ export const SERIES_DATA: Series[] = [
     releaseOrder: 25,
     chronologicalOrder: 25,
     tagline: 'Loki\'s time has come.',
-    tmdbId: 88396,
+    tmdbId: 84958,
     watchConfig: {
-      tmdbId: 88396,
+      tmdbId: 84958,
       type: 'tv',
       watchProvider: 'screenscape',
       language: 'eng'
@@ -52,7 +52,7 @@ export const SERIES_DATA: Series[] = [
               season: 1,
               episode: 1,
               watchProvider: 'screenscape',
-              tmdbId: 88396
+              tmdbId: 84958
             }
           },
           {
@@ -68,7 +68,7 @@ export const SERIES_DATA: Series[] = [
               season: 1,
               episode: 2,
               watchProvider: 'screenscape',
-              tmdbId: 88396
+              tmdbId: 84958
             }
           },
           {
@@ -84,7 +84,7 @@ export const SERIES_DATA: Series[] = [
               season: 1,
               episode: 6,
               watchProvider: 'screenscape',
-              tmdbId: 88396
+              tmdbId: 84958
             }
           }
         ]
@@ -108,7 +108,7 @@ export const SERIES_DATA: Series[] = [
               season: 2,
               episode: 1,
               watchProvider: 'screenscape',
-              tmdbId: 88396
+              tmdbId: 84958
             }
           },
           {
@@ -124,7 +124,7 @@ export const SERIES_DATA: Series[] = [
               season: 2,
               episode: 6,
               watchProvider: 'screenscape',
-              tmdbId: 88396
+              tmdbId: 84958
             }
           }
         ]

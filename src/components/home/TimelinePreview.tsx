@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Compass, ChevronRight, Play, Film, Tv } from 'lucide-react';
-import { TIMELINE_NODES } from '../../data/timeline';
+import { createTimelineNodes } from '../../data/timeline';
 import { Phase, TimelineNode } from '../../types';
 import { PhaseBadge } from '../ui/PhaseBadge';
+import { useMedia } from '../../context/MediaContext';
 
 interface TimelinePreviewProps {
   onOpenTimelinePage: () => void;
@@ -12,9 +13,11 @@ interface TimelinePreviewProps {
 const PHASES: Phase[] = ['Phase 1', 'Phase 2', 'Phase 3', 'Phase 4', 'Phase 5', 'Phase 6'];
 
 export const TimelinePreview: React.FC<TimelinePreviewProps> = ({ onOpenTimelinePage, onSelectNode }) => {
+  const { movies, series } = useMedia();
   const [selectedPhase, setSelectedPhase] = useState<Phase>('Phase 1');
 
-  const phaseNodes = TIMELINE_NODES.filter(n => n.phase === selectedPhase);
+  const nodes = createTimelineNodes(movies, series);
+  const phaseNodes = nodes.filter(n => n.phase === selectedPhase);
 
   return (
     <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent via-slate-950/80 to-transparent">
@@ -70,8 +73,9 @@ export const TimelinePreview: React.FC<TimelinePreviewProps> = ({ onOpenTimeline
             >
               <div className="relative aspect-[2/3] w-full overflow-hidden bg-slate-950">
                 <img
-                  src={node.poster}
+                  src={node.poster || 'https://images.unsplash.com/photo-1635863138275-d9b33299680b?q=80&w=800&auto=format&fit=crop'}
                   alt={node.title}
+                  onError={(e) => { (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1635863138275-d9b33299680b?q=80&w=800&auto=format&fit=crop'; }}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
 

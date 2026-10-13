@@ -1,13 +1,15 @@
-import React from 'react';
-import { Play, Plus, Check, Star, Clock, User, ArrowLeft, ArrowRight, Shield } from 'lucide-react';
+
+import React, { useEffect, useState } from 'react';
+import { Play, Plus, Check, Clock, User, ArrowLeft, Shield } from 'lucide-react';
 import { Movie, Character } from '../types';
 import { PhaseBadge } from '../components/ui/PhaseBadge';
 import { RatingBadge } from '../components/ui/RatingBadge';
 import { useWatchlist } from '../hooks/useWatchlist';
 import { PageTransition } from '../components/ui/PageTransition';
-import { MOVIES_DATA } from '../data/movies';
 import { CHARACTERS_DATA } from '../data/characters';
 import { MovieCard } from '../components/ui/MovieCard';
+import { useMedia } from '../context/MediaContext';
+import { FALLBACK_POSTER, FALLBACK_BACKDROP, FALLBACK_AVATAR } from '../services/tmdb';
 
 interface MovieDetailPageProps {
   movie: Movie;
@@ -18,24 +20,36 @@ interface MovieDetailPageProps {
 }
 
 export const MovieDetailPage: React.FC<MovieDetailPageProps> = ({
-  movie,
+  movie: initialMovie,
   onBack,
   onWatch,
   onSelectMovie,
   onSelectCharacter
 }) => {
+  const { movies, enrichMovieDetail } = useMedia();
+  const [movie, setMovie] = useState<Movie>(initialMovie);
   const { isInWatchlist, toggleWatchlist } = useWatchlist();
   const isSaved = isInWatchlist(movie.id);
 
-  // MCU Timeline connections (Prev, Current, Next)
-  const prevMovie = MOVIES_DATA.find(m => m.releaseOrder === movie.releaseOrder - 1);
-  const nextMovie = MOVIES_DATA.find(m => m.releaseOrder === movie.releaseOrder + 1);
+  // Sync state if props change and fetch deeper TMDB details (credits, trailer)
+  useEffect(() => {
+    setMovie(initialMovie);
+    if (initialMovie.tmdbId) {
+      enrichMovieDetail(initialMovie).then(enriched => {
+        setMovie(enriched);
+      });
+    }
+  }, [initialMovie, enrichMovieDetail]);
+
+  // MCU Timeline connections (Prev, Current, Next) using enriched movies
+  const prevMovie = movies.find(m => m.releaseOrder === movie.releaseOrder - 1);
+  const nextMovie = movies.find(m => m.releaseOrder === movie.releaseOrder + 1);
 
   // Related characters
   const relatedChars = CHARACTERS_DATA.filter(c => movie.characters.includes(c.id));
 
   // Related movies in same phase
-  const relatedMovies = MOVIES_DATA.filter(m => m.phase === movie.phase && m.id !== movie.id).slice(0, 4);
+  const relatedMovies = movies.filter(m => m.phase === movie.phase && m.id !== movie.id).slice(0, 4);
 
   return (
     <PageTransition>
@@ -43,8 +57,9 @@ export const MovieDetailPage: React.FC<MovieDetailPageProps> = ({
         {/* Backdrop Container */}
         <div className="relative min-h-[50vh] lg:min-h-[60vh] w-full overflow-hidden">
           <img
-            src={movie.backdrop}
+            src={movie.backdrop || FALLBACK_BACKDROP}
             alt={movie.title}
+            onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_BACKDROP; }}
             className="h-full w-full object-cover object-top opacity-35 filter blur-none"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
@@ -67,8 +82,9 @@ export const MovieDetailPage: React.FC<MovieDetailPageProps> = ({
             {/* Poster Left */}
             <div className="w-64 sm:w-80 flex-shrink-0 mx-auto md:mx-0 rounded-2xl overflow-hidden border border-white/20 bg-slate-900 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
               <img
-                src={movie.poster}
+                src={movie.poster || FALLBACK_POSTER}
                 alt={movie.title}
+                onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_POSTER; }}
                 className="w-full object-cover aspect-[2/3]"
               />
             </div>
@@ -173,7 +189,12 @@ export const MovieDetailPage: React.FC<MovieDetailPageProps> = ({
                   onClick={() => onSelectMovie(prevMovie)}
                   className="group cursor-pointer p-4 rounded-xl border border-white/10 bg-slate-950/80 hover:border-red-600/50 transition-all flex items-center gap-3"
                 >
-                  <img src={prevMovie.poster} alt={prevMovie.title} className="h-14 w-10 rounded object-cover" />
+                  <img
+                    src={prevMovie.poster || FALLBACK_POSTER}
+                    alt={prevMovie.title}
+                    onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_POSTER; }}
+                    className="h-14 w-10 rounded object-cover"
+                  />
                   <div className="flex-1 min-w-0">
                     <span className="text-[10px] font-mono text-gray-400 uppercase">PREVIOUS FILM</span>
                     <h4 className="text-xs font-bold text-white truncate group-hover:text-red-400">{prevMovie.title}</h4>
@@ -188,7 +209,12 @@ export const MovieDetailPage: React.FC<MovieDetailPageProps> = ({
 
               {/* Current Movie Node */}
               <div className="p-4 rounded-xl border-2 border-red-600 bg-red-950/40 shadow-[0_0_20px_rgba(230,36,41,0.3)] flex items-center gap-3">
-                <img src={movie.poster} alt={movie.title} className="h-14 w-10 rounded object-cover" />
+                <img
+                  src={movie.poster || FALLBACK_POSTER}
+                  alt={movie.title}
+                  onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_POSTER; }}
+                  className="h-14 w-10 rounded object-cover"
+                />
                 <div className="flex-1 min-w-0">
                   <span className="text-[10px] font-mono text-red-400 font-bold uppercase">YOU ARE HERE</span>
                   <h4 className="text-xs font-bold text-white truncate">{movie.title}</h4>
@@ -202,7 +228,12 @@ export const MovieDetailPage: React.FC<MovieDetailPageProps> = ({
                   onClick={() => onSelectMovie(nextMovie)}
                   className="group cursor-pointer p-4 rounded-xl border border-white/10 bg-slate-950/80 hover:border-red-600/50 transition-all flex items-center gap-3"
                 >
-                  <img src={nextMovie.poster} alt={nextMovie.title} className="h-14 w-10 rounded object-cover" />
+                  <img
+                    src={nextMovie.poster || FALLBACK_POSTER}
+                    alt={nextMovie.title}
+                    onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_POSTER; }}
+                    className="h-14 w-10 rounded object-cover"
+                  />
                   <div className="flex-1 min-w-0">
                     <span className="text-[10px] font-mono text-gray-400 uppercase">NEXT FILM</span>
                     <h4 className="text-xs font-bold text-white truncate group-hover:text-red-400">{nextMovie.title}</h4>
@@ -217,16 +248,25 @@ export const MovieDetailPage: React.FC<MovieDetailPageProps> = ({
             </div>
           </div>
 
-          {/* Cast & Crew Grid */}
+          {/* Cast & Crew Grid with TMDB Profile Photos */}
           {movie.cast.length > 0 && (
             <div className="space-y-4">
               <h3 className="text-xl font-extrabold text-white uppercase tracking-wider">Featured Cast</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
                 {movie.cast.map(c => (
                   <div key={c.name} className="p-3 rounded-xl border border-white/10 bg-slate-900/80 flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-red-400 border border-white/10">
-                      <User className="w-5 h-5" />
-                    </div>
+                    {c.avatar ? (
+                      <img
+                        src={c.avatar}
+                        alt={c.name}
+                        onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_AVATAR; }}
+                        className="h-10 w-10 rounded-full object-cover border border-white/20 flex-shrink-0"
+                      />
+                    ) : (
+                      <div className="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-red-400 border border-white/10 flex-shrink-0">
+                        <User className="w-5 h-5" />
+                      </div>
+                    )}
                     <div className="min-w-0">
                       <h4 className="text-xs font-bold text-white truncate">{c.name}</h4>
                       <p className="text-[11px] font-mono text-gray-400 truncate">{c.role}</p>
@@ -248,7 +288,12 @@ export const MovieDetailPage: React.FC<MovieDetailPageProps> = ({
                     onClick={() => onSelectCharacter && onSelectCharacter(char)}
                     className="group cursor-pointer p-3 rounded-xl border border-white/10 bg-slate-900/80 hover:border-red-600/50 transition-all flex items-center gap-3"
                   >
-                    <img src={char.portrait} alt={char.name} className="h-12 w-12 rounded-full object-cover border border-red-600/40" />
+                    <img
+                      src={char.portrait || FALLBACK_AVATAR}
+                      alt={char.name}
+                      onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_AVATAR; }}
+                      className="h-12 w-12 rounded-full object-cover border border-red-600/40"
+                    />
                     <div className="min-w-0">
                       <h4 className="text-xs font-bold text-white uppercase truncate group-hover:text-red-400">{char.alias}</h4>
                       <p className="text-[10px] font-mono text-gray-400 truncate">{char.name}</p>

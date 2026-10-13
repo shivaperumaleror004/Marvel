@@ -1,10 +1,11 @@
 import React, { useState, useMemo } from 'react';
-import { Tv, ArrowUpDown } from 'lucide-react';
-import { SERIES_DATA } from '../data/series';
+import { Tv, ArrowUpDown, Loader2 } from 'lucide-react';
 import { Series } from '../types';
 import { SeriesCard } from '../components/ui/SeriesCard';
 import { PageTransition } from '../components/ui/PageTransition';
 import { isMarvelContent } from '../utils/marvelWhitelist';
+import { useMedia } from '../context/MediaContext';
+import { GridSkeleton } from '../components/ui/SkeletonLoader';
 
 interface SeriesPageProps {
   onSelectSeries: (series: Series) => void;
@@ -15,11 +16,12 @@ const PHASES = ['All', 'Phase 4', 'Phase 5', 'Phase 6'];
 type SortOption = 'release' | 'alphabetical' | 'rating';
 
 export const SeriesPage: React.FC<SeriesPageProps> = ({ onSelectSeries, onWatchSeries }) => {
+  const { series: seriesList, isLoading } = useMedia();
   const [selectedPhase, setSelectedPhase] = useState<string>('All');
   const [sortBy, setSortBy] = useState<SortOption>('release');
 
   const filteredSeries = useMemo(() => {
-    let result = SERIES_DATA.filter(isMarvelContent);
+    let result = seriesList.filter(isMarvelContent);
 
     if (selectedPhase !== 'All') {
       result = result.filter(s => s.phase === selectedPhase);
@@ -33,7 +35,7 @@ export const SeriesPage: React.FC<SeriesPageProps> = ({ onSelectSeries, onWatchS
     });
 
     return result;
-  }, [selectedPhase, sortBy]);
+  }, [seriesList, selectedPhase, sortBy]);
 
   return (
     <PageTransition>
@@ -44,12 +46,13 @@ export const SeriesPage: React.FC<SeriesPageProps> = ({ onSelectSeries, onWatchS
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-red-500 uppercase tracking-widest">
               <Tv className="w-4 h-4" />
               <span>THE TELEVISION ARCHIVE</span>
+              {isLoading && <Loader2 className="w-3.5 h-3.5 animate-spin text-gray-400" />}
             </div>
             <h1 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight mt-1">
               Marvel Series
             </h1>
             <p className="text-sm text-gray-400 mt-1">
-              Explore {filteredSeries.length} Marvel original television series across the Multiverse Saga.
+              Explore {filteredSeries.length} Marvel original television series loaded with TMDB official imagery & ratings.
             </p>
           </div>
 
@@ -92,16 +95,20 @@ export const SeriesPage: React.FC<SeriesPageProps> = ({ onSelectSeries, onWatchS
         </div>
 
         {/* Series Poster Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-6">
-          {filteredSeries.map(series => (
-            <SeriesCard
-              key={series.id}
-              series={series}
-              onSelect={onSelectSeries}
-              onWatch={onWatchSeries}
-            />
-          ))}
-        </div>
+        {filteredSeries.length === 0 && isLoading ? (
+          <GridSkeleton count={8} />
+        ) : (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-6">
+            {filteredSeries.map(series => (
+              <SeriesCard
+                key={series.id}
+                series={series}
+                onSelect={onSelectSeries}
+                onWatch={onWatchSeries}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </PageTransition>
   );
