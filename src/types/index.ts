@@ -80,7 +80,8 @@ export type UniverseId =
   | 'earth-828038'     // Retro-60s Alternate Universe (Fantastic Four: First Steps)
   | 'standalone-marvel'// Standalone Marvel Universe
   | 'marvel-legacy-tv' // Agents of S.H.I.E.L.D., Inhumans, Runaways, Cloak & Dagger, Legion, The Gifted
-  | 'multiverse';
+  | 'multiverse'
+  | (string & {});
 
 export interface StudioInfo {
   id: StudioId;
@@ -133,7 +134,7 @@ export type Movie = {
   universe?: string;
   universeId?: UniverseId;
   universeDesignation?: string;
-  movieType?: 'live-action' | 'animation' | 'short' | 'special';
+  movieType?: 'live-action' | 'animation' | 'short' | 'special' | 'tv-movie';
   mcuRelationship?: 'canon-mcu' | 'multiverse-crossover' | 'non-mcu' | 'legacy' | 'sony-collaboration';
   isAnimation?: boolean;
   isMcu?: boolean;
@@ -171,7 +172,7 @@ export type Season = {
   seasonNumber: number;
   title: string;
   overview: string;
-  poster: string;
+  poster?: string;
   episodes: Episode[];
   episodeCount?: number;
 };
@@ -260,7 +261,7 @@ export type TimelineNode = {
   universe?: string;
   universeId?: UniverseId;
   universeDesignation?: string;
-  movieType?: 'live-action' | 'animation' | 'short' | 'special';
+  movieType?: 'live-action' | 'animation' | 'short' | 'special' | 'tv-movie';
   mcuRelationship?: 'canon-mcu' | 'multiverse-crossover' | 'non-mcu' | 'legacy' | 'sony-collaboration';
 };
 

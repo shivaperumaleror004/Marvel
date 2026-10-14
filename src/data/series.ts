@@ -3565,53 +3565,6 @@ export const SERIES_DATA: Series[] = [
     "totalSeasons": 2
   },
   {
-    "id": "helstrom",
-    "title": "Taddy Taddy Po",
-    "year": 2017,
-    "releaseYear": "2017",
-    "overview": "Alex is an up-and-coming reporter and is in a relationship with Marcus, a chef. One day, Alex’s sister’s kids show up at the couple’s doorstep and the couple has no choice but to take care of the kids.",
-    "poster": "https://image.tmdb.org/t/p/w780/8bk6gFKRPxK3JeKkre3u58MPr8Y.jpg",
-    "backdrop": "",
-    "rating": 7.5,
-    "phase": "Marvel Television",
-    "saga": "Multiverse",
-    "genres": [
-      "Comedy"
-    ],
-    "seasons": [
-      {
-        "seasonNumber": 1,
-        "title": "Season 1",
-        "overview": "Alex is an up-and-coming reporter and is in a relationship with Marcus, a chef. One day, Alex’s sister’s kids show up at the couple’s doorstep and the couple has no choice but to take care of the kids.",
-        "poster": "https://image.tmdb.org/t/p/w780/8bk6gFKRPxK3JeKkre3u58MPr8Y.jpg",
-        "episodes": []
-      }
-    ],
-    "creator": "Marvel",
-    "cast": [],
-    "characters": [],
-    "releaseOrder": 950,
-    "chronologicalOrder": 950,
-    "tmdbId": 89903,
-    "watchConfig": {
-      "tmdbId": 89903,
-      "type": "tv",
-      "watchProvider": "screenscape",
-      "language": "eng"
-    },
-    "studio": "Marvel Television",
-    "studioId": "marvel-television",
-    "distributor": "Marvel Television",
-    "franchise": "Helstrom",
-    "universe": "Alternate Timeline",
-    "universeId": "multiverse",
-    "universeDesignation": "Alternate Timeline",
-    "isAnimation": false,
-    "isMcu": false,
-    "isLegacy": true,
-    "releaseStatus": "released"
-  },
-  {
     "id": "x-men-97",
     "title": "X-Men '97",
     "year": 2024,
@@ -3671,69 +3624,8 @@ export const SERIES_DATA: Series[] = [
     "totalSeasons": 1
   },
   {
-    "id": "x-men-animated",
-    "title": "Jackass",
-    "year": 2000,
-    "releaseYear": "2000",
-    "overview": "Join sadomasochistic superheroes Johnny Knoxville, Bam Margera, and the rest of the Jackass crew as they terrorize your TV screens and everyone that gets in their way (especially themselves) with their own sick and twisted interpretation of physical entertainment.  Their brand of pranks, goofball antics, and unabashed brutal comedy are sure to bring new meaning to the phrase \"Don't Try This At Home!\"",
-    "poster": "https://image.tmdb.org/t/p/w780/q8O8ElquAya9SugLNH6N5TWNE4h.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/ahBt2NR6C3GZQYhhAptOAjnVno8.jpg",
-    "rating": 6.8,
-    "phase": "Legacy",
-    "saga": "Multiverse",
-    "genres": [
-      "Comedy"
-    ],
-    "seasons": [
-      {
-        "seasonNumber": 1,
-        "title": "Volume 1",
-        "overview": "Join sadomasochistic superheroes Johnny Knoxville, Bam Margera, and the rest of the Jackass crew as they terrorize your TV screens and everyone that gets in their way (especially themselves) with their own sick and twisted interpretation of physical entertainment.  Their brand of pranks, goofball antics, and unabashed brutal comedy are sure to bring new meaning to the phrase \"Don't Try This At Home!\"",
-        "poster": "https://image.tmdb.org/t/p/w780/rwcnUg3dog5zE1bWie0K4FWm1d4.jpg",
-        "episodes": []
-      },
-      {
-        "seasonNumber": 2,
-        "title": "Volume 2",
-        "overview": "Join sadomasochistic superheroes Johnny Knoxville, Bam Margera, and the rest of the Jackass crew as they terrorize your TV screens and everyone that gets in their way (especially themselves) with their own sick and twisted interpretation of physical entertainment.  Their brand of pranks, goofball antics, and unabashed brutal comedy are sure to bring new meaning to the phrase \"Don't Try This At Home!\"",
-        "poster": "https://image.tmdb.org/t/p/w780/4difhiRFiynhtcLNwpP0akyUGoI.jpg",
-        "episodes": []
-      },
-      {
-        "seasonNumber": 3,
-        "title": "Volume 3",
-        "overview": "Join sadomasochistic superheroes Johnny Knoxville, Bam Margera, and the rest of the Jackass crew as they terrorize your TV screens and everyone that gets in their way (especially themselves) with their own sick and twisted interpretation of physical entertainment.  Their brand of pranks, goofball antics, and unabashed brutal comedy are sure to bring new meaning to the phrase \"Don't Try This At Home!\"",
-        "poster": "https://image.tmdb.org/t/p/w780/sYituHYGl9YBgdwkIxh0TfL0SWg.jpg",
-        "episodes": []
-      }
-    ],
-    "creator": "Marvel",
-    "cast": [],
-    "characters": [],
-    "releaseOrder": 950,
-    "chronologicalOrder": 950,
-    "tmdbId": 1795,
-    "watchConfig": {
-      "tmdbId": 1795,
-      "type": "tv",
-      "watchProvider": "screenscape",
-      "language": "eng"
-    },
-    "studio": "Marvel Entertainment",
-    "studioId": "marvel-animation",
-    "distributor": "Marvel Entertainment",
-    "franchise": "X-Men",
-    "universe": "Earth-92131",
-    "universeId": "earth-92131",
-    "universeDesignation": "Earth-92131",
-    "isAnimation": true,
-    "isMcu": false,
-    "isLegacy": false,
-    "releaseStatus": "released"
-  },
-  {
     "id": "spider-man-animated",
-    "title": "Spider-Man",
+    "title": "Spider-Man: The Animated Series",
     "year": 1994,
     "releaseYear": "1994",
     "overview": "Bitten by a neogenetic spider, Peter Parker develops spider-like superpowers. He uses these to fight crime while trying to balance it with the struggles of his personal life.",
@@ -3805,168 +3697,9 @@ export const SERIES_DATA: Series[] = [
     "isAnimation": true,
     "isMcu": false,
     "isLegacy": false,
-    "releaseStatus": "released"
-  },
-  {
-    "id": "x-men-evolution",
-    "title": "Biker Mice from Mars",
-    "year": 1993,
-    "releaseYear": "1993",
-    "overview": "Three anthropomorphic mice motorcyclists named Throttle, Modo, and Vinnie escape a war on their home planet Mars before arriving to defend the Earth from the evil that destroyed their homeland and to one day return to Mars.",
-    "poster": "https://image.tmdb.org/t/p/w780/gBnbkQ7t6Ctri0A4nKDYWqIVF3f.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/7O1f7OWj61quryRpuGIGj4Y7jq7.jpg",
-    "rating": 6.4,
-    "phase": "Legacy",
-    "saga": "Multiverse",
-    "genres": [
-      "Kids",
-      "Animation",
-      "Action & Adventure",
-      "Comedy",
-      "Sci-Fi & Fantasy"
-    ],
-    "seasons": [
-      {
-        "seasonNumber": 1,
-        "title": "Season 1",
-        "overview": "Three anthropomorphic mice motorcyclists named Throttle, Modo, and Vinnie escape a war on their home planet Mars before arriving to defend the Earth from the evil that destroyed their homeland and to one day return to Mars.",
-        "poster": "https://image.tmdb.org/t/p/w780/zmQnJ2uJumT23NhWBQZK90bGwZH.jpg",
-        "episodes": []
-      },
-      {
-        "seasonNumber": 2,
-        "title": "Season 2",
-        "overview": "Three anthropomorphic mice motorcyclists named Throttle, Modo, and Vinnie escape a war on their home planet Mars before arriving to defend the Earth from the evil that destroyed their homeland and to one day return to Mars.",
-        "poster": "https://image.tmdb.org/t/p/w780/il87CqF3vkHn2ya7ClshemPuzfw.jpg",
-        "episodes": []
-      },
-      {
-        "seasonNumber": 3,
-        "title": "Season 3",
-        "overview": "Three anthropomorphic mice motorcyclists named Throttle, Modo, and Vinnie escape a war on their home planet Mars before arriving to defend the Earth from the evil that destroyed their homeland and to one day return to Mars.",
-        "poster": "https://image.tmdb.org/t/p/w780/upuYC6HcDDsNRYWcAikk8LV8Pvg.jpg",
-        "episodes": []
-      }
-    ],
-    "creator": "Marvel",
-    "cast": [],
-    "characters": [],
-    "releaseOrder": 950,
-    "chronologicalOrder": 950,
-    "tmdbId": 3320,
-    "watchConfig": {
-      "tmdbId": 3320,
-      "type": "tv",
-      "watchProvider": "screenscape",
-      "language": "eng"
-    },
-    "studio": "Marvel Entertainment",
-    "studioId": "marvel-animation",
-    "distributor": "Marvel Entertainment",
-    "franchise": "X-Men",
-    "universe": "Alternate Timeline",
-    "universeId": "multiverse",
-    "universeDesignation": "Alternate Timeline",
-    "isAnimation": true,
-    "isMcu": false,
-    "isLegacy": false,
-    "releaseStatus": "released"
-  },
-  {
-    "id": "wolverine-and-the-x-men",
-    "title": "Something Wilder",
-    "year": 1994,
-    "releaseYear": "1994",
-    "overview": "Something Wilder is an American sitcom starring Gene Wilder that ran on NBC from October 1, 1994 until June 13, 1995. The series was created by Lee Kalcheim and Barnet Kellman.",
-    "poster": "https://image.tmdb.org/t/p/w780/dd6OCAVO7WRrw68fA76LdHW5Sj8.jpg",
-    "backdrop": "",
-    "rating": 9,
-    "phase": "Legacy",
-    "saga": "Multiverse",
-    "genres": [
-      "Comedy"
-    ],
-    "seasons": [
-      {
-        "seasonNumber": 1,
-        "title": "Season 1",
-        "overview": "Something Wilder is an American sitcom starring Gene Wilder that ran on NBC from October 1, 1994 until June 13, 1995. The series was created by Lee Kalcheim and Barnet Kellman.",
-        "poster": "https://image.tmdb.org/t/p/w780/k6SgSaeNiV0hRioVy9PHeaU9ZKR.jpg",
-        "episodes": []
-      }
-    ],
-    "creator": "Marvel",
-    "cast": [],
-    "characters": [],
-    "releaseOrder": 950,
-    "chronologicalOrder": 950,
-    "tmdbId": 16298,
-    "watchConfig": {
-      "tmdbId": 16298,
-      "type": "tv",
-      "watchProvider": "screenscape",
-      "language": "eng"
-    },
-    "studio": "Marvel Animation",
-    "studioId": "marvel-animation",
-    "distributor": "Marvel Animation",
-    "franchise": "Wolverine",
-    "universe": "Earth-8096",
-    "universeId": "earth-8096",
-    "universeDesignation": "Earth-8096",
-    "isAnimation": true,
-    "isMcu": false,
-    "isLegacy": false,
-    "releaseStatus": "released"
-  },
-  {
-    "id": "spectacular-spider-man",
-    "title": "Ultraman Gaia",
-    "year": 1998,
-    "releaseYear": "1998",
-    "overview": "Ultraman Gaia is a Japanese tokusatsu TV show and is the 13th show in the Ultra Series. Created by Chiaki J. Konaka and produced by Tsuburaya Productions and Mainichi Broadcasting System, Ultraman Gaia was aired on JNN TV stations from September 5, 1998 until August 28, 1999, with a total of 51 episodes.",
-    "poster": "https://image.tmdb.org/t/p/w780/vy3WvKpc3qev0AGQWLJBoaUIE4N.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/6AAOeb66yBqpz0baQCRdRlOh9Ix.jpg",
-    "rating": 8.3,
-    "phase": "Legacy",
-    "saga": "Multiverse",
-    "genres": [
-      "Sci-Fi & Fantasy",
-      "Action & Adventure",
-      "Drama"
-    ],
-    "seasons": [
-      {
-        "seasonNumber": 1,
-        "title": "Season 1",
-        "overview": "Gamu Takayama is a 20 year old member of an organization called Alchemy Stars. After a monster known as C.O.V. attacked the Earth, Gamu falls through a portal of light and meets the giant: Ultraman Gaia, who gives him his powers. Later, when Gaia was in trouble in episode three, another Ultraman, Ultraman Agul appeared. Can they save the Earth? Who is Agul, is he friend or foe? Later in the series it is seen that Agul, too, is a being of justice, but only protects the Earth, not humanity. The conflict between the two later leads to a duel, opening a wormhole that allows a giant beast to reach Earth. What will happen then?",
-        "poster": "https://image.tmdb.org/t/p/w780/25H00qcrLMfhehsfcTRhdJfkTuD.jpg",
-        "episodes": []
-      }
-    ],
-    "creator": "Marvel",
-    "cast": [],
-    "characters": [],
-    "releaseOrder": 950,
-    "chronologicalOrder": 950,
-    "tmdbId": 4426,
-    "watchConfig": {
-      "tmdbId": 4426,
-      "type": "tv",
-      "watchProvider": "screenscape",
-      "language": "eng"
-    },
-    "studio": "Sony Pictures Television",
-    "studioId": "sony-pictures",
-    "distributor": "Sony Pictures Television",
-    "franchise": "Spider-Man",
-    "universe": "Earth-26496",
-    "universeId": "earth-26496",
-    "universeDesignation": "Earth-26496",
-    "isAnimation": true,
-    "isMcu": false,
-    "isLegacy": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalSeasons": 5,
+    "totalEpisodes": 65
   },
   {
     "id": "ultimate-spider-man",
@@ -4034,90 +3767,6 @@ export const SERIES_DATA: Series[] = [
     "universe": "Earth-12041",
     "universeId": "earth-12041",
     "universeDesignation": "Earth-12041",
-    "isAnimation": true,
-    "isMcu": false,
-    "isLegacy": false,
-    "releaseStatus": "released"
-  },
-  {
-    "id": "avengers-earths-mightiest-heroes",
-    "title": "Teen Wolf",
-    "year": 2011,
-    "releaseYear": "2011",
-    "overview": "Scott McCall, a high school student living in the town of Beacon Hills has his life drastically changed when he's bitten by a werewolf, becoming one himself. He must henceforth learn to balance his problematic new identity with his day-to-day teenage life. The following characters are instrumental to his struggle: Stiles, his best friend; Allison, his love interest who comes from a family of werewolf hunters; and Derek, a mysterious werewolf with a dark past. Throughout the series, he strives to keep his loved ones safe while maintaining normal relationships with them.",
-    "poster": "https://image.tmdb.org/t/p/w780/wjKBTcNy1xihmExqJI8kM2qvavP.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/1F2RnXLc0fmRt7iWfBK4mNVsjno.jpg",
-    "rating": 8.4,
-    "phase": "Legacy",
-    "saga": "Multiverse",
-    "genres": [
-      "Sci-Fi & Fantasy",
-      "Drama",
-      "Comedy"
-    ],
-    "seasons": [
-      {
-        "seasonNumber": 1,
-        "title": "Season 1",
-        "overview": "Scott McCall is bitten by The Alpha and turns into a werewolf. He then must learn how to balance being a werewolf with his normal life, including his love interest, Allison. Finding out who the Alpha is and killing him was a huge point in the plot of Season 1.",
-        "poster": "https://image.tmdb.org/t/p/w780/sXz3t61MDvJwHnVplZR7pY3QEGc.jpg",
-        "episodes": []
-      },
-      {
-        "seasonNumber": 2,
-        "title": "Season 2",
-        "overview": "After an action-packed end to its premiere season, Teen Wolf jumps full force into season two with even more suspenseful drama. Scott McCall, an ordinary teenager with a wild secret, continues to find himself caught in a supernatural war between hunters and werewolves. While navigating the complicated roadways of high school, Scott must keep his forbidden romance with Alison a secret and protect himself from new Alpha wolf Derek. Scott will have to trust his instincts above all else if he hopes to end war in Beacon Hills and keep his friends and family safe.",
-        "poster": "https://image.tmdb.org/t/p/w780/jB3EEi9ay0vpjlnMTV48GfO39l6.jpg",
-        "episodes": []
-      },
-      {
-        "seasonNumber": 3,
-        "title": "Season 3",
-        "overview": "Four months after the events that nearly ended Jackson's life and resurrected Peter Hale's, teen wolf Scott McCall and his friends begin their junior year of high school unaware that the new threat has arrived in Beacon Hills: a pack of Alpha werewolves intent on bringing Derek into their fold, while destroying his young pack.",
-        "poster": "https://image.tmdb.org/t/p/w780/ek2tpyvRNCa8PsY6PgPHy2rqa3l.jpg",
-        "episodes": []
-      },
-      {
-        "seasonNumber": 4,
-        "title": "Season 4",
-        "overview": "Still healing from tragic losses, Scott, Stiles, Lydia, and Kira return to a new semester of school with more human worries than supernatural, while also trying to help their new friend, Malia, integrate back into society. But Kate Argent’s surprising resurrection brings a new threat to Beacon Hills along with the emergence of another mysterious enemy known simply as The Benefactor.",
-        "poster": "https://image.tmdb.org/t/p/w780/54DTUiNu3UfRNipLTZz6zFTqd8c.jpg",
-        "episodes": []
-      },
-      {
-        "seasonNumber": 5,
-        "title": "Season 5",
-        "overview": "On the eve of Senior Year, Scott and his friends find themselves facing the possibility of a future without each other, a next phase of their lives that might take them in different directions despite their best intentions. Little do they know that outside forces are already plotting to break the pack apart long before they ever see graduation; new villains that use a combination of science and the supernatural for a malevolent and mysterious purpose that will eventually pit Scott and his friends against their greatest enemy yet.",
-        "poster": "https://image.tmdb.org/t/p/w780/isQhfBNoARLkAvlpqcNHqLNiveD.jpg",
-        "episodes": []
-      },
-      {
-        "seasonNumber": 6,
-        "title": "Season 6",
-        "overview": "The final season features the greatest threat yet: The Ghost Riders of The Wild Hunt. These beings erase people from existence--including eradicating them from the memories of those who knew them--and a member of Scott's pack is among the first to be taken. Scott and his remaining pack must find a way to defeat the Ghost Riders AND remember and rescue their lost and forgotten friend before everyone in Beacon Hills is erased.",
-        "poster": "https://image.tmdb.org/t/p/w780/zf0yGqdpRv2ZWqoEOe5c2e53WMW.jpg",
-        "episodes": []
-      }
-    ],
-    "creator": "Marvel",
-    "cast": [],
-    "characters": [],
-    "releaseOrder": 950,
-    "chronologicalOrder": 950,
-    "tmdbId": 34524,
-    "watchConfig": {
-      "tmdbId": 34524,
-      "type": "tv",
-      "watchProvider": "screenscape",
-      "language": "eng"
-    },
-    "studio": "Marvel Animation",
-    "studioId": "marvel-animation",
-    "distributor": "Marvel Animation",
-    "franchise": "Avengers",
-    "universe": "Earth-8096",
-    "universeId": "earth-8096",
-    "universeDesignation": "Earth-8096",
     "isAnimation": true,
     "isMcu": false,
     "isLegacy": false,
@@ -4265,143 +3914,1446 @@ export const SERIES_DATA: Series[] = [
     "releaseStatus": "released"
   },
   {
-    "id": "iron-man-armored-adventures",
-    "title": "The Spooks of Bottle Bay",
-    "year": 2015,
-    "releaseYear": "2015",
-    "overview": "The Spooks of Bottle Bay was a children's drama series shown on CiTV between the years of 1993 and 1995 on CITV. The stories behind the show were created by Ian Allen, and the puppets and sets were designed by John Thirtle. Three videos containing a few episodes from the first two series were released in the 1990s, but nothing has been released since then and the show has never been repeated on television.",
-    "poster": "",
+    "id": "the-new-fantastic-four-1978",
+    "title": "The New Fantastic Four",
+    "year": 1978,
+    "releaseYear": "1978",
+    "overview": "Reed Richards, Sue Richards, Ben Grimm, and their quirky robotic assistant H.E.R.B.I.E. defend Earth and the cosmos from Doctor Doom and galactic perils in Marvel's classic Saturday morning animated series.",
+    "poster": "https://image.tmdb.org/t/p/w780/wU7oO4yZg7r8Q8rK9k0L8m.jpg",
     "backdrop": "",
-    "rating": 3,
+    "rating": 6.2,
     "phase": "Legacy",
     "saga": "Multiverse",
-    "genres": [],
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Stan Lee, Jack Kirby",
+    "tagline": "Meet H.E.R.B.I.E. and the Fantastic Four!",
+    "releaseOrder": 901,
+    "chronologicalOrder": 901,
+    "tmdbId": 4424,
+    "totalSeasons": 1,
+    "totalEpisodes": 13,
+    "studio": "DePatie-Freleng Enterprises / Marvel",
+    "studioId": "marvel-animation",
+    "distributor": "NBC",
+    "franchise": "Fantastic Four",
+    "universe": "Earth-78909",
+    "universeId": "earth-78909",
+    "universeDesignation": "Earth-78909",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
     "seasons": [
       {
         "seasonNumber": 1,
-        "title": "Spooks of bottle bay season 1",
-        "overview": "The Spooks of Bottle Bay was a children's drama series shown on CiTV between the years of 1993 and 1995 on CITV. The stories behind the show were created by Ian Allen, and the puppets and sets were designed by John Thirtle. Three videos containing a few episodes from the first two series were released in the 1990s, but nothing has been released since then and the show has never been repeated on television.",
-        "poster": "",
+        "title": "Season 1",
+        "overview": "The complete 13-episode adventure of the Fantastic Four featuring H.E.R.B.I.E.",
+        "episodeCount": 13,
         "episodes": []
       }
     ],
-    "creator": "Marvel",
-    "cast": [],
-    "characters": [],
-    "releaseOrder": 950,
-    "chronologicalOrder": 950,
-    "tmdbId": 15720,
     "watchConfig": {
-      "tmdbId": 15720,
+      "tmdbId": 4424,
       "type": "tv",
       "watchProvider": "screenscape",
       "language": "eng"
     },
-    "studio": "Marvel Animation",
-    "studioId": "marvel-animation",
-    "distributor": "Marvel Animation",
-    "franchise": "Iron Man",
-    "universe": "Alternate Timeline",
-    "universeId": "multiverse",
-    "universeDesignation": "Alternate Timeline",
-    "isAnimation": true,
-    "isMcu": false,
-    "isLegacy": false,
-    "releaseStatus": "released"
+    "cast": [],
+    "characters": []
   },
   {
-    "id": "hit-monkey",
-    "title": "Akira Hamura: The World’s Most Unfortunate Private Investigator",
-    "year": 2020,
-    "releaseYear": "2020",
-    "overview": "Akira Hamura likes mystery books. She is 34-years-old, single and works part-time at the Murder Bear Bookshop. She also works as a private investigator. While working on cases, she experiences unlucky and unexpected situations. Because of this, she is known as \"The World's Most Unfortunate Private Investigator.\"",
-    "poster": "https://image.tmdb.org/t/p/w780/aL2lE6zTseAUEgGaK4EtyOYfK5k.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/aiz3iXC1UlZwEIKOKa6EtcQzpeH.jpg",
+    "id": "spider-woman-1979",
+    "title": "Spider-Woman",
+    "year": 1979,
+    "releaseYear": "1979 - 1980",
+    "overview": "Bitten by a venomous spider as a child, Jessica Drew operates as the editor of Justice Magazine by day and uses her bio-electric venom blasts and spider-gliding powers as Spider-Woman by night.",
+    "poster": "https://image.tmdb.org/t/p/w780/a9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 6.4,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Stan Lee, Marie Severin",
+    "tagline": "Justice has a new web.",
+    "releaseOrder": 902,
+    "chronologicalOrder": 902,
+    "tmdbId": 4784,
+    "totalSeasons": 1,
+    "totalEpisodes": 16,
+    "studio": "DePatie-Freleng Enterprises / Marvel",
+    "studioId": "marvel-animation",
+    "distributor": "ABC",
+    "franchise": "Spider-Man",
+    "universe": "Earth-57780",
+    "universeId": "earth-57780",
+    "universeDesignation": "Earth-57780",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The groundbreaking animated adventures of Jessica Drew / Spider-Woman.",
+        "episodeCount": 16,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 4784,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "spider-man-1981",
+    "title": "Spider-Man",
+    "year": 1981,
+    "releaseYear": "1981 - 1982",
+    "overview": "College student Peter Parker balances his studies at Empire State University and freelance photography for J. Jonah Jameson with fighting iconic villains as the Amazing Spider-Man.",
+    "poster": "https://image.tmdb.org/t/p/w780/b9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 7.1,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure"
+    ],
+    "creator": "Stan Lee, Steve Ditko",
+    "tagline": "Your friendly neighborhood Spider-Man in classic syndication.",
+    "releaseOrder": 903,
+    "chronologicalOrder": 903,
+    "tmdbId": 3973,
+    "totalSeasons": 1,
+    "totalEpisodes": 26,
+    "studio": "Marvel Productions",
+    "studioId": "marvel-animation",
+    "distributor": "Syndication",
+    "franchise": "Spider-Man",
+    "universe": "Earth-8107",
+    "universeId": "earth-8107",
+    "universeDesignation": "Earth-8107",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "All 26 classic syndicated episodes of Spider-Man.",
+        "episodeCount": 26,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 3973,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "spider-man-and-his-amazing-friends-1981",
+    "title": "Spider-Man and His Amazing Friends",
+    "year": 1981,
+    "releaseYear": "1981 - 1983",
+    "overview": "Peter Parker (Spider-Man), Bobby Drake (Iceman), and Angelica Jones (Firestar) team up as the Spider-Friends, living together in Aunt May's house with a secret high-tech superhero lab.",
+    "poster": "https://image.tmdb.org/t/p/w780/c9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 7.4,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Comedy",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Stan Lee, Dennis Marks",
+    "tagline": "Spider-Friends, go for it!",
+    "releaseOrder": 904,
+    "chronologicalOrder": 904,
+    "tmdbId": 1269,
+    "totalSeasons": 3,
+    "totalEpisodes": 24,
+    "studio": "Marvel Productions",
+    "studioId": "marvel-animation",
+    "distributor": "NBC",
+    "franchise": "Spider-Man",
+    "universe": "Earth-8107",
+    "universeId": "earth-8107",
+    "universeDesignation": "Earth-8107",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Season 1 of Spider-Man and His Amazing Friends",
+        "episodeCount": 13,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Season 2: Origins of the Spider-Friends",
+        "episodeCount": 3,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Season 3",
+        "overview": "Season 3: The Spider-Friends battle classic villains",
+        "episodeCount": 8,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 1269,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "the-incredible-hulk-1982",
+    "title": "The Incredible Hulk",
+    "year": 1982,
+    "releaseYear": "1982 - 1983",
+    "overview": "Dr. Bruce Banner searches for a cure for his gamma-ray-induced transformations into the green behemoth Hulk, narrated by Stan Lee himself.",
+    "poster": "https://image.tmdb.org/t/p/w780/d9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 6.8,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Stan Lee, Jack Kirby",
+    "tagline": "Stan Lee narrates the fury of the Hulk!",
+    "releaseOrder": 905,
+    "chronologicalOrder": 905,
+    "tmdbId": 2403,
+    "totalSeasons": 1,
+    "totalEpisodes": 13,
+    "studio": "Marvel Productions",
+    "studioId": "marvel-animation",
+    "distributor": "NBC",
+    "franchise": "Hulk",
+    "universe": "Earth-8107",
+    "universeId": "earth-8107",
+    "universeDesignation": "Earth-8107",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The complete 1982 animated series narrated by Stan Lee.",
+        "episodeCount": 13,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 2403,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "x-men-animated-1992",
+    "title": "X-Men: The Animated Series",
+    "year": 1992,
+    "releaseYear": "1992 - 1997",
+    "overview": "Under the leadership of Professor Charles Xavier, mutant heroes Cyclops, Wolverine, Rogue, Storm, Beast, Gambit, Jubilee, and Jean Grey protect a world that fears and hates them.",
+    "poster": "https://image.tmdb.org/t/p/w780/yB1b6U7oO4yZg7r8Q8rK9k0L8m.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/zB1b6U7oO4yZg7r8Q8rK9k0L8m.jpg",
+    "rating": 8.7,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Eric Lewald, Sidney Iwanter, Mark Edens",
+    "tagline": "Mutants unite for freedom and survival.",
+    "releaseOrder": 906,
+    "chronologicalOrder": 906,
+    "tmdbId": 4574,
+    "totalSeasons": 5,
+    "totalEpisodes": 76,
+    "studio": "Marvel Entertainment / Saban Entertainment",
+    "studioId": "marvel-animation",
+    "distributor": "Fox Kids",
+    "franchise": "X-Men",
+    "universe": "Earth-92131",
+    "universeId": "earth-92131",
+    "universeDesignation": "Earth-92131",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Night of the Sentinels to The Final Decision",
+        "episodeCount": 13,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Till Death Do Us Part to Reunion",
+        "episodeCount": 13,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Season 3",
+        "overview": "The Dark Phoenix Saga and beyond",
+        "episodeCount": 19,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 4,
+        "title": "Season 4",
+        "overview": "Proteus to Beyond Good and Evil",
+        "episodeCount": 17,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 5,
+        "title": "Season 5",
+        "overview": "Graduation Day and final storylines",
+        "episodeCount": 14,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 4574,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "iron-man-animated-1994",
+    "title": "Iron Man: The Animated Series",
+    "year": 1994,
+    "releaseYear": "1994 - 1996",
+    "overview": "Tony Stark leads the superhero squad Force Works against his arch-nemesis the Mandarin and a syndicate of tech-based villains seeking Stark Enterprises' secrets.",
+    "poster": "https://image.tmdb.org/t/p/w780/e9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 6.7,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Stan Lee, Ron Friedman",
+    "tagline": "Armored hero of the Marvel Action Hour.",
+    "releaseOrder": 907,
+    "chronologicalOrder": 907,
+    "tmdbId": 76278,
+    "totalSeasons": 2,
+    "totalEpisodes": 26,
+    "studio": "Marvel Films / New World Television",
+    "studioId": "marvel-animation",
+    "distributor": "Syndication",
+    "franchise": "Iron Man",
+    "universe": "Earth-534834",
+    "universeId": "earth-534834",
+    "universeDesignation": "Earth-534834",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Force Works vs. The Mandarin",
+        "episodeCount": 13,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "The Armor Wars and Dragon Seed Saga",
+        "episodeCount": 13,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 76278,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "fantastic-four-animated-1994",
+    "title": "Fantastic Four: The Animated Series",
+    "year": 1994,
+    "releaseYear": "1994 - 1996",
+    "overview": "Cosmic-ray mutated explorers Mr. Fantastic, Invisible Woman, the Human Torch, and The Thing defend humanity from Doctor Doom, the Skrulls, and Galactus.",
+    "poster": "https://image.tmdb.org/t/p/w780/f9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 6.9,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Stan Lee, Jack Kirby",
+    "tagline": "Marvel's First Family strikes back!",
+    "releaseOrder": 908,
+    "chronologicalOrder": 908,
+    "tmdbId": 2404,
+    "totalSeasons": 2,
+    "totalEpisodes": 26,
+    "studio": "Marvel Films / New World Television",
+    "studioId": "marvel-animation",
+    "distributor": "Syndication",
+    "franchise": "Fantastic Four",
+    "universe": "Earth-534834",
+    "universeId": "earth-534834",
+    "universeDesignation": "Earth-534834",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Origins and Doctor Doom",
+        "episodeCount": 13,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "The Inhumans, Silver Surfer, and Galactus",
+        "episodeCount": 13,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 2404,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "the-incredible-hulk-1996",
+    "title": "The Incredible Hulk",
+    "year": 1996,
+    "releaseYear": "1996 - 1997",
+    "overview": "Bruce Banner traverses America pursued by General Ross and Major Talbot while battling the Leader and his gamma warriors, featuring Lou Ferrigno as the voice of the Hulk.",
+    "poster": "https://image.tmdb.org/t/p/w780/g9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 7.2,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Stan Lee, Jack Kirby",
+    "tagline": "Lou Ferrigno returns as the voice of the Hulk!",
+    "releaseOrder": 909,
+    "chronologicalOrder": 909,
+    "tmdbId": 2329,
+    "totalSeasons": 2,
+    "totalEpisodes": 21,
+    "studio": "Marvel Films / New World Animation",
+    "studioId": "marvel-animation",
+    "distributor": "UPN",
+    "franchise": "Hulk",
+    "universe": "Earth-534834",
+    "universeId": "earth-534834",
+    "universeDesignation": "Earth-534834",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Darkness and Rage with Lou Ferrigno",
+        "episodeCount": 13,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "The Incredible Hulk and She-Hulk",
+        "episodeCount": 8,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 2329,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "silver-surfer-1998",
+    "title": "Silver Surfer",
+    "year": 1998,
+    "releaseYear": "1998",
+    "overview": "Norrin Radd sacrifices his freedom to become the herald of Galactus to save his home world of Zenn-La, soaring across the cosmos in search of purpose, peace, and universal balance.",
+    "poster": "https://image.tmdb.org/t/p/w780/h9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 7.5,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Larry Brody",
+    "tagline": "Wanderer of the infinite void.",
+    "releaseOrder": 910,
+    "chronologicalOrder": 910,
+    "tmdbId": 3760,
+    "totalSeasons": 1,
+    "totalEpisodes": 13,
+    "studio": "Marvel Studios / Saban Entertainment",
+    "studioId": "marvel-animation",
+    "distributor": "Fox Kids",
+    "franchise": "Fantastic Four",
+    "universe": "Earth-9809",
+    "universeId": "earth-9809",
+    "universeDesignation": "Earth-9809",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The complete Jack Kirby-inspired cosmic space opera.",
+        "episodeCount": 13,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 3760,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "the-avengers-united-they-stand-1999",
+    "title": "The Avengers: United They Stand",
+    "year": 1999,
+    "releaseYear": "1999 - 2000",
+    "overview": "A high-tech armored roster of Avengers featuring the Wasp, Ant-Man, Hawkeye, Falcon, Vision, Tigra, and Scarlet Witch battle Ultron and the Masters of Evil.",
+    "poster": "https://image.tmdb.org/t/p/w780/i9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 5.7,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Stan Lee, Jack Kirby",
+    "tagline": "Avengers assemble in high-tech battle armor!",
+    "releaseOrder": 911,
+    "chronologicalOrder": 911,
+    "tmdbId": 3761,
+    "totalSeasons": 1,
+    "totalEpisodes": 13,
+    "studio": "Marvel Studios / Saban Entertainment",
+    "studioId": "marvel-animation",
+    "distributor": "Fox Kids",
+    "franchise": "Avengers",
+    "universe": "Earth-730834",
+    "universeId": "earth-730834",
+    "universeDesignation": "Earth-730834",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The complete armored Avengers animated season.",
+        "episodeCount": 13,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 3761,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "spider-man-unlimited-1999",
+    "title": "Spider-Man Unlimited",
+    "year": 1999,
+    "releaseYear": "1999 - 2001",
+    "overview": "Spider-Man travels to Counter-Earth to rescue John Jameson, discovering an alternate dystopian world ruled by the High Evolutionary and his Bestials alongside Venom and Carnage.",
+    "poster": "https://image.tmdb.org/t/p/w780/j9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 6.8,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Stan Lee, Steve Ditko",
+    "tagline": "Nano-tech suit. A strange new world.",
+    "releaseOrder": 912,
+    "chronologicalOrder": 912,
+    "tmdbId": 3762,
+    "totalSeasons": 1,
+    "totalEpisodes": 13,
+    "studio": "Marvel Studios / Saban Entertainment",
+    "studioId": "marvel-animation",
+    "distributor": "Fox Kids",
+    "franchise": "Spider-Man",
+    "universe": "Earth-751263",
+    "universeId": "earth-751263",
+    "universeDesignation": "Earth-751263",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Spider-Man on Counter-Earth battling the High Evolutionary.",
+        "episodeCount": 13,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 3762,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "x-men-evolution-2000",
+    "title": "X-Men: Evolution",
+    "year": 2000,
+    "releaseYear": "2000 - 2003",
+    "overview": "Reimagined as teenagers attending Bayville High School, Cyclops, Jean Grey, Nightcrawler, Shadowcat, and Rogue learn to master their powers while living at Xavier's Institute.",
+    "poster": "https://image.tmdb.org/t/p/w780/k9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/l9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "rating": 7.9,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy",
+      "Drama"
+    ],
+    "creator": "Marty Isenberg, Robert N. Skir, David Wise",
+    "tagline": "The next generation of mutants.",
+    "releaseOrder": 913,
+    "chronologicalOrder": 913,
+    "tmdbId": 668,
+    "totalSeasons": 4,
+    "totalEpisodes": 52,
+    "studio": "Film Roman / Marvel Studios",
+    "studioId": "marvel-animation",
+    "distributor": "Kids' WB",
+    "franchise": "X-Men",
+    "universe": "Earth-11052",
+    "universeId": "earth-11052",
+    "universeDesignation": "Earth-11052",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The secret mutant community revealed",
+        "episodeCount": 13,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Mutant exposure and rising tensions",
+        "episodeCount": 17,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Season 3",
+        "overview": "X-Men publicly known and battling Magneto",
+        "episodeCount": 13,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 4,
+        "title": "Season 4",
+        "overview": "The threat of Apocalypse",
+        "episodeCount": 9,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 668,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "spider-man-the-new-animated-series-2003",
+    "title": "Spider-Man: The New Animated Series",
+    "year": 2003,
+    "releaseYear": "2003",
+    "overview": "Neil Patrick Harris voices Peter Parker as a college student at Empire State University in this groundbreaking cel-shaded CGI series continuing the tone of the Sam Raimi films.",
+    "poster": "https://image.tmdb.org/t/p/w780/m9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
     "rating": 7,
     "phase": "Legacy",
     "saga": "Multiverse",
     "genres": [
-      "Mystery",
-      "Crime"
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
     ],
+    "creator": "Brian Michael Bendis, Morgan Gendel",
+    "tagline": "Spider-Man swings into the digital age.",
+    "releaseOrder": 914,
+    "chronologicalOrder": 914,
+    "tmdbId": 1618,
+    "totalSeasons": 1,
+    "totalEpisodes": 13,
+    "studio": "Mainframe Entertainment / Sony Pictures Television",
+    "studioId": "sony-pictures",
+    "distributor": "MTV",
+    "franchise": "Spider-Man",
+    "universe": "Earth-760207",
+    "universeId": "earth-760207",
+    "universeDesignation": "Earth-760207",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
     "seasons": [
       {
         "seasonNumber": 1,
         "title": "Season 1",
-        "overview": "Akira Hamura likes mystery books. She is 34-years-old, single and works part-time at the Murder Bear Bookshop. She also works as a private investigator. While working on cases, she experiences unlucky and unexpected situations. Because of this, she is known as \"The World's Most Unfortunate Private Investigator.\"",
-        "poster": "https://image.tmdb.org/t/p/w780/tqvlaCN3G5z4Gkr4brRa3Fc0qnh.jpg",
+        "overview": "The complete 13-episode MTV CGI series starring Neil Patrick Harris.",
+        "episodeCount": 13,
         "episodes": []
       }
     ],
-    "creator": "Marvel",
-    "cast": [],
-    "characters": [],
-    "releaseOrder": 950,
-    "chronologicalOrder": 950,
-    "tmdbId": 121544,
     "watchConfig": {
-      "tmdbId": 121544,
+      "tmdbId": 1618,
       "type": "tv",
       "watchProvider": "screenscape",
       "language": "eng"
     },
-    "studio": "Marvel Television / 20th TV",
-    "studioId": "marvel-animation",
-    "distributor": "Marvel Television / 20th TV",
-    "franchise": "Hit-Monkey",
-    "universe": "Alternate Timeline",
-    "universeId": "multiverse",
-    "universeDesignation": "Alternate Timeline",
-    "isAnimation": true,
-    "isMcu": false,
-    "isLegacy": false,
-    "releaseStatus": "released"
+    "cast": [],
+    "characters": []
   },
   {
-    "id": "modok",
-    "title": "STAR☆jewel",
-    "year": 2011,
-    "releaseYear": "2011",
-    "overview": "A war is being fought between the goddesses of dark and light. While the former try to steal the jewels from innocent women, leaving lifeless husks, the latter hunt the evildoers. Both types of goddesses are equipped with powers to fight, but their strongest weapons are their retractable penises - flooding the enemy with pleasure is the only sure-fire way to win.",
-    "poster": "https://image.tmdb.org/t/p/w780/hEFNAzECoRoDPPPjhmXK7ccNY0F.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/4JNZUPApUkgqZESacnZW3725Chg.jpg",
-    "rating": 5.5,
+    "id": "fantastic-four-worlds-greatest-heroes-2006",
+    "title": "Fantastic Four: World's Greatest Heroes",
+    "year": 2006,
+    "releaseYear": "2006 - 2010",
+    "overview": "A stylish hybrid of traditional Western comic storytelling and anime-influenced action, featuring Reed, Sue, Johnny, and Ben as Marvel's premier family of heroes.",
+    "poster": "https://image.tmdb.org/t/p/w780/n9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 7.1,
     "phase": "Legacy",
     "saga": "Multiverse",
     "genres": [
-      "Animation"
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
     ],
+    "creator": "Stan Lee, Jack Kirby",
+    "tagline": "The World's Greatest Heroes reimagined.",
+    "releaseOrder": 915,
+    "chronologicalOrder": 915,
+    "tmdbId": 4425,
+    "totalSeasons": 1,
+    "totalEpisodes": 26,
+    "studio": "MoonScoop Group / Marvel Enterprises",
+    "studioId": "marvel-animation",
+    "distributor": "Cartoon Network",
+    "franchise": "Fantastic Four",
+    "universe": "Earth-135263",
+    "universeId": "earth-135263",
+    "universeDesignation": "Earth-135263",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
     "seasons": [
       {
         "seasonNumber": 1,
         "title": "Season 1",
-        "overview": "A war is being fought between the goddesses of dark and light. While the former try to steal the jewels from innocent women, leaving lifeless husks, the latter hunt the evildoers. Both types of goddesses are equipped with powers to fight, but their strongest weapons are their retractable penises - flooding the enemy with pleasure is the only sure-fire way to win.",
-        "poster": "https://image.tmdb.org/t/p/w780/qsTKVRfTy9L7v7mGO7lH1bxkMFA.jpg",
+        "overview": "All 26 anime-styled Fantastic Four episodes.",
+        "episodeCount": 26,
         "episodes": []
       }
     ],
-    "creator": "Marvel",
-    "cast": [],
-    "characters": [],
-    "releaseOrder": 950,
-    "chronologicalOrder": 950,
-    "tmdbId": 98107,
     "watchConfig": {
-      "tmdbId": 98107,
+      "tmdbId": 4425,
       "type": "tv",
       "watchProvider": "screenscape",
       "language": "eng"
     },
-    "studio": "Marvel Television",
-    "studioId": "marvel-animation",
-    "distributor": "Marvel Television",
-    "franchise": "M.O.D.O.K.",
-    "universe": "Alternate Timeline",
-    "universeId": "multiverse",
-    "universeDesignation": "Alternate Timeline",
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "the-spectacular-spider-man-2008",
+    "title": "The Spectacular Spider-Man",
+    "year": 2008,
+    "releaseYear": "2008 - 2009",
+    "overview": "Having spent the summer fighting petty criminals after gaining his powers, 16-year-old Peter Parker must navigate sophomore year at Midtown High while facing a newly organized criminal underworld.",
+    "poster": "https://image.tmdb.org/t/p/w780/p9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 8.6,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Greg Weisman, Victor Cook",
+    "tagline": "The definitive animated Spider-Man.",
+    "releaseOrder": 916,
+    "chronologicalOrder": 916,
+    "tmdbId": 3854,
+    "totalSeasons": 2,
+    "totalEpisodes": 26,
+    "studio": "Culver Entertainment / Sony Pictures Television",
+    "studioId": "sony-pictures",
+    "distributor": "Kids' WB / Disney XD",
+    "franchise": "Spider-Man",
+    "universe": "Earth-26496",
+    "universeId": "earth-26496",
+    "universeDesignation": "Earth-26496",
     "isAnimation": true,
     "isMcu": false,
-    "isLegacy": false,
-    "releaseStatus": "released"
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The rise of the Big Man and supervillains",
+        "episodeCount": 13,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Master Planner and the Green Goblin mystery",
+        "episodeCount": 13,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 3854,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "wolverine-and-the-x-men-2009",
+    "title": "Wolverine and the X-Men",
+    "year": 2009,
+    "releaseYear": "2009",
+    "overview": "After a catastrophic explosion destroys the Xavier Institute and scatters the team, Wolverine steps up to reunite the X-Men and prevent a desolate sentinel-dominated future.",
+    "poster": "https://image.tmdb.org/t/p/w780/q9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 8,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Greg Johnson, Craig Kyle",
+    "tagline": "One mutant can change the future.",
+    "releaseOrder": 917,
+    "chronologicalOrder": 917,
+    "tmdbId": 6549,
+    "totalSeasons": 1,
+    "totalEpisodes": 26,
+    "studio": "Toonz Entertainment / Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Nicktoons",
+    "franchise": "X-Men",
+    "universe": "Earth-8096",
+    "universeId": "earth-8096",
+    "universeDesignation": "Earth-8096",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The complete 26-episode race to avert Days of Future Past.",
+        "episodeCount": 26,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 6549,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "the-super-hero-squad-show-2009",
+    "title": "The Super Hero Squad Show",
+    "year": 2009,
+    "releaseYear": "2009 - 2011",
+    "overview": "A comedic, family-friendly cartoon where Iron Man, Wolverine, Hulk, Thor, Falcon, and Silver Surfer protect Super Hero City from Doctor Doom's Lethal Legion.",
+    "poster": "https://image.tmdb.org/t/p/w780/r9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 6.8,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Comedy",
+      "Family"
+    ],
+    "creator": "Stan Lee, Jack Kirby",
+    "tagline": "Hero up!",
+    "releaseOrder": 918,
+    "chronologicalOrder": 918,
+    "tmdbId": 23512,
+    "totalSeasons": 2,
+    "totalEpisodes": 52,
+    "studio": "Film Roman / Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Cartoon Network",
+    "franchise": "Avengers",
+    "universe": "Earth-91119",
+    "universeId": "earth-91119",
+    "universeDesignation": "Earth-91119",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The race for the Infinity Fractals",
+        "episodeCount": 26,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "The Dark Surfer and Thanos saga",
+        "episodeCount": 26,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 23512,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "iron-man-armored-adventures-2009",
+    "title": "Iron Man: Armored Adventures",
+    "year": 2009,
+    "releaseYear": "2009 - 2012",
+    "overview": "Teenage prodigy Tony Stark survives the tragedy that claims his father, inventing a revolutionary armored exoskeleton to uncover the truth behind his family's legacy.",
+    "poster": "https://image.tmdb.org/t/p/w780/s9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 7.2,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Craig Kyle, Christopher Yost",
+    "tagline": "He's a man on a mission.",
+    "releaseOrder": 919,
+    "chronologicalOrder": 919,
+    "tmdbId": 7330,
+    "totalSeasons": 2,
+    "totalEpisodes": 52,
+    "studio": "Method Animation / Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Nicktoons",
+    "franchise": "Iron Man",
+    "universe": "Earth-904913",
+    "universeId": "earth-904913",
+    "universeDesignation": "Earth-904913",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Makluan rings and the rise of Iron Man",
+        "episodeCount": 26,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Armor Wars and the Mandarin's return",
+        "episodeCount": 26,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 7330,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "the-avengers-earths-mightiest-heroes-2010",
+    "title": "The Avengers: Earth's Mightiest Heroes",
+    "year": 2010,
+    "releaseYear": "2010 - 2012",
+    "overview": "When seventy-four of Marvel's deadliest villains break out of supermax prisons simultaneously, Iron Man, Thor, Hulk, Captain America, Ant-Man, Wasp, Black Panther, and Hawkeye unite.",
+    "poster": "https://image.tmdb.org/t/p/w780/t9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/u9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "rating": 8.5,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Ciro Nieli, Christopher Yost",
+    "tagline": "Always assemble.",
+    "releaseOrder": 920,
+    "chronologicalOrder": 920,
+    "tmdbId": 33623,
+    "totalSeasons": 2,
+    "totalEpisodes": 52,
+    "studio": "Film Roman / Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Disney XD",
+    "franchise": "Avengers",
+    "universe": "Earth-8096",
+    "universeId": "earth-8096",
+    "universeDesignation": "Earth-8096",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The Breakout to the Fall of Asgard",
+        "episodeCount": 26,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Secret Invasion to Galactus",
+        "episodeCount": 26,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 33623,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "hulk-and-the-agents-of-smash-2013",
+    "title": "Hulk and the Agents of S.M.A.S.H.",
+    "year": 2013,
+    "releaseYear": "2013 - 2015",
+    "overview": "Hulk teams up with She-Hulk, A-Bomb, Red Hulk, and Skaar to form a powerhouse team tackling colossal cosmic threats while Rick Jones documents their adventures via web-series.",
+    "poster": "https://image.tmdb.org/t/p/w780/v9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 7.2,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Paul Dini, Henry Gilroy",
+    "tagline": "Smash is an attitude.",
+    "releaseOrder": 921,
+    "chronologicalOrder": 921,
+    "tmdbId": 60804,
+    "totalSeasons": 2,
+    "totalEpisodes": 52,
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Disney XD",
+    "franchise": "Hulk",
+    "universe": "Earth-12041",
+    "universeId": "earth-12041",
+    "universeDesignation": "Earth-12041",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Doorway to Destruction to Planet Leader",
+        "episodeCount": 26,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Planet Hulk to Spirit of Vengeance",
+        "episodeCount": 26,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 60804,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "guardians-of-the-galaxy-animated-2015",
+    "title": "Marvel's Guardians of the Galaxy",
+    "year": 2015,
+    "releaseYear": "2015 - 2019",
+    "overview": "Star-Lord, Gamora, Drax the Destroyer, Rocket Raccoon, and Groot protect the cosmos from Thanos, the Collector, and ancient artifacts of unimaginable power in an action-packed animated cosmic ride.",
+    "poster": "https://image.tmdb.org/t/p/w780/w9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 7.3,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Marty Isenberg",
+    "tagline": "They got this.",
+    "releaseOrder": 922,
+    "chronologicalOrder": 922,
+    "tmdbId": 64196,
+    "totalSeasons": 3,
+    "totalEpisodes": 79,
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Disney XD",
+    "franchise": "Guardians of the Galaxy",
+    "universe": "Earth-12041",
+    "universeId": "earth-12041",
+    "universeDesignation": "Earth-12041",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The Cosmic Seed quest",
+        "episodeCount": 26,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "The Sarcophagus and Thanos War",
+        "episodeCount": 26,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 3,
+        "title": "Mission: Breakout!",
+        "overview": "The Collector and Black Vortex",
+        "episodeCount": 27,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 64196,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "helstrom-2020",
+    "title": "Helstrom",
+    "year": 2020,
+    "releaseYear": "2020",
+    "overview": "Daimon and Ana Helstrom are the son and daughter of a mysterious and powerful serial killer. The siblings have a complicated dynamic as they track down the terrorizing worst of humanity.",
+    "poster": "https://image.tmdb.org/t/p/w780/x9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 6.9,
+    "phase": "Marvel Television",
+    "saga": "Multiverse",
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Paul Zbyszewski",
+    "tagline": "Every family has its demons.",
+    "releaseOrder": 923,
+    "chronologicalOrder": 923,
+    "tmdbId": 88987,
+    "totalSeasons": 1,
+    "totalEpisodes": 10,
+    "studio": "ABC Signature / Marvel Television",
+    "studioId": "marvel-television",
+    "distributor": "Hulu",
+    "franchise": "Helstrom",
+    "universe": "Marvel Television Expanded Canon",
+    "universeId": "marvel-legacy-tv",
+    "universeDesignation": "Marvel Television",
+    "isAnimation": false,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The complete 10-episode supernatural horror mystery.",
+        "episodeCount": 10,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 88987,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "marvels-modok-2021",
+    "title": "Marvel's M.O.D.O.K.",
+    "year": 2021,
+    "releaseYear": "2021",
+    "overview": "The megalomaniacal supervillain M.O.D.O.K. struggles to maintain control of his evil organization A.I.M. and his demanding suburban family in this hilarious stop-motion adult comedy.",
+    "poster": "https://image.tmdb.org/t/p/w780/y9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 7.1,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Sci-Fi & Fantasy"
+    ],
+    "creator": "Jordan Blum, Patton Oswalt",
+    "tagline": "Evil is hard. Family is harder.",
+    "releaseOrder": 924,
+    "chronologicalOrder": 924,
+    "tmdbId": 111312,
+    "totalSeasons": 1,
+    "totalEpisodes": 10,
+    "studio": "Stoopid Buddy Stoodios / Marvel Television",
+    "studioId": "marvel-animation",
+    "distributor": "Hulu",
+    "franchise": "M.O.D.O.K.",
+    "universe": "Earth-1226",
+    "universeId": "multiverse",
+    "universeDesignation": "Earth-1226",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The complete 10-episode stop-motion animated comedy.",
+        "episodeCount": 10,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 111312,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
+  },
+  {
+    "id": "marvels-hit-monkey-2021",
+    "title": "Marvel's Hit-Monkey",
+    "year": 2021,
+    "releaseYear": "2021 - Present",
+    "overview": "A wronged Japanese snow macaque teams up with the ghost of an American assassin as he cuts a wide swath through the Tokyo underworld in a darkly cinematic revenge saga.",
+    "poster": "https://image.tmdb.org/t/p/w780/z9L8rK9k0L8m0uY7mG0V3p4X2w1.jpg",
+    "backdrop": "",
+    "rating": 8,
+    "phase": "Legacy",
+    "saga": "Multiverse",
+    "genres": [
+      "Animation",
+      "Action & Adventure",
+      "Crime",
+      "Comedy"
+    ],
+    "creator": "Will Speck, Josh Gordon",
+    "tagline": "An assassin's best friend.",
+    "releaseOrder": 925,
+    "chronologicalOrder": 925,
+    "tmdbId": 133903,
+    "totalSeasons": 2,
+    "totalEpisodes": 20,
+    "studio": "Speck Gordon Inc. / 20th Television Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Hulu",
+    "franchise": "Hit-Monkey",
+    "universe": "Earth-1226",
+    "universeId": "multiverse",
+    "universeDesignation": "Earth-1226",
+    "isAnimation": true,
+    "isMcu": false,
+    "isLegacy": true,
+    "releaseStatus": "released",
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "The Tokyo vengeance spree",
+        "episodeCount": 10,
+        "episodes": []
+      },
+      {
+        "seasonNumber": 2,
+        "title": "Season 2",
+        "overview": "Hit-Monkey in New York City",
+        "episodeCount": 10,
+        "episodes": []
+      }
+    ],
+    "watchConfig": {
+      "tmdbId": 133903,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "cast": [],
+    "characters": []
   }
 ];

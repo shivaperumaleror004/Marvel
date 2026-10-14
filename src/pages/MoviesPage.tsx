@@ -38,6 +38,7 @@ type MovieCategory =
   | 'other'
   | 'animation'
   | 'oneshots'
+  | 'hulk'
   | 'sony'
   | 'x-men'
   | 'fantastic-four'
@@ -88,7 +89,9 @@ export const MoviesPage: React.FC<MoviesPageProps> = ({ onSelectMovie, onWatchMo
     } else if (activeCategory === 'animation') {
       result = result.filter(m => m.isAnimation || m.movieType === 'animation' || m.studioId === 'marvel-animation');
     } else if (activeCategory === 'oneshots') {
-      result = result.filter(m => m.movieType === 'short' || m.id.startsWith('one-shot-') || m.id === 'werewolf-by-night' || m.id === 'gotg-holiday-special');
+      result = result.filter(m => m.movieType === 'short' || m.movieType === 'tv-movie' || m.movieType === 'special' || m.id.startsWith('one-shot-') || m.id.includes('hulk-returns') || m.id.includes('trial-of-the-incredible-hulk') || m.id.includes('death-of-the-incredible-hulk') || m.id === 'werewolf-by-night' || m.id === 'gotg-holiday-special');
+    } else if (activeCategory === 'hulk') {
+      result = result.filter(m => m.franchise?.includes('Hulk') || m.id.includes('hulk'));
     } else if (activeCategory === 'sony') {
       result = result.filter(
         m =>
@@ -178,7 +181,8 @@ export const MoviesPage: React.FC<MoviesPageProps> = ({ onSelectMovie, onWatchMo
       mcu: valid.filter(m => m.isMcu && m.movieType !== 'short' && !m.id.startsWith('one-shot-')).length,
       other: valid.filter(m => !m.isMcu && !m.isAnimation && m.movieType !== 'short' && !m.id.startsWith('one-shot-')).length,
       animation: valid.filter(m => m.isAnimation || m.movieType === 'animation' || m.studioId === 'marvel-animation').length,
-      oneshots: valid.filter(m => m.movieType === 'short' || m.id.startsWith('one-shot-') || m.id === 'werewolf-by-night' || m.id === 'gotg-holiday-special').length,
+      oneshots: valid.filter(m => m.movieType === 'short' || m.movieType === 'tv-movie' || m.movieType === 'special' || m.id.startsWith('one-shot-') || m.id.includes('hulk-returns') || m.id.includes('trial-of-the-incredible-hulk') || m.id.includes('death-of-the-incredible-hulk') || m.id === 'werewolf-by-night' || m.id === 'gotg-holiday-special').length,
+      hulk: valid.filter(m => m.franchise?.includes('Hulk') || m.id.includes('hulk')).length,
       sony: valid.filter(m => m.studioId === 'sony-pictures' || m.franchise?.includes('Spider-Man') || m.franchise?.includes('Venom') || m.franchise?.includes('Spider-Verse')).length,
       xmen: valid.filter(m => m.franchise?.includes('X-Men') || m.franchise?.includes('Wolverine') || m.franchise?.includes('Deadpool') || m.id === 'generation-x-1996').length,
       fantasticFour: valid.filter(m => m.franchise?.includes('Fantastic Four')).length,
@@ -288,7 +292,8 @@ export const MoviesPage: React.FC<MoviesPageProps> = ({ onSelectMovie, onWatchMo
             { id: 'mcu', label: 'MCU Movies', count: counts.mcu, icon: Clapperboard },
             { id: 'other', label: 'Other Marvel Movies', count: counts.other, icon: Calendar },
             { id: 'animation', label: 'Animated Marvel Movies', count: counts.animation, icon: Sparkles },
-            { id: 'oneshots', label: 'One-Shots & Specials', count: counts.oneshots, icon: Video },
+            { id: 'oneshots', label: 'TV Movies & Specials', count: counts.oneshots, icon: Video },
+            { id: 'hulk', label: 'Hulk Films', count: counts.hulk, icon: Shield },
             { id: 'sony', label: 'Sony Marvel', count: counts.sony, icon: Sparkles },
             { id: 'x-men', label: 'X-Men & Mutants', count: counts.xmen, icon: Shield },
             { id: 'fantastic-four', label: 'Fantastic Four', count: counts.fantasticFour, icon: Globe },

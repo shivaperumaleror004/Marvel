@@ -3502,75 +3502,6 @@ export const MOVIES_DATA: Movie[] = [
     }
   },
   {
-    "id": "big-hero-6",
-    "title": "Big Hero 6",
-    "year": 2014,
-    "releaseDate": "2014-11-07",
-    "runtime": 102,
-    "overview": "A special bond develops between plus-sized inflatable robot Baymax, and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes.",
-    "poster": "https://image.tmdb.org/t/p/w780/2mxS4wUimwlLmI1xp6QW6NSU361.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/4s2d3xdyqotiVNHTlTlJjrr3q0H.jpg",
-    "rating": 7.7,
-    "genres": [
-      "Adventure",
-      "Family",
-      "Animation",
-      "Action",
-      "Comedy"
-    ],
-    "director": "Don Hall, Chris Williams",
-    "tagline": "Drop everything. Save the world.",
-    "studio": "Walt Disney Animation Studios / Marvel",
-    "studioId": "marvel-animation",
-    "distributor": "Walt Disney Studios Motion Pictures",
-    "franchise": "Big Hero 6",
-    "universe": "San Fransokyo Universe",
-    "universeId": "standalone-marvel",
-    "universeDesignation": "Earth-14123",
-    "movieType": "animation",
-    "mcuRelationship": "legacy",
-    "isMcu": false,
-    "isAnimation": true,
-    "isLegacy": true,
-    "isCollaboration": false,
-    "releaseOrder": 50,
-    "chronologicalOrder": 999,
-    "cast": [
-      {
-        "name": "Scott Adsit",
-        "role": "Baymax (voice)"
-      },
-      {
-        "name": "Ryan Potter",
-        "role": "Hiro Hamada (voice)"
-      },
-      {
-        "name": "Daniel Henney",
-        "role": "Tadashi Hamada (voice)"
-      },
-      {
-        "name": "T.J. Miller",
-        "role": "Fred (voice)"
-      },
-      {
-        "name": "Jamie Chung",
-        "role": "GoGo Tomago (voice)"
-      }
-    ],
-    "characters": [],
-    "tmdbId": 177572,
-    "isUpcoming": false,
-    "isReleased": true,
-    "releaseStatus": "released",
-    "verificationStatus": "verified",
-    "watchConfig": {
-      "tmdbId": 177572,
-      "type": "movie",
-      "watchProvider": "screenscape",
-      "language": "eng"
-    }
-  },
-  {
     "id": "avengers-age-of-ultron",
     "title": "Avengers: Age of Ultron",
     "year": 2015,
@@ -7402,5 +7333,921 @@ export const MOVIES_DATA: Movie[] = [
     },
     "releaseStatus": "released",
     "verificationStatus": "verified"
+  },
+  {
+    "id": "the-incredible-hulk-returns-1988",
+    "title": "The Incredible Hulk Returns",
+    "year": 1988,
+    "releaseDate": "1988-05-22",
+    "runtime": 93,
+    "overview": "Dr. David Banner is on the verge of a cure for his gamma-induced condition when former student Donald Blake arrives with an ancient hammer that summons Thor, the Norse god of thunder. When Banner's life-saving technology is threatened, the two heroes must join forces.",
+    "poster": "https://image.tmdb.org/t/p/w780/kCqT9fV4Yg9B7DqT7p5e3gN4mU3.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/8Z0V1sE3GvQx6uV5H2o8e6e5w4A.jpg",
+    "rating": 6.1,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Science Fiction",
+      "Drama"
+    ],
+    "director": "Nicholas Corea",
+    "tagline": "Together for the first time!",
+    "studio": "Bixby-Brandon Productions / New World Television",
+    "studioId": "marvel-television",
+    "distributor": "NBC",
+    "franchise": "Hulk",
+    "universe": "The Incredible Hulk (1978 Series Universe)",
+    "universeId": "standalone-marvel",
+    "universeDesignation": "Earth-400005",
+    "movieType": "tv-movie",
+    "mcuRelationship": "legacy",
+    "isMcu": false,
+    "isAnimation": false,
+    "isLegacy": true,
+    "isCollaboration": false,
+    "releaseOrder": 3,
+    "chronologicalOrder": 3,
+    "cast": [
+      {
+        "name": "Bill Bixby",
+        "role": "Dr. David Banner"
+      },
+      {
+        "name": "Lou Ferrigno",
+        "role": "The Hulk"
+      },
+      {
+        "name": "Eric Allan Kramer",
+        "role": "Thor"
+      },
+      {
+        "name": "Steve Levitt",
+        "role": "Donald Blake"
+      }
+    ],
+    "characters": [
+      "hulk",
+      "thor"
+    ],
+    "tmdbId": 44379,
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "verificationStatus": "verified",
+    "watchConfig": {
+      "tmdbId": 44379,
+      "type": "movie",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "the-trial-of-the-incredible-hulk-1989",
+    "title": "The Trial of the Incredible Hulk",
+    "year": 1989,
+    "releaseDate": "1989-05-07",
+    "runtime": 100,
+    "overview": "Framed for a subway robbery, Dr. David Banner is defended in court by blind defense attorney Matt Murdock, who secretly battles crime in the streets as the masked vigilante Daredevil. Together, Hulk and Daredevil take on Kingpin Wilson Fisk.",
+    "poster": "https://image.tmdb.org/t/p/w780/jH1t8c5Q8k6R9uY7mG0V3p4X2w1.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/p7Y9k6R9uY7mG0V3p4X2w1.jpg",
+    "rating": 6.2,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Crime",
+      "Drama",
+      "Science Fiction"
+    ],
+    "director": "Bill Bixby",
+    "tagline": "Blind justice meets unstoppable rage.",
+    "studio": "Bixby-Brandon Productions / New World Television",
+    "studioId": "marvel-television",
+    "distributor": "NBC",
+    "franchise": "Hulk",
+    "universe": "The Incredible Hulk (1978 Series Universe)",
+    "universeId": "standalone-marvel",
+    "universeDesignation": "Earth-400005",
+    "movieType": "tv-movie",
+    "mcuRelationship": "legacy",
+    "isMcu": false,
+    "isAnimation": false,
+    "isLegacy": true,
+    "isCollaboration": false,
+    "releaseOrder": 4,
+    "chronologicalOrder": 4,
+    "cast": [
+      {
+        "name": "Bill Bixby",
+        "role": "Dr. David Banner"
+      },
+      {
+        "name": "Lou Ferrigno",
+        "role": "The Hulk"
+      },
+      {
+        "name": "Rex Smith",
+        "role": "Matt Murdock / Daredevil"
+      },
+      {
+        "name": "John Rhys-Davies",
+        "role": "Wilson Fisk / Kingpin"
+      }
+    ],
+    "characters": [
+      "hulk",
+      "daredevil"
+    ],
+    "tmdbId": 39598,
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "verificationStatus": "verified",
+    "watchConfig": {
+      "tmdbId": 39598,
+      "type": "movie",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "the-death-of-the-incredible-hulk-1990",
+    "title": "The Death of the Incredible Hulk",
+    "year": 1990,
+    "releaseDate": "1990-02-18",
+    "runtime": 95,
+    "overview": "Seeking a permanent end to his curse, Dr. David Banner poses as a lab assistant for scientist Dr. Ronald Pratt. When an Eastern European espionage network attempts to weaponize Pratt's research, Banner must make the ultimate sacrifice to save humanity.",
+    "poster": "https://image.tmdb.org/t/p/w780/r2L9k6R9uY7mG0V3p4X2w1.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/w8L9k6R9uY7mG0V3p4X2w1.jpg",
+    "rating": 5.8,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Science Fiction"
+    ],
+    "director": "Bill Bixby",
+    "tagline": "The final battle.",
+    "studio": "Bixby-Brandon Productions / New World Television",
+    "studioId": "marvel-television",
+    "distributor": "NBC",
+    "franchise": "Hulk",
+    "universe": "The Incredible Hulk (1978 Series Universe)",
+    "universeId": "standalone-marvel",
+    "universeDesignation": "Earth-400005",
+    "movieType": "tv-movie",
+    "mcuRelationship": "legacy",
+    "isMcu": false,
+    "isAnimation": false,
+    "isLegacy": true,
+    "isCollaboration": false,
+    "releaseOrder": 5,
+    "chronologicalOrder": 5,
+    "cast": [
+      {
+        "name": "Bill Bixby",
+        "role": "Dr. David Banner"
+      },
+      {
+        "name": "Lou Ferrigno",
+        "role": "The Hulk"
+      },
+      {
+        "name": "Elizabeth Gracen",
+        "role": "Jasmine"
+      },
+      {
+        "name": "Philip Sterling",
+        "role": "Dr. Ronald Pratt"
+      }
+    ],
+    "characters": [
+      "hulk"
+    ],
+    "tmdbId": 44380,
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "verificationStatus": "verified",
+    "watchConfig": {
+      "tmdbId": 44380,
+      "type": "movie",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "iron-man-rise-of-technovore-2013",
+    "title": "Iron Man: Rise of Technovore",
+    "year": 2013,
+    "releaseDate": "2013-04-16",
+    "runtime": 88,
+    "overview": "Iron Man teams up with the Punisher, Black Widow, and Hawkeye to stop Ezekiel Stane, who has developed a new bio-technological organism that threatens to assimilate and destroy all advanced technology.",
+    "poster": "https://image.tmdb.org/t/p/w780/6A7Q6rK8n2J9rP8L0Y7M0k.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/u6W6rK8n2J9rP8L0Y7M0k.jpg",
+    "rating": 6,
+    "genres": [
+      "Animation",
+      "Action",
+      "Science Fiction"
+    ],
+    "director": "Hiroshi Hamasaki",
+    "tagline": "Man and machine become one.",
+    "studio": "Madhouse / Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Sony Pictures Home Entertainment",
+    "franchise": "Iron Man",
+    "universe": "Madhouse Marvel Anime Universe",
+    "universeId": "standalone-marvel",
+    "universeDesignation": "Earth-101001",
+    "movieType": "animation",
+    "mcuRelationship": "legacy",
+    "isMcu": false,
+    "isAnimation": true,
+    "isLegacy": true,
+    "isCollaboration": false,
+    "releaseOrder": 45,
+    "chronologicalOrder": 999,
+    "cast": [
+      {
+        "name": "Matthew Mercer",
+        "role": "Tony Stark / Iron Man (voice)"
+      },
+      {
+        "name": "Norman Reedus",
+        "role": "Frank Castle / The Punisher (voice)"
+      }
+    ],
+    "characters": [
+      "iron-man",
+      "punisher",
+      "black-widow",
+      "hawkeye"
+    ],
+    "tmdbId": 172605,
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "verificationStatus": "verified",
+    "watchConfig": {
+      "tmdbId": 172605,
+      "type": "movie",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "iron-man-and-hulk-heroes-united-2013",
+    "title": "Iron Man & Hulk: Heroes United",
+    "year": 2013,
+    "releaseDate": "2013-12-03",
+    "runtime": 71,
+    "overview": "The Invincible Iron Man and the Incredible Hulk join forces to save the Earth from its greatest threat yet: Zzzax, a monstrous, energy-devouring creature created by Hydra scientists.",
+    "poster": "https://image.tmdb.org/t/p/w780/tC3T6uE7n9Y9k8R8o5P1.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/pC3T6uE7n9Y9k8R8o5P1.jpg",
+    "rating": 5.6,
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure",
+      "Family",
+      "Science Fiction"
+    ],
+    "director": "Eric Radomski, Leo Riley",
+    "tagline": "Two of Marvel's biggest heroes unite!",
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Walt Disney Studios Home Entertainment",
+    "franchise": "Avengers",
+    "universe": "Heroes United Universe",
+    "universeId": "standalone-marvel",
+    "universeDesignation": "Earth-13393",
+    "movieType": "animation",
+    "mcuRelationship": "legacy",
+    "isMcu": false,
+    "isAnimation": true,
+    "isLegacy": true,
+    "isCollaboration": false,
+    "releaseOrder": 48,
+    "chronologicalOrder": 999,
+    "cast": [
+      {
+        "name": "Adrian Pasdar",
+        "role": "Tony Stark / Iron Man (voice)"
+      },
+      {
+        "name": "Fred Tatasciore",
+        "role": "Bruce Banner / Hulk (voice)"
+      }
+    ],
+    "characters": [
+      "iron-man",
+      "hulk"
+    ],
+    "tmdbId": 230896,
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "verificationStatus": "verified",
+    "watchConfig": {
+      "tmdbId": 230896,
+      "type": "movie",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "avengers-confidential-black-widow-and-punisher-2014",
+    "title": "Avengers Confidential: Black Widow & Punisher",
+    "year": 2014,
+    "releaseDate": "2014-03-25",
+    "runtime": 83,
+    "overview": "After interfering with a top-secret S.H.I.E.L.D. mission, the Punisher is taken into custody by Black Widow. Under orders from Nick Fury, the lethal pair must team up to stop Leviathan, a global terrorist cabal auctioning stolen S.H.I.E.L.D. tech.",
+    "poster": "https://image.tmdb.org/t/p/w780/jQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/kQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "rating": 6.5,
+    "genres": [
+      "Animation",
+      "Action",
+      "Science Fiction"
+    ],
+    "director": "Kenichi Shimizu",
+    "tagline": "Lethal vengeance meets deadly precision.",
+    "studio": "Madhouse / Marvel Entertainment",
+    "studioId": "marvel-animation",
+    "distributor": "Sony Pictures Home Entertainment",
+    "franchise": "Avengers",
+    "universe": "Madhouse Marvel Anime Universe",
+    "universeId": "standalone-marvel",
+    "universeDesignation": "Earth-101001",
+    "movieType": "animation",
+    "mcuRelationship": "legacy",
+    "isMcu": false,
+    "isAnimation": true,
+    "isLegacy": true,
+    "isCollaboration": false,
+    "releaseOrder": 49,
+    "chronologicalOrder": 999,
+    "cast": [
+      {
+        "name": "Jennifer Carpenter",
+        "role": "Natasha Romanoff / Black Widow (voice)"
+      },
+      {
+        "name": "Brian Bloom",
+        "role": "Frank Castle / The Punisher (voice)"
+      }
+    ],
+    "characters": [
+      "black-widow",
+      "punisher",
+      "iron-man",
+      "hulk",
+      "hawkeye"
+    ],
+    "tmdbId": 247061,
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "verificationStatus": "verified",
+    "watchConfig": {
+      "tmdbId": 247061,
+      "type": "movie",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "iron-man-and-captain-america-heroes-united-2014",
+    "title": "Iron Man & Captain America: Heroes United",
+    "year": 2014,
+    "releaseDate": "2014-07-29",
+    "runtime": 71,
+    "overview": "Iron Man and Captain America battle to keep the Red Skull and his Taskmaster minion from unleashing an army of Hydra Brutes on the world. To prevail, they must combine Stark's high-tech intellect with Rogers' battlefield leadership.",
+    "poster": "https://image.tmdb.org/t/p/w780/aC3T6uE7n9Y9k8R8o5P1.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/bC3T6uE7n9Y9k8R8o5P1.jpg",
+    "rating": 5.8,
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure",
+      "Science Fiction"
+    ],
+    "director": "Leo Riley",
+    "tagline": "Brain and brawn against the ultimate villain.",
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Walt Disney Studios Home Entertainment",
+    "franchise": "Avengers",
+    "universe": "Heroes United Universe",
+    "universeId": "standalone-marvel",
+    "universeDesignation": "Earth-13393",
+    "movieType": "animation",
+    "mcuRelationship": "legacy",
+    "isMcu": false,
+    "isAnimation": true,
+    "isLegacy": true,
+    "isCollaboration": false,
+    "releaseOrder": 51,
+    "chronologicalOrder": 999,
+    "cast": [
+      {
+        "name": "Adrian Pasdar",
+        "role": "Tony Stark / Iron Man (voice)"
+      },
+      {
+        "name": "Roger Craig Smith",
+        "role": "Steve Rogers / Captain America (voice)"
+      }
+    ],
+    "characters": [
+      "iron-man",
+      "captain-america"
+    ],
+    "tmdbId": 284274,
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "verificationStatus": "verified",
+    "watchConfig": {
+      "tmdbId": 284274,
+      "type": "movie",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "marvel-super-hero-adventures-frost-fight-2015",
+    "title": "Marvel Super Hero Adventures: Frost Fight!",
+    "year": 2015,
+    "releaseDate": "2015-12-11",
+    "runtime": 73,
+    "overview": "The frost giant Ymir and Loki team up to steal Santa Claus' powers and conquer the world. The Avengers, along with Captain Marvel and Reptil, must travel to the North Pole to save the holidays and defeat the frost giants.",
+    "poster": "https://image.tmdb.org/t/p/w780/mC3T6uE7n9Y9k8R8o5P1.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/nC3T6uE7n9Y9k8R8o5P1.jpg",
+    "rating": 5.8,
+    "genres": [
+      "Animation",
+      "Action",
+      "Family",
+      "Adventure"
+    ],
+    "director": "Mitch Schauer",
+    "tagline": "The coolest Avengers battle ever!",
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Walt Disney Studios Home Entertainment",
+    "franchise": "Avengers",
+    "universe": "Marvel Animation Earth-12041",
+    "universeId": "standalone-marvel",
+    "universeDesignation": "Earth-12041",
+    "movieType": "animation",
+    "mcuRelationship": "legacy",
+    "isMcu": false,
+    "isAnimation": true,
+    "isLegacy": true,
+    "isCollaboration": false,
+    "releaseOrder": 54,
+    "chronologicalOrder": 999,
+    "cast": [
+      {
+        "name": "Mick Wingert",
+        "role": "Iron Man (voice)"
+      },
+      {
+        "name": "Matthew Mercer",
+        "role": "Captain America (voice)"
+      },
+      {
+        "name": "Travis Willingham",
+        "role": "Thor (voice)"
+      },
+      {
+        "name": "Fred Tatasciore",
+        "role": "Hulk (voice)"
+      }
+    ],
+    "characters": [
+      "iron-man",
+      "captain-america",
+      "thor",
+      "hulk",
+      "loki"
+    ],
+    "tmdbId": 368304,
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "verificationStatus": "verified",
+    "watchConfig": {
+      "tmdbId": 368304,
+      "type": "movie",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "hulk-where-monsters-dwell-2016",
+    "title": "Hulk: Where Monsters Dwell",
+    "year": 2016,
+    "releaseDate": "2016-10-21",
+    "runtime": 75,
+    "overview": "On Halloween night, Nightmare attempts to conquer the waking world by entering through the Dream Dimension. Doctor Strange, the Hulk, and the Howling Commandos must join forces to battle terrifying monsters and stop Nightmare's plot.",
+    "poster": "https://image.tmdb.org/t/p/w780/kH1t8c5Q8k6R9uY7mG0V3p4X2w1.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/jH1t8c5Q8k6R9uY7mG0V3p4X2w1.jpg",
+    "rating": 6.1,
+    "genres": [
+      "Animation",
+      "Action",
+      "Fantasy"
+    ],
+    "director": "Mitch Schauer",
+    "tagline": "The nightmare begins when you fall asleep.",
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Walt Disney Studios Home Entertainment",
+    "franchise": "Hulk",
+    "universe": "Marvel Animation Earth-12041",
+    "universeId": "standalone-marvel",
+    "universeDesignation": "Earth-12041",
+    "movieType": "animation",
+    "mcuRelationship": "legacy",
+    "isMcu": false,
+    "isAnimation": true,
+    "isLegacy": true,
+    "isCollaboration": false,
+    "releaseOrder": 57,
+    "chronologicalOrder": 999,
+    "cast": [
+      {
+        "name": "Fred Tatasciore",
+        "role": "Hulk (voice)"
+      },
+      {
+        "name": "Liam O'Brien",
+        "role": "Doctor Strange (voice)"
+      }
+    ],
+    "characters": [
+      "hulk",
+      "doctor-strange"
+    ],
+    "tmdbId": 418078,
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "verificationStatus": "verified",
+    "watchConfig": {
+      "tmdbId": 418078,
+      "type": "movie",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "marvel-rising-secret-warriors-2018",
+    "title": "Marvel Rising: Secret Warriors",
+    "year": 2018,
+    "releaseDate": "2018-09-30",
+    "runtime": 80,
+    "overview": "When a threat of inhuman proportions looms over the Marvel Universe, an unconventional team of young heroes—Ms. Marvel, Squirrel Girl, Quake, Patriot, America Chavez, and Inferno—join forces to prove that teamwork can save the world.",
+    "poster": "https://image.tmdb.org/t/p/w780/bQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "rating": 6.4,
+    "genres": [
+      "Animation",
+      "Action",
+      "Family",
+      "Science Fiction"
+    ],
+    "director": "Alfred Gimeno",
+    "tagline": "Heroism has no age limit.",
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Disney Channel / Disney XD",
+    "franchise": "Marvel Rising",
+    "universe": "Marvel Rising Universe",
+    "universeId": "standalone-marvel",
+    "universeDesignation": "Earth-TRN688",
+    "movieType": "animation",
+    "mcuRelationship": "legacy",
+    "isMcu": false,
+    "isAnimation": true,
+    "isLegacy": true,
+    "isCollaboration": false,
+    "releaseOrder": 62,
+    "chronologicalOrder": 999,
+    "cast": [
+      {
+        "name": "Kathreen Khavari",
+        "role": "Kamala Khan / Ms. Marvel (voice)"
+      },
+      {
+        "name": "Milana Vayntrub",
+        "role": "Doreen Green / Squirrel Girl (voice)"
+      },
+      {
+        "name": "Chloe Bennet",
+        "role": "Daisy Johnson / Quake (voice)"
+      }
+    ],
+    "characters": [
+      "ms-marvel"
+    ],
+    "tmdbId": 538153,
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "verificationStatus": "verified",
+    "watchConfig": {
+      "tmdbId": 538153,
+      "type": "movie",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "marvel-rising-chasing-ghosts-2019",
+    "title": "Marvel Rising: Chasing Ghosts",
+    "year": 2019,
+    "releaseDate": "2019-01-16",
+    "runtime": 22,
+    "overview": "Ghost-Spider teams up with the Secret Warriors to track down She-Hulk villain She-Thing and Exile before they carry out a plan to destroy the city.",
+    "poster": "https://image.tmdb.org/t/p/w780/dQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/eQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "rating": 6.3,
+    "genres": [
+      "Animation",
+      "Action",
+      "Science Fiction"
+    ],
+    "director": "Alfred Gimeno",
+    "tagline": "Ghost-Spider joins the team.",
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Disney XD",
+    "franchise": "Marvel Rising",
+    "universe": "Marvel Rising Universe",
+    "universeId": "standalone-marvel",
+    "universeDesignation": "Earth-TRN688",
+    "movieType": "animation",
+    "mcuRelationship": "legacy",
+    "isMcu": false,
+    "isAnimation": true,
+    "isLegacy": true,
+    "isCollaboration": false,
+    "releaseOrder": 63,
+    "chronologicalOrder": 999,
+    "cast": [
+      {
+        "name": "Dove Cameron",
+        "role": "Gwen Stacy / Ghost-Spider (voice)"
+      },
+      {
+        "name": "Kathreen Khavari",
+        "role": "Kamala Khan / Ms. Marvel (voice)"
+      }
+    ],
+    "characters": [
+      "ms-marvel",
+      "spider-man"
+    ],
+    "tmdbId": 574474,
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "verificationStatus": "verified",
+    "watchConfig": {
+      "tmdbId": 574474,
+      "type": "movie",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "marvel-rising-heart-of-iron-2019",
+    "title": "Marvel Rising: Heart of Iron",
+    "year": 2019,
+    "releaseDate": "2019-04-03",
+    "runtime": 44,
+    "overview": "Riri Williams struggles to fit into college until Hala the Accuser destroys the engineering lab, prompting Riri to dawn her Ironheart armor alongside the Secret Warriors.",
+    "poster": "https://image.tmdb.org/t/p/w780/fQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/gQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "rating": 6.2,
+    "genres": [
+      "Animation",
+      "Action",
+      "Science Fiction"
+    ],
+    "director": "Sol Choi",
+    "tagline": "Ironheart arrives.",
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Disney XD",
+    "franchise": "Marvel Rising",
+    "universe": "Marvel Rising Universe",
+    "universeId": "standalone-marvel",
+    "universeDesignation": "Earth-TRN688",
+    "movieType": "animation",
+    "mcuRelationship": "legacy",
+    "isMcu": false,
+    "isAnimation": true,
+    "isLegacy": true,
+    "isCollaboration": false,
+    "releaseOrder": 64,
+    "chronologicalOrder": 999,
+    "cast": [
+      {
+        "name": "Sofia Wylie",
+        "role": "Riri Williams / Ironheart (voice)"
+      },
+      {
+        "name": "Ming-Na Wen",
+        "role": "Hala the Accuser (voice)"
+      }
+    ],
+    "characters": [
+      "ironheart",
+      "ms-marvel"
+    ],
+    "tmdbId": 588226,
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "verificationStatus": "verified",
+    "watchConfig": {
+      "tmdbId": 588226,
+      "type": "movie",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "marvel-rising-battle-of-the-bands-2019",
+    "title": "Marvel Rising: Battle of the Bands",
+    "year": 2019,
+    "releaseDate": "2019-08-28",
+    "runtime": 22,
+    "overview": "Gwen Stacy's band competition is in jeopardy when mysterious sonic attacks threaten the city, forcing Ghost-Spider to multitask between rockstar and superhero.",
+    "poster": "https://image.tmdb.org/t/p/w780/hQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/iQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "rating": 6.1,
+    "genres": [
+      "Animation",
+      "Action",
+      "Science Fiction"
+    ],
+    "director": "Alfred Gimeno",
+    "tagline": "Rock on with the Secret Warriors.",
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Disney XD",
+    "franchise": "Marvel Rising",
+    "universe": "Marvel Rising Universe",
+    "universeId": "standalone-marvel",
+    "universeDesignation": "Earth-TRN688",
+    "movieType": "animation",
+    "mcuRelationship": "legacy",
+    "isMcu": false,
+    "isAnimation": true,
+    "isLegacy": true,
+    "isCollaboration": false,
+    "releaseOrder": 65,
+    "chronologicalOrder": 999,
+    "cast": [
+      {
+        "name": "Dove Cameron",
+        "role": "Gwen Stacy / Ghost-Spider (voice)"
+      }
+    ],
+    "characters": [
+      "ms-marvel",
+      "spider-man"
+    ],
+    "tmdbId": 627103,
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "verificationStatus": "verified",
+    "watchConfig": {
+      "tmdbId": 627103,
+      "type": "movie",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "marvel-rising-operation-shuri-2019",
+    "title": "Marvel Rising: Operation Shuri",
+    "year": 2019,
+    "releaseDate": "2019-10-06",
+    "runtime": 22,
+    "overview": "Princess Shuri of Wakanda visits New York City incognito, joining forces with the Secret Warriors to blend cultural diplomacy with high-octane crime fighting.",
+    "poster": "https://image.tmdb.org/t/p/w780/jQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/kQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "rating": 6.5,
+    "genres": [
+      "Animation",
+      "Action",
+      "Science Fiction"
+    ],
+    "director": "Sol Choi",
+    "tagline": "Wakanda meets the Secret Warriors.",
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Disney XD",
+    "franchise": "Marvel Rising",
+    "universe": "Marvel Rising Universe",
+    "universeId": "standalone-marvel",
+    "universeDesignation": "Earth-TRN688",
+    "movieType": "animation",
+    "mcuRelationship": "legacy",
+    "isMcu": false,
+    "isAnimation": true,
+    "isLegacy": true,
+    "isCollaboration": false,
+    "releaseOrder": 66,
+    "chronologicalOrder": 999,
+    "cast": [
+      {
+        "name": "Daisy Lightfoot",
+        "role": "Shuri (voice)"
+      },
+      {
+        "name": "Kathreen Khavari",
+        "role": "Kamala Khan / Ms. Marvel (voice)"
+      }
+    ],
+    "characters": [
+      "black-panther",
+      "ms-marvel"
+    ],
+    "tmdbId": 639933,
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "verificationStatus": "verified",
+    "watchConfig": {
+      "tmdbId": 639933,
+      "type": "movie",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "marvel-rising-playing-with-fire-2019",
+    "title": "Marvel Rising: Playing with Fire",
+    "year": 2019,
+    "releaseDate": "2019-12-18",
+    "runtime": 44,
+    "overview": "When Inferno's powers are stolen by Zarek, he must overcome self-doubt with the support of America Chavez and the Secret Warriors to reclaim his flame and defend his friends.",
+    "poster": "https://image.tmdb.org/t/p/w780/lQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/mQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "rating": 6,
+    "genres": [
+      "Animation",
+      "Action",
+      "Science Fiction"
+    ],
+    "director": "Sol Choi",
+    "tagline": "Reignite the hero within.",
+    "studio": "Marvel Animation",
+    "studioId": "marvel-animation",
+    "distributor": "Disney XD",
+    "franchise": "Marvel Rising",
+    "universe": "Marvel Rising Universe",
+    "universeId": "standalone-marvel",
+    "universeDesignation": "Earth-TRN688",
+    "movieType": "animation",
+    "mcuRelationship": "legacy",
+    "isMcu": false,
+    "isAnimation": true,
+    "isLegacy": true,
+    "isCollaboration": false,
+    "releaseOrder": 67,
+    "chronologicalOrder": 999,
+    "cast": [
+      {
+        "name": "Tyler Posey",
+        "role": "Dante Pertuz / Inferno (voice)"
+      },
+      {
+        "name": "Cierra Ramirez",
+        "role": "America Chavez (voice)"
+      }
+    ],
+    "characters": [
+      "ms-marvel"
+    ],
+    "tmdbId": 653723,
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "verificationStatus": "verified",
+    "watchConfig": {
+      "tmdbId": 653723,
+      "type": "movie",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    }
   }
 ];
