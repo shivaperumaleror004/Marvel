@@ -173,6 +173,7 @@ export type Season = {
   overview: string;
   poster: string;
   episodes: Episode[];
+  episodeCount?: number;
 };
 
 export type Series = {
@@ -194,6 +195,8 @@ export type Series = {
   releaseOrder: number;
   chronologicalOrder: number;
   tmdbId?: number;
+  totalEpisodes?: number;
+  totalSeasons?: number;
   watchSource?: string;
   watchConfig?: WatchConfig;
   tagline?: string;

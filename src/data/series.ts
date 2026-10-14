@@ -159,7 +159,8 @@ export const SERIES_DATA: Series[] = [
               "language": "eng"
             }
           }
-        ]
+        ],
+        "episodeCount": 6
       },
       {
         "seasonNumber": 2,
@@ -269,7 +270,8 @@ export const SERIES_DATA: Series[] = [
               "language": "eng"
             }
           }
-        ]
+        ],
+        "episodeCount": 6
       }
     ],
     "studio": "Marvel Studios",
@@ -282,7 +284,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 12,
+    "totalSeasons": 2
   },
   {
     "id": "wandavision",
@@ -357,7 +361,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 9
       }
     ],
     "studio": "Marvel Studios",
@@ -370,7 +375,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 9,
+    "totalSeasons": 1
   },
   {
     "id": "the-falcon-and-the-winter-soldier",
@@ -444,7 +451,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 6
       }
     ],
     "studio": "Marvel Studios",
@@ -457,7 +465,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 6,
+    "totalSeasons": 1
   },
   {
     "id": "what-if",
@@ -522,7 +532,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 9
       },
       {
         "seasonNumber": 2,
@@ -546,7 +557,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 9
       },
       {
         "seasonNumber": 3,
@@ -570,7 +582,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 8
       }
     ],
     "studio": "Marvel Animation",
@@ -583,7 +596,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": true,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 26,
+    "totalSeasons": 3
   },
   {
     "id": "hawkeye",
@@ -657,7 +672,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 6
       }
     ],
     "studio": "Marvel Studios",
@@ -670,7 +686,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 6,
+    "totalSeasons": 1
   },
   {
     "id": "moon-knight",
@@ -740,7 +758,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 6
       }
     ],
     "studio": "Marvel Studios",
@@ -753,7 +772,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 6,
+    "totalSeasons": 1
   },
   {
     "id": "ms-marvel",
@@ -819,7 +840,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 6
       }
     ],
     "studio": "Marvel Studios",
@@ -832,7 +854,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 6,
+    "totalSeasons": 1
   },
   {
     "id": "she-hulk",
@@ -901,7 +925,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 9
       }
     ],
     "studio": "Marvel Studios",
@@ -914,7 +939,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 9,
+    "totalSeasons": 1
   },
   {
     "id": "secret-invasion",
@@ -987,7 +1014,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 6
       }
     ],
     "studio": "Marvel Studios",
@@ -1000,7 +1028,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 6,
+    "totalSeasons": 1
   },
   {
     "id": "echo",
@@ -1067,7 +1097,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 5
       }
     ],
     "studio": "Marvel Studios",
@@ -1080,7 +1111,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 5,
+    "totalSeasons": 1
   },
   {
     "id": "agatha-all-along",
@@ -1147,7 +1180,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 9
       }
     ],
     "studio": "Marvel Studios",
@@ -1160,7 +1194,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 9,
+    "totalSeasons": 1
   },
   {
     "id": "daredevil-born-again",
@@ -1229,7 +1265,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 9
       },
       {
         "seasonNumber": 2,
@@ -1266,7 +1303,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 9,
+    "totalSeasons": 1
   },
   {
     "id": "i-am-groot",
@@ -1329,7 +1368,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 5
       },
       {
         "seasonNumber": 2,
@@ -1353,7 +1393,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 5
       }
     ],
     "studio": "Marvel Animation",
@@ -1366,7 +1407,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": true,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 10,
+    "totalSeasons": 2
   },
   {
     "id": "eyes-of-wakanda",
@@ -1819,7 +1862,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 13
       },
       {
         "seasonNumber": 2,
@@ -1843,7 +1887,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 13
       },
       {
         "seasonNumber": 3,
@@ -1867,7 +1912,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 13
       }
     ],
     "studio": "Marvel Television / ABC Studios",
@@ -1880,7 +1926,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": false,
     "isLegacy": true,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 39,
+    "totalSeasons": 3
   },
   {
     "id": "jessica-jones",
@@ -1930,19 +1978,212 @@ export const SERIES_DATA: Series[] = [
         "title": "Season 1",
         "overview": "Jessica Jones Season 1",
         "poster": "https://image.tmdb.org/t/p/w780/oxnWofiE9fHOgUfs9NJa6nG6NTR.jpg",
+        "episodeCount": 13,
         "episodes": [
           {
             "id": "jessica-jones_s1_e1",
             "seasonNumber": 1,
             "episodeNumber": 1,
-            "title": "Episode 1",
-            "runtime": 50,
-            "overview": "Episode 1 of Jessica Jones Season 1",
+            "title": "AKA Ladies Night",
+            "runtime": 52,
+            "overview": "Jessica Jones is hired to find a pretty NYU student who's vanished, but the case turns into something far more dangerous.",
             "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
-            "airDate": "2015-01-01",
+            "airDate": "2015-11-20",
             "episodeWatchConfig": {
               "season": 1,
               "episode": 1,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s1_e2",
+            "seasonNumber": 1,
+            "episodeNumber": 2,
+            "title": "AKA Crush Syndrome",
+            "runtime": 52,
+            "overview": "Jessica vows to prove Hope's innocence, even though it means tracking down a terrifying figure from her own past.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2015-11-20",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 2,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s1_e3",
+            "seasonNumber": 1,
+            "episodeNumber": 3,
+            "title": "AKA It's Called Whiskey",
+            "runtime": 54,
+            "overview": "It won't be easy to acquire or deploy, but Jessica thinks she's found a weapon to use against Kilgrave.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2015-11-20",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 3,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s1_e4",
+            "seasonNumber": 1,
+            "episodeNumber": 4,
+            "title": "AKA 99 Friends",
+            "runtime": 49,
+            "overview": "A new case demands attention as Jessica tries to find out who's spying on her for Kilgrave.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2015-11-20",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 4,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s1_e5",
+            "seasonNumber": 1,
+            "episodeNumber": 5,
+            "title": "AKA The Sandwich Saved Me",
+            "runtime": 50,
+            "overview": "Despite Jessica's objections, Trish's new friend Simpson gets involved in the hunt for Kilgrave.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2015-11-20",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 5,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s1_e6",
+            "seasonNumber": 1,
+            "episodeNumber": 6,
+            "title": "AKA You're a Winner!",
+            "runtime": 54,
+            "overview": "Luke hires Jessica to help him find a boy who may have skipped town, but Jessica fears he'll learn too much about her history.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2015-11-20",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 6,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s1_e7",
+            "seasonNumber": 1,
+            "episodeNumber": 7,
+            "title": "AKA Top Shelf Perverts",
+            "runtime": 55,
+            "overview": "Malcolm, Simpson and Trish go rogue to prevent Jessica from carrying out an extreme plan to outsmart Kilgrave.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2015-11-20",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 7,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s1_e8",
+            "seasonNumber": 1,
+            "episodeNumber": 8,
+            "title": "AKA WWJD?",
+            "runtime": 52,
+            "overview": "Jessica experiences a strange homecoming courtesy of Kilgrave. Hogarth's conflict with her estranged wife reaches a tipping point.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2015-11-20",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 8,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s1_e9",
+            "seasonNumber": 1,
+            "episodeNumber": 9,
+            "title": "AKA Sin Bin",
+            "runtime": 55,
+            "overview": "Just when Jessica has Kilgrave right where she wants him, Hogarth's involvement complicates the situation.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2015-11-20",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 9,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s1_e10",
+            "seasonNumber": 1,
+            "episodeNumber": 10,
+            "title": "AKA 1,000 Cuts",
+            "runtime": 49,
+            "overview": "Discovery has the potential to upend the entire game — if Jessica can conquer her fear and make a move.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2015-11-20",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 10,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s1_e11",
+            "seasonNumber": 1,
+            "episodeNumber": 11,
+            "title": "AKA I've Got the Blues",
+            "runtime": 50,
+            "overview": "Jessica searches the city for Kilgrave, but Trish finds that Simpson is becoming an unstable wild card.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2015-11-20",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 11,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s1_e12",
+            "seasonNumber": 1,
+            "episodeNumber": 12,
+            "title": "AKA Take a Bloody Number",
+            "runtime": 53,
+            "overview": "The hunt for Kilgrave reunites Jessica and Luke. Trish makes a startling discovery about Simpson.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2015-11-20",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 12,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s1_e13",
+            "seasonNumber": 1,
+            "episodeNumber": 13,
+            "title": "AKA Smile",
+            "runtime": 55,
+            "overview": "Jessica and Luke get help from someone else in the neighborhood. Kilgrave prepares for a major test of his powers against Jessica.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2015-11-20",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 13,
               "tmdbId": 38472,
               "watchProvider": "screenscape"
             }
@@ -1954,19 +2195,212 @@ export const SERIES_DATA: Series[] = [
         "title": "Season 2",
         "overview": "Jessica Jones Season 2",
         "poster": "https://image.tmdb.org/t/p/w780/oxnWofiE9fHOgUfs9NJa6nG6NTR.jpg",
+        "episodeCount": 13,
         "episodes": [
           {
             "id": "jessica-jones_s2_e1",
             "seasonNumber": 2,
             "episodeNumber": 1,
-            "title": "Episode 1",
-            "runtime": 50,
-            "overview": "Episode 1 of Jessica Jones Season 2",
+            "title": "AKA Start at the Beginning",
+            "runtime": 53,
+            "overview": "While Jessica investigates a competitor and deals with a paranoid client, Trish unearths Jessica's IGH medical files.",
             "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
-            "airDate": "2015-01-01",
+            "airDate": "2018-03-08",
             "episodeWatchConfig": {
               "season": 2,
               "episode": 1,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s2_e2",
+            "seasonNumber": 2,
+            "episodeNumber": 2,
+            "title": "AKA Freak Accident",
+            "runtime": 52,
+            "overview": "Jessica tracks down a clinic connected to IGH and searches for a doctor who worked there, while Trish investigates Malcolm.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2018-03-08",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 2,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s2_e3",
+            "seasonNumber": 2,
+            "episodeNumber": 3,
+            "title": "AKA Sole Survivor",
+            "runtime": 50,
+            "overview": "Jessica remembers the aftermath of the crash that took her family as she looks for answers at an abandoned clinic.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2018-03-08",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 3,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s2_e4",
+            "seasonNumber": 2,
+            "episodeNumber": 4,
+            "title": "AKA God Help the Hobo",
+            "runtime": 51,
+            "overview": "Hogarth faces a life-altering medical diagnosis. Jessica searches for a mysterious woman connected to the clinic.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2018-03-08",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 4,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s2_e5",
+            "seasonNumber": 2,
+            "episodeNumber": 5,
+            "title": "AKA The Octopus",
+            "runtime": 51,
+            "overview": "Jessica takes a trip to an aquarium to confront a suspect, while Hogarth makes an unconventional deal for alternative treatment.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2018-03-08",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 5,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s2_e6",
+            "seasonNumber": 2,
+            "episodeNumber": 6,
+            "title": "AKA Facetime",
+            "runtime": 53,
+            "overview": "Jessica suspects Malcolm is hiding something. Trish tries to keep her new enhancement secret from her mother.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2018-03-08",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 6,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s2_e7",
+            "seasonNumber": 2,
+            "episodeNumber": 7,
+            "title": "AKA I Want Your Cray Cray",
+            "runtime": 51,
+            "overview": "Flashbacks reveal the origins of Jessica's relationship with Trish, her wild phase, and the tragic fate of her family.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2018-03-08",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 7,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s2_e8",
+            "seasonNumber": 2,
+            "episodeNumber": 8,
+            "title": "AKA Ain't We Got Fun",
+            "runtime": 52,
+            "overview": "Jessica struggles to manage a shocking revelation about her past and the mysterious killer from IGH.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2018-03-08",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 8,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s2_e9",
+            "seasonNumber": 2,
+            "episodeNumber": 9,
+            "title": "AKA Shark in the Bathtub, Monster in the Bed",
+            "runtime": 50,
+            "overview": "A shoot-out forces Jessica to make a difficult choice between protecting someone she loves and doing what's right.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2018-03-08",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 9,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s2_e10",
+            "seasonNumber": 2,
+            "episodeNumber": 10,
+            "title": "AKA Pork Chop",
+            "runtime": 53,
+            "overview": "Hogarth plots revenge against the swindler who betrayed her. Trish's pursuit of justice leads to dangerous obsession.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2018-03-08",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 10,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s2_e11",
+            "seasonNumber": 2,
+            "episodeNumber": 11,
+            "title": "AKA Three Lives and Counting",
+            "runtime": 51,
+            "overview": "Kilgrave returns as a hallucination in Jessica's mind, taunting her as she contemplates a desperate act.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2018-03-08",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 11,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s2_e12",
+            "seasonNumber": 2,
+            "episodeNumber": 12,
+            "title": "AKA Pray for My Patsy",
+            "runtime": 54,
+            "overview": "Jessica rushes to save Trish from Dr. Malus' experimental procedure before it's too late.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2018-03-08",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 12,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s2_e13",
+            "seasonNumber": 2,
+            "episodeNumber": 13,
+            "title": "AKA Playland",
+            "runtime": 55,
+            "overview": "On the run with her mother, Jessica faces a tragic standoff at Playland amusement park.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2018-03-08",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 13,
               "tmdbId": 38472,
               "watchProvider": "screenscape"
             }
@@ -1978,19 +2412,212 @@ export const SERIES_DATA: Series[] = [
         "title": "Season 3",
         "overview": "Jessica Jones Season 3",
         "poster": "https://image.tmdb.org/t/p/w780/oxnWofiE9fHOgUfs9NJa6nG6NTR.jpg",
+        "episodeCount": 13,
         "episodes": [
           {
             "id": "jessica-jones_s3_e1",
             "seasonNumber": 3,
             "episodeNumber": 1,
-            "title": "Episode 1",
+            "title": "AKA The Perfect Burger",
             "runtime": 50,
-            "overview": "Episode 1 of Jessica Jones Season 3",
+            "overview": "Jessica returns to sleuthing and finds herself targeted by a psychotic sadist who prides himself on his superior intellect.",
             "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
-            "airDate": "2015-01-01",
+            "airDate": "2019-06-14",
             "episodeWatchConfig": {
               "season": 3,
               "episode": 1,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s3_e2",
+            "seasonNumber": 3,
+            "episodeNumber": 2,
+            "title": "AKA You're Welcome",
+            "runtime": 50,
+            "overview": "Trish tests her newfound agility and reflexes, training to become the hero she believes New York needs.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2019-06-14",
+            "episodeWatchConfig": {
+              "season": 3,
+              "episode": 2,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s3_e3",
+            "seasonNumber": 3,
+            "episodeNumber": 3,
+            "title": "AKA I Have No Spleen",
+            "runtime": 48,
+            "overview": "Recovering from a severe stab wound, Jessica must team up with Trish to track down Sallinger.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2019-06-14",
+            "episodeWatchConfig": {
+              "season": 3,
+              "episode": 3,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s3_e4",
+            "seasonNumber": 3,
+            "episodeNumber": 4,
+            "title": "AKA Customer Service is on the Line",
+            "runtime": 51,
+            "overview": "Jessica and Erik search for clues in Sallinger's past, while Malcolm deals with a moral dilemma at Pryce Cheng's agency.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2019-06-14",
+            "episodeWatchConfig": {
+              "season": 3,
+              "episode": 4,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s3_e5",
+            "seasonNumber": 3,
+            "episodeNumber": 5,
+            "title": "AKA I Wish",
+            "runtime": 51,
+            "overview": "Jessica confronts Gregory Sallinger directly, but he turns the tables by exploiting the legal system against her.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2019-06-14",
+            "episodeWatchConfig": {
+              "season": 3,
+              "episode": 5,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s3_e6",
+            "seasonNumber": 3,
+            "episodeNumber": 6,
+            "title": "AKA Sorry Face",
+            "runtime": 52,
+            "overview": "A gruesome discovery raises the stakes. Jessica races against time to save Erik from Sallinger's torture chamber.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2019-06-14",
+            "episodeWatchConfig": {
+              "season": 3,
+              "episode": 6,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s3_e7",
+            "seasonNumber": 3,
+            "episodeNumber": 7,
+            "title": "AKA The Double Half-Wappinger",
+            "runtime": 54,
+            "overview": "Jessica and Trish travel to Sallinger's hometown in Upstate New York to investigate an unsolved tragedy from his youth.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2019-06-14",
+            "episodeWatchConfig": {
+              "season": 3,
+              "episode": 7,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s3_e8",
+            "seasonNumber": 3,
+            "episodeNumber": 8,
+            "title": "AKA Camera Friendly",
+            "runtime": 49,
+            "overview": "Sallinger uses the media to paint Jessica as an out-of-control vigilante monster, putting the public on edge.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2019-06-14",
+            "episodeWatchConfig": {
+              "season": 3,
+              "episode": 8,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s3_e9",
+            "seasonNumber": 3,
+            "episodeNumber": 9,
+            "title": "AKA I Did Something Today",
+            "runtime": 51,
+            "overview": "Trish spirals after a personal tragedy, testing the limits of her moral compass and Jessica's patience.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2019-06-14",
+            "episodeWatchConfig": {
+              "season": 3,
+              "episode": 9,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s3_e10",
+            "seasonNumber": 3,
+            "episodeNumber": 10,
+            "title": "AKA Hero Pants",
+            "runtime": 50,
+            "overview": "The police suspect Jessica in a high-profile homicide, but Trish's secret activities threaten to expose everything.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2019-06-14",
+            "episodeWatchConfig": {
+              "season": 3,
+              "episode": 10,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s3_e11",
+            "seasonNumber": 3,
+            "episodeNumber": 11,
+            "title": "AKA Hellcat",
+            "runtime": 48,
+            "overview": "Trish's evolution into Hellcat reaches an irreversible crescendo as she chooses ruthless justice over due process.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2019-06-14",
+            "episodeWatchConfig": {
+              "season": 3,
+              "episode": 11,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s3_e12",
+            "seasonNumber": 3,
+            "episodeNumber": 12,
+            "title": "AKA A Lotta Worms",
+            "runtime": 53,
+            "overview": "Jessica tries to protect Sallinger from Trish, leading to a heartbreaking confrontation between former sisters.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2019-06-14",
+            "episodeWatchConfig": {
+              "season": 3,
+              "episode": 12,
+              "tmdbId": 38472,
+              "watchProvider": "screenscape"
+            }
+          },
+          {
+            "id": "jessica-jones_s3_e13",
+            "seasonNumber": 3,
+            "episodeNumber": 13,
+            "title": "AKA Everything",
+            "runtime": 54,
+            "overview": "Jessica makes the ultimate sacrifice to bring down Trish, choosing her path as a true hero of New York City.",
+            "still": "https://image.tmdb.org/t/p/w1280/fjEOQhzZk2Or7VYUBeMx5ZIwU95.jpg",
+            "airDate": "2019-06-14",
+            "episodeWatchConfig": {
+              "season": 3,
+              "episode": 13,
               "tmdbId": 38472,
               "watchProvider": "screenscape"
             }
@@ -2008,7 +2635,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": false,
     "isLegacy": true,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 39,
+    "totalSeasons": 3
   },
   {
     "id": "luke-cage",
@@ -2075,7 +2704,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 13
       },
       {
         "seasonNumber": 2,
@@ -2099,7 +2729,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 13
       }
     ],
     "studio": "Marvel Television / ABC Studios",
@@ -2112,7 +2743,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": false,
     "isLegacy": true,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 26,
+    "totalSeasons": 2
   },
   {
     "id": "iron-fist",
@@ -2175,7 +2808,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 13
       },
       {
         "seasonNumber": 2,
@@ -2199,7 +2833,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 10
       }
     ],
     "studio": "Marvel Television / ABC Studios",
@@ -2212,7 +2847,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": false,
     "isLegacy": true,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 23,
+    "totalSeasons": 2
   },
   {
     "id": "the-defenders",
@@ -2285,7 +2922,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 8
       }
     ],
     "studio": "Marvel Television / ABC Studios",
@@ -2298,7 +2936,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": false,
     "isLegacy": true,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 8,
+    "totalSeasons": 1
   },
   {
     "id": "the-punisher",
@@ -2361,7 +3001,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 13
       },
       {
         "seasonNumber": 2,
@@ -2385,7 +3026,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 13
       }
     ],
     "studio": "Marvel Television / ABC Studios",
@@ -2398,7 +3040,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": false,
     "isLegacy": true,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 26,
+    "totalSeasons": 2
   },
   {
     "id": "agent-carter",
@@ -2465,7 +3109,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 8
       },
       {
         "seasonNumber": 2,
@@ -2489,7 +3134,8 @@ export const SERIES_DATA: Series[] = [
               "watchProvider": "screenscape"
             }
           }
-        ]
+        ],
+        "episodeCount": 10
       }
     ],
     "studio": "Marvel Studios",
@@ -2502,7 +3148,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": false,
     "isLegacy": true,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 18,
+    "totalSeasons": 2
   },
   {
     "id": "agents-of-shield",
@@ -2527,49 +3175,56 @@ export const SERIES_DATA: Series[] = [
         "title": "Season 1",
         "overview": "Season one begins where the “Marvel's The Avengers” left off. It's just after the battle of New York, and now that the existence of superheroes and aliens has become public knowledge, the world is trying to come to grips with this new reality. Agent Phil Coulson is back in action and now has his eye on a mysterious group called The Rising Tide. In order to track this unseen, unknown enemy, he has assembled a small, highly select group of Agents from the worldwide law-enforcement organization known as S.H.I.E.L.D.",
         "poster": "https://image.tmdb.org/t/p/w780/1CaKyPcZvzzMSwbNFJObxNsxTkK.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 22
       },
       {
         "seasonNumber": 2,
         "title": "Season 2",
         "overview": "In the second season, Coulson and his team look to restore trust from the government and public following S.H.I.E.L.D.'s collapse. ",
         "poster": "https://image.tmdb.org/t/p/w780/p8Qy60OIf0OaJ29KPw6ld51MSP7.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 22
       },
       {
         "seasonNumber": 3,
         "title": "Season 3",
         "overview": "Many months after their war with a rogue group of Inhumans, the team is still reeling. Coulson is again trying to put the pieces of his once revered organization back together while also dealing with the loss of his hand. His confidante and second in command, Agent Melinda May, has yet to return from an impromptu vacation with ex-husband Andrew; deadly superspy Agent Bobbi Morse is recovering from her traumatic torture at the hands of Grant Ward; Fitz is obsessed with discovering the truth behind the mysterious disappearance of Simmons; and all are on high-alert for the next move from Ward and Hydra.",
         "poster": "https://image.tmdb.org/t/p/w780/y0cxxcvCk9lEG4DEorTz5GxC9sj.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 22
       },
       {
         "seasonNumber": 4,
         "title": "Season 4",
         "overview": "Vengeance runs rampant this season as Coulson is a mere agent again, and Daisy has gone rogue after being under Hive's control. How will S.H.I.E.L.D. deal with the arrival of The Ghost Rider?",
         "poster": "https://image.tmdb.org/t/p/w780/mgyMzTTIFVdKoejD0gKIyaCgWOP.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 22
       },
       {
         "seasonNumber": 5,
         "title": "Season 5",
         "overview": "Agent Coulson and the team escaped LMD Aida’s Framework and awakened in the real world. Little did they know that Aida was now fully human – and with multiple Inhuman abilities – with the dangerous notion that, with Fitz by her side, she could change the world. After defeating her with the aid of Ghost Rider, the team went out for a celebration but were interrupted by a mysterious man who rendered them frozen. The next thing we see is Coulson onboard a ship … in space. Coulson will discover that some, but not all, of his S.H.I.E.L.D. colleagues were taken with him and placed onboard the ship. As they come in contact with some of the vessel’s inhabitants, it becomes abundantly clear that something has gone terribly awry, and the team will need to figure out their role and delve deeper into this nightmarish mystery to try to right what has gone incredibly wrong.",
         "poster": "https://image.tmdb.org/t/p/w780/pwZedE4CB3E73lvH9A5yRaszll0.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 22
       },
       {
         "seasonNumber": 6,
         "title": "Season 6",
         "overview": "Last season, the team leaped forward in time to a dystopian future they soon realized must be prevented. While facing multiple timelines and new enemies from faraway planets, they found family, friends, teammates and the courage to pull off their biggest challenge yet. Their next challenge? Coming to grips with the knowledge that bending the laws of space and time may have saved the planet, but it couldn’t save Fitz or Coulson.",
         "poster": "https://image.tmdb.org/t/p/w780/QU0NjcvDonZLKhjRuxRv6AVo5l.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 13
       },
       {
         "seasonNumber": 7,
         "title": "Season 7",
         "overview": "Coulson and the Agents of S.H.I.E.L.D. are thrust backward in time and stranded in 1931 New York City. With the all-new Zephyr set to time-jump at any moment, the team must hurry to find out exactly what happened. If they fail, it would mean disaster for the past, present and future of the world.",
         "poster": "https://image.tmdb.org/t/p/w780/qM95u55G8xVyfgoSZ2qTlY3MDl6.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 13
       }
     ],
     "creator": "Joss Whedon, Jed Whedon, Maurissa Tancharoen",
@@ -2597,7 +3252,9 @@ export const SERIES_DATA: Series[] = [
     "isAnimation": false,
     "isMcu": false,
     "isLegacy": true,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 136,
+    "totalSeasons": 7
   },
   {
     "id": "inhumans",
@@ -2621,7 +3278,8 @@ export const SERIES_DATA: Series[] = [
         "title": "Season 1",
         "overview": "After the Royal Family of Inhumans is splintered by a military coup, they barely escape to Hawaii where their surprising interactions with the lush world and humanity around them may prove to not only save them, but Earth itself.",
         "poster": "https://image.tmdb.org/t/p/w780/doCIoaV9ffAJbK3TW2AsGp4ytOQ.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 8
       }
     ],
     "creator": "Marvel",
@@ -2646,7 +3304,9 @@ export const SERIES_DATA: Series[] = [
     "isAnimation": false,
     "isMcu": false,
     "isLegacy": true,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 8,
+    "totalSeasons": 1
   },
   {
     "id": "runaways",
@@ -2670,21 +3330,24 @@ export const SERIES_DATA: Series[] = [
         "title": "Season 1",
         "overview": "Every teenager thinks their parents are evil. What if you found out they actually were? Six diverse teenagers who can barely stand each other must unite against a common foe – their parents.",
         "poster": "https://image.tmdb.org/t/p/w780/hMsaGkDyCM3Y3EWcdYK5Uu8qEok.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 10
       },
       {
         "seasonNumber": 2,
         "title": "Season 2",
         "overview": "The Runaways have left their homes (and evil parents) behind and now have to learn to live on their own. As they scavenge for food, search for shelter, and take care of one another, our kids begin to realize that, for better or worse, they’re stuck with each other. And it’s up to them to take down PRIDE once and for all. But someone sent a mysterious message to Jonah… Is there a mole in the Runaways? Meanwhile PRIDE is focused on finding their children, and Jonah has his own dangerous plan in mind.",
         "poster": "https://image.tmdb.org/t/p/w780/r2e50wFzTsMgsSVLAyIB8uX1EGu.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 13
       },
       {
         "seasonNumber": 3,
         "title": "Season 3",
         "overview": "The Runaways frantically search for their captured friends Chase, Gert and Karolina. The kids go head to head with an unstoppable enemy who has targeted Leslie - or more accurately, the child she's carrying. Nico draws them all into a dark realm where its ruler Morgan le Fay, is much more nefarious than anyone the kids have yet to face.",
         "poster": "https://image.tmdb.org/t/p/w780/m83skvEvoFQoo1szIMpFQ6kbCe6.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 10
       }
     ],
     "creator": "Marvel",
@@ -2709,7 +3372,9 @@ export const SERIES_DATA: Series[] = [
     "isAnimation": false,
     "isMcu": false,
     "isLegacy": true,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 33,
+    "totalSeasons": 3
   },
   {
     "id": "cloak-and-dagger",
@@ -2733,14 +3398,16 @@ export const SERIES_DATA: Series[] = [
         "title": "Season 1",
         "overview": "Two teenagers from very different backgrounds awaken to newly acquired superpowers which mysteriously link them to one another.",
         "poster": "https://image.tmdb.org/t/p/w780/nluzawv8wEo0AeECpnLo3wO2YLZ.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 10
       },
       {
         "seasonNumber": 2,
         "title": "Season 2",
         "overview": "Season two turns the heat up on our young heroes as Tyrone and Tandy try to find their place as more active heroes in this world. As they learn and grow emotionally, so will their skills. With enhanced powers and a decision to make about the type of heroes they want to be, they make the choice to run into the danger, head first. They tackle a heartless vigilante and uncover an evil that’s been preying on the young women of the city, as the show takes on more serious topics like gang violence and human trafficking.",
         "poster": "https://image.tmdb.org/t/p/w780/pYnRJuBPEqZO1o4fcxBTgmKNHfy.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 10
       }
     ],
     "creator": "Marvel",
@@ -2765,7 +3432,9 @@ export const SERIES_DATA: Series[] = [
     "isAnimation": false,
     "isMcu": false,
     "isLegacy": true,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 20,
+    "totalSeasons": 2
   },
   {
     "id": "legion",
@@ -2789,21 +3458,24 @@ export const SERIES_DATA: Series[] = [
         "title": "Season 1",
         "overview": "Troubled by unsettling visions, young David Haller begins piecing together his fragmented memories and realizes he may have special powers.",
         "poster": "https://image.tmdb.org/t/p/w780/au5hsZ20QzOVXSOWgx7umAhHC6A.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 8
       },
       {
         "seasonNumber": 2,
         "title": "Season 2",
         "overview": "With David and Oliver missing and Farouk on the loose, the team forms an unlikely alliance with their former enemy Clark and his well-funded government is on a new path to attaining infinite and world-ending power.",
         "poster": "https://image.tmdb.org/t/p/w780/wMPFWmM7VLu2AwBzpF3JiWTnTkt.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 11
       },
       {
         "seasonNumber": 3,
         "title": "Season 3",
         "overview": "As Farouk and Syd embark on a search, David gains a following, teams up with a time traveler named Switch and prepares to wage war.",
         "poster": "https://image.tmdb.org/t/p/w780/4THIqrWWYdsxy6zkfzzYvWnXR6Z.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 8
       }
     ],
     "creator": "Marvel",
@@ -2828,7 +3500,9 @@ export const SERIES_DATA: Series[] = [
     "isAnimation": false,
     "isMcu": false,
     "isLegacy": true,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 27,
+    "totalSeasons": 3
   },
   {
     "id": "the-gifted",
@@ -2852,14 +3526,16 @@ export const SERIES_DATA: Series[] = [
         "title": "Season 1",
         "overview": "A suburban couple's ordinary lives are rocked by the sudden discovery that their children possess mutant powers. Forced to go on the run from a hostile government, the family joins up with an underground network of mutants and must fight to survive.",
         "poster": "https://image.tmdb.org/t/p/w780/nYkGYVzn4Df3V5fZS9xYyKZn551.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 13
       },
       {
         "seasonNumber": 2,
         "title": "Season 2",
         "overview": "A suburban couple's ordinary lives are rocked by the sudden discovery that their children possess mutant powers. Forced to go on the run from a hostile government, the family joins up with an underground network of mutants and must fight to survive.",
         "poster": "https://image.tmdb.org/t/p/w780/bUL8MBcB4OeVA2YkA3q1AMbpJL1.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 16
       }
     ],
     "creator": "Marvel",
@@ -2884,7 +3560,9 @@ export const SERIES_DATA: Series[] = [
     "isAnimation": false,
     "isMcu": false,
     "isLegacy": true,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 29,
+    "totalSeasons": 2
   },
   {
     "id": "helstrom",
@@ -2955,7 +3633,8 @@ export const SERIES_DATA: Series[] = [
         "title": "Season 1",
         "overview": "Picking up where 'X-Men' left off, the X-Men are in a period of transition, struggling with the loss of Professor X. And while their world is in a strained state of calm when it comes to mutant-human relations—everyone knows that's likely temporary.",
         "poster": "https://image.tmdb.org/t/p/w780/383PV0WolYYQvTriH0NfvMUA28R.jpg",
-        "episodes": []
+        "episodes": [],
+        "episodeCount": 10
       },
       {
         "seasonNumber": 2,
@@ -2987,7 +3666,9 @@ export const SERIES_DATA: Series[] = [
     "isAnimation": true,
     "isMcu": false,
     "isLegacy": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "totalEpisodes": 10,
+    "totalSeasons": 1
   },
   {
     "id": "x-men-animated",

@@ -604,16 +604,20 @@ export async function enrichSeriesWithTmdb(series: Series, isDetail: boolean = f
         }))
       : series.cast;
 
-    // Map seasons and update posters
+    // Map seasons and update posters and episode counts
     const updatedSeasons: Season[] = (series.seasons || []).map(localSeason => {
       const tmdbSeason = tmdbData.seasons?.find(s => s.season_number === localSeason.seasonNumber);
       return {
         ...localSeason,
         title: tmdbSeason?.name || localSeason.title,
         overview: tmdbSeason?.overview || localSeason.overview,
-        poster: tmdbSeason?.poster_path ? getTmdbPosterUrl(tmdbSeason.poster_path, 'w500') : localSeason.poster
+        poster: tmdbSeason?.poster_path ? getTmdbPosterUrl(tmdbSeason.poster_path, 'w500') : localSeason.poster,
+        episodeCount: tmdbSeason?.episode_count || localSeason.episodeCount || (localSeason.episodes?.length > 1 ? localSeason.episodes.length : undefined)
       };
     });
+
+    const totalEpisodes = tmdbData.number_of_episodes || updatedSeasons.reduce((sum, s) => sum + (s.episodeCount || s.episodes?.length || 0), 0);
+    const totalSeasons = tmdbData.number_of_seasons || updatedSeasons.length;
 
     return {
       ...series,
@@ -625,7 +629,9 @@ export async function enrichSeriesWithTmdb(series: Series, isDetail: boolean = f
       tagline: tmdbData.tagline || series.tagline,
       genres: tmdbData.genres?.length ? tmdbData.genres.map(g => g.name) : series.genres,
       cast,
-      seasons: updatedSeasons
+      seasons: updatedSeasons,
+      totalEpisodes,
+      totalSeasons
     };
   } catch (e) {
     return series;

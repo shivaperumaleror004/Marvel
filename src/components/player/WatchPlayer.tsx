@@ -6,7 +6,6 @@ import {
   ChevronLeft,
   ChevronRight,
   ShieldAlert,
-  Loader2,
   Tv,
   Film,
   ArrowLeft,
@@ -14,14 +13,13 @@ import {
   Check,
   ListVideo
 } from 'lucide-react';
-import type { Movie, Series, Episode, WatchConfig, EpisodeWatchConfig } from '../../types';
+import type { Movie, Series, Episode } from '../../types';
 import { MOVIES_DATA } from '../../data/movies';
 import { SERIES_DATA } from '../../data/series';
-import { buildMovieWatchUrl, buildEpisodeWatchUrl, resolveWatchUrl } from '../../services/watchSourceBuilder';
+import { resolveWatchUrl } from '../../services/watchSourceBuilder';
 import { fetchCompleteSeasonEpisodes } from '../../services/tmdb';
 import { useWatchProgress } from '../../hooks/useWatchProgress';
 import { useSettings } from '../../hooks/useSettings';
-import { isMarvelContent } from '../../utils/marvelWhitelist';
 
 export interface WatchPlayerProps {
   mediaType: 'movie' | 'series';

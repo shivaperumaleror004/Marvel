@@ -22,8 +22,15 @@ export const SeriesCard: React.FC<SeriesCardProps> = ({ series, onSelect, onWatc
     setImgError(false);
   }, [series.poster]);
 
-  const totalSeasons = series.seasons?.length || 1;
-  const totalEpisodes = series.seasons?.reduce((sum, s) => sum + (s.episodes?.length || 0), 0) || 0;
+  const totalSeasons = series.totalSeasons || series.seasons?.length || 1;
+  const totalEpisodes =
+    series.totalEpisodes ||
+    series.seasons?.reduce((sum, s) => {
+      if (typeof s.episodeCount === 'number' && s.episodeCount > 0) return sum + s.episodeCount;
+      if (s.episodes && s.episodes.length > 1) return sum + s.episodes.length;
+      return sum;
+    }, 0) ||
+    0;
 
   return (
     <div

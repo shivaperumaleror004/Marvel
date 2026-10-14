@@ -153,9 +153,16 @@ export const SeriesDetailPage: React.FC<SeriesDetailPageProps> = ({
               <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm font-mono text-gray-300">
                 <span>{series.releaseYear}</span>
                 <span>•</span>
-                <span className="flex items-center gap-1 text-red-400 font-bold">
+                <span className="flex items-center gap-1.5 text-red-400 font-bold">
                   <Tv className="w-3.5 h-3.5" />
-                  {series.seasons.length} {series.seasons.length === 1 ? 'Season' : 'Seasons'}
+                  <span>
+                    {series.totalSeasons || series.seasons.length} {(series.totalSeasons || series.seasons.length) === 1 ? 'Season' : 'Seasons'}
+                  </span>
+                  {series.totalEpisodes && (
+                    <span className="text-gray-400 font-normal">
+                      ({series.totalEpisodes} Episodes)
+                    </span>
+                  )}
                 </span>
                 <span>•</span>
                 <span className="text-gray-400">
