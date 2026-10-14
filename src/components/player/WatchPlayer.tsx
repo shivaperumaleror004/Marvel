@@ -180,12 +180,14 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
     }
   }, [isPlayerActive, isIframeLoaded, targetId, mediaType, movie, series, activeEpisode, updateProgress, initialTime]);
 
+  const activeEpisodes = seasonEpisodes.length > 0 ? seasonEpisodes : (currentSeason?.episodes || []);
+
   // Previous & Next Episode handlers
   const handlePrevEpisode = () => {
-    if (!series || !currentSeason || !activeEpisode) return;
-    const currIndex = currentSeason.episodes.findIndex(e => e.episodeNumber === activeEpisode.episodeNumber);
+    if (!series || !activeEpisode) return;
+    const currIndex = activeEpisodes.findIndex(e => e.episodeNumber === activeEpisode.episodeNumber);
     if (currIndex > 0) {
-      const prevEp = currentSeason.episodes[currIndex - 1];
+      const prevEp = activeEpisodes[currIndex - 1];
       setActiveEpisode(prevEp);
       setIsIframeLoaded(false);
       if (onSelectEpisode) onSelectEpisode(series, prevEp);
@@ -203,10 +205,10 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
   };
 
   const handleNextEpisode = () => {
-    if (!series || !currentSeason || !activeEpisode) return;
-    const currIndex = currentSeason.episodes.findIndex(e => e.episodeNumber === activeEpisode.episodeNumber);
-    if (currIndex < currentSeason.episodes.length - 1) {
-      const nextEp = currentSeason.episodes[currIndex + 1];
+    if (!series || !activeEpisode) return;
+    const currIndex = activeEpisodes.findIndex(e => e.episodeNumber === activeEpisode.episodeNumber);
+    if (currIndex !== -1 && currIndex < activeEpisodes.length - 1) {
+      const nextEp = activeEpisodes[currIndex + 1];
       setActiveEpisode(nextEp);
       setIsIframeLoaded(false);
       if (onSelectEpisode) onSelectEpisode(series, nextEp);
@@ -315,14 +317,14 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
             )}
 
             {/* Episode Selector Dropdown */}
-            {currentSeason && currentSeason.episodes.length > 0 && (
+            {activeEpisodes.length > 0 && (
               <div className="flex items-center gap-1.5 bg-black/60 border border-white/15 rounded-xl px-3 py-1.5">
                 <ListVideo className="w-3.5 h-3.5 text-red-500" />
                 <select
                   value={activeEpisode?.episodeNumber || 1}
                   onChange={(e) => {
                     const epNum = parseInt(e.target.value, 10);
-                    const ep = currentSeason.episodes.find(item => item.episodeNumber === epNum);
+                    const ep = activeEpisodes.find(item => item.episodeNumber === epNum);
                     if (ep) {
                       setActiveEpisode(ep);
                       setIsIframeLoaded(false);
@@ -331,7 +333,7 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
                   }}
                   className="bg-transparent text-xs font-mono font-bold text-white focus:outline-none cursor-pointer max-w-[180px] truncate"
                 >
-                  {currentSeason.episodes.map(e => (
+                  {activeEpisodes.map(e => (
                     <option key={e.id} value={e.episodeNumber} className="bg-slate-900 text-white truncate">
                       E{e.episodeNumber}: {e.title}
                     </option>
