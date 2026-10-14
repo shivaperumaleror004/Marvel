@@ -8,7 +8,7 @@ export const TMDB_BASE_URL = '/api/tmdb';
 export const TMDB_IMAGE_BASE = 'https://image.tmdb.org/t/p';
 
 // Default Fallback Assets (Marvel Cinematic Studio aesthetic)
-export const FALLBACK_POSTER = 'https://image.tmdb.org/t/p/w780/78lPtwv72eTNqFW9COBYI0dWDJa.jpg';
+export const FALLBACK_POSTER = '/shield-favicon.png';
 export const FALLBACK_BACKDROP = 'https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg';
 export const FALLBACK_STILL = 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop';
 export const FALLBACK_AVATAR = 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop';

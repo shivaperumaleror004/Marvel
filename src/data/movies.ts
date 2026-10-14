@@ -6615,9 +6615,9 @@ export const MOVIES_DATA: Movie[] = [
       "the-fantastic-four-first-steps"
     ],
     "tmdbId": 617126,
-    "isUpcoming": true,
-    "isReleased": false,
-    "releaseStatus": "upcoming",
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
       "tmdbId": 617126,
@@ -6770,9 +6770,9 @@ export const MOVIES_DATA: Movie[] = [
       "hulk"
     ],
     "tmdbId": 969681,
-    "isUpcoming": true,
-    "isReleased": false,
-    "releaseStatus": "upcoming",
+    "isUpcoming": false,
+    "isReleased": true,
+    "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
       "tmdbId": 969681,
@@ -7279,7 +7279,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2022-11-25",
     "runtime": 44,
     "overview": "On a mission to make Christmas unforgettable for Peter Quill, the Guardians head to Earth in search of the ultimate present: Kevin Bacon.",
-    "poster": "https://image.tmdb.org/t/p/w780/8dqXJijQQ46NsLq4YkFj1n0o9Gf.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/8dqXyslZ2hv49Oiob9UjlGSHSTR.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8tB6Z5i7W8K5qA4vN9eQ8vN3B.jpg",
     "rating": 6.9,
     "genres": [
@@ -7341,7 +7341,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "1988-05-22",
     "runtime": 93,
     "overview": "Dr. David Banner is on the verge of a cure for his gamma-induced condition when former student Donald Blake arrives with an ancient hammer that summons Thor, the Norse god of thunder. When Banner's life-saving technology is threatened, the two heroes must join forces.",
-    "poster": "https://image.tmdb.org/t/p/w780/kCqT9fV4Yg9B7DqT7p5e3gN4mU3.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/rDAWdpW0uzUj9c4YPeuanPGWHBq.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/8Z0V1sE3GvQx6uV5H2o8e6e5w4A.jpg",
     "rating": 6.1,
     "genres": [
@@ -7389,13 +7389,13 @@ export const MOVIES_DATA: Movie[] = [
       "hulk",
       "thor"
     ],
-    "tmdbId": 44379,
+    "tmdbId": 26881,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 44379,
+      "tmdbId": 26881,
       "type": "movie",
       "watchProvider": "screenscape",
       "language": "eng"
@@ -7408,7 +7408,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "1989-05-07",
     "runtime": 100,
     "overview": "Framed for a subway robbery, Dr. David Banner is defended in court by blind defense attorney Matt Murdock, who secretly battles crime in the streets as the masked vigilante Daredevil. Together, Hulk and Daredevil take on Kingpin Wilson Fisk.",
-    "poster": "https://image.tmdb.org/t/p/w780/jH1t8c5Q8k6R9uY7mG0V3p4X2w1.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/jaaeLvonWry3TdTXaGSu2VveNEG.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/p7Y9k6R9uY7mG0V3p4X2w1.jpg",
     "rating": 6.2,
     "genres": [
@@ -7457,13 +7457,13 @@ export const MOVIES_DATA: Movie[] = [
       "hulk",
       "daredevil"
     ],
-    "tmdbId": 39598,
+    "tmdbId": 26883,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 39598,
+      "tmdbId": 26883,
       "type": "movie",
       "watchProvider": "screenscape",
       "language": "eng"
@@ -7476,7 +7476,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "1990-02-18",
     "runtime": 95,
     "overview": "Seeking a permanent end to his curse, Dr. David Banner poses as a lab assistant for scientist Dr. Ronald Pratt. When an Eastern European espionage network attempts to weaponize Pratt's research, Banner must make the ultimate sacrifice to save humanity.",
-    "poster": "https://image.tmdb.org/t/p/w780/r2L9k6R9uY7mG0V3p4X2w1.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/6q6CviMLR97ssODmKhxgyxQuoYp.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/w8L9k6R9uY7mG0V3p4X2w1.jpg",
     "rating": 5.8,
     "genres": [
@@ -7523,13 +7523,13 @@ export const MOVIES_DATA: Movie[] = [
     "characters": [
       "hulk"
     ],
-    "tmdbId": 44380,
+    "tmdbId": 19593,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 44380,
+      "tmdbId": 19593,
       "type": "movie",
       "watchProvider": "screenscape",
       "language": "eng"
@@ -7542,7 +7542,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2013-04-16",
     "runtime": 88,
     "overview": "Iron Man teams up with the Punisher, Black Widow, and Hawkeye to stop Ezekiel Stane, who has developed a new bio-technological organism that threatens to assimilate and destroy all advanced technology.",
-    "poster": "https://image.tmdb.org/t/p/w780/6A7Q6rK8n2J9rP8L0Y7M0k.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/eHDez1uN5X2ZAq4niX7HvhyZIIO.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/u6W6rK8n2J9rP8L0Y7M0k.jpg",
     "rating": 6,
     "genres": [
@@ -7583,13 +7583,13 @@ export const MOVIES_DATA: Movie[] = [
       "black-widow",
       "hawkeye"
     ],
-    "tmdbId": 172605,
+    "tmdbId": 169934,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 172605,
+      "tmdbId": 169934,
       "type": "movie",
       "watchProvider": "screenscape",
       "language": "eng"
@@ -7602,7 +7602,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2013-12-03",
     "runtime": 71,
     "overview": "The Invincible Iron Man and the Incredible Hulk join forces to save the Earth from its greatest threat yet: Zzzax, a monstrous, energy-devouring creature created by Hydra scientists.",
-    "poster": "https://image.tmdb.org/t/p/w780/tC3T6uE7n9Y9k8R8o5P1.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/xCBBQMPxXsqIlZUAbpeSo1SVj6R.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/pC3T6uE7n9Y9k8R8o5P1.jpg",
     "rating": 5.6,
     "genres": [
@@ -7662,7 +7662,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2014-03-25",
     "runtime": 83,
     "overview": "After interfering with a top-secret S.H.I.E.L.D. mission, the Punisher is taken into custody by Black Widow. Under orders from Nick Fury, the lethal pair must team up to stop Leviathan, a global terrorist cabal auctioning stolen S.H.I.E.L.D. tech.",
-    "poster": "https://image.tmdb.org/t/p/w780/jQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/z6KvqfkAdmdCcNpCecPioEDjxfq.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/kQ8uK8n2J9rP8L0Y7M0k.jpg",
     "rating": 6.5,
     "genres": [
@@ -7704,13 +7704,13 @@ export const MOVIES_DATA: Movie[] = [
       "hulk",
       "hawkeye"
     ],
-    "tmdbId": 247061,
+    "tmdbId": 257346,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 247061,
+      "tmdbId": 257346,
       "type": "movie",
       "watchProvider": "screenscape",
       "language": "eng"
@@ -7723,7 +7723,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2014-07-29",
     "runtime": 71,
     "overview": "Iron Man and Captain America battle to keep the Red Skull and his Taskmaster minion from unleashing an army of Hydra Brutes on the world. To prevail, they must combine Stark's high-tech intellect with Rogers' battlefield leadership.",
-    "poster": "https://image.tmdb.org/t/p/w780/aC3T6uE7n9Y9k8R8o5P1.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/CX7eRlaxFXiW3UGQBdQUoSVZRi.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/bC3T6uE7n9Y9k8R8o5P1.jpg",
     "rating": 5.8,
     "genres": [
@@ -7782,7 +7782,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2015-12-11",
     "runtime": 73,
     "overview": "The frost giant Ymir and Loki team up to steal Santa Claus' powers and conquer the world. The Avengers, along with Captain Marvel and Reptil, must travel to the North Pole to save the holidays and defeat the frost giants.",
-    "poster": "https://image.tmdb.org/t/p/w780/mC3T6uE7n9Y9k8R8o5P1.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/h7pgMFwnx2dhSZypbBYdoVCV1eT.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/nC3T6uE7n9Y9k8R8o5P1.jpg",
     "rating": 5.8,
     "genres": [
@@ -7833,13 +7833,13 @@ export const MOVIES_DATA: Movie[] = [
       "hulk",
       "loki"
     ],
-    "tmdbId": 368304,
+    "tmdbId": 372631,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 368304,
+      "tmdbId": 372631,
       "type": "movie",
       "watchProvider": "screenscape",
       "language": "eng"
@@ -7852,7 +7852,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2016-10-21",
     "runtime": 75,
     "overview": "On Halloween night, Nightmare attempts to conquer the waking world by entering through the Dream Dimension. Doctor Strange, the Hulk, and the Howling Commandos must join forces to battle terrifying monsters and stop Nightmare's plot.",
-    "poster": "https://image.tmdb.org/t/p/w780/kH1t8c5Q8k6R9uY7mG0V3p4X2w1.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/udUnSnQKzYddDpU6WNdTMB5XVEE.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/jH1t8c5Q8k6R9uY7mG0V3p4X2w1.jpg",
     "rating": 6.1,
     "genres": [
@@ -7891,13 +7891,13 @@ export const MOVIES_DATA: Movie[] = [
       "hulk",
       "doctor-strange"
     ],
-    "tmdbId": 418078,
+    "tmdbId": 422153,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 418078,
+      "tmdbId": 422153,
       "type": "movie",
       "watchProvider": "screenscape",
       "language": "eng"
@@ -7910,7 +7910,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2018-09-30",
     "runtime": 80,
     "overview": "When a threat of inhuman proportions looms over the Marvel Universe, an unconventional team of young heroes—Ms. Marvel, Squirrel Girl, Quake, Patriot, America Chavez, and Inferno—join forces to prove that teamwork can save the world.",
-    "poster": "https://image.tmdb.org/t/p/w780/bQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/rXmc4jvDBU04Wp8r5JMWy3HbhB3.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/cQ8uK8n2J9rP8L0Y7M0k.jpg",
     "rating": 6.4,
     "genres": [
@@ -7953,13 +7953,13 @@ export const MOVIES_DATA: Movie[] = [
     "characters": [
       "ms-marvel"
     ],
-    "tmdbId": 538153,
+    "tmdbId": 491633,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 538153,
+      "tmdbId": 491633,
       "type": "movie",
       "watchProvider": "screenscape",
       "language": "eng"
@@ -7972,7 +7972,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2019-01-16",
     "runtime": 22,
     "overview": "Ghost-Spider teams up with the Secret Warriors to track down She-Hulk villain She-Thing and Exile before they carry out a plan to destroy the city.",
-    "poster": "https://image.tmdb.org/t/p/w780/dQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/pufQvXrrxng95dT4kYlQtXn98kK.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/eQ8uK8n2J9rP8L0Y7M0k.jpg",
     "rating": 6.3,
     "genres": [
@@ -8011,13 +8011,13 @@ export const MOVIES_DATA: Movie[] = [
       "ms-marvel",
       "spider-man"
     ],
-    "tmdbId": 574474,
+    "tmdbId": 576743,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 574474,
+      "tmdbId": 576743,
       "type": "movie",
       "watchProvider": "screenscape",
       "language": "eng"
@@ -8030,7 +8030,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2019-04-03",
     "runtime": 44,
     "overview": "Riri Williams struggles to fit into college until Hala the Accuser destroys the engineering lab, prompting Riri to dawn her Ironheart armor alongside the Secret Warriors.",
-    "poster": "https://image.tmdb.org/t/p/w780/fQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/4IZv4EdqXNtMIpTqrwtLJubdYI2.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/gQ8uK8n2J9rP8L0Y7M0k.jpg",
     "rating": 6.2,
     "genres": [
@@ -8069,13 +8069,13 @@ export const MOVIES_DATA: Movie[] = [
       "ironheart",
       "ms-marvel"
     ],
-    "tmdbId": 588226,
+    "tmdbId": 583209,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 588226,
+      "tmdbId": 583209,
       "type": "movie",
       "watchProvider": "screenscape",
       "language": "eng"
@@ -8088,7 +8088,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2019-08-28",
     "runtime": 22,
     "overview": "Gwen Stacy's band competition is in jeopardy when mysterious sonic attacks threaten the city, forcing Ghost-Spider to multitask between rockstar and superhero.",
-    "poster": "https://image.tmdb.org/t/p/w780/hQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/mFL0EzAhEj3vscyGUMk6sT7pfQg.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/iQ8uK8n2J9rP8L0Y7M0k.jpg",
     "rating": 6.1,
     "genres": [
@@ -8123,13 +8123,13 @@ export const MOVIES_DATA: Movie[] = [
       "ms-marvel",
       "spider-man"
     ],
-    "tmdbId": 627103,
+    "tmdbId": 592687,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 627103,
+      "tmdbId": 592687,
       "type": "movie",
       "watchProvider": "screenscape",
       "language": "eng"
@@ -8142,7 +8142,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2019-10-06",
     "runtime": 22,
     "overview": "Princess Shuri of Wakanda visits New York City incognito, joining forces with the Secret Warriors to blend cultural diplomacy with high-octane crime fighting.",
-    "poster": "https://image.tmdb.org/t/p/w780/jQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/4fcvluN98HWo6VB7C5ONRNOL4CY.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/kQ8uK8n2J9rP8L0Y7M0k.jpg",
     "rating": 6.5,
     "genres": [
@@ -8181,13 +8181,13 @@ export const MOVIES_DATA: Movie[] = [
       "black-panther",
       "ms-marvel"
     ],
-    "tmdbId": 639933,
+    "tmdbId": 592688,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 639933,
+      "tmdbId": 592688,
       "type": "movie",
       "watchProvider": "screenscape",
       "language": "eng"
@@ -8200,7 +8200,7 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2019-12-18",
     "runtime": 44,
     "overview": "When Inferno's powers are stolen by Zarek, he must overcome self-doubt with the support of America Chavez and the Secret Warriors to reclaim his flame and defend his friends.",
-    "poster": "https://image.tmdb.org/t/p/w780/lQ8uK8n2J9rP8L0Y7M0k.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/lelNkBnjIi4N1uQBV2TnODgS9UT.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/mQ8uK8n2J9rP8L0Y7M0k.jpg",
     "rating": 6,
     "genres": [
@@ -8238,13 +8238,13 @@ export const MOVIES_DATA: Movie[] = [
     "characters": [
       "ms-marvel"
     ],
-    "tmdbId": 653723,
+    "tmdbId": 592689,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 653723,
+      "tmdbId": 592689,
       "type": "movie",
       "watchProvider": "screenscape",
       "language": "eng"
