@@ -1,14 +1,15 @@
 import React from 'react';
-import { Play, RotateCcw, Clock } from 'lucide-react';
+import { Play, RotateCcw, Clock, X } from 'lucide-react';
 import { useWatchProgress } from '../../hooks/useWatchProgress';
 import { WatchProgress } from '../../types';
+import { FALLBACK_POSTER } from '../../services/tmdb';
 
 interface ContinueWatchingRowProps {
   onResume: (progress: WatchProgress) => void;
 }
 
 export const ContinueWatchingRow: React.FC<ContinueWatchingRowProps> = ({ onResume }) => {
-  const { continueWatching } = useWatchProgress();
+  const { continueWatching, removeFromHistory } = useWatchProgress();
 
   if (continueWatching.length === 0) return null;
 
@@ -38,8 +39,9 @@ export const ContinueWatchingRow: React.FC<ContinueWatchingRowProps> = ({ onResu
             {/* Backdrop / Poster Container */}
             <div className="relative aspect-video w-full overflow-hidden bg-slate-950">
               <img
-                src={item.backdrop || item.poster}
+                src={item.backdrop || item.poster || FALLBACK_POSTER}
                 alt={item.title}
+                onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_POSTER; }}
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
@@ -51,8 +53,20 @@ export const ContinueWatchingRow: React.FC<ContinueWatchingRowProps> = ({ onResu
                 </div>
               </div>
 
+              {/* Dismiss / Remove button */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  removeFromHistory(item.id);
+                }}
+                title="Remove from history"
+                className="absolute top-2.5 left-2.5 p-1 rounded-full bg-black/70 hover:bg-red-600 text-gray-400 hover:text-white transition-colors z-20 opacity-0 group-hover:opacity-100"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+
               {/* Progress Bar Badge */}
-              <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded bg-black/80 border border-white/20 text-[10px] font-mono text-red-400 font-bold">
+              <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded bg-black/80 border border-white/20 text-[10px] font-mono text-red-400 font-bold z-10">
                 {item.percentage}% WATCHED
               </div>
             </div>

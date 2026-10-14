@@ -1,58 +1,31 @@
 import { useState, useEffect } from 'react';
 import type { WatchProgress } from '../types';
-import { isMarvelContent } from '../utils/marvelWhitelist';
 
 const STORAGE_KEY = 'marvel_watch_hub_progress';
-
-const DEFAULT_MOCK_PROGRESS: WatchProgress[] = [
-  {
-    id: 'iron-man',
-    mediaId: 'iron-man',
-    mediaType: 'movie',
-    title: 'Iron Man',
-    currentTime: 5890,
-    duration: 7560,
-    percentage: 78,
-    lastWatched: new Date(Date.now() - 3600000 * 4).toISOString(),
-    poster: 'https://images.unsplash.com/photo-1635863138275-d9b33299680b?q=80&w=800&auto=format&fit=crop',
-    backdrop: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1600&auto=format&fit=crop'
-  },
-  {
-    id: 'loki_s1_e1',
-    mediaId: 'loki',
-    mediaType: 'series',
-    seriesId: 'loki',
-    seasonNumber: 1,
-    episodeNumber: 1,
-    title: 'Loki',
-    subtitle: 'S1:E1 • Glorious Purpose',
-    currentTime: 1240,
-    duration: 3060,
-    percentage: 40,
-    lastWatched: new Date(Date.now() - 3600000 * 24).toISOString(),
-    poster: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop',
-    backdrop: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1600&auto=format&fit=crop'
-  }
-];
 
 export function useWatchProgress() {
   const [progressList, setProgressList] = useState<Record<string, WatchProgress>>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
-        return JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        const cleaned: Record<string, WatchProgress> = {};
+        for (const [k, v] of Object.entries(parsed as Record<string, WatchProgress>)) {
+          // Exclude any legacy mock items that used Unsplash images or mock IDs
+          const isMock =
+            v.poster?.includes('unsplash.com') ||
+            v.backdrop?.includes('unsplash.com') ||
+            (v.id === 'iron-man' && v.currentTime === 5890) ||
+            (v.id === 'loki_s1_e1' && v.currentTime === 1240);
+          if (!isMock && v.title) {
+            cleaned[k] = v;
+          }
+        }
+        return cleaned;
       }
-      const initialMap: Record<string, WatchProgress> = {};
-      DEFAULT_MOCK_PROGRESS.forEach(item => {
-        initialMap[item.id] = item;
-      });
-      return initialMap;
+      return {};
     } catch {
-      const initialMap: Record<string, WatchProgress> = {};
-      DEFAULT_MOCK_PROGRESS.forEach(item => {
-        initialMap[item.id] = item;
-      });
-      return initialMap;
+      return {};
     }
   });
 
@@ -82,19 +55,38 @@ export function useWatchProgress() {
     return progressList[id];
   };
 
-  const clearHistory = () => {
-    setProgressList({});
+  const removeFromHistory = (id: string) => {
+    setProgressList(prev => {
+      const updated = { ...prev };
+      delete updated[id];
+      return updated;
+    });
   };
 
-  const sortedContinueWatching = Object.values(progressList)
-    .filter(item => isMarvelContent(item) && item.percentage < 95 && item.percentage > 0)
+  const clearHistory = () => {
+    setProgressList({});
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch {}
+  };
+
+  // Full watch history sorted by most recent
+  const watchHistory = Object.values(progressList)
+    .filter(item => item && item.title)
     .sort((a, b) => new Date(b.lastWatched).getTime() - new Date(a.lastWatched).getTime());
+
+  // In-progress items for Continue Watching shelf (< 95% and > 0%)
+  const sortedContinueWatching = watchHistory
+    .filter(item => item.percentage < 95 && item.percentage > 0);
 
   return {
     progressList,
     updateProgress,
     getProgress,
+    removeFromHistory,
     clearHistory,
-    continueWatching: sortedContinueWatching
+    continueWatching: sortedContinueWatching,
+    watchHistory
   };
 }
+

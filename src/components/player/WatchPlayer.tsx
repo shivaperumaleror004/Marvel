@@ -149,34 +149,68 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
     });
   }
 
-  // Periodic watch progress simulator / recorder for embedded frame
+  // Immediate and periodic watch progress recorder for embedded frame
   useEffect(() => {
-    if (isPlayerActive && isIframeLoaded) {
-      const duration = mediaType === 'movie' ? (movie?.runtime ? movie.runtime * 60 : 7200) : (activeEpisode?.runtime ? activeEpisode.runtime * 60 : 2700);
-      const interval = setInterval(() => {
-        const title = mediaType === 'movie' ? (movie?.title || 'Marvel Movie') : (series?.title || 'Marvel Series');
-        const subtitle = mediaType === 'series' && activeEpisode
-          ? `S${activeEpisode.seasonNumber}:E${activeEpisode.episodeNumber} • ${activeEpisode.title}`
-          : undefined;
-        const poster = mediaType === 'movie' ? (movie?.backdrop || movie?.poster || '') : (activeEpisode?.still || series?.backdrop || series?.poster || '');
+    if (!targetId) return;
 
-        updateProgress({
-          id: targetId,
-          mediaId: mediaType === 'movie' ? (movie?.id || '') : (series?.id || ''),
-          mediaType,
-          seriesId: series?.id,
-          seasonNumber: activeEpisode?.seasonNumber,
-          episodeNumber: activeEpisode?.episodeNumber,
-          title,
-          subtitle,
-          currentTime: Math.min(duration, (initialTime || 0) + 30),
-          duration,
-          poster
-        });
-      }, 10000);
-      return () => clearInterval(interval);
+    const duration = mediaType === 'movie'
+      ? (movie?.runtime ? movie.runtime * 60 : 7200)
+      : (activeEpisode?.runtime ? activeEpisode.runtime * 60 : 2700);
+
+    const title = mediaType === 'movie' ? (movie?.title || 'Marvel Movie') : (series?.title || 'Marvel Series');
+    const subtitle = mediaType === 'series' && activeEpisode
+      ? `S${activeEpisode.seasonNumber}:E${activeEpisode.episodeNumber} • ${activeEpisode.title}`
+      : undefined;
+    const poster = mediaType === 'movie'
+      ? (movie?.poster || movie?.backdrop || '')
+      : (activeEpisode?.still || series?.poster || series?.backdrop || '');
+    const backdrop = mediaType === 'movie'
+      ? (movie?.backdrop || movie?.poster || '')
+      : (series?.backdrop || activeEpisode?.still || series?.poster || '');
+
+    // Record immediately so it appears right away in watch history
+    let currentWatchedTime = initialTime && initialTime > 0 ? initialTime : 60;
+    const existing = getProgress(targetId);
+    if (existing && existing.currentTime > currentWatchedTime) {
+      currentWatchedTime = existing.currentTime;
     }
-  }, [isPlayerActive, isIframeLoaded, targetId, mediaType, movie, series, activeEpisode, updateProgress, initialTime]);
+
+    updateProgress({
+      id: targetId,
+      mediaId: mediaType === 'movie' ? (movie?.id || '') : (series?.id || ''),
+      mediaType,
+      seriesId: series?.id,
+      seasonNumber: activeEpisode?.seasonNumber,
+      episodeNumber: activeEpisode?.episodeNumber,
+      title,
+      subtitle,
+      currentTime: currentWatchedTime,
+      duration,
+      poster,
+      backdrop
+    });
+
+    // Increment watch timer every 10 seconds while on the player
+    const interval = setInterval(() => {
+      currentWatchedTime = Math.min(duration, currentWatchedTime + 10);
+      updateProgress({
+        id: targetId,
+        mediaId: mediaType === 'movie' ? (movie?.id || '') : (series?.id || ''),
+        mediaType,
+        seriesId: series?.id,
+        seasonNumber: activeEpisode?.seasonNumber,
+        episodeNumber: activeEpisode?.episodeNumber,
+        title,
+        subtitle,
+        currentTime: currentWatchedTime,
+        duration,
+        poster,
+        backdrop
+      });
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [targetId, mediaType, movie, series, activeEpisode, initialTime]);
 
   const activeEpisodes = seasonEpisodes.length > 0 ? seasonEpisodes : (currentSeason?.episodes || []);
 
