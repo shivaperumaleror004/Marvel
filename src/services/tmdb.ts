@@ -3,8 +3,8 @@ import { SERIES_DATA } from '../data/series';
 import type { Movie, Series, CastMember, Season, Episode } from '../types';
 import { isMarvelContent, MARVEL_MOVIE_TMDB_IDS } from '../utils/marvelWhitelist';
 
-// TMDB Official API Configuration
-export const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
+// TMDB Serverless API Proxy Configuration (Same-Origin Vercel Serverless Function)
+export const TMDB_BASE_URL = '/api/tmdb';
 export const TMDB_IMAGE_BASE = 'https://image.tmdb.org/t/p';
 
 // Default Fallback Assets (Marvel Cinematic Studio aesthetic)
@@ -12,20 +12,6 @@ export const FALLBACK_POSTER = 'https://image.tmdb.org/t/p/w780/78lPtwv72eTNqFW9
 export const FALLBACK_BACKDROP = 'https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg';
 export const FALLBACK_STILL = 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop';
 export const FALLBACK_AVATAR = 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop';
-
-// Retrieve API Key securely from Vite Environment
-const RAW_API_KEY = (import.meta.env.VITE_TMDB_API_KEY || '').trim();
-
-// Determine if token is a v4 Bearer Token (JWT format starting with eyJ) or v3 API Key
-const IS_BEARER_TOKEN = RAW_API_KEY.startsWith('eyJ');
-
-/**
- * Strips sensitive API keys from strings for safe console logging
- */
-function sanitizeLog(message: string): string {
-  if (!RAW_API_KEY) return message;
-  return message.replace(new RegExp(RAW_API_KEY, 'g'), '[REDACTED_API_KEY]');
-}
 
 // In-memory response cache and in-flight request deduplication
 const memoryCache = new Map<string, { data: any; expiry: number }>();
@@ -99,19 +85,14 @@ export function getTmdbProfileUrl(path?: string | null, size: 'w185' | 'w300' | 
 }
 
 /**
- * Centralized HTTP client for TMDB with deduplication, caching, and safe error handling.
+ * Centralized HTTP client for TMDB through the same-origin /api/tmdb proxy
+ * with deduplication, caching, and safe error handling.
  */
 export async function tmdbFetch<T>(endpoint: string, params: Record<string, string> = {}): Promise<T | null> {
-  if (!RAW_API_KEY) {
-    return null;
-  }
-
   const queryParams = new URLSearchParams(params);
-  if (!IS_BEARER_TOKEN) {
-    queryParams.set('api_key', RAW_API_KEY);
-  }
+  queryParams.set('path', endpoint);
 
-  const url = `${TMDB_BASE_URL}${endpoint}?${queryParams.toString()}`;
+  const url = `${TMDB_BASE_URL}?${queryParams.toString()}`;
   const cacheKey = `${endpoint}_${queryParams.toString()}`;
 
   // Return cached result if available
@@ -125,17 +106,14 @@ export async function tmdbFetch<T>(endpoint: string, params: Record<string, stri
 
   const fetchPromise = (async () => {
     try {
-      const headers: HeadersInit = {
-        'Accept': 'application/json',
-      };
-      if (IS_BEARER_TOKEN) {
-        headers['Authorization'] = `Bearer ${RAW_API_KEY}`;
-      }
+      const res = await fetch(url, {
+        headers: {
+          'Accept': 'application/json',
+        },
+      });
 
-      const res = await fetch(url, { headers });
-
-      if (res.status === 401 || res.status === 403) {
-        console.warn('TMDB API: Authentication failed. Please verify your VITE_TMDB_API_KEY.');
+      if (res.status === 401 || res.status === 403 || res.status === 502) {
+        console.warn('TMDB API: Proxy upstream authentication failed. Verify server-side TMDB_API_KEY.');
         return null;
       }
 
@@ -148,6 +126,11 @@ export async function tmdbFetch<T>(endpoint: string, params: Record<string, stri
         return null;
       }
 
+      if (res.status === 503) {
+        console.warn('TMDB API: TMDB_API_KEY not configured on server. Falling back to curated local data.');
+        return null;
+      }
+
       if (!res.ok) {
         console.warn(`TMDB API HTTP Error ${res.status}`);
         return null;
@@ -156,8 +139,9 @@ export async function tmdbFetch<T>(endpoint: string, params: Record<string, stri
       const data = await res.json();
       setStoredCache(cacheKey, data);
       return data as T;
-    } catch (err: any) {
-      console.warn('TMDB API Network Error:', sanitizeLog(err?.message || 'Failed to fetch'));
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Failed to fetch';
+      console.warn('TMDB API Network Error:', msg);
       return null;
     } finally {
       inFlightRequests.delete(cacheKey);

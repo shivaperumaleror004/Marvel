@@ -7,17 +7,26 @@ import { SearchOverlay } from './components/layout/SearchOverlay';
 import { HomePage } from './pages/HomePage';
 import { MoviesPage } from './pages/MoviesPage';
 import { SeriesPage } from './pages/SeriesPage';
-import { AnimationPage } from './pages/AnimationPage';
-import { StudiosPage } from './pages/StudiosPage';
-import { UniversesPage } from './pages/UniversesPage';
-import { MovieDetailPage } from './pages/MovieDetailPage';
-import { SeriesDetailPage } from './pages/SeriesDetailPage';
-import { WatchPage } from './pages/WatchPage';
-import { TimelinePage } from './pages/TimelinePage';
-import { CharactersPage } from './pages/CharactersPage';
-import { CharacterDetailPage } from './pages/CharacterDetailPage';
-import { MyListPage } from './pages/MyListPage';
-import { SettingsPage } from './pages/SettingsPage';
+
+// Dynamic imports for code splitting to optimize bundle size and initial load
+const AnimationPage = React.lazy(() => import('./pages/AnimationPage').then(m => ({ default: m.AnimationPage })));
+const StudiosPage = React.lazy(() => import('./pages/StudiosPage').then(m => ({ default: m.StudiosPage })));
+const UniversesPage = React.lazy(() => import('./pages/UniversesPage').then(m => ({ default: m.UniversesPage })));
+const MovieDetailPage = React.lazy(() => import('./pages/MovieDetailPage').then(m => ({ default: m.MovieDetailPage })));
+const SeriesDetailPage = React.lazy(() => import('./pages/SeriesDetailPage').then(m => ({ default: m.SeriesDetailPage })));
+const WatchPage = React.lazy(() => import('./pages/WatchPage').then(m => ({ default: m.WatchPage })));
+const TimelinePage = React.lazy(() => import('./pages/TimelinePage').then(m => ({ default: m.TimelinePage })));
+const CharactersPage = React.lazy(() => import('./pages/CharactersPage').then(m => ({ default: m.CharactersPage })));
+const CharacterDetailPage = React.lazy(() => import('./pages/CharacterDetailPage').then(m => ({ default: m.CharacterDetailPage })));
+const MyListPage = React.lazy(() => import('./pages/MyListPage').then(m => ({ default: m.MyListPage })));
+const SettingsPage = React.lazy(() => import('./pages/SettingsPage').then(m => ({ default: m.SettingsPage })));
+
+const PageLoadingFallback: React.FC = () => (
+  <div className="flex flex-col items-center justify-center min-h-[55vh] text-center px-4">
+    <div className="w-10 h-10 border-2 border-red-600/30 border-t-red-600 rounded-full animate-spin mb-4" />
+    <span className="text-xs font-mono uppercase tracking-widest text-zinc-400">Loading Module...</span>
+  </div>
+);
 
 import { Movie, Series, Episode, Character, TimelineNode, WatchProgress } from './types';
 import { MediaProvider, useMedia } from './context/MediaContext';
@@ -309,6 +318,7 @@ function MarvelHubContent() {
 
       {/* Main Page Router */}
       <main className="flex-1 pb-16 md:pb-0">
+        <React.Suspense fallback={<PageLoadingFallback />}>
         {activeTab === 'home' && (
           <HomePage
             onSelectMovie={handleSelectMovie}
@@ -439,6 +449,7 @@ function MarvelHubContent() {
         {activeTab === 'settings' && (
           <SettingsPage />
         )}
+        </React.Suspense>
       </main>
 
       {/* Global Search Overlay */}
