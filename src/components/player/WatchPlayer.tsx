@@ -18,6 +18,7 @@ import type { Movie, Series, Episode, WatchConfig, EpisodeWatchConfig } from '..
 import { MOVIES_DATA } from '../../data/movies';
 import { SERIES_DATA } from '../../data/series';
 import { buildMovieWatchUrl, buildEpisodeWatchUrl, resolveWatchUrl } from '../../services/watchSourceBuilder';
+import { fetchCompleteSeasonEpisodes } from '../../services/tmdb';
 import { useWatchProgress } from '../../hooks/useWatchProgress';
 import { useSettings } from '../../hooks/useSettings';
 import { isMarvelContent } from '../../utils/marvelWhitelist';
@@ -63,6 +64,25 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
 
   const currentSeason = series?.seasons.find(s => s.seasonNumber === activeSeasonNum) || series?.seasons[0];
 
+  // Dynamic episodes for active season (populated from local data and enriched via TMDB)
+  const [seasonEpisodes, setSeasonEpisodes] = useState<Episode[]>(() => {
+    return currentSeason?.episodes || [];
+  });
+
+  useEffect(() => {
+    if (series && activeSeasonNum) {
+      const localSeason = series.seasons.find(s => s.seasonNumber === activeSeasonNum);
+      if (localSeason && localSeason.episodes.length > 0) {
+        setSeasonEpisodes(localSeason.episodes);
+      }
+      fetchCompleteSeasonEpisodes(series, activeSeasonNum).then(eps => {
+        if (eps && eps.length > 0) {
+          setSeasonEpisodes(eps);
+        }
+      });
+    }
+  }, [series, activeSeasonNum]);
+
   const [activeEpisode, setActiveEpisode] = useState<Episode | undefined>(() => {
     if (initialEpisode) return initialEpisode;
     if (initialEpNum && currentSeason) {
@@ -81,12 +101,12 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
 
   useEffect(() => {
     if (series && activeSeasonNum) {
-      const season = series.seasons.find(s => s.seasonNumber === activeSeasonNum);
-      if (season && (!activeEpisode || activeEpisode.seasonNumber !== activeSeasonNum)) {
-        setActiveEpisode(season.episodes[0]);
+      const eps = seasonEpisodes.length > 0 ? seasonEpisodes : (currentSeason?.episodes || []);
+      if (eps.length > 0 && (!activeEpisode || activeEpisode.seasonNumber !== activeSeasonNum)) {
+        setActiveEpisode(eps[0]);
       }
     }
-  }, [activeSeasonNum, series]);
+  }, [activeSeasonNum, series, seasonEpisodes, activeEpisode, currentSeason]);
 
   // Construct target item ID for watch progress persistence
   const targetId = mediaType === 'movie'

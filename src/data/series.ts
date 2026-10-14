@@ -54,23 +54,109 @@ export const SERIES_DATA: Series[] = [
       {
         "seasonNumber": 1,
         "title": "Season 1",
-        "overview": "Loki Season 1",
+        "overview": "Loki navigates the complex Sacred Timeline with the Time Variance Authority.",
         "poster": "https://image.tmdb.org/t/p/w780/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
         "episodes": [
           {
             "id": "loki_s1_e1",
             "seasonNumber": 1,
             "episodeNumber": 1,
-            "title": "Episode 1",
-            "runtime": 50,
-            "overview": "Episode 1 of Loki Season 1",
+            "title": "Glorious Purpose",
+            "runtime": 51,
+            "overview": "After stealing the Tesseract in Avengers: Endgame, Loki is brought to the mysterious Time Variance Authority.",
             "still": "https://image.tmdb.org/t/p/w1280/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
-            "airDate": "2021-01-01",
+            "airDate": "2021-06-09",
             "episodeWatchConfig": {
               "season": 1,
               "episode": 1,
               "tmdbId": 84958,
-              "watchProvider": "screenscape"
+              "watchProvider": "screenscape",
+              "language": "eng"
+            }
+          },
+          {
+            "id": "loki_s1_e2",
+            "seasonNumber": 1,
+            "episodeNumber": 2,
+            "title": "The Variant",
+            "runtime": 54,
+            "overview": "Mobius puts Loki to work tracking down a dangerous fugitive variant causing disruptions across time.",
+            "still": "https://image.tmdb.org/t/p/w1280/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+            "airDate": "2021-06-16",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 2,
+              "tmdbId": 84958,
+              "watchProvider": "screenscape",
+              "language": "eng"
+            }
+          },
+          {
+            "id": "loki_s1_e3",
+            "seasonNumber": 1,
+            "episodeNumber": 3,
+            "title": "Lamentis",
+            "runtime": 42,
+            "overview": "Loki and Sylvie find themselves stranded on the doomed moon of Lamentis-1 facing impending apocalypse.",
+            "still": "https://image.tmdb.org/t/p/w1280/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+            "airDate": "2021-06-23",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 3,
+              "tmdbId": 84958,
+              "watchProvider": "screenscape",
+              "language": "eng"
+            }
+          },
+          {
+            "id": "loki_s1_e4",
+            "seasonNumber": 1,
+            "episodeNumber": 4,
+            "title": "The Nexus Event",
+            "runtime": 48,
+            "overview": "Tensions mount and revelations emerge at the TVA as Loki and Sylvie confront the mysterious Time-Keepers.",
+            "still": "https://image.tmdb.org/t/p/w1280/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+            "airDate": "2021-06-30",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 4,
+              "tmdbId": 84958,
+              "watchProvider": "screenscape",
+              "language": "eng"
+            }
+          },
+          {
+            "id": "loki_s1_e5",
+            "seasonNumber": 1,
+            "episodeNumber": 5,
+            "title": "Journey into Mystery",
+            "runtime": 49,
+            "overview": "Pruned to the Void at the end of time, Loki encounters eccentric variants of himself and battles Alioth.",
+            "still": "https://image.tmdb.org/t/p/w1280/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+            "airDate": "2021-07-07",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 5,
+              "tmdbId": 84958,
+              "watchProvider": "screenscape",
+              "language": "eng"
+            }
+          },
+          {
+            "id": "loki_s1_e6",
+            "seasonNumber": 1,
+            "episodeNumber": 6,
+            "title": "For All Time. Always.",
+            "runtime": 46,
+            "overview": "At the Citadel at the End of Time, Loki and Sylvie face He Who Remains and decide the fate of the entire Multiverse.",
+            "still": "https://image.tmdb.org/t/p/w1280/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+            "airDate": "2021-07-14",
+            "episodeWatchConfig": {
+              "season": 1,
+              "episode": 6,
+              "tmdbId": 84958,
+              "watchProvider": "screenscape",
+              "language": "eng"
             }
           }
         ]
@@ -78,23 +164,109 @@ export const SERIES_DATA: Series[] = [
       {
         "seasonNumber": 2,
         "title": "Season 2",
-        "overview": "Loki Season 2",
+        "overview": "Loki battles for the soul of the Time Variance Authority across slipping timelines.",
         "poster": "https://image.tmdb.org/t/p/w780/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
         "episodes": [
           {
             "id": "loki_s2_e1",
             "seasonNumber": 2,
             "episodeNumber": 1,
-            "title": "Episode 1",
-            "runtime": 50,
-            "overview": "Episode 1 of Loki Season 2",
+            "title": "Ouroboros",
+            "runtime": 47,
+            "overview": "Loki finds himself slipping violently through past, present, and future at the TVA, seeking O.B.'s help.",
             "still": "https://image.tmdb.org/t/p/w1280/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
-            "airDate": "2021-01-01",
+            "airDate": "2023-10-05",
             "episodeWatchConfig": {
               "season": 2,
               "episode": 1,
               "tmdbId": 84958,
-              "watchProvider": "screenscape"
+              "watchProvider": "screenscape",
+              "language": "eng"
+            }
+          },
+          {
+            "id": "loki_s2_e2",
+            "seasonNumber": 2,
+            "episodeNumber": 2,
+            "title": "Breaking Brad",
+            "runtime": 49,
+            "overview": "Loki and Mobius pursue Brad Wolfe on 1970s Earth, hunting down General Dox's rogue TVA faction.",
+            "still": "https://image.tmdb.org/t/p/w1280/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+            "airDate": "2023-10-12",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 2,
+              "tmdbId": 84958,
+              "watchProvider": "screenscape",
+              "language": "eng"
+            }
+          },
+          {
+            "id": "loki_s2_e3",
+            "seasonNumber": 2,
+            "episodeNumber": 3,
+            "title": "1893",
+            "runtime": 53,
+            "overview": "At the 1893 Chicago World's Columbian Exposition, Loki and Mobius track down Victor Timely.",
+            "still": "https://image.tmdb.org/t/p/w1280/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+            "airDate": "2023-10-19",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 3,
+              "tmdbId": 84958,
+              "watchProvider": "screenscape",
+              "language": "eng"
+            }
+          },
+          {
+            "id": "loki_s2_e4",
+            "seasonNumber": 2,
+            "episodeNumber": 4,
+            "title": "Heart of the TVA",
+            "runtime": 48,
+            "overview": "With the Temporal Loom nearing catastrophic meltdown, the team races against time to expand its throughput.",
+            "still": "https://image.tmdb.org/t/p/w1280/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+            "airDate": "2023-10-26",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 4,
+              "tmdbId": 84958,
+              "watchProvider": "screenscape",
+              "language": "eng"
+            }
+          },
+          {
+            "id": "loki_s2_e5",
+            "seasonNumber": 2,
+            "episodeNumber": 5,
+            "title": "Science/Fiction",
+            "runtime": 45,
+            "overview": "Following the Loom's explosion, Loki finds his friends living reset lives across diverging branch timelines.",
+            "still": "https://image.tmdb.org/t/p/w1280/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+            "airDate": "2023-11-02",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 5,
+              "tmdbId": 84958,
+              "watchProvider": "screenscape",
+              "language": "eng"
+            }
+          },
+          {
+            "id": "loki_s2_e6",
+            "seasonNumber": 2,
+            "episodeNumber": 6,
+            "title": "Glorious Purpose",
+            "runtime": 56,
+            "overview": "Loki masters time slipping and makes the ultimate cosmic sacrifice, weaving the timelines together as the God of Stories.",
+            "still": "https://image.tmdb.org/t/p/w1280/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+            "airDate": "2023-11-09",
+            "episodeWatchConfig": {
+              "season": 2,
+              "episode": 6,
+              "tmdbId": 84958,
+              "watchProvider": "screenscape",
+              "language": "eng"
             }
           }
         ]
