@@ -3,24 +3,25 @@ import { SERIES_DATA } from '../data/series';
 import type { Movie, Series, CastMember, Season, Episode } from '../types';
 import { isMarvelContent, MARVEL_MOVIE_TMDB_IDS } from '../utils/marvelWhitelist';
 
+export const DEFAULT_RENDER_BACKEND = 'https://marvel-aytt.onrender.com';
+
 /**
  * Resolves the configured TMDB API endpoint.
- * Supports:
- * - Dedicated Render backend via `VITE_API_BASE_URL` (e.g. "https://marvel-zero-g-api.onrender.com")
- * - Same-origin / local proxy fallback ("/api/tmdb")
- * Guarantees that `/api/tmdb` is never duplicated and trailing slashes are normalized.
+ * - Reads from `import.meta.env.VITE_API_BASE_URL`
+ * - In production, defaults to the verified Render backend: https://marvel-aytt.onrender.com/api/tmdb
+ * - In local development without VITE_API_BASE_URL, uses the local same-origin Vite proxy (/api/tmdb)
+ * - Guarantees that `/api/tmdb` is never duplicated and trailing slashes are normalized.
  */
 export function getTmdbApiEndpoint(): string {
-  const customBase = (import.meta.env.VITE_API_BASE_URL || '').trim();
-  if (!customBase) {
+  const configured = (import.meta.env.VITE_API_BASE_URL || '').trim();
+  const baseUrl = configured || (import.meta.env.PROD ? DEFAULT_RENDER_BACKEND : '/api/tmdb');
+
+  if (baseUrl === '/api/tmdb') {
     return '/api/tmdb';
   }
 
-  const sanitized = customBase.replace(/\/+$/, '');
-  if (sanitized.endsWith('/api/tmdb')) {
-    return sanitized;
-  }
-  return `${sanitized}/api/tmdb`;
+  const sanitized = baseUrl.replace(/\/+$/, '');
+  return sanitized.endsWith('/api/tmdb') ? sanitized : `${sanitized}/api/tmdb`;
 }
 
 export const TMDB_BASE_URL = getTmdbApiEndpoint();
