@@ -212,10 +212,27 @@ async function executeTmdbProxy(
       upstreamHeaders['Authorization'] = `Bearer ${apiKey}`;
     }
 
-    const upstreamResponse = await fetch(upstreamUrl, {
-      method: 'GET',
-      headers: upstreamHeaders,
-    });
+    let upstreamResponse: Response | null = null;
+    let lastError: unknown = null;
+
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        upstreamResponse = await fetch(upstreamUrl, {
+          method: 'GET',
+          headers: upstreamHeaders,
+        });
+        break;
+      } catch (err) {
+        lastError = err;
+        if (attempt === 0) {
+          await new Promise(resolve => setTimeout(resolve, 200));
+        }
+      }
+    }
+
+    if (!upstreamResponse) {
+      throw lastError;
+    }
 
     if (upstreamResponse.status === 404) {
       return {
@@ -273,6 +290,7 @@ async function executeTmdbProxy(
       body: responseData,
     };
   } catch (_err) {
+    console.error('TMDB Proxy upstream error:', _err);
     return {
       statusCode: 502,
       headers: {

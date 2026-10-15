@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import type { Movie, Series } from '../types';
 import { MOVIES_DATA } from '../data/movies';
 import { SERIES_DATA } from '../data/series';
-import { enrichAllMovies, enrichAllSeries, enrichMovieWithTmdb, enrichSeriesWithTmdb } from '../services/tmdb';
+import { enrichMovieWithTmdb, enrichSeriesWithTmdb } from '../services/tmdb';
 
 interface MediaContextType {
   movies: Movie[];
@@ -21,32 +21,43 @@ const MediaContext = createContext<MediaContextType | undefined>(undefined);
 export const MediaProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [movies, setMovies] = useState<Movie[]>(MOVIES_DATA);
   const [series, setSeries] = useState<Series[]>(SERIES_DATA);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  const loadMedia = useCallback(async () => {
-    setIsLoading(true);
-    setError(null);
+  // Soft background refresh for top hero items only, never blocking page render
+  const refreshMedia = useCallback(async () => {
     try {
-      // Fetch TMDB enriched movies and series in parallel
-      const [enrichedMovies, enrichedSeries] = await Promise.all([
-        enrichAllMovies(MOVIES_DATA),
-        enrichAllSeries(SERIES_DATA)
-      ]);
-
-      setMovies(enrichedMovies);
-      setSeries(enrichedSeries);
+      const topMovies = await Promise.all(
+        MOVIES_DATA.slice(0, 5).map(m => enrichMovieWithTmdb(m, false))
+      );
+      setMovies(prev => {
+        const map = new Map(topMovies.map(m => [m.id, m]));
+        return prev.map(m => map.get(m.id) || m);
+      });
     } catch (err: any) {
-      console.warn('Failed to load TMDB media enrichment:', err);
-      setError('Could not connect to TMDB. Using local Marvel dataset.');
-    } finally {
-      setIsLoading(false);
+      console.warn('Soft media refresh failed:', err);
     }
   }, []);
 
+  // Background lazy enrichment of the primary hero movie on startup (0 blocking network requests)
   useEffect(() => {
-    loadMedia();
-  }, [loadMedia]);
+    let active = true;
+    const heroMovie = MOVIES_DATA[0];
+    if (heroMovie?.tmdbId) {
+      enrichMovieWithTmdb(heroMovie, false)
+        .then(enriched => {
+          if (active && enriched) {
+            setMovies(prev => prev.map(m => m.id === enriched.id ? enriched : m));
+          }
+        })
+        .catch(() => {
+          // Gracefully retain curated local data on error / offline
+        });
+    }
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const getMovieById = useCallback((id: string) => {
     return movies.find(m => m.id === id);
@@ -75,7 +86,7 @@ export const MediaProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         series,
         isLoading,
         error,
-        refreshMedia: loadMedia,
+        refreshMedia,
         getMovieById,
         getSeriesById,
         enrichMovieDetail,

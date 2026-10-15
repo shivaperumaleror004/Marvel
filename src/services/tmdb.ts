@@ -110,6 +110,7 @@ export async function tmdbFetch<T>(endpoint: string, params: Record<string, stri
         headers: {
           'Accept': 'application/json',
         },
+        signal: typeof AbortSignal.timeout === 'function' ? AbortSignal.timeout(8000) : undefined,
       });
 
       if (res.status === 401 || res.status === 403 || res.status === 502) {
@@ -376,7 +377,7 @@ export async function searchMovies(query: string): Promise<Movie[]> {
   if (!query.trim()) return [];
 
   const raw = await tmdbFetch<{ results: any[] }>('/search/movie', {
-    query: encodeURIComponent(query.trim())
+    query: query.trim()
   });
 
   if (raw && raw.results && raw.results.length > 0) {
@@ -445,7 +446,7 @@ export async function searchSeries(query: string): Promise<Series[]> {
   if (!query.trim()) return [];
 
   const raw = await tmdbFetch<{ results: any[] }>('/search/tv', {
-    query: encodeURIComponent(query.trim())
+    query: query.trim()
   });
 
   if (raw && raw.results && raw.results.length > 0) {

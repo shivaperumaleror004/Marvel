@@ -122,13 +122,16 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
 
   // Active watch time state
   const [currentWatchedTime, setCurrentWatchedTime] = useState<number>(initialTime);
+  const [initialSeekTime, setInitialSeekTime] = useState<number>(initialTime);
   const [customInputTime, setCustomInputTime] = useState<string>('');
   const [showTimeEditor, setShowTimeEditor] = useState<boolean>(false);
 
   // Sync when targetId changes
   useEffect(() => {
     const existing = getProgress(targetId);
-    setCurrentWatchedTime(existing ? existing.currentTime : 0);
+    const time = existing ? existing.currentTime : 0;
+    setCurrentWatchedTime(time);
+    setInitialSeekTime(time);
   }, [targetId]);
 
   // Total duration in seconds
@@ -154,7 +157,7 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
       tmdbId,
       watchConfig: movie.watchConfig,
       customSourceOverride: customOverride,
-      time: currentWatchedTime > 0 ? currentWatchedTime : undefined
+      time: initialSeekTime > 0 ? initialSeekTime : undefined
     });
   } else if (mediaType === 'series' && series && activeEpisode) {
     tmdbId = activeEpisode.episodeWatchConfig?.tmdbId || series.watchConfig?.tmdbId || series.tmdbId;
@@ -168,7 +171,7 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
       watchConfig: series.watchConfig,
       episodeWatchConfig: activeEpisode.episodeWatchConfig,
       customSourceOverride: customOverride,
-      time: currentWatchedTime > 0 ? currentWatchedTime : undefined
+      time: initialSeekTime > 0 ? initialSeekTime : undefined
     });
   }
 
@@ -480,9 +483,9 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
                     <h3 className="text-lg font-black text-white drop-shadow-md">
                       Loading Cinematic Player...
                     </h3>
-                    {currentWatchedTime > 0 && (
+                    {initialSeekTime > 0 && (
                       <p className="text-xs font-mono text-emerald-400 drop-shadow">
-                        Resuming from {formatExactTime(currentWatchedTime)}
+                        Resuming from {formatExactTime(initialSeekTime)}
                       </p>
                     )}
                     {subtitleText && (
@@ -495,7 +498,7 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
 
             {isPlayerActive && (
               <iframe
-                key={`${resolvedWatchUrl}_${currentWatchedTime}`}
+                key={targetId}
                 src={resolvedWatchUrl}
                 title={titleText || 'Marvel Player'}
                 className={`h-full w-full border-0 transition-opacity duration-700 ${

@@ -3,25 +3,34 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
 /**
- * Local development plugin that mimics the Vercel serverless function
- * during `npm run dev` by routing `/api/tmdb` requests directly to `api/tmdb.ts`.
+ * Local middleware that mimics the Vercel serverless function
+ * during both `npm run dev` and `npm run preview` by routing `/api/tmdb`
+ * requests directly to `api/tmdb.ts`.
  */
+function createTmdbMiddleware(env: Record<string, string>) {
+  return async (req: import('node:http').IncomingMessage, res: import('node:http').ServerResponse) => {
+    process.env.TMDB_API_KEY = env.TMDB_API_KEY || process.env.TMDB_API_KEY || '';
+    try {
+      const { default: handler } = await import('./api/tmdb.ts');
+      await handler(req, res);
+    } catch (err: unknown) {
+      const errorMsg = err instanceof Error ? err.message : 'Internal Server Error';
+      res.statusCode = 500;
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify({ error: errorMsg }));
+    }
+  };
+}
+
 function tmdbLocalDevPlugin(env: Record<string, string>): Plugin {
+  const middleware = createTmdbMiddleware(env);
   return {
-    name: 'tmdb-local-dev-middleware',
+    name: 'tmdb-local-middleware',
     configureServer(server) {
-      server.middlewares.use('/api/tmdb', async (req, res) => {
-        process.env.TMDB_API_KEY = env.TMDB_API_KEY || process.env.TMDB_API_KEY || '';
-        try {
-          const { default: handler } = await import('./api/tmdb.ts');
-          await handler(req, res);
-        } catch (err: unknown) {
-          const errorMsg = err instanceof Error ? err.message : 'Internal Server Error';
-          res.statusCode = 500;
-          res.setHeader('Content-Type', 'application/json');
-          res.end(JSON.stringify({ error: errorMsg }));
-        }
-      });
+      server.middlewares.use('/api/tmdb', middleware);
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use('/api/tmdb', middleware);
     },
   };
 }
