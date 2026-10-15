@@ -3,7 +3,7 @@ import { Shield } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full border-t border-white/10 bg-slate-950 py-10 px-4 sm:px-6 lg:px-8 text-center text-xs text-gray-500 space-y-4">
+    <footer className="w-full border-t border-white/10 bg-slate-950 pt-10 pb-24 lg:pb-10 px-4 sm:px-6 lg:px-8 text-center text-xs text-gray-500 space-y-4">
       <div className="flex items-center justify-center gap-2">
         <div className="bg-red-600 px-2.5 py-0.5 font-black text-white text-xs tracking-tight uppercase rounded">
           MARVEL

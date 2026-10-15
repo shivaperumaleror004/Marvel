@@ -145,33 +145,35 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({
       {/* Search Header */}
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 pt-6 md:pt-10 pb-4 border-b border-white/10">
         <div className="relative flex items-center">
-          <Search className="absolute left-4 w-6 h-6 text-red-500" />
+          <Search className="absolute left-3.5 sm:left-4 w-5 h-5 sm:w-6 sm:h-6 text-red-500 pointer-events-none" />
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search Marvel movies, series, heroes, actors, phases (e.g. Iron, Loki, Spider-Man)..."
-            className="w-full rounded-2xl border border-white/15 bg-slate-900/90 py-4 pl-14 pr-20 text-lg text-white placeholder-gray-500 focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-600/50 shadow-2xl font-medium"
+            placeholder="Search Marvel movies, series, heroes..."
+            className="w-full rounded-2xl border border-white/15 bg-slate-900/90 py-3 sm:py-4 pl-11 sm:pl-14 pr-14 sm:pr-20 text-sm sm:text-lg text-white placeholder-gray-500 focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-600/50 shadow-2xl font-medium"
           />
-          <div className="absolute right-14 flex items-center gap-2">
+          <div className="absolute right-3 sm:right-14 flex items-center gap-2">
             {isSearching && (
-              <Loader2 className="w-5 h-5 text-red-500 animate-spin" />
+              <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 text-red-500 animate-spin" />
             )}
             {query && !isSearching && (
               <button
                 onClick={() => setQuery('')}
-                className="text-gray-400 hover:text-white"
+                className="text-gray-400 hover:text-white p-1"
+                aria-label="Clear search query"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             )}
           </div>
           <button
             onClick={onClose}
-            className="ml-4 p-3 rounded-2xl border border-white/10 bg-slate-900 text-gray-400 hover:text-white hover:border-white/30 transition-colors"
+            aria-label="Close search"
+            className="ml-2 sm:ml-4 p-2.5 sm:p-3 rounded-2xl border border-white/10 bg-slate-900 text-gray-400 hover:text-white hover:border-white/30 transition-colors flex-shrink-0"
           >
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
         </div>
 

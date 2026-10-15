@@ -1,6 +1,6 @@
 import type { TimelineNode, Movie, Series, Phase, Saga, Continuity, TimelineMediaType } from '../types';
 
-export const MCU_TIMELINE_ENTRIES: TimelineNode[] = [
+const MCU_TIMELINE_RAW: TimelineNode[] = [
   {
     "id": "eyes-of-wakanda",
     "title": "Eyes of Wakanda",
@@ -2981,6 +2981,15 @@ export const MCU_TIMELINE_ENTRIES: TimelineNode[] = [
     "isUpcoming": true
   }
 ];
+
+// Calculate canonical MCU release order based on releaseDate to ensure distinct release vs chronological ordering
+const sortedMcuByRelease = [...MCU_TIMELINE_RAW].sort((a, b) => a.releaseDate.localeCompare(b.releaseDate));
+const mcuReleaseOrderMap = new Map(sortedMcuByRelease.map((node, index) => [node.id, index + 1]));
+
+export const MCU_TIMELINE_ENTRIES: TimelineNode[] = MCU_TIMELINE_RAW.map(node => ({
+  ...node,
+  releaseOrder: mcuReleaseOrderMap.get(node.id) ?? node.releaseOrder
+}));
 
 /**
  * Merges dynamic TMDB artwork and details (if fetched) into the curated master timeline nodes.

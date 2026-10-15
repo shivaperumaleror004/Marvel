@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Settings as SettingsIcon, Shield, Trash2, Check, RefreshCw, Key, Link as LinkIcon, AlertTriangle } from 'lucide-react';
+import { Settings as SettingsIcon, Shield, Trash2, Check, RefreshCw, Key, Link as LinkIcon, AlertTriangle, Download } from 'lucide-react';
 import { useSettings } from '../hooks/useSettings';
 import { useWatchProgress } from '../hooks/useWatchProgress';
 import { useWatchlist } from '../hooks/useWatchlist';
@@ -21,6 +21,33 @@ export const SettingsPage: React.FC = () => {
     if (!customUrlInput.trim()) return;
     setConfiguredSource(selectedMediaId, customUrlInput.trim());
     setCustomUrlInput('');
+  };
+
+  const handleExportData = () => {
+    try {
+      const exportPayload = {
+        app: 'MARVEL // ZERO-G',
+        version: '1.0.0',
+        exportedAt: new Date().toISOString(),
+        storageType: 'browser-local',
+        note: 'This data is stored strictly in your local browser storage. No cloud database or cross-device synchronisation is currently enabled.',
+        watchProgress: JSON.parse(localStorage.getItem('marvel_watch_hub_progress') || '{}'),
+        watchlist: JSON.parse(localStorage.getItem('marvel_watchlist') || '[]'),
+        userSettings: JSON.parse(localStorage.getItem('marvel_user_settings') || '{}')
+      };
+
+      const blob = new Blob([JSON.stringify(exportPayload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `marvel-zero-g-backup-${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error('Failed to export data:', err);
+    }
   };
 
   return (
@@ -246,6 +273,27 @@ export const SettingsPage: React.FC = () => {
                   Clear Watchlist
                 </button>
               )}
+            </div>
+            {/* Export Vault Data */}
+            <div className="p-4 rounded-xl border border-white/10 bg-slate-950 space-y-3 sm:col-span-2">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <h4 className="text-sm font-bold text-white flex items-center gap-1.5">
+                    <Download className="w-4 h-4 text-red-500" />
+                    <span>Export Vault Data (JSON)</span>
+                  </h4>
+                  <p className="text-xs text-gray-400 mt-0.5">
+                    Download a full JSON backup of your watch progress timestamps, saved watchlist, and personal settings. All data is strictly browser-local (no cloud account / cross-device sync).
+                  </p>
+                </div>
+                <button
+                  onClick={handleExportData}
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 hover:bg-red-600 border border-white/10 text-xs font-mono font-bold text-white transition-all active:scale-95 flex-shrink-0"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>EXPORT JSON BACKUP</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

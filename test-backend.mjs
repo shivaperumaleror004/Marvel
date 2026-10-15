@@ -3,7 +3,7 @@
  * Validates health, TMDB proxying, validation, error handling, and CORS origins.
  */
 
-const BASE_URL = process.env.API_BASE_URL || 'http://localhost:5000';
+const BASE_URL = process.env.API_BASE_URL || process.argv[2] || 'http://localhost:5000';
 
 async function runTestSuite() {
   console.log('======================================================');

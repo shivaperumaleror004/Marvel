@@ -434,27 +434,27 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
     <div className="w-full space-y-4">
       {/* Top Header Controls Bar */}
       <div className="flex flex-wrap items-center justify-between gap-3 bg-slate-900/90 border border-white/10 rounded-2xl p-4 shadow-xl backdrop-blur-md">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
           {onBack && (
             <button
               onClick={onBack}
-              className="flex items-center gap-2 rounded-xl bg-slate-800 hover:bg-red-600 border border-white/10 px-3.5 py-2 text-xs font-mono font-bold text-gray-200 hover:text-white transition-all active:scale-95 shadow"
+              className="flex items-center gap-2 rounded-xl bg-slate-800 hover:bg-red-600 border border-white/10 px-3 py-2 sm:px-3.5 text-xs font-mono font-bold text-gray-200 hover:text-white transition-all active:scale-95 shadow flex-shrink-0"
             >
               <ArrowLeft className="w-4 h-4" />
               <span className="hidden sm:inline">BACK TO DETAILS</span>
             </button>
           )}
 
-          <div>
+          <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2">
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[10px] font-mono font-extrabold uppercase tracking-wider bg-red-600 text-white shadow-sm">
+              <span className="inline-flex items-center px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-mono font-extrabold uppercase tracking-wider bg-red-600 text-white shadow-sm flex-shrink-0">
                 {mediaType === 'movie' ? 'MCU MOVIE' : 'MARVEL SERIES'}
               </span>
               <span className="text-xs font-mono text-gray-400">
                 {movie?.year || series?.year}
               </span>
             </div>
-            <h2 className="text-base sm:text-xl font-black text-white tracking-tight truncate max-w-md mt-0.5">
+            <h2 className="text-sm sm:text-xl font-black text-white tracking-tight truncate max-w-md mt-0.5">
               {titleText}
             </h2>
           </div>
