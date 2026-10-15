@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Shield, Zap, Film, Tv, Users } from 'lucide-react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { ArrowLeft, Shield, Zap, Film, Tv, Users, Clapperboard, Globe } from 'lucide-react';
 import { Character, Movie, Series } from '../types';
-import { MOVIES_DATA } from '../data/movies';
-import { SERIES_DATA } from '../data/series';
+import { useMedia } from '../context/MediaContext';
 import { CHARACTERS_DATA } from '../data/characters';
 import { PageTransition } from '../components/ui/PageTransition';
 import { MovieCard } from '../components/ui/MovieCard';
@@ -28,14 +27,58 @@ export const CharacterDetailPage: React.FC<CharacterDetailPageProps> = ({
   onSelectSeries,
   onWatchSeries
 }) => {
-  const appearedMovies = MOVIES_DATA.filter(m => character.movies.includes(m.id));
-  const appearedSeries = SERIES_DATA.filter(s => character.series.includes(s.id));
-  const relatedChars = CHARACTERS_DATA.filter(c => character.relatedCharacters.includes(c.id));
+  const { movies, series: seriesList } = useMedia();
+
+  // Bidirectional resolution of appearances
+  const allAppearedMovies = useMemo(() => {
+    return movies.filter(
+      m => character.movies.includes(m.id) || m.characters?.includes(character.id)
+    );
+  }, [movies, character]);
+
+  const appearedFeatureFilms = useMemo(() => {
+    return allAppearedMovies.filter(
+      m =>
+        m.movieType !== 'short' &&
+        m.movieType !== 'special' &&
+        m.mediaSubtype !== 'one-shot' &&
+        m.mediaSubtype !== 'short-film' &&
+        m.mediaSubtype !== 'special-presentation' &&
+        !m.id.startsWith('one-shot-') &&
+        m.id !== 'werewolf-by-night' &&
+        m.id !== 'gotg-holiday-special'
+    );
+  }, [allAppearedMovies]);
+
+  const appearedShorts = useMemo(() => {
+    return allAppearedMovies.filter(
+      m =>
+        m.movieType === 'short' ||
+        m.movieType === 'special' ||
+        m.mediaSubtype === 'one-shot' ||
+        m.mediaSubtype === 'short-film' ||
+        m.mediaSubtype === 'special-presentation' ||
+        m.id.startsWith('one-shot-') ||
+        m.id === 'werewolf-by-night' ||
+        m.id === 'gotg-holiday-special'
+    );
+  }, [allAppearedMovies]);
+
+  const appearedSeries = useMemo(() => {
+    return seriesList.filter(
+      s => character.series.includes(s.id) || s.characters?.includes(character.id)
+    );
+  }, [seriesList, character]);
+
+  const relatedChars = useMemo(() => {
+    return CHARACTERS_DATA.filter(c => character.relatedCharacters.includes(c.id));
+  }, [character]);
 
   // Determine the best backdrop: character's own backdrop -> first appeared movie/series backdrop -> character portrait
   const characterMovieBackdrop =
-    appearedMovies.find(m => m.backdrop && !m.backdrop.includes('cKvDv2LpwVEqbdXWoQl4XgGN6le'))?.backdrop ||
-    appearedSeries.find(s => s.backdrop)?.backdrop;
+    appearedFeatureFilms.find(m => m.backdrop && !m.backdrop.includes('cKvDv2LpwVEqbdXWoQl4XgGN6le'))?.backdrop ||
+    appearedSeries.find(s => s.backdrop)?.backdrop ||
+    appearedShorts.find(s => s.backdrop)?.backdrop;
 
   const primaryBackdrop = character.backdrop || characterMovieBackdrop || character.portrait;
   const [currentBackdrop, setCurrentBackdrop] = useState<string>(primaryBackdrop);
@@ -45,13 +88,17 @@ export const CharacterDetailPage: React.FC<CharacterDetailPageProps> = ({
   }, [character, characterMovieBackdrop]);
 
   const handleBackdropError = () => {
-    // If the provided backdrop failed, fall back to the movie they appeared in, or their portrait
     if (currentBackdrop !== characterMovieBackdrop && characterMovieBackdrop) {
       setCurrentBackdrop(characterMovieBackdrop);
     } else if (currentBackdrop !== character.portrait && character.portrait) {
       setCurrentBackdrop(character.portrait);
     }
   };
+
+  const role = character.role || (
+    ['thanos', 'ultron', 'doctor-doom', 'magneto'].includes(character.id) ? 'villain' :
+    ['deadpool', 'punisher', 'agatha-harkness', 'venom', 'loki', 'blade'].includes(character.id) ? 'antihero' : 'hero'
+  );
 
   return (
     <PageTransition>
@@ -99,10 +146,26 @@ export const CharacterDetailPage: React.FC<CharacterDetailPageProps> = ({
             {/* Information Right */}
             <div className="flex-1 space-y-5">
               <div>
-                <div className="flex items-center gap-2 text-xs font-mono font-bold text-red-500 uppercase tracking-widest">
-                  <Shield className="w-4 h-4" />
-                  <span>IDENTITY: {character.name}</span>
+                <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider">
+                  <span className="flex items-center gap-1.5 text-red-500">
+                    <Shield className="w-4 h-4" />
+                    IDENTITY: {character.name}
+                  </span>
+                  <span className="text-gray-600">•</span>
+                  <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase ${
+                    role === 'villain' ? 'bg-red-950/90 text-red-400 border border-red-700/60' :
+                    role === 'antihero' ? 'bg-purple-950/90 text-purple-300 border border-purple-700/60' :
+                    'bg-emerald-950/90 text-emerald-300 border border-emerald-700/60'
+                  }`}>
+                    {role.toUpperCase()}
+                  </span>
+                  {character.universe && (
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-slate-800 border border-white/10 text-gray-300">
+                      {character.universe}
+                    </span>
+                  )}
                 </div>
+
                 <h1 className="text-4xl sm:text-6xl font-black text-white uppercase tracking-tight leading-none mt-1">
                   {character.alias}
                 </h1>
@@ -152,17 +215,17 @@ export const CharacterDetailPage: React.FC<CharacterDetailPageProps> = ({
           </div>
 
           {/* Cinematic Appearances (Movies) */}
-          {appearedMovies.length > 0 && (
+          {appearedFeatureFilms.length > 0 && (
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <Film className="w-5 h-5 text-red-500" />
                 <h3 className="text-xl font-extrabold text-white uppercase tracking-wider">
-                  Cinematic Movie Appearances ({appearedMovies.length})
+                  Feature Motion Picture Appearances ({appearedFeatureFilms.length})
                 </h3>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                {appearedMovies.map(m => (
+                {appearedFeatureFilms.map(m => (
                   <MovieCard
                     key={m.id}
                     movie={m}
@@ -191,6 +254,29 @@ export const CharacterDetailPage: React.FC<CharacterDetailPageProps> = ({
                     series={s}
                     onSelect={onSelectSeries || (() => {})}
                     onWatch={onWatchSeries || (() => {})}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Shorts & Special Presentations Appearances */}
+          {appearedShorts.length > 0 && (
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Clapperboard className="w-5 h-5 text-red-500" />
+                <h3 className="text-xl font-extrabold text-white uppercase tracking-wider">
+                  Shorts & Special Presentations ({appearedShorts.length})
+                </h3>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {appearedShorts.map(s => (
+                  <MovieCard
+                    key={s.id}
+                    movie={s}
+                    onSelect={onSelectMovie}
+                    onWatch={onWatchMovie}
                   />
                 ))}
               </div>
@@ -229,3 +315,5 @@ export const CharacterDetailPage: React.FC<CharacterDetailPageProps> = ({
     </PageTransition>
   );
 };
+
+export default CharacterDetailPage;

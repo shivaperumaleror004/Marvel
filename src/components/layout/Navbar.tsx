@@ -1,5 +1,4 @@
-import React from 'react';
-import { Search, Settings as SettingsIcon, Film, Tv, Compass, Users, Bookmark, Home, Sparkles, Building2, Globe } from 'lucide-react';
+import { Search, Settings as SettingsIcon, Film, Tv, Compass, Users, Bookmark, Home, Sparkles, Building2, Globe, Clapperboard, Calendar } from 'lucide-react';
 import { useWatchlist } from '../../hooks/useWatchlist';
 
 interface NavbarProps {
@@ -13,13 +12,15 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onNavigate, onOpenSea
 
   const NAV_ITEMS = [
     { id: 'home', label: 'Home', icon: Home },
-    { id: 'timeline', label: 'MCU Timeline', icon: Compass },
     { id: 'movies', label: 'Movies', icon: Film },
     { id: 'series', label: 'Series', icon: Tv },
+    { id: 'shorts', label: 'Shorts & Specials', icon: Clapperboard },
+    { id: 'upcoming', label: 'Upcoming', icon: Calendar },
+    { id: 'characters', label: 'Characters', icon: Users },
+    { id: 'timeline', label: 'Timeline', icon: Compass },
     { id: 'animation', label: 'Animation', icon: Sparkles },
     { id: 'studios', label: 'Studios', icon: Building2 },
     { id: 'universes', label: 'Universes', icon: Globe },
-    { id: 'characters', label: 'Characters', icon: Users },
     { id: 'mylist', label: 'My List', icon: Bookmark, badge: watchlist.length > 0 ? watchlist.length : undefined },
   ];
 

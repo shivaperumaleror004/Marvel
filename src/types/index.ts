@@ -26,6 +26,15 @@ export type Continuity =
 
 export type TimelineMediaType = 'movie' | 'series' | 'one-shot' | 'special';
 
+export type MediaSubtype =
+  | 'feature-film'
+  | 'one-shot'
+  | 'short-film'
+  | 'special-presentation'
+  | 'television-special';
+
+export type CharacterRole = 'hero' | 'villain' | 'antihero' | 'supporting';
+
 export type WatchProviderType = 'screenscape' | 'custom' | string;
 
 export interface WatchConfig {
@@ -135,6 +144,7 @@ export type Movie = {
   universeId?: UniverseId;
   universeDesignation?: string;
   movieType?: 'live-action' | 'animation' | 'short' | 'special' | 'tv-movie';
+  mediaSubtype?: MediaSubtype;
   mcuRelationship?: 'canon-mcu' | 'multiverse-crossover' | 'non-mcu' | 'legacy' | 'sony-collaboration';
   isAnimation?: boolean;
   isMcu?: boolean;
@@ -143,6 +153,7 @@ export type Movie = {
   isUpcoming?: boolean;
   isReleased?: boolean;
   releaseStatus?: 'released' | 'upcoming';
+  upcomingStatus?: 'confirmed' | 'announced' | 'unconfirmed';
   mcuChronologyOrder?: number;
   universeChronologyOrder?: number;
   verificationStatus?: 'verified' | 'unverified';
@@ -212,6 +223,8 @@ export type Series = {
   isMcu?: boolean;
   isLegacy?: boolean;
   releaseStatus?: 'released' | 'upcoming';
+  upcomingStatus?: 'confirmed' | 'announced' | 'unconfirmed';
+  mediaSubtype?: string;
 };
 
 export type Character = {
@@ -229,6 +242,12 @@ export type Character = {
   movies: string[]; // movie IDs
   series: string[]; // series IDs
   relatedCharacters: string[]; // character IDs
+  role?: CharacterRole;
+  universe?: string;
+  universeId?: UniverseId;
+  franchise?: string;
+  shorts?: string[];
+  status?: string;
 };
 
 export type TimelineNode = {
@@ -262,6 +281,7 @@ export type TimelineNode = {
   universeId?: UniverseId;
   universeDesignation?: string;
   movieType?: 'live-action' | 'animation' | 'short' | 'special' | 'tv-movie';
+  mediaSubtype?: MediaSubtype;
   mcuRelationship?: 'canon-mcu' | 'multiverse-crossover' | 'non-mcu' | 'legacy' | 'sony-collaboration';
 };
 

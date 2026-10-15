@@ -35,15 +35,13 @@ interface MoviesPageProps {
 type MovieCategory =
   | 'all'
   | 'mcu'
-  | 'other'
-  | 'animation'
-  | 'oneshots'
-  | 'hulk'
   | 'sony'
   | 'x-men'
   | 'fantastic-four'
   | 'blade-ghost-rider'
-  | 'upcoming';
+  | 'hulk'
+  | 'animation'
+  | 'other';
 
 type SortOption = 'release' | 'chronological' | 'alphabetical' | 'rating';
 type ViewMode = 'grid' | 'timeline';
@@ -77,21 +75,33 @@ export const MoviesPage: React.FC<MoviesPageProps> = ({ onSelectMovie, onWatchMo
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
+  // Filter out unreleased upcoming projects and shorts (which have their own dedicated sections)
+  const releasedMovies = useMemo(() => {
+    return movies.filter(m => {
+      if (!isMarvelContent(m)) return false;
+      if (m.isUpcoming || m.releaseStatus === 'upcoming') return false;
+      if (
+        m.movieType === 'short' ||
+        m.movieType === 'special' ||
+        m.movieType === 'tv-movie' ||
+        m.mediaSubtype === 'one-shot' ||
+        m.mediaSubtype === 'special-presentation' ||
+        m.mediaSubtype === 'short-film' ||
+        m.id.startsWith('one-shot-') ||
+        m.id === 'werewolf-by-night' ||
+        m.id === 'gotg-holiday-special'
+      ) return false;
+      return true;
+    });
+  }, [movies]);
+
   // Primary filter function
   const filteredMovies = useMemo(() => {
-    let result = movies.filter(isMarvelContent);
+    let result = [...releasedMovies];
 
     // 1. Category Filter
     if (activeCategory === 'mcu') {
-      result = result.filter(m => m.isMcu && m.movieType !== 'short' && !m.id.startsWith('one-shot-'));
-    } else if (activeCategory === 'other') {
-      result = result.filter(m => !m.isMcu && !m.isAnimation && m.movieType !== 'short' && !m.id.startsWith('one-shot-'));
-    } else if (activeCategory === 'animation') {
-      result = result.filter(m => m.isAnimation || m.movieType === 'animation' || m.studioId === 'marvel-animation');
-    } else if (activeCategory === 'oneshots') {
-      result = result.filter(m => m.movieType === 'short' || m.movieType === 'tv-movie' || m.movieType === 'special' || m.id.startsWith('one-shot-') || m.id.includes('hulk-returns') || m.id.includes('trial-of-the-incredible-hulk') || m.id.includes('death-of-the-incredible-hulk') || m.id === 'werewolf-by-night' || m.id === 'gotg-holiday-special');
-    } else if (activeCategory === 'hulk') {
-      result = result.filter(m => m.franchise?.includes('Hulk') || m.id.includes('hulk'));
+      result = result.filter(m => m.isMcu);
     } else if (activeCategory === 'sony') {
       result = result.filter(
         m =>
@@ -114,8 +124,12 @@ export const MoviesPage: React.FC<MoviesPageProps> = ({ onSelectMovie, onWatchMo
       result = result.filter(
         m => m.franchise?.includes('Blade') || m.franchise?.includes('Ghost Rider')
       );
-    } else if (activeCategory === 'upcoming') {
-      result = result.filter(m => m.isUpcoming || m.releaseStatus === 'upcoming');
+    } else if (activeCategory === 'hulk') {
+      result = result.filter(m => m.franchise?.includes('Hulk') || m.id.includes('hulk'));
+    } else if (activeCategory === 'animation') {
+      result = result.filter(m => m.isAnimation || m.movieType === 'animation' || m.studioId === 'marvel-animation');
+    } else if (activeCategory === 'other') {
+      result = result.filter(m => !m.isMcu && !m.isAnimation);
     }
 
     // 2. Studio Filter
@@ -171,25 +185,22 @@ export const MoviesPage: React.FC<MoviesPageProps> = ({ onSelectMovie, onWatchMo
     });
 
     return result;
-  }, [movies, activeCategory, selectedStudio, selectedEra, searchQuery, sortBy]);
+  }, [releasedMovies, activeCategory, selectedStudio, selectedEra, searchQuery, sortBy]);
 
   // Tab counts
   const counts = useMemo(() => {
-    const valid = movies.filter(isMarvelContent);
     return {
-      all: valid.length,
-      mcu: valid.filter(m => m.isMcu && m.movieType !== 'short' && !m.id.startsWith('one-shot-')).length,
-      other: valid.filter(m => !m.isMcu && !m.isAnimation && m.movieType !== 'short' && !m.id.startsWith('one-shot-')).length,
-      animation: valid.filter(m => m.isAnimation || m.movieType === 'animation' || m.studioId === 'marvel-animation').length,
-      oneshots: valid.filter(m => m.movieType === 'short' || m.movieType === 'tv-movie' || m.movieType === 'special' || m.id.startsWith('one-shot-') || m.id.includes('hulk-returns') || m.id.includes('trial-of-the-incredible-hulk') || m.id.includes('death-of-the-incredible-hulk') || m.id === 'werewolf-by-night' || m.id === 'gotg-holiday-special').length,
-      hulk: valid.filter(m => m.franchise?.includes('Hulk') || m.id.includes('hulk')).length,
-      sony: valid.filter(m => m.studioId === 'sony-pictures' || m.franchise?.includes('Spider-Man') || m.franchise?.includes('Venom') || m.franchise?.includes('Spider-Verse')).length,
-      xmen: valid.filter(m => m.franchise?.includes('X-Men') || m.franchise?.includes('Wolverine') || m.franchise?.includes('Deadpool') || m.id === 'generation-x-1996').length,
-      fantasticFour: valid.filter(m => m.franchise?.includes('Fantastic Four')).length,
-      bladeGhost: valid.filter(m => m.franchise?.includes('Blade') || m.franchise?.includes('Ghost Rider')).length,
-      upcoming: valid.filter(m => m.isUpcoming || m.releaseStatus === 'upcoming').length
+      all: releasedMovies.length,
+      mcu: releasedMovies.filter(m => m.isMcu).length,
+      sony: releasedMovies.filter(m => m.studioId === 'sony-pictures' || m.franchise?.includes('Spider-Man') || m.franchise?.includes('Venom') || m.franchise?.includes('Spider-Verse')).length,
+      xmen: releasedMovies.filter(m => m.franchise?.includes('X-Men') || m.franchise?.includes('Wolverine') || m.franchise?.includes('Deadpool') || m.id === 'generation-x-1996').length,
+      fantasticFour: releasedMovies.filter(m => m.franchise?.includes('Fantastic Four')).length,
+      bladeGhost: releasedMovies.filter(m => m.franchise?.includes('Blade') || m.franchise?.includes('Ghost Rider')).length,
+      hulk: releasedMovies.filter(m => m.franchise?.includes('Hulk') || m.id.includes('hulk')).length,
+      animation: releasedMovies.filter(m => m.isAnimation || m.movieType === 'animation' || m.studioId === 'marvel-animation').length,
+      other: releasedMovies.filter(m => !m.isMcu && !m.isAnimation).length
     };
-  }, [movies]);
+  }, [releasedMovies]);
 
   return (
     <PageTransition>
@@ -285,20 +296,18 @@ export const MoviesPage: React.FC<MoviesPageProps> = ({ onSelectMovie, onWatchMo
           </div>
         )}
 
-        {/* Category Pills (Section 8 Requirements) */}
+        {/* Category Pills */}
         <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-none border-b border-white/5 pb-4">
           {[
-            { id: 'all', label: 'All Marvel Movies', count: counts.all, icon: Film },
+            { id: 'all', label: 'All Released Movies', count: counts.all, icon: Film },
             { id: 'mcu', label: 'MCU Movies', count: counts.mcu, icon: Clapperboard },
-            { id: 'other', label: 'Other Marvel Movies', count: counts.other, icon: Calendar },
-            { id: 'animation', label: 'Animated Marvel Movies', count: counts.animation, icon: Sparkles },
-            { id: 'oneshots', label: 'TV Movies & Specials', count: counts.oneshots, icon: Video },
-            { id: 'hulk', label: 'Hulk Films', count: counts.hulk, icon: Shield },
-            { id: 'sony', label: 'Sony Marvel', count: counts.sony, icon: Sparkles },
+            { id: 'sony', label: 'Sony Spider-Man', count: counts.sony, icon: Sparkles },
             { id: 'x-men', label: 'X-Men & Mutants', count: counts.xmen, icon: Shield },
             { id: 'fantastic-four', label: 'Fantastic Four', count: counts.fantasticFour, icon: Globe },
             { id: 'blade-ghost-rider', label: 'Blade & Ghost Rider', count: counts.bladeGhost, icon: Sparkles },
-            { id: 'upcoming', label: 'Upcoming', count: counts.upcoming, icon: Clock }
+            { id: 'hulk', label: 'Hulk Films', count: counts.hulk, icon: Shield },
+            { id: 'animation', label: 'Animated Features', count: counts.animation, icon: Sparkles },
+            { id: 'other', label: 'Other Classics', count: counts.other, icon: Calendar }
           ].map(tab => {
             const isActive = activeCategory === tab.id;
             const Icon = tab.icon;

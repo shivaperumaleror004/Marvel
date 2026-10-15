@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Film, Tv, Compass, Users, Bookmark, Sparkles, Building2, Globe } from 'lucide-react';
+import { Home, Film, Tv, Compass, Users, Bookmark, Sparkles, Building2, Globe, Clapperboard, Calendar } from 'lucide-react';
 import { useWatchlist } from '../../hooks/useWatchlist';
 
 interface MobileNavProps {
@@ -12,13 +12,15 @@ export const MobileNav: React.FC<MobileNavProps> = ({ activeTab, onNavigate }) =
 
   const NAV_ITEMS = [
     { id: 'home', label: 'Home', icon: Home },
-    { id: 'timeline', label: 'Timeline', icon: Compass },
     { id: 'movies', label: 'Movies', icon: Film },
     { id: 'series', label: 'Series', icon: Tv },
+    { id: 'shorts', label: 'Shorts', icon: Clapperboard },
+    { id: 'upcoming', label: 'Upcoming', icon: Calendar },
+    { id: 'characters', label: 'Heroes', icon: Users },
+    { id: 'timeline', label: 'Timeline', icon: Compass },
     { id: 'animation', label: 'Animation', icon: Sparkles },
     { id: 'studios', label: 'Studios', icon: Building2 },
     { id: 'universes', label: 'Multiverse', icon: Globe },
-    { id: 'characters', label: 'Heroes', icon: Users },
     { id: 'mylist', label: 'My List', icon: Bookmark, badge: watchlist.length > 0 ? watchlist.length : undefined },
   ];
 

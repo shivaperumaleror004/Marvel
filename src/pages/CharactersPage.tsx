@@ -1,7 +1,18 @@
 import React, { useState, useMemo } from 'react';
-import { Users, Search, Shield, Zap, Sparkles, Flame, Eye } from 'lucide-react';
+import {
+  Users,
+  Search,
+  Shield,
+  Zap,
+  Sparkles,
+  Flame,
+  Eye,
+  Globe,
+  Skull,
+  UserCheck
+} from 'lucide-react';
 import { CHARACTERS_DATA } from '../data/characters';
-import { Character } from '../types';
+import { Character, CharacterRole } from '../types';
 import { CharacterCard } from '../components/ui/CharacterCard';
 import { PageTransition } from '../components/ui/PageTransition';
 
@@ -9,12 +20,20 @@ interface CharactersPageProps {
   onSelectCharacter: (character: Character) => void;
 }
 
-type CharacterCategory = 'all' | 'avengers' | 'xmen' | 'cosmic' | 'street' | 'mystic';
+type CharacterCategory =
+  | 'all'
+  | 'avengers'
+  | 'xmen'
+  | 'fantastic-four'
+  | 'street'
+  | 'cosmic'
+  | 'mystic';
 
 const CATEGORIES: { id: CharacterCategory; label: string; icon: React.FC<{ className?: string }> }[] = [
   { id: 'all', label: 'All Dossiers', icon: Users },
   { id: 'avengers', label: 'Avengers', icon: Shield },
   { id: 'xmen', label: 'X-Men & Mutants', icon: Zap },
+  { id: 'fantastic-four', label: 'Fantastic Four', icon: Globe },
   { id: 'street', label: 'Street Vigilantes', icon: Flame },
   { id: 'cosmic', label: 'Cosmic & Guardians', icon: Sparkles },
   { id: 'mystic', label: 'Mystic & Supernatural', icon: Eye }
@@ -23,14 +42,16 @@ const CATEGORIES: { id: CharacterCategory; label: string; icon: React.FC<{ class
 export const CharactersPage: React.FC<CharactersPageProps> = ({ onSelectCharacter }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<CharacterCategory>('all');
+  const [selectedRole, setSelectedRole] = useState<'all' | CharacterRole>('all');
+  const [selectedUniverse, setSelectedUniverse] = useState<string>('all');
 
   const filteredCharacters = useMemo(() => {
     return CHARACTERS_DATA.filter(c => {
-      // Category filter
+      // 1. Category / Team Filter
       if (selectedCategory === 'avengers') {
         const isAvenger =
           c.affiliation.toLowerCase().includes('avenger') ||
-          ['iron-man', 'captain-america', 'thor', 'hulk', 'black-widow', 'hawkeye', 'spider-man', 'sam-wilson', 'ant-man', 'captain-marvel', 'war-machine', 'vision', 'winter-soldier'].includes(c.id);
+          ['iron-man', 'captain-america', 'thor', 'hulk', 'black-widow', 'hawkeye', 'spider-man', 'sam-wilson', 'ant-man', 'captain-marvel', 'war-machine', 'vision', 'white-vision', 'winter-soldier'].includes(c.id);
         if (!isAvenger) return false;
       } else if (selectedCategory === 'xmen') {
         const isXmen =
@@ -38,6 +59,12 @@ export const CharactersPage: React.FC<CharactersPageProps> = ({ onSelectCharacte
           c.affiliation.toLowerCase().includes('mutant') ||
           ['wolverine', 'deadpool', 'professor-x', 'magneto'].includes(c.id);
         if (!isXmen) return false;
+      } else if (selectedCategory === 'fantastic-four') {
+        const isFF =
+          c.affiliation.toLowerCase().includes('fantastic') ||
+          c.franchise?.toLowerCase().includes('fantastic') ||
+          ['fantastic-four-reed', 'sue-storm', 'doctor-doom'].includes(c.id);
+        if (!isFF) return false;
       } else if (selectedCategory === 'cosmic') {
         const isCosmic =
           ['thor', 'loki', 'star-lord', 'thanos', 'captain-marvel', 'rocket-raccoon', 'groot', 'gamora'].includes(c.id) ||
@@ -52,12 +79,32 @@ export const CharactersPage: React.FC<CharactersPageProps> = ({ onSelectCharacte
         if (!isStreet) return false;
       } else if (selectedCategory === 'mystic') {
         const isMystic =
-          ['doctor-strange', 'scarlet-witch', 'moon-knight', 'loki', 'shang-chi', 'ghost-rider', 'blade', 'fantastic-four-reed'].includes(c.id) ||
+          ['doctor-strange', 'scarlet-witch', 'moon-knight', 'loki', 'shang-chi', 'ghost-rider', 'blade', 'agatha-harkness'].includes(c.id) ||
           c.powers.some(p => p.toLowerCase().includes('magic') || p.toLowerCase().includes('mystic') || p.toLowerCase().includes('chaos'));
         if (!isMystic) return false;
       }
 
-      // Search filter
+      // 2. Role Filter
+      if (selectedRole !== 'all') {
+        const inferredRole: CharacterRole =
+          c.role ||
+          (['thanos', 'ultron', 'doctor-doom', 'magneto'].includes(c.id) ? 'villain' :
+           ['deadpool', 'punisher', 'agatha-harkness', 'venom', 'loki', 'blade'].includes(c.id) ? 'antihero' : 'hero');
+        if (inferredRole !== selectedRole) return false;
+      }
+
+      // 3. Universe Filter
+      if (selectedUniverse !== 'all') {
+        if (selectedUniverse === 'mcu') {
+          const isMcu = c.universeId === 'earth-616' || !c.universeId || c.id.startsWith('spider-man') === false || c.id === 'spider-man';
+          if (!isMcu && ['spider-man-tobey', 'spider-man-andrew', 'miles-morales', 'wolverine', 'deadpool', 'professor-x', 'magneto', 'blade', 'ghost-rider', 'punisher'].includes(c.id)) return false;
+        } else if (selectedUniverse === 'multiverse') {
+          const isAlt = ['spider-man-tobey', 'spider-man-andrew', 'miles-morales', 'wolverine', 'deadpool', 'professor-x', 'magneto', 'blade', 'ghost-rider', 'punisher', 'sue-storm'].includes(c.id) || c.universeId !== 'earth-616';
+          if (!isAlt) return false;
+        }
+      }
+
+      // 4. Search Filter
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase().trim();
         return (
@@ -65,13 +112,15 @@ export const CharactersPage: React.FC<CharactersPageProps> = ({ onSelectCharacte
           c.alias.toLowerCase().includes(q) ||
           c.actor.toLowerCase().includes(q) ||
           c.powers.some(p => p.toLowerCase().includes(q)) ||
-          c.affiliation.toLowerCase().includes(q)
+          c.affiliation.toLowerCase().includes(q) ||
+          c.franchise?.toLowerCase().includes(q) ||
+          c.firstAppearance.toLowerCase().includes(q)
         );
       }
 
       return true;
     });
-  }, [searchQuery, selectedCategory]);
+  }, [searchQuery, selectedCategory, selectedRole, selectedUniverse]);
 
   return (
     <PageTransition>
@@ -81,13 +130,13 @@ export const CharactersPage: React.FC<CharactersPageProps> = ({ onSelectCharacte
           <div>
             <div className="flex items-center gap-2 text-xs font-mono font-bold text-red-500 uppercase tracking-widest">
               <Shield className="w-4 h-4" />
-              <span>SUPERHERO DOSSIERS</span>
+              <span>SUPERHERO & VILLAIN DOSSIERS</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight mt-1">
               Marvel Character Vault
             </h1>
-            <p className="text-sm text-gray-400 mt-1">
-              Showing {filteredCharacters.length} classified hero archives with official Marvel cinematic portraits, powers & biographies.
+            <p className="text-sm text-gray-400 mt-1 max-w-2xl">
+              Classified dossier archives with verified Marvel cinematic portraits, powers, origins, and linked appearances across films, streaming series, and specials.
             </p>
           </div>
 
@@ -98,7 +147,7 @@ export const CharactersPage: React.FC<CharactersPageProps> = ({ onSelectCharacte
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search heroes, actors, or powers..."
+              placeholder="Search heroes, villains, actors, or powers..."
               className="w-full rounded-xl border border-white/10 bg-slate-900 py-2.5 pl-10 pr-4 text-xs font-mono text-white placeholder-gray-500 focus:border-red-600 focus:outline-none transition-colors"
             />
             {searchQuery && (
@@ -112,7 +161,7 @@ export const CharactersPage: React.FC<CharactersPageProps> = ({ onSelectCharacte
           </div>
         </div>
 
-        {/* Affiliation / Category Filter Tabs */}
+        {/* Team Tabs */}
         <div className="flex flex-wrap items-center gap-2 border-b border-white/5 pb-4">
           {CATEGORIES.map(cat => {
             const Icon = cat.icon;
@@ -134,6 +183,58 @@ export const CharactersPage: React.FC<CharactersPageProps> = ({ onSelectCharacte
           })}
         </div>
 
+        {/* Secondary Filter Bar: Role and Universe */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-900/40 p-3 rounded-xl border border-white/5">
+          {/* Role Filter Buttons */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
+            <span className="text-[11px] font-mono text-gray-400 uppercase font-semibold mr-1">
+              Role:
+            </span>
+            {[
+              { id: 'all', label: 'All Roles' },
+              { id: 'hero', label: 'Heroes' },
+              { id: 'villain', label: 'Villains' },
+              { id: 'antihero', label: 'Antiheroes' }
+            ].map(r => (
+              <button
+                key={r.id}
+                onClick={() => setSelectedRole(r.id as any)}
+                className={`px-3 py-1 rounded-lg text-xs font-mono transition-all border ${
+                  selectedRole === r.id
+                    ? 'bg-white/20 text-white border-white/40'
+                    : 'text-gray-400 border-transparent hover:text-white hover:bg-white/5'
+                }`}
+              >
+                {r.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Universe Filter Buttons */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
+            <span className="text-[11px] font-mono text-gray-400 uppercase font-semibold mr-1">
+              Continuity:
+            </span>
+            {[
+              { id: 'all', label: 'All Realities' },
+              { id: 'mcu', label: 'Sacred Timeline (MCU)' },
+              { id: 'multiverse', label: 'Multiverse / Legacy' }
+            ].map(u => (
+              <button
+                key={u.id}
+                onClick={() => setSelectedUniverse(u.id)}
+                className={`px-3 py-1 rounded-lg text-xs font-mono transition-all border ${
+                  selectedUniverse === u.id
+                    ? 'bg-red-950/80 text-red-300 border-red-700/60'
+                    : 'text-gray-400 border-transparent hover:text-white hover:bg-white/5'
+                }`}
+              >
+                {u.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Character Grid */}
         {filteredCharacters.length === 0 ? (
           <div className="py-20 text-center text-gray-500 font-mono text-sm bg-slate-900/40 rounded-2xl border border-white/5 space-y-2">
@@ -143,8 +244,10 @@ export const CharactersPage: React.FC<CharactersPageProps> = ({ onSelectCharacte
               onClick={() => {
                 setSearchQuery('');
                 setSelectedCategory('all');
+                setSelectedRole('all');
+                setSelectedUniverse('all');
               }}
-              className="mt-2 text-xs text-red-400 hover:text-red-300 underline"
+              className="mt-2 text-xs text-red-400 hover:text-red-300 underline font-mono"
             >
               Reset character search
             </button>
@@ -164,3 +267,5 @@ export const CharactersPage: React.FC<CharactersPageProps> = ({ onSelectCharacte
     </PageTransition>
   );
 };
+
+export default CharactersPage;

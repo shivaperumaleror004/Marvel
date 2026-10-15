@@ -48,8 +48,10 @@ export const SeriesPage: React.FC<SeriesPageProps> = ({ onSelectSeries, onWatchS
   const [sortBy, setSortBy] = useState<SortOption>('release');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
+  const releasedSeries = useMemo(() => seriesList.filter(isMarvelContent).filter(s => s.releaseStatus !== 'upcoming'), [seriesList]);
+
   const filteredSeries = useMemo(() => {
-    let result = seriesList.filter(isMarvelContent);
+    let result = releasedSeries;
 
     // Category filter
     if (selectedCategory !== 'all') {
@@ -82,13 +84,13 @@ export const SeriesPage: React.FC<SeriesPageProps> = ({ onSelectSeries, onWatchS
     });
 
     return result;
-  }, [seriesList, selectedCategory, selectedPhase, searchQuery, sortBy]);
+  }, [releasedSeries, selectedCategory, selectedPhase, searchQuery, sortBy]);
 
   // Tab counts
-  const disneyPlusCount = useMemo(() => seriesList.filter(s => getSeriesCategory(s) === 'disney-plus').length, [seriesList]);
-  const defendersCount = useMemo(() => seriesList.filter(s => getSeriesCategory(s) === 'defenders').length, [seriesList]);
-  const tvCount = useMemo(() => seriesList.filter(s => getSeriesCategory(s) === 'marvel-television').length, [seriesList]);
-  const animatedCount = useMemo(() => seriesList.filter(s => getSeriesCategory(s) === 'animated').length, [seriesList]);
+  const disneyPlusCount = useMemo(() => releasedSeries.filter(s => getSeriesCategory(s) === 'disney-plus').length, [releasedSeries]);
+  const defendersCount = useMemo(() => releasedSeries.filter(s => getSeriesCategory(s) === 'defenders').length, [releasedSeries]);
+  const tvCount = useMemo(() => releasedSeries.filter(s => getSeriesCategory(s) === 'marvel-television').length, [releasedSeries]);
+  const animatedCount = useMemo(() => releasedSeries.filter(s => getSeriesCategory(s) === 'animated').length, [releasedSeries]);
 
   return (
     <PageTransition>

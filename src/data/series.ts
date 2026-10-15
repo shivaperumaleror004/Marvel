@@ -5355,5 +5355,127 @@ export const SERIES_DATA: Series[] = [
     },
     "cast": [],
     "characters": []
+  },
+  {
+    "id": "vision-quest",
+    "title": "VisionQuest",
+    "year": 2026,
+    "releaseYear": "2026",
+    "overview": "Following the events of WandaVision, White Vision embarks on an existential journey of self-discovery, exploring his newly restored memories and reckoning with his past and purpose as he confronts the ghosts of his creation, including the revived Ultron.",
+    "poster": "https://image.tmdb.org/t/p/w780/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+    "rating": 8.4,
+    "phase": "Phase 6",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Action",
+      "Sci-Fi",
+      "Drama",
+      "Adventure"
+    ],
+    "creator": "Terry Matalas",
+    "tagline": "What is grief, if not love persevering?",
+    "releaseOrder": 77,
+    "chronologicalOrder": 82,
+    "tmdbId": 202619,
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "Vision",
+    "universe": "The Sacred Timeline (MCU)",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isAnimation": false,
+    "isLegacy": false,
+    "releaseStatus": "released",
+    "cast": [
+      {
+        "name": "Paul Bettany",
+        "role": "Vision / White Vision"
+      },
+      {
+        "name": "James Spader",
+        "role": "Ultron"
+      },
+      {
+        "name": "Todd Stashwick",
+        "role": "Assassin"
+      }
+    ],
+    "characters": [
+      "vision",
+      "white-vision",
+      "ultron"
+    ],
+    "watchConfig": {
+      "tmdbId": 202619,
+      "type": "tv",
+      "watchProvider": "screenscape",
+      "language": "eng"
+    },
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "White Vision struggles with human emotion, reconstructed memories, and the philosophical consequences of existence while being hunted across the globe.",
+        "poster": "https://image.tmdb.org/t/p/w780/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+        "episodes": [
+          {
+            "id": "vision-quest_s1_e1",
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Episode 1: Ghost in the Shell",
+            "runtime": 50,
+            "overview": "White Vision retreats to an isolated sanctuary to process memories of Westview, finding that his synthetic mind is plagued by the echo of Tony Stark's greatest failure.",
+            "still": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+            "airDate": "2026-10-07"
+          },
+          {
+            "id": "vision-quest_s1_e2",
+            "seasonNumber": 1,
+            "episodeNumber": 2,
+            "title": "Episode 2: The Ship of Theseus",
+            "runtime": 48,
+            "overview": "Investigating unauthorized signals tracking his Vibranium composition, Vision crosses paths with an underground network seeking to weaponize synthetic consciousness.",
+            "still": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+            "airDate": "2026-10-14"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova-mcu",
+    "title": "Nova",
+    "year": 2027,
+    "releaseYear": "2027",
+    "overview": "Following the devastation of Xandar by Thanos, Richard Rider is chosen by Rhomann Dey to inherit the unified power of the Nova Force, rising as the Centurion prime to protect the cosmos against ancient warlords.",
+    "poster": "https://image.tmdb.org/t/p/w780/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cDJ61O1STtbWNBwefuqVrRe3d7l.jpg",
+    "rating": 8.0,
+    "phase": "Phase 6",
+    "saga": "Multiverse Saga",
+    "genres": ["Action", "Sci-Fi", "Adventure"],
+    "creator": "Edward Abdul-Rahman",
+    "tagline": "The Human Rocket ignites.",
+    "releaseOrder": 78,
+    "chronologicalOrder": 83,
+    "tmdbId": 984511,
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "distributor": "Disney+",
+    "franchise": "Nova",
+    "universe": "The Sacred Timeline (MCU)",
+    "universeId": "earth-616",
+    "universeDesignation": "Earth-616",
+    "isMcu": true,
+    "isAnimation": false,
+    "isLegacy": false,
+    "releaseStatus": "upcoming",
+    "upcomingStatus": "announced",
+    "cast": [],
+    "characters": [],
+    "seasons": []
   }
 ];

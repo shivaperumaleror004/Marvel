@@ -57,14 +57,24 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onSelect, onWatch }
                  movie.studioId === 'marvel-animation' ? 'ANIMATION' : 'MARVEL'}
               </span>
             )}
-            {isOneShot && (
+            {(isOneShot || movie.mediaSubtype === 'one-shot') && (
               <span className="px-1.5 py-0.5 rounded bg-blue-950/90 border border-blue-600/70 text-[9px] font-mono font-black text-blue-400 uppercase tracking-wider">
                 ONE-SHOT
               </span>
             )}
-            {isSpecial && (
+            {(isSpecial || movie.mediaSubtype === 'special-presentation') && (
               <span className="px-1.5 py-0.5 rounded bg-purple-950/90 border border-purple-600/70 text-[9px] font-mono font-black text-purple-400 uppercase tracking-wider">
                 SPECIAL
+              </span>
+            )}
+            {movie.mediaSubtype === 'short-film' && (
+              <span className="px-1.5 py-0.5 rounded bg-amber-950/90 border border-amber-600/70 text-[9px] font-mono font-black text-amber-400 uppercase tracking-wider">
+                SHORT FILM
+              </span>
+            )}
+            {movie.mediaSubtype === 'television-special' && (
+              <span className="px-1.5 py-0.5 rounded bg-emerald-950/90 border border-emerald-600/70 text-[9px] font-mono font-black text-emerald-400 uppercase tracking-wider">
+                TV SPECIAL
               </span>
             )}
           </div>

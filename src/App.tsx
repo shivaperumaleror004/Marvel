@@ -18,6 +18,8 @@ const WatchPage = React.lazy(() => import('./pages/WatchPage').then(m => ({ defa
 const TimelinePage = React.lazy(() => import('./pages/TimelinePage').then(m => ({ default: m.TimelinePage })));
 const CharactersPage = React.lazy(() => import('./pages/CharactersPage').then(m => ({ default: m.CharactersPage })));
 const CharacterDetailPage = React.lazy(() => import('./pages/CharacterDetailPage').then(m => ({ default: m.CharacterDetailPage })));
+const ShortsPage = React.lazy(() => import('./pages/ShortsPage').then(m => ({ default: m.ShortsPage })));
+const UpcomingPage = React.lazy(() => import('./pages/UpcomingPage').then(m => ({ default: m.UpcomingPage })));
 const MyListPage = React.lazy(() => import('./pages/MyListPage').then(m => ({ default: m.MyListPage })));
 const SettingsPage = React.lazy(() => import('./pages/SettingsPage').then(m => ({ default: m.SettingsPage })));
 
@@ -386,6 +388,22 @@ function MarvelHubContent() {
           />
         )}
 
+        {activeTab === 'shorts' && (
+          <ShortsPage
+            onSelectMovie={handleSelectMovie}
+            onWatchMovie={handleWatchMovie}
+            onSelectSeries={handleSelectSeries}
+            onWatchSeries={handleWatchSeries}
+          />
+        )}
+
+        {activeTab === 'upcoming' && (
+          <UpcomingPage
+            onSelectMovie={handleSelectMovie}
+            onSelectSeries={handleSelectSeries}
+          />
+        )}
+
         {activeTab === 'animation' && (
           <AnimationPage
             onSelectMovie={handleSelectMovie}
@@ -428,6 +446,7 @@ function MarvelHubContent() {
             series={selectedSeries}
             onBack={() => handleNavigate('series')}
             onWatchEpisode={handleWatchEpisode}
+            onSelectCharacter={handleSelectCharacter}
           />
         )}
 

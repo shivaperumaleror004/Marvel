@@ -45,8 +45,10 @@ export const MovieDetailPage: React.FC<MovieDetailPageProps> = ({
   const prevMovie = movies.find(m => m.releaseOrder === movie.releaseOrder - 1);
   const nextMovie = movies.find(m => m.releaseOrder === movie.releaseOrder + 1);
 
-  // Related characters
-  const relatedChars = CHARACTERS_DATA.filter(c => movie.characters.includes(c.id));
+  // Related characters (bidirectional link)
+  const relatedChars = CHARACTERS_DATA.filter(
+    c => movie.characters?.includes(c.id) || c.movies?.includes(movie.id)
+  );
 
   // Related movies in same phase
   const relatedMovies = movies.filter(m => m.phase === movie.phase && m.id !== movie.id).slice(0, 4);

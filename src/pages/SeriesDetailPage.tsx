@@ -13,7 +13,8 @@ import {
   Loader2,
   Film
 } from 'lucide-react';
-import { Series, Episode } from '../types';
+import { Series, Episode, Character } from '../types';
+import { CHARACTERS_DATA } from '../data/characters';
 import { PhaseBadge } from '../components/ui/PhaseBadge';
 import { RatingBadge } from '../components/ui/RatingBadge';
 import { useWatchlist } from '../hooks/useWatchlist';
@@ -33,12 +34,14 @@ interface SeriesDetailPageProps {
   series: Series;
   onBack: () => void;
   onWatchEpisode: (series: Series, episode: Episode) => void;
+  onSelectCharacter?: (character: Character) => void;
 }
 
 export const SeriesDetailPage: React.FC<SeriesDetailPageProps> = ({
   series: initialSeries,
   onBack,
-  onWatchEpisode
+  onWatchEpisode,
+  onSelectCharacter
 }) => {
   const { enrichSeriesDetail } = useMedia();
   const [series, setSeries] = useState<Series>(initialSeries);
@@ -396,6 +399,45 @@ export const SeriesDetailPage: React.FC<SeriesDetailPageProps> = ({
               </div>
             </div>
           )}
+          {/* Featured Characters in this Series */}
+          {(() => {
+            const relatedChars = CHARACTERS_DATA.filter(
+              c => series.characters?.includes(c.id) || c.series?.includes(series.id)
+            );
+            if (relatedChars.length === 0) return null;
+
+            return (
+              <div className="space-y-4 pt-6 border-t border-white/10">
+                <h3 className="text-xl font-extrabold text-white uppercase tracking-wider">
+                  Featured Marvel Characters
+                </h3>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                  {relatedChars.map(char => (
+                    <div
+                      key={char.id}
+                      onClick={() => onSelectCharacter && onSelectCharacter(char)}
+                      className="group cursor-pointer p-3 rounded-xl border border-white/10 bg-slate-900/80 hover:border-red-600/50 transition-all flex items-center gap-3"
+                    >
+                      <img
+                        src={char.portrait || FALLBACK_AVATAR}
+                        alt={char.name}
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = FALLBACK_AVATAR;
+                        }}
+                        className="h-12 w-12 rounded-full object-cover border border-red-600/40"
+                      />
+                      <div className="min-w-0">
+                        <h4 className="text-xs font-bold text-white uppercase truncate group-hover:text-red-400">
+                          {char.alias}
+                        </h4>
+                        <p className="text-[10px] font-mono text-gray-400 truncate">{char.name}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </div>
     </PageTransition>
