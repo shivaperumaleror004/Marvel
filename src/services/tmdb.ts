@@ -3,8 +3,27 @@ import { SERIES_DATA } from '../data/series';
 import type { Movie, Series, CastMember, Season, Episode } from '../types';
 import { isMarvelContent, MARVEL_MOVIE_TMDB_IDS } from '../utils/marvelWhitelist';
 
-// TMDB Serverless API Proxy Configuration (Same-Origin Vercel Serverless Function)
-export const TMDB_BASE_URL = '/api/tmdb';
+/**
+ * Resolves the configured TMDB API endpoint.
+ * Supports:
+ * - Dedicated Render backend via `VITE_API_BASE_URL` (e.g. "https://marvel-zero-g-api.onrender.com")
+ * - Same-origin / local proxy fallback ("/api/tmdb")
+ * Guarantees that `/api/tmdb` is never duplicated and trailing slashes are normalized.
+ */
+export function getTmdbApiEndpoint(): string {
+  const customBase = (import.meta.env.VITE_API_BASE_URL || '').trim();
+  if (!customBase) {
+    return '/api/tmdb';
+  }
+
+  const sanitized = customBase.replace(/\/+$/, '');
+  if (sanitized.endsWith('/api/tmdb')) {
+    return sanitized;
+  }
+  return `${sanitized}/api/tmdb`;
+}
+
+export const TMDB_BASE_URL = getTmdbApiEndpoint();
 export const TMDB_IMAGE_BASE = 'https://image.tmdb.org/t/p';
 
 // Default Fallback Assets (Marvel Cinematic Studio aesthetic)
