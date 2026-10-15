@@ -149,7 +149,17 @@ export const MARVEL_MOVIE_TMDB_IDS = new Set<number>([
   588226,
   627103,
   639933,
-  653723
+  653723,
+  413277,
+  441384,
+  503619,
+  445030,
+  119843,
+  617127,
+  776510,
+  569094,
+  897087,
+  978436
 ]);
 
 export const MARVEL_SERIES_TMDB_IDS = new Set<number>([
@@ -202,7 +212,9 @@ export const MARVEL_SERIES_TMDB_IDS = new Set<number>([
   64196,
   88987,
   111312,
-  133903
+  133903,
+  202619,
+  984511
 ]);
 
 export const MARVEL_LOCAL_IDS = new Set<string>([
@@ -238,6 +250,28 @@ export const MARVEL_LOCAL_IDS = new Set<string>([
   'echo',
   'agatha-all-along',
   'daredevil-born-again',
+  'vision-quest',
+  'ironheart',
+  'eyes-of-wakanda',
+  'marvel-zombies',
+  'wonder-man',
+  'nova-mcu',
+  'the-punisher-one-last-kill',
+  'team-thor',
+  'team-thor-part-2',
+  'team-darryl',
+  'deadpool-no-good-deed',
+  'blade-mcu',
+  'armor-wars',
+  'spider-man-beyond-the-spider-verse',
+  'shang-chi-2',
+  'x-men-mcu',
+  'avengers-secret-wars',
+  'ultron',
+  'white-vision',
+  'agatha-harkness',
+  'doctor-doom',
+  'sue-storm',
   'iron-man-character',
   'captain-america-character',
   'thor-character',

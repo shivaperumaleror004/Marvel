@@ -222,6 +222,7 @@ export type Series = {
   isAnimation?: boolean;
   isMcu?: boolean;
   isLegacy?: boolean;
+  isUpcoming?: boolean;
   releaseStatus?: 'released' | 'upcoming';
   upcomingStatus?: 'confirmed' | 'announced' | 'unconfirmed';
   mediaSubtype?: string;

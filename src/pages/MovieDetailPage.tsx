@@ -141,13 +141,20 @@ export const MovieDetailPage: React.FC<MovieDetailPageProps> = ({
 
               {/* Watch & List Buttons */}
               <div className="pt-4 flex flex-wrap items-center gap-3">
-                <button
-                  onClick={() => onWatch(movie)}
-                  className="flex items-center gap-2 rounded-xl bg-red-600 px-6 py-3.5 text-sm font-black text-white uppercase tracking-wider shadow-[0_0_30px_rgba(230,36,41,0.5)] transition-all hover:bg-red-500 hover:scale-105 active:scale-95"
-                >
-                  <Play className="w-5 h-5 fill-current" />
-                  <span>WATCH NOW</span>
-                </button>
+                {movie.isUpcoming || movie.releaseStatus === 'upcoming' ? (
+                  <div className="flex items-center gap-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 px-6 py-3.5 text-sm font-bold text-amber-300">
+                    <Clock className="w-5 h-5 text-amber-400" />
+                    <span>UPCOMING // IN PRODUCTION</span>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => onWatch(movie)}
+                    className="flex items-center gap-2 rounded-xl bg-red-600 px-6 py-3.5 text-sm font-black text-white uppercase tracking-wider shadow-[0_0_30px_rgba(230,36,41,0.5)] transition-all hover:bg-red-500 hover:scale-105 active:scale-95"
+                  >
+                    <Play className="w-5 h-5 fill-current" />
+                    <span>WATCH NOW</span>
+                  </button>
+                )}
 
                 <button
                   onClick={() => toggleWatchlist(movie.id)}

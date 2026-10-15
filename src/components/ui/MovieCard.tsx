@@ -113,16 +113,23 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onSelect, onWatch }
 
             {/* Action Buttons */}
             <div className="mt-3 flex items-center gap-2">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (onWatch) onWatch(movie);
-                }}
-                className="flex-1 flex items-center justify-center gap-1.5 rounded-lg bg-red-600 px-3 py-2 text-xs font-bold text-white shadow-lg transition-transform hover:bg-red-500 active:scale-95"
-              >
-                <Play className="w-3.5 h-3.5 fill-current" />
-                <span>WATCH</span>
-              </button>
+              {movie.isUpcoming || movie.releaseStatus === 'upcoming' ? (
+                <div className="flex-1 flex items-center justify-center gap-1.5 rounded-lg bg-amber-500/20 border border-amber-500/40 px-3 py-2 text-xs font-bold text-amber-300">
+                  <Clock className="w-3.5 h-3.5 text-amber-400" />
+                  <span>UPCOMING</span>
+                </div>
+              ) : (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (onWatch) onWatch(movie);
+                  }}
+                  className="flex-1 flex items-center justify-center gap-1.5 rounded-lg bg-red-600 px-3 py-2 text-xs font-bold text-white shadow-lg transition-transform hover:bg-red-500 active:scale-95"
+                >
+                  <Play className="w-3.5 h-3.5 fill-current" />
+                  <span>WATCH</span>
+                </button>
+              )}
 
               <button
                 onClick={(e) => {

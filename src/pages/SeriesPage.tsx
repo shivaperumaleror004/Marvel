@@ -12,7 +12,7 @@ interface SeriesPageProps {
   onWatchSeries: (series: Series) => void;
 }
 
-const PHASES = ['All', 'Phase 4', 'Phase 5', 'Defenders', 'Marvel Television'];
+const PHASES = ['All', 'Phase 4', 'Phase 5', 'Phase 6', 'Defenders', 'Marvel Television'];
 type SortOption = 'release' | 'alphabetical' | 'rating';
 type SeriesCategoryOption = 'all' | 'disney-plus' | 'defenders' | 'marvel-television' | 'animated';
 
