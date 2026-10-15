@@ -6,6 +6,7 @@ import { RatingBadge } from './RatingBadge';
 import { useWatchlist } from '../../hooks/useWatchlist';
 import { useWatchProgress } from '../../hooks/useWatchProgress';
 import { FALLBACK_POSTER } from '../../services/tmdb';
+import { createTitleSpecificPoster } from '../../utils/imageFallback';
 
 interface MovieCardProps {
   movie: Movie;
@@ -36,7 +37,15 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onSelect, onWatch }
       {/* Poster Image */}
       <div className="relative aspect-[2/3] w-full overflow-hidden bg-slate-950">
         <img
-          src={imgError ? FALLBACK_POSTER : (movie.poster || FALLBACK_POSTER)}
+          src={
+            imgError || !movie.poster
+              ? createTitleSpecificPoster(
+                  movie.title,
+                  movie.isUpcoming || movie.releaseStatus === 'upcoming' ? 'upcoming' : 'movie',
+                  movie.isUpcoming || movie.releaseStatus === 'upcoming' ? 'UPCOMING PROJECT' : movie.studio || 'MARVEL'
+                )
+              : movie.poster
+          }
           alt={movie.title}
           onError={() => setImgError(true)}
           loading="lazy"

@@ -5,6 +5,7 @@ import { PhaseBadge } from './PhaseBadge';
 import { RatingBadge } from './RatingBadge';
 import { useWatchlist } from '../../hooks/useWatchlist';
 import { FALLBACK_POSTER } from '../../services/tmdb';
+import { createTitleSpecificPoster } from '../../utils/imageFallback';
 
 interface SeriesCardProps {
   series: Series;
@@ -39,7 +40,15 @@ export const SeriesCard: React.FC<SeriesCardProps> = ({ series, onSelect, onWatc
     >
       <div className="relative aspect-[2/3] w-full overflow-hidden bg-slate-950">
         <img
-          src={imgError ? FALLBACK_POSTER : (series.poster || FALLBACK_POSTER)}
+          src={
+            imgError || !series.poster
+              ? createTitleSpecificPoster(
+                  series.title,
+                  series.releaseStatus === 'upcoming' || series.isUpcoming ? 'upcoming' : 'series',
+                  series.studio || 'MARVEL TELEVISION'
+                )
+              : series.poster
+          }
           alt={series.title}
           onError={() => setImgError(true)}
           loading="lazy"

@@ -9,10 +9,11 @@ const ALLOWED_PATH_PATTERNS: RegExp[] = [
   /^\/tv\/\d+$/,
   /^\/tv\/\d+\/season\/\d+$/,
   /^\/tv\/\d+\/season\/\d+\/episode\/\d+$/,
+  /^\/person\/\d+$/,
   /^\/movie\/(popular|now_playing|upcoming)$/,
   /^\/tv\/(popular|airing_today)$/,
   /^\/trending\/all\/(day|week)$/,
-  /^\/search\/(movie|tv|multi)$/,
+  /^\/search\/(movie|tv|multi|person)$/,
   /^\/genre\/(movie|tv)\/list$/,
 ];
 

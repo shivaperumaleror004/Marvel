@@ -1,4 +1,4 @@
-import type { Series } from '../types';
+import { Series } from '../types';
 
 export const SERIES_DATA: Series[] = [
   {
@@ -47,7 +47,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 84958,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -70,7 +70,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 84958,
-              "watchProvider": "screenscape",
+              "watchProvider": "autoembed",
               "language": "eng"
             }
           },
@@ -87,7 +87,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 2,
               "tmdbId": 84958,
-              "watchProvider": "screenscape",
+              "watchProvider": "autoembed",
               "language": "eng"
             }
           },
@@ -104,7 +104,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 3,
               "tmdbId": 84958,
-              "watchProvider": "screenscape",
+              "watchProvider": "autoembed",
               "language": "eng"
             }
           },
@@ -121,7 +121,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 4,
               "tmdbId": 84958,
-              "watchProvider": "screenscape",
+              "watchProvider": "autoembed",
               "language": "eng"
             }
           },
@@ -138,7 +138,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 5,
               "tmdbId": 84958,
-              "watchProvider": "screenscape",
+              "watchProvider": "autoembed",
               "language": "eng"
             }
           },
@@ -155,7 +155,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 6,
               "tmdbId": 84958,
-              "watchProvider": "screenscape",
+              "watchProvider": "autoembed",
               "language": "eng"
             }
           }
@@ -181,7 +181,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 1,
               "tmdbId": 84958,
-              "watchProvider": "screenscape",
+              "watchProvider": "autoembed",
               "language": "eng"
             }
           },
@@ -198,7 +198,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 2,
               "tmdbId": 84958,
-              "watchProvider": "screenscape",
+              "watchProvider": "autoembed",
               "language": "eng"
             }
           },
@@ -215,7 +215,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 3,
               "tmdbId": 84958,
-              "watchProvider": "screenscape",
+              "watchProvider": "autoembed",
               "language": "eng"
             }
           },
@@ -232,7 +232,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 4,
               "tmdbId": 84958,
-              "watchProvider": "screenscape",
+              "watchProvider": "autoembed",
               "language": "eng"
             }
           },
@@ -249,7 +249,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 5,
               "tmdbId": 84958,
-              "watchProvider": "screenscape",
+              "watchProvider": "autoembed",
               "language": "eng"
             }
           },
@@ -266,7 +266,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 6,
               "tmdbId": 84958,
-              "watchProvider": "screenscape",
+              "watchProvider": "autoembed",
               "language": "eng"
             }
           }
@@ -335,7 +335,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 85271,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -358,7 +358,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 85271,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -425,7 +425,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 88396,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -448,7 +448,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 88396,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -506,7 +506,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 91363,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -529,7 +529,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 91363,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -554,7 +554,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 1,
               "tmdbId": 91363,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -579,7 +579,7 @@ export const SERIES_DATA: Series[] = [
               "season": 3,
               "episode": 1,
               "tmdbId": 91363,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -646,7 +646,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 88329,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -669,7 +669,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 88329,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -732,7 +732,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 92749,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -755,7 +755,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 92749,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -814,7 +814,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 92782,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -837,7 +837,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 92782,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -899,7 +899,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 92783,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -922,7 +922,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 92783,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -988,7 +988,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 114472,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -1011,7 +1011,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 114472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -1071,7 +1071,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 122226,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -1094,7 +1094,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 122226,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -1154,7 +1154,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 138501,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -1177,7 +1177,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 138501,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -1205,7 +1205,7 @@ export const SERIES_DATA: Series[] = [
     "releaseYear": "2025 - 2026",
     "overview": "Blind lawyer Matt Murdock and criminal mastermind Wilson Fisk attempt to put their alter egos behind them in New York, but inevitable forces pull them back into an all-out street-level war.",
     "poster": "https://image.tmdb.org/t/p/w780/xDUoAsU8lQHOOoRkFiBuarmACDN.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/xDUoAsU8lQHOOoRkFiBuarmACDN.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/qrTAc0ZtQ859Qu5O8cixJzNJpQs.jpg",
     "rating": 8.5,
     "phase": "Phase 5",
     "saga": "Multiverse Saga",
@@ -1239,7 +1239,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 202555,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -1262,7 +1262,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 202555,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -1287,7 +1287,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 1,
               "tmdbId": 202555,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ]
@@ -1305,7 +1305,9 @@ export const SERIES_DATA: Series[] = [
     "isAnimation": false,
     "releaseStatus": "released",
     "totalEpisodes": 9,
-    "totalSeasons": 1
+    "totalSeasons": 1,
+    "isReleased": true,
+    "isUpcoming": false
   },
   {
     "id": "i-am-groot",
@@ -1342,7 +1344,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 232125,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -1365,7 +1367,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 232125,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -1390,7 +1392,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 1,
               "tmdbId": 232125,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -1444,7 +1446,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 241388,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -1467,7 +1469,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 241388,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ]
@@ -1483,7 +1485,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": true,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "isReleased": true,
+    "isUpcoming": false
   },
   {
     "id": "your-friendly-neighborhood-spider-man",
@@ -1522,7 +1526,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 138503,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -1545,7 +1549,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 138503,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ]
@@ -1561,7 +1565,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": true,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "isReleased": true,
+    "isUpcoming": false
   },
   {
     "id": "marvel-zombies",
@@ -1598,7 +1604,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 138505,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -1621,7 +1627,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 138505,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ]
@@ -1637,7 +1643,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": true,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "isReleased": true,
+    "isUpcoming": false
   },
   {
     "id": "ironheart",
@@ -1674,7 +1682,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 114471,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -1697,7 +1705,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 114471,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ]
@@ -1713,7 +1721,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "isReleased": true,
+    "isUpcoming": false
   },
   {
     "id": "wonder-man",
@@ -1750,7 +1760,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 198178,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -1773,7 +1783,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 198178,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ]
@@ -1789,7 +1799,9 @@ export const SERIES_DATA: Series[] = [
     "isMcu": true,
     "isLegacy": false,
     "isAnimation": false,
-    "releaseStatus": "released"
+    "releaseStatus": "released",
+    "isReleased": true,
+    "isUpcoming": false
   },
   {
     "id": "daredevil",
@@ -1836,7 +1848,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 61889,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -1859,7 +1871,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 61889,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -1884,7 +1896,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 1,
               "tmdbId": 61889,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -1909,7 +1921,7 @@ export const SERIES_DATA: Series[] = [
               "season": 3,
               "episode": 1,
               "tmdbId": 61889,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -1969,7 +1981,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 38472,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -1993,7 +2005,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2009,7 +2021,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 2,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2025,7 +2037,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 3,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2041,7 +2053,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 4,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2057,7 +2069,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 5,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2073,7 +2085,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 6,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2089,7 +2101,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 7,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2105,7 +2117,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 8,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2121,7 +2133,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 9,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2137,7 +2149,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 10,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2153,7 +2165,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 11,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2169,7 +2181,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 12,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2185,7 +2197,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 13,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ]
@@ -2210,7 +2222,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 1,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2226,7 +2238,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 2,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2242,7 +2254,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 3,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2258,7 +2270,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 4,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2274,7 +2286,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 5,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2290,7 +2302,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 6,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2306,7 +2318,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 7,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2322,7 +2334,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 8,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2338,7 +2350,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 9,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2354,7 +2366,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 10,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2370,7 +2382,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 11,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2386,7 +2398,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 12,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2402,7 +2414,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 13,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ]
@@ -2427,7 +2439,7 @@ export const SERIES_DATA: Series[] = [
               "season": 3,
               "episode": 1,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2443,7 +2455,7 @@ export const SERIES_DATA: Series[] = [
               "season": 3,
               "episode": 2,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2459,7 +2471,7 @@ export const SERIES_DATA: Series[] = [
               "season": 3,
               "episode": 3,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2475,7 +2487,7 @@ export const SERIES_DATA: Series[] = [
               "season": 3,
               "episode": 4,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2491,7 +2503,7 @@ export const SERIES_DATA: Series[] = [
               "season": 3,
               "episode": 5,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2507,7 +2519,7 @@ export const SERIES_DATA: Series[] = [
               "season": 3,
               "episode": 6,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2523,7 +2535,7 @@ export const SERIES_DATA: Series[] = [
               "season": 3,
               "episode": 7,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2539,7 +2551,7 @@ export const SERIES_DATA: Series[] = [
               "season": 3,
               "episode": 8,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2555,7 +2567,7 @@ export const SERIES_DATA: Series[] = [
               "season": 3,
               "episode": 9,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2571,7 +2583,7 @@ export const SERIES_DATA: Series[] = [
               "season": 3,
               "episode": 10,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2587,7 +2599,7 @@ export const SERIES_DATA: Series[] = [
               "season": 3,
               "episode": 11,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2603,7 +2615,7 @@ export const SERIES_DATA: Series[] = [
               "season": 3,
               "episode": 12,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           },
           {
@@ -2619,7 +2631,7 @@ export const SERIES_DATA: Series[] = [
               "season": 3,
               "episode": 13,
               "tmdbId": 38472,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ]
@@ -2678,7 +2690,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 62126,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -2701,7 +2713,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 62126,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -2726,7 +2738,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 1,
               "tmdbId": 62126,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -2782,7 +2794,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 62127,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -2805,7 +2817,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 62127,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -2830,7 +2842,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 1,
               "tmdbId": 62127,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -2896,7 +2908,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 62285,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -2919,7 +2931,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 62285,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -2975,7 +2987,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 67178,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -2998,7 +3010,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 67178,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -3023,7 +3035,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 1,
               "tmdbId": 67178,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -3083,7 +3095,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 61550,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -3106,7 +3118,7 @@ export const SERIES_DATA: Series[] = [
               "season": 1,
               "episode": 1,
               "tmdbId": 61550,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -3131,7 +3143,7 @@ export const SERIES_DATA: Series[] = [
               "season": 2,
               "episode": 1,
               "tmdbId": 61550,
-              "watchProvider": "screenscape"
+              "watchProvider": "autoembed"
             }
           }
         ],
@@ -3239,7 +3251,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 1403,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "studio": "Marvel Television",
@@ -3291,7 +3303,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 68716,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "studio": "Marvel Television",
@@ -3359,7 +3371,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 67466,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "studio": "Marvel Television",
@@ -3419,7 +3431,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 66190,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "studio": "Marvel Television",
@@ -3487,7 +3499,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 67195,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "studio": "FX Networks / Marvel Television",
@@ -3547,7 +3559,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 69629,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "studio": "20th Century Fox / Marvel Television",
@@ -3606,7 +3618,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 138502,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "studio": "Marvel Animation",
@@ -3621,7 +3633,9 @@ export const SERIES_DATA: Series[] = [
     "isLegacy": false,
     "releaseStatus": "released",
     "totalEpisodes": 10,
-    "totalSeasons": 1
+    "totalSeasons": 1,
+    "isReleased": true,
+    "isUpcoming": false
   },
   {
     "id": "spider-man-animated",
@@ -3684,7 +3698,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 888,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "studio": "Marvel Entertainment",
@@ -3757,7 +3771,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 34391,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "studio": "Marvel Animation",
@@ -3834,7 +3848,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 59427,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "studio": "Marvel Animation",
@@ -3898,7 +3912,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 72705,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "studio": "Marvel Animation",
@@ -3959,7 +3973,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 2373,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4011,7 +4025,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 4784,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4062,7 +4076,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 3973,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4129,7 +4143,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 1269,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4181,7 +4195,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 11328,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4261,7 +4275,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 4574,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4320,7 +4334,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 3097,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4379,7 +4393,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 2901,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4438,7 +4452,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 6332,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4490,7 +4504,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 1130,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4542,7 +4556,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 1300,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4594,7 +4608,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 10079,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4668,7 +4682,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 668,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4720,7 +4734,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 1664,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4772,7 +4786,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 132,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4831,7 +4845,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 3854,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4883,7 +4897,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 6549,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -4943,7 +4957,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 21781,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -5002,7 +5016,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 7330,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -5061,7 +5075,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 33623,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -5120,7 +5134,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 40044,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -5186,7 +5200,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 63181,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -5238,7 +5252,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 88987,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -5290,7 +5304,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 111312,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -5350,7 +5364,7 @@ export const SERIES_DATA: Series[] = [
     "watchConfig": {
       "tmdbId": 133903,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "cast": [],
@@ -5361,9 +5375,9 @@ export const SERIES_DATA: Series[] = [
     "title": "VisionQuest",
     "year": 2026,
     "releaseYear": "2026",
-    "overview": "Following the events of WandaVision, White Vision embarks on an existential journey of self-discovery, exploring his newly restored memories and reckoning with his past and purpose as he confronts the ghosts of his creation, including the revived Ultron.",
-    "poster": "https://image.tmdb.org/t/p/w780/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+    "overview": "With a bounty on his head, Vision must confront his nature and resist Ultron's influence to survive.",
+    "poster": "https://image.tmdb.org/t/p/w780/WGyAyBPncfuu8MZhLY9RtfZPM0.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/uoXXbN2PrOxH6UKyP7kYwmGpAAP.jpg",
     "rating": 8.4,
     "phase": "Phase 6",
     "saga": "Multiverse Saga",
@@ -5377,7 +5391,7 @@ export const SERIES_DATA: Series[] = [
     "tagline": "What is grief, if not love persevering?",
     "releaseOrder": 77,
     "chronologicalOrder": 82,
-    "tmdbId": 202619,
+    "tmdbId": 213375,
     "studio": "Marvel Studios",
     "studioId": "marvel-studios",
     "distributor": "Disney+",
@@ -5392,26 +5406,28 @@ export const SERIES_DATA: Series[] = [
     "cast": [
       {
         "name": "Paul Bettany",
-        "role": "Vision / White Vision"
+        "role": "Vision / White Vision",
+        "avatar": "https://image.tmdb.org/t/p/w185/oNrDowF5cRtK5lJJuCAh0KeFizy.jpg"
       },
       {
         "name": "James Spader",
-        "role": "Ultron"
+        "role": "Ultron",
+        "avatar": "https://image.tmdb.org/t/p/w185/3gurW3OgDOD4hcqDfgcqUnoNg34.jpg"
       },
       {
         "name": "Todd Stashwick",
-        "role": "Assassin"
+        "role": "Paladin"
       }
     ],
     "characters": [
-      "vision",
       "white-vision",
+      "vision",
       "ultron"
     ],
     "watchConfig": {
-      "tmdbId": 202619,
+      "tmdbId": 213375,
       "type": "tv",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "seasons": [
@@ -5443,7 +5459,9 @@ export const SERIES_DATA: Series[] = [
           }
         ]
       }
-    ]
+    ],
+    "isReleased": true,
+    "isUpcoming": false
   },
   {
     "id": "nova-mcu",
@@ -5453,10 +5471,14 @@ export const SERIES_DATA: Series[] = [
     "overview": "Following the devastation of Xandar by Thanos, Richard Rider is chosen by Rhomann Dey to inherit the unified power of the Nova Force, rising as the Centurion prime to protect the cosmos against ancient warlords.",
     "poster": "https://image.tmdb.org/t/p/w780/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/cDJ61O1STtbWNBwefuqVrRe3d7l.jpg",
-    "rating": 8.0,
+    "rating": 8,
     "phase": "Phase 6",
     "saga": "Multiverse Saga",
-    "genres": ["Action", "Sci-Fi", "Adventure"],
+    "genres": [
+      "Action",
+      "Sci-Fi",
+      "Adventure"
+    ],
     "creator": "Edward Abdul-Rahman",
     "tagline": "The Human Rocket ignites.",
     "releaseOrder": 78,
@@ -5477,5 +5499,55 @@ export const SERIES_DATA: Series[] = [
     "cast": [],
     "characters": [],
     "seasons": []
+  },
+  {
+    "id": "zodiac",
+    "title": "Zodiac",
+    "year": 2027,
+    "releaseYear": "TBA",
+    "overview": "A high-stakes spy thriller set in the Marvel Cinematic Universe (MCU) exploring covert black-ops and clandestine espionage syndicates.",
+    "poster": "https://image.tmdb.org/t/p/w780/A0Q6ttr7FPG93Jmft45e8pwsPIn.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+    "rating": 7.8,
+    "phase": "Phase 6",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Action",
+      "Thriller",
+      "Crime"
+    ],
+    "seasons": [
+      {
+        "seasonNumber": 1,
+        "title": "Season 1",
+        "overview": "Clandestine operatives investigate the mysterious conspiracy known only as Zodiac.",
+        "episodeCount": 6,
+        "episodes": []
+      }
+    ],
+    "creator": "Marvel Studios",
+    "cast": [],
+    "characters": [],
+    "releaseOrder": 35,
+    "chronologicalOrder": 35,
+    "tmdbId": 337844,
+    "totalEpisodes": 6,
+    "totalSeasons": 1,
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "franchise": "MCU Series",
+    "universe": "Marvel Cinematic Universe (Earth-616)",
+    "universeId": "earth-616",
+    "isMcu": true,
+    "isUpcoming": true,
+    "isReleased": false,
+    "releaseStatus": "upcoming",
+    "upcomingStatus": "announced",
+    "watchConfig": {
+      "tmdbId": 337844,
+      "type": "tv",
+      "watchProvider": "autoembed",
+      "language": "eng"
+    }
   }
 ];

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Shield, Zap, ChevronRight } from 'lucide-react';
 import { Character } from '../../types';
 import { FALLBACK_POSTER } from '../../services/tmdb';
+import { createTitleSpecificPoster } from '../../utils/imageFallback';
 
 interface CharacterCardProps {
   character: Character;
@@ -32,7 +33,11 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({ character, onSelec
       {/* Portrait Container */}
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-slate-950">
         <img
-          src={imgError ? FALLBACK_POSTER : character.portrait}
+          src={
+            imgError || !character.portrait
+              ? createTitleSpecificPoster(character.alias, 'character', character.name)
+              : character.portrait
+          }
           alt={character.alias}
           onError={() => setImgError(true)}
           loading="lazy"

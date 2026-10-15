@@ -2,719 +2,1922 @@ import { Character } from '../types';
 
 export const CHARACTERS_DATA: Character[] = [
   {
-    id: 'iron-man',
-    name: 'Anthony "Tony" Stark',
-    alias: 'Iron Man',
-    actor: 'Robert Downey Jr.',
-    portrait: 'https://image.tmdb.org/t/p/w780/78lPtwv72eTNqFW9COBYI0dWDJa.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg',
-    description: 'Genius, billionaire, playboy, philanthropist who constructed a powered suit of armor to save his own life and fight global threats.',
-    bio: 'Tony Stark was an industrialist and genius inventor who inherited Stark Industries from his father. After being captured by terrorists in Afghanistan and suffering a shrapnel injury to his chest, Tony built the Arc Reactor and the Mark I Iron Man armor to escape. He went on to co-found the Avengers and sacrificed his life to defeat Thanos with the Infinity Stones.',
-    powers: ['Genius-Level Intellect', 'Powered Armored Suit', 'Repulsor Beams', 'Tactical HUD Interface', 'Micro-Missile Arrays'],
-    affiliation: 'Avengers / Stark Industries',
-    firstAppearance: 'Iron Man (2008)',
-    movies: ['iron-man', 'iron-man-2', 'the-avengers', 'iron-man-3', 'avengers-age-of-ultron', 'captain-america-civil-war', 'spider-man-homecoming', 'avengers-infinity-war', 'avengers-endgame'],
-    series: [],
-    relatedCharacters: ['captain-america', 'spider-man', 'hulk', 'black-widow', 'hawkeye', 'war-machine']
+    "id": "iron-man",
+    "name": "Anthony \"Tony\" Stark",
+    "alias": "Iron Man",
+    "actor": "Robert Downey Jr.",
+    "portrait": "https://image.tmdb.org/t/p/w780/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+    "description": "Genius, billionaire, playboy, philanthropist who constructed a powered suit of armor to save his own life and fight global threats.",
+    "bio": "Tony Stark was an industrialist and genius inventor who inherited Stark Industries from his father. After being captured by terrorists in Afghanistan and suffering a shrapnel injury to his chest, Tony built the Arc Reactor and the Mark I Iron Man armor to escape. He went on to co-found the Avengers and sacrificed his life to defeat Thanos with the Infinity Stones.",
+    "powers": [
+      "Genius-Level Intellect",
+      "Powered Armored Suit",
+      "Repulsor Beams",
+      "Tactical HUD Interface",
+      "Micro-Missile Arrays"
+    ],
+    "affiliation": "Avengers / Stark Industries",
+    "firstAppearance": "Iron Man (2008)",
+    "movies": [
+      "iron-man",
+      "iron-man-2",
+      "the-avengers",
+      "iron-man-3",
+      "avengers-age-of-ultron",
+      "captain-america-civil-war",
+      "spider-man-homecoming",
+      "avengers-infinity-war",
+      "avengers-endgame"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "captain-america",
+      "spider-man",
+      "hulk",
+      "black-widow",
+      "hawkeye",
+      "war-machine"
+    ]
   },
   {
-    id: 'captain-america',
-    name: 'Steven "Steve" Rogers',
-    alias: 'Captain America',
-    actor: 'Chris Evans',
-    portrait: 'https://image.tmdb.org/t/p/w780/vSNxAJTlD0r02V9sPYpOjqDZXUK.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/yFuKvT4Vm3sKHdFY4eG6I4ldAnn.jpg',
-    description: 'WWII veteran enhanced to the peak of human physicality by an experimental Super-Soldier Serum and frozen in ice for decades.',
-    bio: 'Deemed unfit for military service in World War II due to his frail stature, Steve Rogers volunteered for Project Rebirth. Enhanced with the Super-Soldier Serum, he fought Hydra and Red Skull before crashing an aircraft in the Arctic. Awakened 70 years later in modern New York, he led the Avengers as their moral compass and proved worthy to wield Mjolnir.',
-    powers: ['Superhuman Strength & Agility', 'Indestructible Vibranium Shield', 'Master Tactician', 'Peak Human Endurance', 'Mjolnir Worthiness'],
-    affiliation: 'Avengers / US Army / Howling Commandos',
-    firstAppearance: 'Captain America: The First Avenger (2011)',
-    movies: ['captain-america-first-avenger', 'the-avengers', 'captain-america-winter-soldier', 'avengers-age-of-ultron', 'captain-america-civil-war', 'avengers-infinity-war', 'avengers-endgame'],
-    series: ['the-falcon-and-the-winter-soldier'],
-    relatedCharacters: ['iron-man', 'black-widow', 'thor', 'sam-wilson', 'winter-soldier']
+    "id": "captain-america",
+    "name": "Steven \"Steve\" Rogers",
+    "alias": "Captain America",
+    "actor": "Chris Evans",
+    "portrait": "https://image.tmdb.org/t/p/w780/vSNxAJTlD0r02V9sPYpOjqDZXUK.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/yFuKvT4Vm3sKHdFY4eG6I4ldAnn.jpg",
+    "description": "WWII veteran enhanced to the peak of human physicality by an experimental Super-Soldier Serum and frozen in ice for decades.",
+    "bio": "Deemed unfit for military service in World War II due to his frail stature, Steve Rogers volunteered for Project Rebirth. Enhanced with the Super-Soldier Serum, he fought Hydra and Red Skull before crashing an aircraft in the Arctic. Awakened 70 years later in modern New York, he led the Avengers as their moral compass and proved worthy to wield Mjolnir.",
+    "powers": [
+      "Superhuman Strength & Agility",
+      "Indestructible Vibranium Shield",
+      "Master Tactician",
+      "Peak Human Endurance",
+      "Mjolnir Worthiness"
+    ],
+    "affiliation": "Avengers / US Army / Howling Commandos",
+    "firstAppearance": "Captain America: The First Avenger (2011)",
+    "movies": [
+      "captain-america-first-avenger",
+      "the-avengers",
+      "captain-america-winter-soldier",
+      "avengers-age-of-ultron",
+      "captain-america-civil-war",
+      "avengers-infinity-war",
+      "avengers-endgame"
+    ],
+    "series": [
+      "the-falcon-and-the-winter-soldier"
+    ],
+    "relatedCharacters": [
+      "iron-man",
+      "black-widow",
+      "thor",
+      "sam-wilson",
+      "winter-soldier"
+    ]
   },
   {
-    id: 'thor',
-    name: 'Thor Odinson',
-    alias: 'God of Thunder',
-    actor: 'Chris Hemsworth',
-    portrait: 'https://image.tmdb.org/t/p/w780/prSfAi1xGrhLQNxVSUFh61xQ4Qy.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/cDJ61O1STtbWNBwefuqVrRe3d7l.jpg',
-    description: 'The Crown Prince of Asgard wields the enchanted hammer Mjolnir and storm-forged axe Stormbreaker to command lightning across the cosmos.',
-    bio: 'Thor is an ancient Asgardian warrior prince whose arrogance initially lost him his divine hammer and realm. Banished to Earth, he learned humility and became one of humanity\'s fiercest guardians. He endured immense personal tragedy—losing Asgard, his brother Loki, his father Odin, and his homeland—before finding renewed purpose fighting alongside the Avengers and Guardians.',
-    powers: ['God of Thunder Energy Manipulation', 'Mjolnir & Stormbreaker Weaponry', 'Superhuman Asgardian Strength', 'Flight & Teleportation via Bifrost', 'Immortality & Regeneration'],
-    affiliation: 'Asgard Royalty / Avengers / Guardians of the Galaxy',
-    firstAppearance: 'Thor (2011)',
-    movies: ['thor', 'the-avengers', 'thor-the-dark-world', 'avengers-age-of-ultron', 'thor-ragnarok', 'avengers-infinity-war', 'avengers-endgame', 'thor-love-and-thunder'],
-    series: ['loki', 'what-if'],
-    relatedCharacters: ['loki', 'hulk', 'iron-man', 'captain-america', 'star-lord']
+    "id": "thor",
+    "name": "Thor Odinson",
+    "alias": "God of Thunder",
+    "actor": "Chris Hemsworth",
+    "portrait": "https://image.tmdb.org/t/p/w780/prSfAi1xGrhLQNxVSUFh61xQ4Qy.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cDJ61O1STtbWNBwefuqVrRe3d7l.jpg",
+    "description": "The Crown Prince of Asgard wields the enchanted hammer Mjolnir and storm-forged axe Stormbreaker to command lightning across the cosmos.",
+    "bio": "Thor is an ancient Asgardian warrior prince whose arrogance initially lost him his divine hammer and realm. Banished to Earth, he learned humility and became one of humanity's fiercest guardians. He endured immense personal tragedy—losing Asgard, his brother Loki, his father Odin, and his homeland—before finding renewed purpose fighting alongside the Avengers and Guardians.",
+    "powers": [
+      "God of Thunder Energy Manipulation",
+      "Mjolnir & Stormbreaker Weaponry",
+      "Superhuman Asgardian Strength",
+      "Flight & Teleportation via Bifrost",
+      "Immortality & Regeneration"
+    ],
+    "affiliation": "Asgard Royalty / Avengers / Guardians of the Galaxy",
+    "firstAppearance": "Thor (2011)",
+    "movies": [
+      "thor",
+      "the-avengers",
+      "thor-the-dark-world",
+      "avengers-age-of-ultron",
+      "thor-ragnarok",
+      "avengers-infinity-war",
+      "avengers-endgame",
+      "thor-love-and-thunder"
+    ],
+    "series": [
+      "loki",
+      "what-if"
+    ],
+    "relatedCharacters": [
+      "loki",
+      "hulk",
+      "iron-man",
+      "captain-america",
+      "star-lord"
+    ]
   },
   {
-    id: 'hulk',
-    name: 'Dr. Robert Bruce Banner',
-    alias: 'The Incredible Hulk',
-    actor: 'Mark Ruffalo',
-    portrait: 'https://image.tmdb.org/t/p/w780/gKzYx79y0AQTL4UAk1cBQJ3nvrm.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/xfBnQ4mgf1jYZsscJGJjr6ce0Ar.jpg',
-    description: 'Brilliant nuclear physicist who transforms into a behemoth of infinite muscular strength whenever provoked into extreme anger.',
-    bio: 'After an accidental exposure to gamma radiation during a recreation of the Super-Soldier Serum, Dr. Bruce Banner acquired a monstrous alter ego. For years he fled the military before joining the Avengers, eventually fusing his intellect with the Hulk\'s physical strength to become Smart Hulk and reversing Thanos\' Decimation with the Infinity Gauntlet.',
-    powers: ['Limitless Physical Strength', 'Invulnerability & Rapid Regeneration', 'Gamma Energy Radiation', 'Genius Biochemistry Intellect', 'Thunderclap Shockwaves'],
-    affiliation: 'Avengers / Sakaar Gladiators',
-    firstAppearance: 'The Incredible Hulk (2008)',
-    movies: ['the-incredible-hulk', 'the-avengers', 'avengers-age-of-ultron', 'thor-ragnarok', 'avengers-infinity-war', 'avengers-endgame', 'spider-man-brand-new-day'],
-    series: ['she-hulk'],
-    relatedCharacters: ['thor', 'iron-man', 'black-widow']
+    "id": "hulk",
+    "name": "Dr. Robert Bruce Banner",
+    "alias": "The Incredible Hulk",
+    "actor": "Mark Ruffalo",
+    "portrait": "https://image.tmdb.org/t/p/w780/gKzYx79y0AQTL4UAk1cBQJ3nvrm.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/xfBnQ4mgf1jYZsscJGJjr6ce0Ar.jpg",
+    "description": "Brilliant nuclear physicist who transforms into a behemoth of infinite muscular strength whenever provoked into extreme anger.",
+    "bio": "After an accidental exposure to gamma radiation during a recreation of the Super-Soldier Serum, Dr. Bruce Banner acquired a monstrous alter ego. For years he fled the military before joining the Avengers, eventually fusing his intellect with the Hulk's physical strength to become Smart Hulk and reversing Thanos' Decimation with the Infinity Gauntlet.",
+    "powers": [
+      "Limitless Physical Strength",
+      "Invulnerability & Rapid Regeneration",
+      "Gamma Energy Radiation",
+      "Genius Biochemistry Intellect",
+      "Thunderclap Shockwaves"
+    ],
+    "affiliation": "Avengers / Sakaar Gladiators",
+    "firstAppearance": "The Incredible Hulk (2008)",
+    "movies": [
+      "the-incredible-hulk",
+      "the-avengers",
+      "avengers-age-of-ultron",
+      "thor-ragnarok",
+      "avengers-infinity-war",
+      "avengers-endgame",
+      "spider-man-brand-new-day"
+    ],
+    "series": [
+      "she-hulk"
+    ],
+    "relatedCharacters": [
+      "thor",
+      "iron-man",
+      "black-widow"
+    ]
   },
   {
-    id: 'black-widow',
-    name: 'Natasha Romanoff',
-    alias: 'Black Widow',
-    actor: 'Scarlett Johansson',
-    portrait: 'https://image.tmdb.org/t/p/w780/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/keIxh0wPr2Ymj0Btjh4gW7JJ89e.jpg',
-    description: 'World-class deadly assassin trained in the Soviet Red Room who redeemed her past by becoming a founding Avenger and S.H.I.E.L.D. master agent.',
-    bio: 'Trained from childhood in the sinister Soviet Red Room, Natasha Romanoff became the world\'s deadliest spy. Defecting to S.H.I.E.L.D. thanks to Clint Barton, she dedicated her life to wiping out the red in her ledger. On Vormir, she gave her life so Hawkeye could retrieve the Soul Stone and restore half the universe.',
-    powers: ['Master Martial Artist', 'Widow\'s Bite Electro-Gauntlets', 'Stealth & Espionage Mastery', 'Tactical Firearms Specialist', 'Polyglot Interrogation Expert'],
-    affiliation: 'S.H.I.E.L.D. / Red Room / Avengers',
-    firstAppearance: 'Iron Man 2 (2010)',
-    movies: ['iron-man-2', 'the-avengers', 'captain-america-winter-soldier', 'avengers-age-of-ultron', 'captain-america-civil-war', 'avengers-infinity-war', 'avengers-endgame', 'black-widow'],
-    series: [],
-    relatedCharacters: ['hawkeye', 'captain-america', 'iron-man', 'hulk', 'nick-fury']
+    "id": "black-widow",
+    "name": "Natasha Romanoff",
+    "alias": "Black Widow",
+    "actor": "Scarlett Johansson",
+    "portrait": "https://image.tmdb.org/t/p/w780/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/keIxh0wPr2Ymj0Btjh4gW7JJ89e.jpg",
+    "description": "World-class deadly assassin trained in the Soviet Red Room who redeemed her past by becoming a founding Avenger and S.H.I.E.L.D. master agent.",
+    "bio": "Trained from childhood in the sinister Soviet Red Room, Natasha Romanoff became the world's deadliest spy. Defecting to S.H.I.E.L.D. thanks to Clint Barton, she dedicated her life to wiping out the red in her ledger. On Vormir, she gave her life so Hawkeye could retrieve the Soul Stone and restore half the universe.",
+    "powers": [
+      "Master Martial Artist",
+      "Widow's Bite Electro-Gauntlets",
+      "Stealth & Espionage Mastery",
+      "Tactical Firearms Specialist",
+      "Polyglot Interrogation Expert"
+    ],
+    "affiliation": "S.H.I.E.L.D. / Red Room / Avengers",
+    "firstAppearance": "Iron Man 2 (2010)",
+    "movies": [
+      "iron-man-2",
+      "the-avengers",
+      "captain-america-winter-soldier",
+      "avengers-age-of-ultron",
+      "captain-america-civil-war",
+      "avengers-infinity-war",
+      "avengers-endgame",
+      "black-widow"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "hawkeye",
+      "captain-america",
+      "iron-man",
+      "hulk",
+      "nick-fury"
+    ]
   },
   {
-    id: 'hawkeye',
-    name: 'Clinton "Clint" Barton',
-    alias: 'Hawkeye / Ronin',
-    actor: 'Jeremy Renner',
-    portrait: 'https://image.tmdb.org/t/p/w780/ct5pNE5dDHryHLDnxyZPYcqO1sz.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/1RWLMyC9KcFfcaoViMiJGSSZzzr.jpg',
-    description: 'Master marksman and founding Avenger who never misses a shot with his arsenal of customized high-tech trick arrows.',
-    bio: 'Clint Barton served as S.H.I.E.L.D.\'s premier black-ops archer before joining the Avengers in the Battle of New York. After losing his family to Thanos\' snap, he adopted the ruthless persona Ronin before regaining hope and mentoring archer prodigy Kate Bishop.',
-    powers: ['Infallible Precision Archery', 'Custom Trick Arrowheads (Explosive, Grapple, EMP, Pym)', 'Expert Combat Tactician', 'Hand-to-Hand Sword & Bow Combat'],
-    affiliation: 'S.H.I.E.L.D. / Avengers',
-    firstAppearance: 'Thor (2011)',
-    movies: ['thor', 'the-avengers', 'avengers-age-of-ultron', 'captain-america-civil-war', 'avengers-endgame'],
-    series: ['hawkeye'],
-    relatedCharacters: ['black-widow', 'captain-america', 'nick-fury']
+    "id": "hawkeye",
+    "name": "Clinton \"Clint\" Barton",
+    "alias": "Hawkeye / Ronin",
+    "actor": "Jeremy Renner",
+    "portrait": "https://image.tmdb.org/t/p/w780/ct5pNE5dDHryHLDnxyZPYcqO1sz.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/1RWLMyC9KcFfcaoViMiJGSSZzzr.jpg",
+    "description": "Master marksman and founding Avenger who never misses a shot with his arsenal of customized high-tech trick arrows.",
+    "bio": "Clint Barton served as S.H.I.E.L.D.'s premier black-ops archer before joining the Avengers in the Battle of New York. After losing his family to Thanos' snap, he adopted the ruthless persona Ronin before regaining hope and mentoring archer prodigy Kate Bishop.",
+    "powers": [
+      "Infallible Precision Archery",
+      "Custom Trick Arrowheads (Explosive, Grapple, EMP, Pym)",
+      "Expert Combat Tactician",
+      "Hand-to-Hand Sword & Bow Combat"
+    ],
+    "affiliation": "S.H.I.E.L.D. / Avengers",
+    "firstAppearance": "Thor (2011)",
+    "movies": [
+      "thor",
+      "the-avengers",
+      "avengers-age-of-ultron",
+      "captain-america-civil-war",
+      "avengers-endgame"
+    ],
+    "series": [
+      "hawkeye"
+    ],
+    "relatedCharacters": [
+      "black-widow",
+      "captain-america",
+      "nick-fury"
+    ]
   },
   {
-    id: 'spider-man',
-    name: 'Peter Parker',
-    alias: 'Spider-Man (MCU)',
-    actor: 'Tom Holland',
-    portrait: 'https://image.tmdb.org/t/p/w780/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/14QbnygCuTO0vl7CAFmPf1fgZfV.jpg',
-    description: 'High school science prodigy bitten by a radioactive spider who protects New York City, carrying the sacred weight of great responsibility.',
-    bio: 'Bitten by a radioactive spider at age 15, Peter Parker gained arachnid-like abilities. Mentored by Tony Stark, Peter joined the Avengers against Thanos. When the Multiverse fractured, Peter confronted villainous threats alongside alternate Peter Parkers, ultimately choosing complete selflessness so his loved ones would remain safe.',
-    powers: ['Wall-Crawling & Web-Slinging', 'Spider-Sense Danger Precognition', 'Superhuman Reflexes & Agility', 'High-Tech Stark Suits & Iron Spider Arms', 'Genius Scientific Mind'],
-    affiliation: 'Avengers / Midtown High School',
-    firstAppearance: 'Captain America: Civil War (2016)',
-    movies: ['captain-america-civil-war', 'spider-man-homecoming', 'avengers-infinity-war', 'avengers-endgame', 'spider-man-far-from-home', 'spider-man-no-way-home', 'spider-man-brand-new-day'],
-    series: [],
-    relatedCharacters: ['iron-man', 'doctor-strange', 'daredevil', 'spider-man-tobey', 'spider-man-andrew']
+    "id": "spider-man",
+    "name": "Peter Parker",
+    "alias": "Spider-Man (MCU)",
+    "actor": "Tom Holland",
+    "portrait": "https://image.tmdb.org/t/p/w780/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/14QbnygCuTO0vl7CAFmPf1fgZfV.jpg",
+    "description": "High school science prodigy bitten by a radioactive spider who protects New York City, carrying the sacred weight of great responsibility.",
+    "bio": "Bitten by a radioactive spider at age 15, Peter Parker gained arachnid-like abilities. Mentored by Tony Stark, Peter joined the Avengers against Thanos. When the Multiverse fractured, Peter confronted villainous threats alongside alternate Peter Parkers, ultimately choosing complete selflessness so his loved ones would remain safe.",
+    "powers": [
+      "Wall-Crawling & Web-Slinging",
+      "Spider-Sense Danger Precognition",
+      "Superhuman Reflexes & Agility",
+      "High-Tech Stark Suits & Iron Spider Arms",
+      "Genius Scientific Mind"
+    ],
+    "affiliation": "Avengers / Midtown High School",
+    "firstAppearance": "Captain America: Civil War (2016)",
+    "movies": [
+      "captain-america-civil-war",
+      "spider-man-homecoming",
+      "avengers-infinity-war",
+      "avengers-endgame",
+      "spider-man-far-from-home",
+      "spider-man-no-way-home",
+      "spider-man-brand-new-day"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "iron-man",
+      "doctor-strange",
+      "daredevil",
+      "spider-man-tobey",
+      "spider-man-andrew"
+    ]
   },
   {
-    id: 'spider-man-tobey',
-    name: 'Peter Parker',
-    alias: 'Spider-Man (Raimi-Verse)',
-    actor: 'Tobey Maguire',
-    portrait: 'https://image.tmdb.org/t/p/w780/or6XJBVpcEbIkma0V9zshnbEtx4.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/zQ8AxTPiCiS5nnwXpwTBPBHSaa5.jpg',
-    description: 'The definitive web-slinger of Earth-96283 who proved that with great power comes great responsibility through legendary battles across New York.',
-    bio: 'Peter Parker of Earth-96283 was bitten by a genetically designed super-spider. Learning the tragic lesson of Uncle Ben\'s death, he battled the Green Goblin, Doctor Octopus, Sandman, and Venom. Pulled through multiversal tears into the MCU, he provided brotherly wisdom to Tom Holland\'s Peter Parker.',
-    powers: ['Organic Web-Shooting', 'Precognitive Spider-Sense', 'Superhuman Wall-Crawling Strength', 'Unbreakable Moral Tenacity', 'Acrobatic Mastery'],
-    affiliation: 'Daily Bugle / Columbia University',
-    firstAppearance: 'Spider-Man (2002)',
-    movies: ['spider-man', 'spider-man-2', 'spider-man-3', 'spider-man-no-way-home'],
-    series: [],
-    relatedCharacters: ['spider-man', 'spider-man-andrew', 'venom']
+    "id": "spider-man-tobey",
+    "name": "Peter Parker",
+    "alias": "Spider-Man (Raimi-Verse)",
+    "actor": "Tobey Maguire",
+    "portrait": "https://image.tmdb.org/t/p/w780/or6XJBVpcEbIkma0V9zshnbEtx4.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/zQ8AxTPiCiS5nnwXpwTBPBHSaa5.jpg",
+    "description": "The definitive web-slinger of Earth-96283 who proved that with great power comes great responsibility through legendary battles across New York.",
+    "bio": "Peter Parker of Earth-96283 was bitten by a genetically designed super-spider. Learning the tragic lesson of Uncle Ben's death, he battled the Green Goblin, Doctor Octopus, Sandman, and Venom. Pulled through multiversal tears into the MCU, he provided brotherly wisdom to Tom Holland's Peter Parker.",
+    "powers": [
+      "Organic Web-Shooting",
+      "Precognitive Spider-Sense",
+      "Superhuman Wall-Crawling Strength",
+      "Unbreakable Moral Tenacity",
+      "Acrobatic Mastery"
+    ],
+    "affiliation": "Daily Bugle / Columbia University",
+    "firstAppearance": "Spider-Man (2002)",
+    "movies": [
+      "spider-man",
+      "spider-man-2",
+      "spider-man-3",
+      "spider-man-no-way-home"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "spider-man",
+      "spider-man-andrew",
+      "venom"
+    ]
   },
   {
-    id: 'spider-man-andrew',
-    name: 'Peter Parker',
-    alias: 'The Amazing Spider-Man',
-    actor: 'Andrew Garfield',
-    portrait: 'https://image.tmdb.org/t/p/w780/jexoNYnPd6vVrmygwF6QZmWPFdu.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/a92L1Zm4vGlXOD0f2CEsfqnNDhc.jpg',
-    description: 'Brilliant science prodigy of Earth-120703 who constructed pressurized web-shooters and sought answers regarding his parents\' Oscorp secrets.',
-    bio: 'Orphaned under mysterious circumstances, Peter Parker discovered Oscorp\'s cross-species genetics research. After the heartbreaking loss of Gwen Stacy, he fell into despair before crossing dimensions to the MCU, where saving MJ gave him emotional redemption and renewed hope.',
-    powers: ['Oscorp Web-Fluid Physics Formulation', 'Acrobatic Precision & Agility', 'Enhanced Danger Spider-Sense', 'Scientific Genius & Biochemistry', 'Enhanced Superhuman Durability'],
-    affiliation: 'Midtown Science High / Oscorp Research',
-    firstAppearance: 'The Amazing Spider-Man (2012)',
-    movies: ['the-amazing-spider-man', 'the-amazing-spider-man-2', 'spider-man-no-way-home'],
-    series: [],
-    relatedCharacters: ['spider-man', 'spider-man-tobey']
+    "id": "spider-man-andrew",
+    "name": "Peter Parker",
+    "alias": "The Amazing Spider-Man",
+    "actor": "Andrew Garfield",
+    "portrait": "https://image.tmdb.org/t/p/w780/jexoNYnPd6vVrmygwF6QZmWPFdu.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/a92L1Zm4vGlXOD0f2CEsfqnNDhc.jpg",
+    "description": "Brilliant science prodigy of Earth-120703 who constructed pressurized web-shooters and sought answers regarding his parents' Oscorp secrets.",
+    "bio": "Orphaned under mysterious circumstances, Peter Parker discovered Oscorp's cross-species genetics research. After the heartbreaking loss of Gwen Stacy, he fell into despair before crossing dimensions to the MCU, where saving MJ gave him emotional redemption and renewed hope.",
+    "powers": [
+      "Oscorp Web-Fluid Physics Formulation",
+      "Acrobatic Precision & Agility",
+      "Enhanced Danger Spider-Sense",
+      "Scientific Genius & Biochemistry",
+      "Enhanced Superhuman Durability"
+    ],
+    "affiliation": "Midtown Science High / Oscorp Research",
+    "firstAppearance": "The Amazing Spider-Man (2012)",
+    "movies": [
+      "the-amazing-spider-man",
+      "the-amazing-spider-man-2",
+      "spider-man-no-way-home"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "spider-man",
+      "spider-man-tobey"
+    ]
   },
   {
-    id: 'miles-morales',
-    name: 'Miles Morales',
-    alias: 'Spider-Man (Spider-Verse)',
-    actor: 'Shameik Moore',
-    portrait: 'https://image.tmdb.org/t/p/w780/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/1ntePsIqeklfmrQJqZPncCydsqY.jpg',
-    description: 'Brooklyn teenager bitten by an Alchemax dimensional spider who embraced his unique destiny and shattered the multiverse canon.',
-    bio: 'Brooklyn teenager Miles Morales was bitten by a radioactive spider from Earth-42. Witnessing the demise of Peter Parker, Miles stepped up with his own distinct powers—Venom blasts and camouflage invisibility. Navigating the multiversal Spider-Society, Miles declared that anyone can wear the mask.',
-    powers: ['Bio-Electric Venom Blasts', 'Spider-Camouflage Invisibility', 'Wall-Crawling & Web-Swinging', 'Spider-Sense Precognition', 'Multiversal Canon Disruption'],
-    affiliation: 'Brooklyn Visions Academy / Spider-Society',
-    firstAppearance: 'Spider-Man: Into the Spider-Verse (2018)',
-    movies: ['spider-man-into-the-spider-verse', 'spider-man-across-the-spider-verse'],
-    series: [],
-    relatedCharacters: ['spider-man']
+    "id": "miles-morales",
+    "name": "Miles Morales",
+    "alias": "Spider-Man (Spider-Verse)",
+    "actor": "Shameik Moore",
+    "portrait": "https://image.tmdb.org/t/p/w780/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/1ntePsIqeklfmrQJqZPncCydsqY.jpg",
+    "description": "Brooklyn teenager bitten by an Alchemax dimensional spider who embraced his unique destiny and shattered the multiverse canon.",
+    "bio": "Brooklyn teenager Miles Morales was bitten by a radioactive spider from Earth-42. Witnessing the demise of Peter Parker, Miles stepped up with his own distinct powers—Venom blasts and camouflage invisibility. Navigating the multiversal Spider-Society, Miles declared that anyone can wear the mask.",
+    "powers": [
+      "Bio-Electric Venom Blasts",
+      "Spider-Camouflage Invisibility",
+      "Wall-Crawling & Web-Swinging",
+      "Spider-Sense Precognition",
+      "Multiversal Canon Disruption"
+    ],
+    "affiliation": "Brooklyn Visions Academy / Spider-Society",
+    "firstAppearance": "Spider-Man: Into the Spider-Verse (2018)",
+    "movies": [
+      "spider-man-into-the-spider-verse",
+      "spider-man-across-the-spider-verse"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "spider-man"
+    ]
   },
   {
-    id: 'doctor-strange',
-    name: 'Dr. Stephen Strange',
-    alias: 'Doctor Strange',
-    actor: 'Benedict Cumberbatch',
-    portrait: 'https://image.tmdb.org/t/p/w780/uGBVj3bEbCoZbDjjl9wTxcygko1.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/lv3TXqhpaIxkclIHbhN2MRMOemQ.jpg',
-    description: 'Former master neurosurgeon who discovered Kamar-Taj and rose to become Earth\'s primary Master of the Mystic Arts protecting reality.',
-    bio: 'After a tragic car crash shattered his hands and destroyed his medical career, Dr. Stephen Strange traveled to Nepal seeking healing. Under the Ancient One, he mastered the Eldritch Arts, the Cloak of Levitation, and the Eye of Agamotto. He foresaw the one winning timeline in 14,000,605 possibilities against Thanos.',
-    powers: ['Eldritch Mystic Magic Manipulation', 'Dimensional Portal Sling-Ring Portals', 'Cloak of Levitation Flight & Sentience', 'Astral Projection & Reality Bending', 'Mirror Dimension Confinement'],
-    affiliation: 'Masters of the Mystic Arts / Avengers',
-    firstAppearance: 'Doctor Strange (2016)',
-    movies: ['doctor-strange', 'thor-ragnarok', 'avengers-infinity-war', 'avengers-endgame', 'spider-man-no-way-home', 'doctor-strange-multiverse-of-madness'],
-    series: ['what-if'],
-    relatedCharacters: ['scarlet-witch', 'spider-man', 'iron-man', 'professor-x']
+    "id": "doctor-strange",
+    "name": "Dr. Stephen Strange",
+    "alias": "Doctor Strange",
+    "actor": "Benedict Cumberbatch",
+    "portrait": "https://image.tmdb.org/t/p/w780/uGBVj3bEbCoZbDjjl9wTxcygko1.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/lv3TXqhpaIxkclIHbhN2MRMOemQ.jpg",
+    "description": "Former master neurosurgeon who discovered Kamar-Taj and rose to become Earth's primary Master of the Mystic Arts protecting reality.",
+    "bio": "After a tragic car crash shattered his hands and destroyed his medical career, Dr. Stephen Strange traveled to Nepal seeking healing. Under the Ancient One, he mastered the Eldritch Arts, the Cloak of Levitation, and the Eye of Agamotto. He foresaw the one winning timeline in 14,000,605 possibilities against Thanos.",
+    "powers": [
+      "Eldritch Mystic Magic Manipulation",
+      "Dimensional Portal Sling-Ring Portals",
+      "Cloak of Levitation Flight & Sentience",
+      "Astral Projection & Reality Bending",
+      "Mirror Dimension Confinement"
+    ],
+    "affiliation": "Masters of the Mystic Arts / Avengers",
+    "firstAppearance": "Doctor Strange (2016)",
+    "movies": [
+      "doctor-strange",
+      "thor-ragnarok",
+      "avengers-infinity-war",
+      "avengers-endgame",
+      "spider-man-no-way-home",
+      "doctor-strange-multiverse-of-madness"
+    ],
+    "series": [
+      "what-if"
+    ],
+    "relatedCharacters": [
+      "scarlet-witch",
+      "spider-man",
+      "iron-man",
+      "professor-x"
+    ]
   },
   {
-    id: 'scarlet-witch',
-    name: 'Wanda Maximoff',
-    alias: 'Scarlet Witch',
-    actor: 'Elizabeth Olsen',
-    portrait: 'https://image.tmdb.org/t/p/w780/ijWWwINc8h71NQ8j1LTJMFSj5wr.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/lv3TXqhpaIxkclIHbhN2MRMOemQ.jpg',
-    description: 'Sokovian sorceress imbued with Chaos Magic capable of spontaneous reality fabrication and dark multiversal Dreamwalking.',
-    bio: 'Orphaned in Sokovia, Wanda Maximoff\'s innate magic was unlocked by HYDRA\'s Mind Stone experiments. She joined the Avengers but suffered devastating losses—losing her brother Pietro, her love Vision, and her created family in Westview. Embracing the prophetized title of the Scarlet Witch, she studied the Darkhold before sacrificing Mount Wundagore to destroy the book of damnation.',
-    powers: ['Chaos Magic & Reality Alteration', 'Telekinesis & Energy Blast Projection', 'Mind Control & Illusory Manipulation', 'Multiversal Dreamwalking', 'Flight & Energy Shields'],
-    affiliation: 'Avengers / Masters of Chaos Magic',
-    firstAppearance: 'Captain America: The Winter Soldier (2014)',
-    movies: ['captain-america-winter-soldier', 'avengers-age-of-ultron', 'captain-america-civil-war', 'avengers-infinity-war', 'avengers-endgame', 'doctor-strange-multiverse-of-madness'],
-    series: ['wandavision', 'agatha-all-along'],
-    relatedCharacters: ['doctor-strange', 'vision']
+    "id": "scarlet-witch",
+    "name": "Wanda Maximoff",
+    "alias": "Scarlet Witch",
+    "actor": "Elizabeth Olsen",
+    "portrait": "https://image.tmdb.org/t/p/w780/ijWWwINc8h71NQ8j1LTJMFSj5wr.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/lv3TXqhpaIxkclIHbhN2MRMOemQ.jpg",
+    "description": "Sokovian sorceress imbued with Chaos Magic capable of spontaneous reality fabrication and dark multiversal Dreamwalking.",
+    "bio": "Orphaned in Sokovia, Wanda Maximoff's innate magic was unlocked by HYDRA's Mind Stone experiments. She joined the Avengers but suffered devastating losses—losing her brother Pietro, her love Vision, and her created family in Westview. Embracing the prophetized title of the Scarlet Witch, she studied the Darkhold before sacrificing Mount Wundagore to destroy the book of damnation.",
+    "powers": [
+      "Chaos Magic & Reality Alteration",
+      "Telekinesis & Energy Blast Projection",
+      "Mind Control & Illusory Manipulation",
+      "Multiversal Dreamwalking",
+      "Flight & Energy Shields"
+    ],
+    "affiliation": "Avengers / Masters of Chaos Magic",
+    "firstAppearance": "Captain America: The Winter Soldier (2014)",
+    "movies": [
+      "captain-america-winter-soldier",
+      "avengers-age-of-ultron",
+      "captain-america-civil-war",
+      "avengers-infinity-war",
+      "avengers-endgame",
+      "doctor-strange-multiverse-of-madness"
+    ],
+    "series": [
+      "wandavision",
+      "agatha-all-along"
+    ],
+    "relatedCharacters": [
+      "doctor-strange",
+      "vision"
+    ]
   },
   {
-    id: 'vision',
-    name: 'Vision',
-    alias: 'The Synthezoid',
-    actor: 'Paul Bettany',
-    portrait: 'https://image.tmdb.org/t/p/w780/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/kIBK5SKwgqIIuRKhhWrJn3XkbPq.jpg',
-    description: 'Sentient synthezoid made of synthetic Vibranium, JARVIS artificial intelligence, and the cosmic Mind Stone.',
-    bio: 'Created by Ultron and brought to life through Thor\'s lightning and Tony Stark\'s JARVIS matrices, Vision is a sentient synthezoid powered by the Mind Stone. Capable of shifting his physical density to pass through solid matter, he proved his pure soul by effortlessly lifting Mjolnir.',
-    powers: ['Mind Stone Energy Blasts', 'Molecular Density Shifting & Phasing', 'Superhuman Vibranium Toughness', 'Supercomputing AI Mind', 'Flight & Energy Levitation'],
-    affiliation: 'Avengers',
-    firstAppearance: 'Avengers: Age of Ultron (2015)',
-    movies: ['avengers-age-of-ultron', 'captain-america-civil-war', 'avengers-infinity-war'],
-    series: ['wandavision', 'what-if', 'vision-quest'],
-    relatedCharacters: ['scarlet-witch', 'iron-man', 'ultron', 'white-vision'],
-    role: 'hero',
-    universe: 'The Sacred Timeline (MCU)',
-    universeId: 'earth-616',
-    franchise: 'Avengers / Vision'
+    "id": "vision",
+    "name": "Vision",
+    "alias": "The Synthezoid",
+    "actor": "Paul Bettany",
+    "portrait": "https://image.tmdb.org/t/p/w780/4ssDuvEDkSArWEdyBl2X5EHvYKU.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/kIBK5SKwgqIIuRKhhWrJn3XkbPq.jpg",
+    "description": "Sentient synthezoid made of synthetic Vibranium, JARVIS artificial intelligence, and the cosmic Mind Stone.",
+    "bio": "Created by Ultron and brought to life through Thor's lightning and Tony Stark's JARVIS matrices, Vision is a sentient synthezoid powered by the Mind Stone. Capable of shifting his physical density to pass through solid matter, he proved his pure soul by effortlessly lifting Mjolnir.",
+    "powers": [
+      "Mind Stone Energy Blasts",
+      "Molecular Density Shifting & Phasing",
+      "Superhuman Vibranium Toughness",
+      "Supercomputing AI Mind",
+      "Flight & Energy Levitation"
+    ],
+    "affiliation": "Avengers",
+    "firstAppearance": "Avengers: Age of Ultron (2015)",
+    "movies": [
+      "avengers-age-of-ultron",
+      "captain-america-civil-war",
+      "avengers-infinity-war"
+    ],
+    "series": [
+      "wandavision",
+      "what-if",
+      "vision-quest"
+    ],
+    "relatedCharacters": [
+      "scarlet-witch",
+      "iron-man",
+      "ultron",
+      "white-vision"
+    ],
+    "role": "hero",
+    "universe": "The Sacred Timeline (MCU)",
+    "universeId": "earth-616",
+    "franchise": "Avengers / Vision"
   },
   {
-    id: 'deadpool',
-    name: 'Wade Wilson',
-    alias: 'Deadpool',
-    actor: 'Ryan Reynolds',
-    portrait: 'https://image.tmdb.org/t/p/w780/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg',
-    description: 'Wisecracking mercenary with accelerated healing factor who constantly shatters the fourth wall and causes multiversal chaos.',
-    bio: 'Former Special Forces operative Wade Wilson underwent weapon experiments that left his skin scarred but gave him an un-killable regenerative healing factor. Armed with dual katanas and dark wit, he joined forces with Wolverine to save his universe from destruction at the hands of the TVA and Cassandra Nova.',
-    powers: ['Accelerated Regenerative Healing Factor', 'Fourth-Wall Breaking Omniscience', 'Master Swordsman & Marksman', 'Immunity to Pain & Diseases', 'Unpredictable Combat Agility'],
-    affiliation: 'X-Force / TVA / X-Men Ally',
-    firstAppearance: 'X-Men Origins: Wolverine (2009)',
-    movies: ['x-men-origins-wolverine', 'deadpool', 'deadpool-2', 'deadpool-and-wolverine'],
-    series: [],
-    relatedCharacters: ['wolverine', 'blade']
+    "id": "deadpool",
+    "name": "Wade Wilson",
+    "alias": "Deadpool",
+    "actor": "Ryan Reynolds",
+    "portrait": "https://image.tmdb.org/t/p/w780/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg",
+    "description": "Wisecracking mercenary with accelerated healing factor who constantly shatters the fourth wall and causes multiversal chaos.",
+    "bio": "Former Special Forces operative Wade Wilson underwent weapon experiments that left his skin scarred but gave him an un-killable regenerative healing factor. Armed with dual katanas and dark wit, he joined forces with Wolverine to save his universe from destruction at the hands of the TVA and Cassandra Nova.",
+    "powers": [
+      "Accelerated Regenerative Healing Factor",
+      "Fourth-Wall Breaking Omniscience",
+      "Master Swordsman & Marksman",
+      "Immunity to Pain & Diseases",
+      "Unpredictable Combat Agility"
+    ],
+    "affiliation": "X-Force / TVA / X-Men Ally",
+    "firstAppearance": "X-Men Origins: Wolverine (2009)",
+    "movies": [
+      "x-men-origins-wolverine",
+      "deadpool",
+      "deadpool-2",
+      "deadpool-and-wolverine"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "wolverine",
+      "blade"
+    ]
   },
   {
-    id: 'wolverine',
-    name: 'James "Logan" Howlett',
-    alias: 'Wolverine',
-    actor: 'Hugh Jackman',
-    portrait: 'https://image.tmdb.org/t/p/w780/fnbjcRDYn6YviCcePDnGdyAkYsB.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/4DZxWNSAyksN6N3JkvpJ53Yq6zU.jpg',
-    description: 'Mutant with retractable bone claws coated in indestructible Adamantium and a fiercer-than-life protective instinct.',
-    bio: 'Born in the 19th century, Logan fought in multiple wars across human history. Experimented on by Weapon X, his skeleton was bonded with indestructible Adamantium. Recruited from a tragic alternate universe by Deadpool, Wolverine fought for redemption and saved the sacred timeline.',
-    powers: ['Indestructible Adamantium Claws & Skeleton', 'Superhuman Mutant Healing Factor', 'Enhanced Animalistic Senses & Reflexes', 'Berserker Combat Rage', 'Longevity & Physical Stamina'],
-    affiliation: 'X-Men / Weapon X',
-    firstAppearance: 'X-Men (2000)',
-    movies: ['x-men', 'x2-x-men-united', 'x-men-the-last-stand', 'x-men-origins-wolverine', 'x-men-first-class', 'the-wolverine', 'x-men-days-of-future-past', 'x-men-apocalypse', 'logan', 'deadpool-and-wolverine'],
-    series: [],
-    relatedCharacters: ['deadpool', 'professor-x', 'magneto']
+    "id": "wolverine",
+    "name": "James \"Logan\" Howlett",
+    "alias": "Wolverine",
+    "actor": "Hugh Jackman",
+    "portrait": "https://image.tmdb.org/t/p/w780/fnbjcRDYn6YviCcePDnGdyAkYsB.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/4DZxWNSAyksN6N3JkvpJ53Yq6zU.jpg",
+    "description": "Mutant with retractable bone claws coated in indestructible Adamantium and a fiercer-than-life protective instinct.",
+    "bio": "Born in the 19th century, Logan fought in multiple wars across human history. Experimented on by Weapon X, his skeleton was bonded with indestructible Adamantium. Recruited from a tragic alternate universe by Deadpool, Wolverine fought for redemption and saved the sacred timeline.",
+    "powers": [
+      "Indestructible Adamantium Claws & Skeleton",
+      "Superhuman Mutant Healing Factor",
+      "Enhanced Animalistic Senses & Reflexes",
+      "Berserker Combat Rage",
+      "Longevity & Physical Stamina"
+    ],
+    "affiliation": "X-Men / Weapon X",
+    "firstAppearance": "X-Men (2000)",
+    "movies": [
+      "x-men",
+      "x2-x-men-united",
+      "x-men-the-last-stand",
+      "x-men-origins-wolverine",
+      "x-men-first-class",
+      "the-wolverine",
+      "x-men-days-of-future-past",
+      "x-men-apocalypse",
+      "logan",
+      "deadpool-and-wolverine"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "deadpool",
+      "professor-x",
+      "magneto"
+    ]
   },
   {
-    id: 'blade',
-    name: 'Eric Brooks',
-    alias: 'Blade',
-    actor: 'Wesley Snipes',
-    portrait: 'https://image.tmdb.org/t/p/w780/6f7iXvPOnf83MaLB1JmPzUor1rr.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/63eAFgJtN6ZTyFFzlAOoZLhlYqc.jpg',
-    description: 'The Daywalker half-mortal, half-vampire hunter who wields titanium swords and silver weapons to rid the shadows of bloodsuckers.',
-    bio: 'Born infected with vampiric enzymes when his mother was bitten before birth, Eric Brooks possesses all vampire strengths with none of their weaknesses except the bloodthirst. Mentored by Whistler, Blade single-handedly launched modern superhero cinema, destroying Deacon Frost, the Reaper strain, and Dracula himself.',
-    powers: ['Daywalker Immortality & Sun Resistance', 'Superhuman Vampire Strength & Speed', 'Titanium Sword & Martial Arts Mastery', 'Silver & UV Stake Arsenal', 'Accelerated Healing Factor'],
-    affiliation: 'Nightstalkers / Blood Hunters',
-    firstAppearance: 'Blade (1998)',
-    movies: ['blade', 'blade-ii', 'blade-trinity', 'deadpool-and-wolverine'],
-    series: [],
-    relatedCharacters: ['deadpool', 'wolverine', 'punisher', 'ghost-rider']
+    "id": "blade",
+    "name": "Eric Brooks",
+    "alias": "Blade",
+    "actor": "Wesley Snipes",
+    "portrait": "https://image.tmdb.org/t/p/w780/iDmPuZXAGheRMbMyB80acMWYJ2s.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/63eAFgJtN6ZTyFFzlAOoZLhlYqc.jpg",
+    "description": "The Daywalker half-mortal, half-vampire hunter who wields titanium swords and silver weapons to rid the shadows of bloodsuckers.",
+    "bio": "Born infected with vampiric enzymes when his mother was bitten before birth, Eric Brooks possesses all vampire strengths with none of their weaknesses except the bloodthirst. Mentored by Whistler, Blade single-handedly launched modern superhero cinema, destroying Deacon Frost, the Reaper strain, and Dracula himself.",
+    "powers": [
+      "Daywalker Immortality & Sun Resistance",
+      "Superhuman Vampire Strength & Speed",
+      "Titanium Sword & Martial Arts Mastery",
+      "Silver & UV Stake Arsenal",
+      "Accelerated Healing Factor"
+    ],
+    "affiliation": "Nightstalkers / Blood Hunters",
+    "firstAppearance": "Blade (1998)",
+    "movies": [
+      "blade",
+      "blade-ii",
+      "blade-trinity",
+      "deadpool-and-wolverine"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "deadpool",
+      "wolverine",
+      "punisher",
+      "ghost-rider"
+    ]
   },
   {
-    id: 'nick-fury',
-    name: 'Nicholas Joseph Fury',
-    alias: 'Nick Fury',
-    actor: 'Samuel L. Jackson',
-    portrait: 'https://image.tmdb.org/t/p/w780/4T0YjvnBaMASZkkRKxMIe6IoWO0.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/7HuwR4a3C9HRIgAAYPtFzcW7Ey6.jpg',
-    description: 'Former Director of S.H.I.E.L.D. who conceptualized and assembled the Avengers Initiative to protect Earth from cosmic threats.',
-    bio: 'Cold War intelligence officer and director of S.H.I.E.L.D., Nick Fury discovered alien existence when meeting Captain Marvel in 1995. Recognizing humanity\'s vulnerability, he wrote the Avengers Initiative and brought together Iron Man, Captain America, Thor, and the founding heroes to defend Earth.',
-    powers: ['Master Intelligence Operative & Spy', 'Tactical Battlefield Strategist', 'Weapons & Firearms Specialist', 'Uncompromising Leadership', 'Global Black-Ops Resources'],
-    affiliation: 'S.H.I.E.L.D. / Avengers Initiative / S.A.B.E.R.',
-    firstAppearance: 'Nick Fury: Agent of S.H.I.E.L.D. (1998)',
-    movies: ['nick-fury-agent-of-shield-1998', 'iron-man', 'iron-man-2', 'the-avengers', 'captain-america-winter-soldier', 'avengers-age-of-ultron', 'avengers-infinity-war', 'captain-marvel', 'spider-man-far-from-home', 'the-marvels'],
-    series: ['secret-invasion'],
-    relatedCharacters: ['captain-marvel', 'captain-america', 'iron-man', 'black-widow']
+    "id": "nick-fury",
+    "name": "Nicholas Joseph Fury",
+    "alias": "Nick Fury",
+    "actor": "Samuel L. Jackson",
+    "portrait": "https://image.tmdb.org/t/p/w780/4T0YjvnBaMASZkkRKxMIe6IoWO0.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/7HuwR4a3C9HRIgAAYPtFzcW7Ey6.jpg",
+    "description": "Former Director of S.H.I.E.L.D. who conceptualized and assembled the Avengers Initiative to protect Earth from cosmic threats.",
+    "bio": "Cold War intelligence officer and director of S.H.I.E.L.D., Nick Fury discovered alien existence when meeting Captain Marvel in 1995. Recognizing humanity's vulnerability, he wrote the Avengers Initiative and brought together Iron Man, Captain America, Thor, and the founding heroes to defend Earth.",
+    "powers": [
+      "Master Intelligence Operative & Spy",
+      "Tactical Battlefield Strategist",
+      "Weapons & Firearms Specialist",
+      "Uncompromising Leadership",
+      "Global Black-Ops Resources"
+    ],
+    "affiliation": "S.H.I.E.L.D. / Avengers Initiative / S.A.B.E.R.",
+    "firstAppearance": "Nick Fury: Agent of S.H.I.E.L.D. (1998)",
+    "movies": [
+      "nick-fury-agent-of-shield-1998",
+      "iron-man",
+      "iron-man-2",
+      "the-avengers",
+      "captain-america-winter-soldier",
+      "avengers-age-of-ultron",
+      "avengers-infinity-war",
+      "captain-marvel",
+      "spider-man-far-from-home",
+      "the-marvels"
+    ],
+    "series": [
+      "secret-invasion"
+    ],
+    "relatedCharacters": [
+      "captain-marvel",
+      "captain-america",
+      "iron-man",
+      "black-widow"
+    ]
   },
   {
-    id: 'punisher',
-    name: 'Frank Castle',
-    alias: 'The Punisher',
-    actor: 'Jon Bernthal / Thomas Jane',
-    portrait: 'https://image.tmdb.org/t/p/w780/7rmA1HwYp2GKM85BL0cVwCaosGr.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/ziexSS07RmowuyqAdJMh1sGxjHg.jpg',
-    description: 'Decorated Marine Force Recon veteran who wage a relentless, lethal one-man war against organized crime following his family\'s murder.',
-    bio: 'After witnessing the brutal slaughter of his wife and children in Central Park, decorated combat veteran Frank Castle adopted the skull insignia. Driven by unbreakable resolve and expert military lethal force, he punishes criminals outside the boundaries of conventional justice.',
-    powers: ['Elite Military Marksman & Sniper', 'Master of Guerilla Warfare & Traps', 'Pain Tolerance & Unshakable Will', 'Close-Quarters Hand-to-Hand Combat', 'Tactical Combat Arsenal'],
-    affiliation: 'USMC Force Recon / Hell\'s Kitchen Vigilantes',
-    firstAppearance: 'The Punisher (1989)',
-    movies: ['the-punisher-1989', 'the-punisher-2004', 'punisher-war-zone'],
-    series: ['daredevil', 'the-punisher', 'daredevil-born-again'],
-    relatedCharacters: ['daredevil', 'blade']
+    "id": "punisher",
+    "name": "Frank Castle",
+    "alias": "The Punisher",
+    "actor": "Jon Bernthal / Thomas Jane",
+    "portrait": "https://image.tmdb.org/t/p/w780/bjcglF1IpDcZNs1HwFxakGpzBo6.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/ziexSS07RmowuyqAdJMh1sGxjHg.jpg",
+    "description": "Decorated Marine Force Recon veteran who wage a relentless, lethal one-man war against organized crime following his family's murder.",
+    "bio": "After witnessing the brutal slaughter of his wife and children in Central Park, decorated combat veteran Frank Castle adopted the skull insignia. Driven by unbreakable resolve and expert military lethal force, he punishes criminals outside the boundaries of conventional justice.",
+    "powers": [
+      "Elite Military Marksman & Sniper",
+      "Master of Guerilla Warfare & Traps",
+      "Pain Tolerance & Unshakable Will",
+      "Close-Quarters Hand-to-Hand Combat",
+      "Tactical Combat Arsenal"
+    ],
+    "affiliation": "USMC Force Recon / Hell's Kitchen Vigilantes",
+    "firstAppearance": "The Punisher (1989)",
+    "movies": [
+      "the-punisher-1989",
+      "the-punisher-2004",
+      "punisher-war-zone"
+    ],
+    "series": [
+      "daredevil",
+      "the-punisher",
+      "daredevil-born-again"
+    ],
+    "relatedCharacters": [
+      "daredevil",
+      "blade"
+    ]
   },
   {
-    id: 'ghost-rider',
-    name: 'Johnathon "Johnny" Blaze',
-    alias: 'Ghost Rider',
-    actor: 'Nicolas Cage',
-    portrait: 'https://image.tmdb.org/t/p/w780/4quwR1VwZouD0YF9AaD72kQAjxH.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/zbV32WKHFuEYLXLTpr0rmVjQn11.jpg',
-    description: 'Stunt motorcyclist bonded to the demonic Spirit of Vengeance, wielding hellfire chains and the devastating Penance Stare.',
-    bio: 'To save his father\'s life from cancer, motorcycle stuntman Johnny Blaze sold his soul to Mephistopheles. Bonded with Zarathos, the Spirit of Vengeance, he rides a flaming motorcycle and punishes wicked souls by forcing them to experience the pain they inflicted through the Penance Stare.',
-    powers: ['Hellfire Projection & Manipulation', 'The Penance Stare Soul Judgement', 'Superhuman Strength & Invulnerability', 'Mystical Hellfire Chain Weaponry', 'Hellcycle Demon Propulsion'],
-    affiliation: 'Spirits of Vengeance / Midnight Sons',
-    firstAppearance: 'Ghost Rider (2007)',
-    movies: ['ghost-rider', 'ghost-rider-spirit-of-vengeance'],
-    series: [],
-    relatedCharacters: ['blade', 'punisher']
+    "id": "ghost-rider",
+    "name": "Johnathon \"Johnny\" Blaze",
+    "alias": "Ghost Rider (Johnny Blaze - Legacy)",
+    "actor": "Nicolas Cage",
+    "portrait": "https://image.tmdb.org/t/p/w780/y1RtezurZYveYkVNRht7CwEgSYY.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/zbV32WKHFuEYLXLTpr0rmVjQn11.jpg",
+    "description": "Stunt motorcyclist Johnny Blaze makes a pact with Mephistopheles, becoming the flaming supernatural bounty hunter of the damned.",
+    "bio": "To save his father's life from cancer, motorcycle stuntman Johnny Blaze sold his soul to Mephistopheles. Bonded with Zarathos, the Spirit of Vengeance, he rides a flaming motorcycle and punishes wicked souls by forcing them to experience the pain they inflicted through the Penance Stare.",
+    "powers": [
+      "Hellfire Projection & Manipulation",
+      "The Penance Stare Soul Judgement",
+      "Superhuman Strength & Invulnerability",
+      "Mystical Hellfire Chain Weaponry",
+      "Hellcycle Demon Propulsion"
+    ],
+    "affiliation": "Midnight Sons / Spirit of Vengeance",
+    "firstAppearance": "Ghost Rider (2007)",
+    "movies": [
+      "ghost-rider",
+      "ghost-rider-spirit-of-vengeance"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "ghost-rider-mcu",
+      "blade",
+      "punisher",
+      "doctor-strange"
+    ]
   },
   {
-    id: 'fantastic-four-reed',
-    name: 'Dr. Reed Richards',
-    alias: 'Mister Fantastic',
-    actor: 'Ioan Gruffudd / Pedro Pascal',
-    portrait: 'https://image.tmdb.org/t/p/w780/4YMcYEFS8sFuW3soP1HVmgR3cSm.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/qq9ELjoyllBUMkGisZvcj0fCd43.jpg',
-    description: 'The smartest man alive whose body was mutated by cosmic rays, granting him malleable plasticity to stretch, bend, and morph.',
-    bio: 'Pioneering scientific explorer Dr. Reed Richards piloted an experimental space flight that was bombarded by cosmic radiation. Blessed with extraordinary elasticity and his boundless intellect, Reed founded the Fantastic Four, defending humanity against Doctor Doom and Galactus.',
-    powers: ['Unmatched Scientific Polymath Genius', 'Limitless Body Plasticity & Malleability', 'Shape-Shifting Physical Formations', 'Cosmic Energy & Multiversal Mastery', 'Density Defense Cushioning'],
-    affiliation: 'Fantastic Four / Illuminati',
-    firstAppearance: 'The Fantastic Four (1994)',
-    movies: ['the-fantastic-four-1994', 'fantastic-four-2005', 'fantastic-four-rise-of-the-silver-surfer', 'fantastic-four-2015', 'doctor-strange-multiverse-of-madness', 'the-fantastic-four-first-steps'],
-    series: [],
-    relatedCharacters: ['doctor-strange', 'iron-man']
+    "id": "fantastic-four-reed",
+    "name": "Dr. Reed Richards",
+    "alias": "Mister Fantastic",
+    "actor": "Ioan Gruffudd / Pedro Pascal",
+    "portrait": "https://image.tmdb.org/t/p/w780/4YMcYEFS8sFuW3soP1HVmgR3cSm.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/qq9ELjoyllBUMkGisZvcj0fCd43.jpg",
+    "description": "The smartest man alive whose body was mutated by cosmic rays, granting him malleable plasticity to stretch, bend, and morph.",
+    "bio": "Pioneering scientific explorer Dr. Reed Richards piloted an experimental space flight that was bombarded by cosmic radiation. Blessed with extraordinary elasticity and his boundless intellect, Reed founded the Fantastic Four, defending humanity against Doctor Doom and Galactus.",
+    "powers": [
+      "Unmatched Scientific Polymath Genius",
+      "Limitless Body Plasticity & Malleability",
+      "Shape-Shifting Physical Formations",
+      "Cosmic Energy & Multiversal Mastery",
+      "Density Defense Cushioning"
+    ],
+    "affiliation": "Fantastic Four / Illuminati",
+    "firstAppearance": "The Fantastic Four (1994)",
+    "movies": [
+      "the-fantastic-four-1994",
+      "fantastic-four-2005",
+      "fantastic-four-rise-of-the-silver-surfer",
+      "fantastic-four-2015",
+      "doctor-strange-multiverse-of-madness",
+      "the-fantastic-four-first-steps"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "doctor-strange",
+      "iron-man"
+    ]
   },
   {
-    id: 'winter-soldier',
-    name: 'James Buchanan "Bucky" Barnes',
-    alias: 'The Winter Soldier',
-    actor: 'Sebastian Stan',
-    portrait: 'https://image.tmdb.org/t/p/w780/tVFRpFw3xTedgPGqxW0AOI8Qhh0.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/1RWLMyC9KcFfcaoViMiJGSSZzzr.jpg',
-    description: 'Steve Rogers\' childhood brother-in-arms brainwashed by HYDRA into a lethal cyborg assassin who reclaimed his humanity.',
-    bio: 'Falling from an icy train in the Austrian Alps during World War II, Bucky Barnes was retrieved by Soviet HYDRA scientists. Fitted with a cybernetic Vibranium arm and placed into cryo-stasis between covert assassinations, Bucky finally broke free of his programming thanks to Steve Rogers.',
-    powers: ['Vibranium Cybernetic Arm Strength', 'Super-Soldier Physical Enhancement', 'Master Assassin & Infiltration', 'Precision Firearms Mastery', 'Tactical Close-Quarters Combat'],
-    affiliation: 'Avengers / Howling Commandos / Thunderbolts',
-    firstAppearance: 'Captain America: The First Avenger (2011)',
-    movies: ['captain-america-first-avenger', 'captain-america-winter-soldier', 'captain-america-civil-war', 'avengers-infinity-war', 'avengers-endgame', 'thunderbolts'],
-    series: ['the-falcon-and-the-winter-soldier', 'what-if'],
-    relatedCharacters: ['captain-america', 'sam-wilson', 'black-widow']
+    "id": "winter-soldier",
+    "name": "James Buchanan \"Bucky\" Barnes",
+    "alias": "The Winter Soldier",
+    "actor": "Sebastian Stan",
+    "portrait": "https://image.tmdb.org/t/p/w780/tVFRpFw3xTedgPGqxW0AOI8Qhh0.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/1RWLMyC9KcFfcaoViMiJGSSZzzr.jpg",
+    "description": "Steve Rogers' childhood brother-in-arms brainwashed by HYDRA into a lethal cyborg assassin who reclaimed his humanity.",
+    "bio": "Falling from an icy train in the Austrian Alps during World War II, Bucky Barnes was retrieved by Soviet HYDRA scientists. Fitted with a cybernetic Vibranium arm and placed into cryo-stasis between covert assassinations, Bucky finally broke free of his programming thanks to Steve Rogers.",
+    "powers": [
+      "Vibranium Cybernetic Arm Strength",
+      "Super-Soldier Physical Enhancement",
+      "Master Assassin & Infiltration",
+      "Precision Firearms Mastery",
+      "Tactical Close-Quarters Combat"
+    ],
+    "affiliation": "Avengers / Howling Commandos / Thunderbolts",
+    "firstAppearance": "Captain America: The First Avenger (2011)",
+    "movies": [
+      "captain-america-first-avenger",
+      "captain-america-winter-soldier",
+      "captain-america-civil-war",
+      "avengers-infinity-war",
+      "avengers-endgame",
+      "thunderbolts"
+    ],
+    "series": [
+      "the-falcon-and-the-winter-soldier",
+      "what-if"
+    ],
+    "relatedCharacters": [
+      "captain-america",
+      "sam-wilson",
+      "black-widow"
+    ]
   },
   {
-    id: 'war-machine',
-    name: 'Colonel James "Rhodey" Rhodes',
-    alias: 'War Machine',
-    actor: 'Don Cheadle',
-    portrait: 'https://image.tmdb.org/t/p/w780/6WBeq4fCfn7AN0o21W9qNcRF2l9.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/7lmBufEG7P7Y1HClYK3gCxYrkgS.jpg',
-    description: 'Decorated US Air Force combat pilot who pilots the heavily weaponized War Machine armor with relentless military firepower.',
-    bio: 'Tony Stark\'s closest confidant and Air Force liaison, Colonel James Rhodes acquired an Iron Man suit to serve his nation as War Machine. Equipped with shoulder-mounted miniguns, bunker-buster missiles, and plasma repulsors, Rhodey fought bravely in the battles of Sokovia, Wakanda, and Earth.',
-    powers: ['Heavy-Artillery Powered Armor', 'Shoulder Gatling Cannon & Micro-Rockets', 'Military Tactical Combat Aviator', 'Stark Repulsor Beam Arrays', 'Superhuman Durability'],
-    affiliation: 'US Air Force / Avengers',
-    firstAppearance: 'Iron Man (2008)',
-    movies: ['iron-man', 'iron-man-2', 'iron-man-3', 'avengers-age-of-ultron', 'captain-america-civil-war', 'avengers-infinity-war', 'avengers-endgame'],
-    series: ['the-falcon-and-the-winter-soldier', 'secret-invasion'],
-    relatedCharacters: ['iron-man', 'captain-america', 'sam-wilson']
+    "id": "war-machine",
+    "name": "Colonel James \"Rhodey\" Rhodes",
+    "alias": "War Machine",
+    "actor": "Don Cheadle",
+    "portrait": "https://image.tmdb.org/t/p/w780/6WBeq4fCfn7AN0o21W9qNcRF2l9.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/7lmBufEG7P7Y1HClYK3gCxYrkgS.jpg",
+    "description": "Decorated US Air Force combat pilot who pilots the heavily weaponized War Machine armor with relentless military firepower.",
+    "bio": "Tony Stark's closest confidant and Air Force liaison, Colonel James Rhodes acquired an Iron Man suit to serve his nation as War Machine. Equipped with shoulder-mounted miniguns, bunker-buster missiles, and plasma repulsors, Rhodey fought bravely in the battles of Sokovia, Wakanda, and Earth.",
+    "powers": [
+      "Heavy-Artillery Powered Armor",
+      "Shoulder Gatling Cannon & Micro-Rockets",
+      "Military Tactical Combat Aviator",
+      "Stark Repulsor Beam Arrays",
+      "Superhuman Durability"
+    ],
+    "affiliation": "US Air Force / Avengers",
+    "firstAppearance": "Iron Man (2008)",
+    "movies": [
+      "iron-man",
+      "iron-man-2",
+      "iron-man-3",
+      "avengers-age-of-ultron",
+      "captain-america-civil-war",
+      "avengers-infinity-war",
+      "avengers-endgame"
+    ],
+    "series": [
+      "the-falcon-and-the-winter-soldier",
+      "secret-invasion"
+    ],
+    "relatedCharacters": [
+      "iron-man",
+      "captain-america",
+      "sam-wilson"
+    ]
   },
   {
-    id: 'professor-x',
-    name: 'Charles Francis Xavier',
-    alias: 'Professor X',
-    actor: 'Patrick Stewart / James McAvoy',
-    portrait: 'https://image.tmdb.org/t/p/w780/hNEokmUke0dazoBhttFN0o3L7Xv.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/yhp5Pt4GugkCs5mz63qWz5khHXe.jpg',
-    description: 'The world\'s most powerful mutant telepath who founded Xavier\'s School for Gifted Youngsters and fought for mutant-human coexistence.',
-    bio: 'Possessing unmatched psychic powers, Professor Charles Xavier dedicated his life and inherited fortune to creating a safe haven for mutants. Using the Cerebro device to connect with every mind on Earth, he led the X-Men in peaceful coexistence, standing as a mentor to Wolverine and brother to Magneto.',
-    powers: ['Omega-Level Telepathy', 'Mind Reading & Memory Manipulation', 'Astral Projection & Psychic Illusions', 'Mental Paralysis & Sedation', 'Cerebro Global Mind Interface'],
-    affiliation: 'X-Men / Xavier\'s School / Illuminati',
-    firstAppearance: 'X-Men (2000)',
-    movies: ['x-men', 'x2-x-men-united', 'x-men-the-last-stand', 'x-men-first-class', 'x-men-days-of-future-past', 'x-men-apocalypse', 'logan', 'doctor-strange-multiverse-of-madness'],
-    series: [],
-    relatedCharacters: ['magneto', 'wolverine']
+    "id": "professor-x",
+    "name": "Charles Francis Xavier",
+    "alias": "Professor X",
+    "actor": "Patrick Stewart / James McAvoy",
+    "portrait": "https://image.tmdb.org/t/p/w780/hNEokmUke0dazoBhttFN0o3L7Xv.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/yhp5Pt4GugkCs5mz63qWz5khHXe.jpg",
+    "description": "The world's most powerful mutant telepath who founded Xavier's School for Gifted Youngsters and fought for mutant-human coexistence.",
+    "bio": "Possessing unmatched psychic powers, Professor Charles Xavier dedicated his life and inherited fortune to creating a safe haven for mutants. Using the Cerebro device to connect with every mind on Earth, he led the X-Men in peaceful coexistence, standing as a mentor to Wolverine and brother to Magneto.",
+    "powers": [
+      "Omega-Level Telepathy",
+      "Mind Reading & Memory Manipulation",
+      "Astral Projection & Psychic Illusions",
+      "Mental Paralysis & Sedation",
+      "Cerebro Global Mind Interface"
+    ],
+    "affiliation": "X-Men / Xavier's School / Illuminati",
+    "firstAppearance": "X-Men (2000)",
+    "movies": [
+      "x-men",
+      "x2-x-men-united",
+      "x-men-the-last-stand",
+      "x-men-first-class",
+      "x-men-days-of-future-past",
+      "x-men-apocalypse",
+      "logan",
+      "doctor-strange-multiverse-of-madness"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "magneto",
+      "wolverine"
+    ]
   },
   {
-    id: 'magneto',
-    name: 'Erik Lehnsherr',
-    alias: 'Magneto',
-    actor: 'Ian McKellen / Michael Fassbender',
-    portrait: 'https://image.tmdb.org/t/p/w780/tYfijzolzgoMOtegh1Y7j2Enorg.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/3czpqXzFy5UcNuD1AubecRLWkwD.jpg',
-    description: 'Master of Magnetism who commands all electromagnetic forces and champions mutant supremacy by any means necessary.',
-    bio: 'Surviving the Auschwitz concentration camps as a boy, Erik Lehnsherr witnessed humanity\'s cruelty firsthand. Manifesting the ability to manipulate all magnetic fields, he formed the Brotherhood of Mutants to defend his kind against human persecution, remaining Charles Xavier\'s greatest friend and greatest rival.',
-    powers: ['Electromagnetic Field Manipulation', 'Metal Levitation, Reshaping & Weaponization', 'Magnetic Force Field Shields', 'Flight via Polar Levitation', 'Telepathic Immunity Helmet'],
-    affiliation: 'Brotherhood of Mutants / X-Men Ally',
-    firstAppearance: 'X-Men (2000)',
-    movies: ['x-men', 'x2-x-men-united', 'x-men-the-last-stand', 'x-men-first-class', 'x-men-days-of-future-past', 'x-men-apocalypse', 'dark-phoenix'],
-    series: [],
-    relatedCharacters: ['professor-x', 'wolverine']
+    "id": "magneto",
+    "name": "Erik Lehnsherr",
+    "alias": "Magneto",
+    "actor": "Ian McKellen / Michael Fassbender",
+    "portrait": "https://image.tmdb.org/t/p/w780/tYfijzolzgoMOtegh1Y7j2Enorg.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/3czpqXzFy5UcNuD1AubecRLWkwD.jpg",
+    "description": "Master of Magnetism who commands all electromagnetic forces and champions mutant supremacy by any means necessary.",
+    "bio": "Surviving the Auschwitz concentration camps as a boy, Erik Lehnsherr witnessed humanity's cruelty firsthand. Manifesting the ability to manipulate all magnetic fields, he formed the Brotherhood of Mutants to defend his kind against human persecution, remaining Charles Xavier's greatest friend and greatest rival.",
+    "powers": [
+      "Electromagnetic Field Manipulation",
+      "Metal Levitation, Reshaping & Weaponization",
+      "Magnetic Force Field Shields",
+      "Flight via Polar Levitation",
+      "Telepathic Immunity Helmet"
+    ],
+    "affiliation": "Brotherhood of Mutants / X-Men Ally",
+    "firstAppearance": "X-Men (2000)",
+    "movies": [
+      "x-men",
+      "x2-x-men-united",
+      "x-men-the-last-stand",
+      "x-men-first-class",
+      "x-men-days-of-future-past",
+      "x-men-apocalypse",
+      "dark-phoenix"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "professor-x",
+      "wolverine"
+    ]
   },
   {
-    id: 'rocket-raccoon',
-    name: 'Rocket',
-    alias: 'Rocket Raccoon',
-    actor: 'Bradley Cooper',
-    portrait: 'https://image.tmdb.org/t/p/w780/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/5YZbUmjbMa3ClvSW1Wj3D6XGolb.jpg',
-    description: 'Genetically modified raccoon cybernetic engineer who builds galaxy-destroying weapons and leads the new Guardians of the Galaxy.',
-    bio: 'Subject 89P13 was created through sadistic biological experiments by the High Evolutionary on Counter-Earth. Escaping his torment, Rocket became a bounty hunter alongside Groot and a core member of the Guardians of the Galaxy, ultimately accepting his identity as Rocket Raccoon.',
-    powers: ['Genius-Level Mechanical Engineering', 'Expert Heavy-Weapons Marksman', 'Tactical Combat Demolitions', 'Starship Piloting Mastery', 'Enhanced Senses & Agility'],
-    affiliation: 'Guardians of the Galaxy / Avengers',
-    firstAppearance: 'Guardians of the Galaxy (2014)',
-    movies: ['guardians-of-the-galaxy', 'guardians-of-the-galaxy-vol-2', 'avengers-infinity-war', 'avengers-endgame', 'gotg-holiday-special', 'guardians-of-the-galaxy-vol-3'],
-    series: ['what-if'],
-    relatedCharacters: ['groot', 'star-lord', 'gamora', 'thor']
+    "id": "rocket-raccoon",
+    "name": "Rocket",
+    "alias": "Rocket Raccoon",
+    "actor": "Bradley Cooper",
+    "portrait": "https://image.tmdb.org/t/p/w780/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/5YZbUmjbMa3ClvSW1Wj3D6XGolb.jpg",
+    "description": "Genetically modified raccoon cybernetic engineer who builds galaxy-destroying weapons and leads the new Guardians of the Galaxy.",
+    "bio": "Subject 89P13 was created through sadistic biological experiments by the High Evolutionary on Counter-Earth. Escaping his torment, Rocket became a bounty hunter alongside Groot and a core member of the Guardians of the Galaxy, ultimately accepting his identity as Rocket Raccoon.",
+    "powers": [
+      "Genius-Level Mechanical Engineering",
+      "Expert Heavy-Weapons Marksman",
+      "Tactical Combat Demolitions",
+      "Starship Piloting Mastery",
+      "Enhanced Senses & Agility"
+    ],
+    "affiliation": "Guardians of the Galaxy / Avengers",
+    "firstAppearance": "Guardians of the Galaxy (2014)",
+    "movies": [
+      "guardians-of-the-galaxy",
+      "guardians-of-the-galaxy-vol-2",
+      "avengers-infinity-war",
+      "avengers-endgame",
+      "gotg-holiday-special",
+      "guardians-of-the-galaxy-vol-3"
+    ],
+    "series": [
+      "what-if"
+    ],
+    "relatedCharacters": [
+      "groot",
+      "star-lord",
+      "gamora",
+      "thor"
+    ]
   },
   {
-    id: 'groot',
-    name: 'Groot',
-    alias: 'Groot',
-    actor: 'Vin Diesel',
-    portrait: 'https://image.tmdb.org/t/p/w780/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/uLtVbjvS1O7gXL8lUOwsFOH4man.jpg',
-    description: 'Sentient flora colossus who regenerates from single twigs, capable of altering his wooden limbs into impenetrable shields.',
-    bio: 'Groot is a tree-like extraterrestrial humanoid of the species Flora colossus from Planet X. Kind-hearted yet ferocious in battle, he gave his life in 2014 to protect his friends ("We are Groot"). His offspring grew through Baby Groot and teenage angst into a colossal powerhouse.',
-    powers: ['Cellular Regeneration & Sprouting', 'Wood Morphing & Branch Stretching', 'Superhuman Dendrological Strength', 'Spore Bioluminescence', 'Flora Shielding Armor'],
-    affiliation: 'Guardians of the Galaxy',
-    firstAppearance: 'Guardians of the Galaxy (2014)',
-    movies: ['guardians-of-the-galaxy', 'guardians-of-the-galaxy-vol-2', 'avengers-infinity-war', 'avengers-endgame', 'gotg-holiday-special', 'guardians-of-the-galaxy-vol-3'],
-    series: ['i-am-groot', 'what-if'],
-    relatedCharacters: ['rocket-raccoon', 'star-lord']
+    "id": "groot",
+    "name": "Groot",
+    "alias": "Groot",
+    "actor": "Vin Diesel",
+    "portrait": "https://image.tmdb.org/t/p/w780/tEoUF0RJqHnskmBOJiDEQhyN7Ok.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/uLtVbjvS1O7gXL8lUOwsFOH4man.jpg",
+    "description": "Sentient flora colossus who regenerates from single twigs, capable of altering his wooden limbs into impenetrable shields.",
+    "bio": "Groot is a tree-like extraterrestrial humanoid of the species Flora colossus from Planet X. Kind-hearted yet ferocious in battle, he gave his life in 2014 to protect his friends (\"We are Groot\"). His offspring grew through Baby Groot and teenage angst into a colossal powerhouse.",
+    "powers": [
+      "Cellular Regeneration & Sprouting",
+      "Wood Morphing & Branch Stretching",
+      "Superhuman Dendrological Strength",
+      "Spore Bioluminescence",
+      "Flora Shielding Armor"
+    ],
+    "affiliation": "Guardians of the Galaxy",
+    "firstAppearance": "Guardians of the Galaxy (2014)",
+    "movies": [
+      "guardians-of-the-galaxy",
+      "guardians-of-the-galaxy-vol-2",
+      "avengers-infinity-war",
+      "avengers-endgame",
+      "gotg-holiday-special",
+      "guardians-of-the-galaxy-vol-3"
+    ],
+    "series": [
+      "i-am-groot",
+      "what-if"
+    ],
+    "relatedCharacters": [
+      "rocket-raccoon",
+      "star-lord"
+    ]
   },
   {
-    id: 'gamora',
-    name: 'Gamora Zen Whoberi Ben Titan',
-    alias: 'Deadliest Woman in the Galaxy',
-    actor: 'Zoe Saldana',
-    portrait: 'https://image.tmdb.org/t/p/w780/y4MBh0EjBlMuOzv9axM4qJlmhzz.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/aJn9XeesqsrSLKcHfHP4u5985hn.jpg',
-    description: 'Zen-Whoberi warrior raised by Thanos as an assassin who betrayed her tyrant father to fight for freedom across the galaxy.',
-    bio: 'Adopted daughter of Thanos after he exterminated half of her homeworld Zen-Whoberi, Gamora was cybernetically enhanced to be the galaxy\'s premier living weapon. Turning against Thanos to safeguard the Power Stone, she joined the Guardians of the Galaxy and found love with Peter Quill.',
-    powers: ['Cybernetically Enhanced Alien Strength', 'Master Swordsman with Godslayer Blade', 'Acrobatic Combat Agility', 'Superhuman Durability & Healing', 'Master Interstellar Assassin'],
-    affiliation: 'Guardians of the Galaxy / Ravagers',
-    firstAppearance: 'Guardians of the Galaxy (2014)',
-    movies: ['guardians-of-the-galaxy', 'guardians-of-the-galaxy-vol-2', 'avengers-infinity-war', 'avengers-endgame', 'guardians-of-the-galaxy-vol-3'],
-    series: ['what-if'],
-    relatedCharacters: ['star-lord', 'thanos', 'rocket-raccoon']
+    "id": "gamora",
+    "name": "Gamora Zen Whoberi Ben Titan",
+    "alias": "Deadliest Woman in the Galaxy",
+    "actor": "Zoe Saldana",
+    "portrait": "https://image.tmdb.org/t/p/w780/y4MBh0EjBlMuOzv9axM4qJlmhzz.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/aJn9XeesqsrSLKcHfHP4u5985hn.jpg",
+    "description": "Zen-Whoberi warrior raised by Thanos as an assassin who betrayed her tyrant father to fight for freedom across the galaxy.",
+    "bio": "Adopted daughter of Thanos after he exterminated half of her homeworld Zen-Whoberi, Gamora was cybernetically enhanced to be the galaxy's premier living weapon. Turning against Thanos to safeguard the Power Stone, she joined the Guardians of the Galaxy and found love with Peter Quill.",
+    "powers": [
+      "Cybernetically Enhanced Alien Strength",
+      "Master Swordsman with Godslayer Blade",
+      "Acrobatic Combat Agility",
+      "Superhuman Durability & Healing",
+      "Master Interstellar Assassin"
+    ],
+    "affiliation": "Guardians of the Galaxy / Ravagers",
+    "firstAppearance": "Guardians of the Galaxy (2014)",
+    "movies": [
+      "guardians-of-the-galaxy",
+      "guardians-of-the-galaxy-vol-2",
+      "avengers-infinity-war",
+      "avengers-endgame",
+      "guardians-of-the-galaxy-vol-3"
+    ],
+    "series": [
+      "what-if"
+    ],
+    "relatedCharacters": [
+      "star-lord",
+      "thanos",
+      "rocket-raccoon"
+    ]
   },
   {
-    id: 'venom',
-    name: 'Eddie Brock',
-    alias: 'Venom',
-    actor: 'Tom Hardy',
-    portrait: 'https://image.tmdb.org/t/p/w780/2uNW4WbgBXL25BAbXGLnLqX71Sw.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/VuukZLgaCrho2Ar8Scl9HtV3yD.jpg',
-    description: 'Investigative reporter bonded with an alien Klyntar symbiote to form the lethal protector Venom.',
-    bio: 'Investigative journalist Eddie Brock bonded with an extraterrestrial amorphous liquid symbiote known as Venom. Together they developed a symbiotic relationship as an anti-hero lethal protector, defending San Francisco from Carnage and Riot before crossing briefly into the MCU multiverse.',
-    powers: ['Symbiote Shapeshifting & Tendrils', 'Superhuman Monolithic Strength', 'Fangs, Claws & Regeneration', 'Wall-Crawling & Web Mimicry', 'Klyntar Hive-Mind Knowledge'],
-    affiliation: 'Lethal Protector / Daily Globe',
-    firstAppearance: 'Spider-Man 3 (2007)',
-    movies: ['spider-man-3', 'venom', 'venom-let-there-be-carnage', 'spider-man-no-way-home', 'venom-the-last-dance'],
-    series: [],
-    relatedCharacters: ['spider-man', 'spider-man-tobey']
+    "id": "venom",
+    "name": "Eddie Brock",
+    "alias": "Venom",
+    "actor": "Tom Hardy",
+    "portrait": "https://image.tmdb.org/t/p/w780/2uNW4WbgBXL25BAbXGLnLqX71Sw.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/VuukZLgaCrho2Ar8Scl9HtV3yD.jpg",
+    "description": "Investigative reporter bonded with an alien Klyntar symbiote to form the lethal protector Venom.",
+    "bio": "Investigative journalist Eddie Brock bonded with an extraterrestrial amorphous liquid symbiote known as Venom. Together they developed a symbiotic relationship as an anti-hero lethal protector, defending San Francisco from Carnage and Riot before crossing briefly into the MCU multiverse.",
+    "powers": [
+      "Symbiote Shapeshifting & Tendrils",
+      "Superhuman Monolithic Strength",
+      "Fangs, Claws & Regeneration",
+      "Wall-Crawling & Web Mimicry",
+      "Klyntar Hive-Mind Knowledge"
+    ],
+    "affiliation": "Lethal Protector / Daily Globe",
+    "firstAppearance": "Spider-Man 3 (2007)",
+    "movies": [
+      "spider-man-3",
+      "venom",
+      "venom-let-there-be-carnage",
+      "spider-man-no-way-home",
+      "venom-the-last-dance"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "spider-man",
+      "spider-man-tobey"
+    ]
   },
   {
-    id: 'loki',
-    name: 'Loki Laufeyson',
-    alias: 'God of Stories',
-    actor: 'Tom Hiddleston',
-    portrait: 'https://image.tmdb.org/t/p/w780/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/cDJ61O1STtbWNBwefuqVrRe3d7l.jpg',
-    description: 'Frost Giant prince adopted by Odin, who transformed from Asgardian villain to the cosmic guardian holding the Multiverse tree together.',
-    bio: 'Resentful of his brother Thor, Loki repeatedly sought to conquer Asgard and Earth before learning of his true parentage. Captured by the Time Variance Authority, Loki mastered temporal mechanics and chronokinesis. In a selfless act of ultimate sacrifice, Loki took throne at the End of Time, physically weaving every branch of the multiverse tree together as the God of Stories.',
-    powers: ['Illusory Duplication & Shapeshifting', 'Time-Slipping & Chrono-Kinesis', 'Asgardian Superhuman Physiology', 'Mystic Telekinesis & Dagger Mastery', 'Multiversal Timeline Weaving'],
-    affiliation: 'Time Variance Authority / Asgard Royalty',
-    firstAppearance: 'Thor (2011)',
-    movies: ['thor', 'the-avengers', 'thor-the-dark-world', 'thor-ragnarok', 'avengers-infinity-war', 'avengers-endgame'],
-    series: ['loki'],
-    relatedCharacters: ['thor', 'thanos']
+    "id": "loki",
+    "name": "Loki Laufeyson",
+    "alias": "God of Stories",
+    "actor": "Tom Hiddleston",
+    "portrait": "https://image.tmdb.org/t/p/w780/mclHxMm8aPlCPKptP67257F5GPo.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cDJ61O1STtbWNBwefuqVrRe3d7l.jpg",
+    "description": "Frost Giant prince adopted by Odin, who transformed from Asgardian villain to the cosmic guardian holding the Multiverse tree together.",
+    "bio": "Resentful of his brother Thor, Loki repeatedly sought to conquer Asgard and Earth before learning of his true parentage. Captured by the Time Variance Authority, Loki mastered temporal mechanics and chronokinesis. In a selfless act of ultimate sacrifice, Loki took throne at the End of Time, physically weaving every branch of the multiverse tree together as the God of Stories.",
+    "powers": [
+      "Illusory Duplication & Shapeshifting",
+      "Time-Slipping & Chrono-Kinesis",
+      "Asgardian Superhuman Physiology",
+      "Mystic Telekinesis & Dagger Mastery",
+      "Multiversal Timeline Weaving"
+    ],
+    "affiliation": "Time Variance Authority / Asgard Royalty",
+    "firstAppearance": "Thor (2011)",
+    "movies": [
+      "thor",
+      "the-avengers",
+      "thor-the-dark-world",
+      "thor-ragnarok",
+      "avengers-infinity-war",
+      "avengers-endgame"
+    ],
+    "series": [
+      "loki"
+    ],
+    "relatedCharacters": [
+      "thor",
+      "thanos"
+    ]
   },
   {
-    id: 'black-panther',
-    name: 'T\'Challa',
-    alias: 'Black Panther',
-    actor: 'Chadwick Boseman',
-    portrait: 'https://image.tmdb.org/t/p/w780/uxzzxijgPIY7slzFvMotPv8wjKA.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/yFuKvT4Vm3sKHdFY4eG6I4ldAnn.jpg',
-    description: 'King and protector of Wakanda who harnesses the Heart-Shaped Herb and a kinetic-absorbing Vibranium habit to lead his nation.',
-    bio: 'Following the tragic death of King T\'Chaka at the Vienna UN bombing, Prince T\'Challa assumed the mantle of Black Panther and the throne of Wakanda. Championing global outreach and justice, he fought alongside the Avengers against Thanos and opened Wakanda\'s technological miracles to the world.',
-    powers: ['Heart-Shaped Herb Superhuman Enhancement', 'Kinetic Absorbing Vibranium Armor Habit', 'Master Martial Artist & Acrobat', 'Retractable Vibranium Claws', 'Wakandan Royal Leader'],
-    affiliation: 'Wakanda Royalty / Avengers',
-    firstAppearance: 'Captain America: Civil War (2016)',
-    movies: ['captain-america-civil-war', 'black-panther', 'avengers-infinity-war', 'avengers-endgame', 'black-panther-wakanda-forever'],
-    series: ['what-if', 'eyes-of-wakanda'],
-    relatedCharacters: ['captain-america', 'iron-man']
+    "id": "black-panther",
+    "name": "T'Challa",
+    "alias": "Black Panther",
+    "actor": "Chadwick Boseman",
+    "portrait": "https://image.tmdb.org/t/p/w780/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/yFuKvT4Vm3sKHdFY4eG6I4ldAnn.jpg",
+    "description": "King and protector of Wakanda who harnesses the Heart-Shaped Herb and a kinetic-absorbing Vibranium habit to lead his nation.",
+    "bio": "Following the tragic death of King T'Chaka at the Vienna UN bombing, Prince T'Challa assumed the mantle of Black Panther and the throne of Wakanda. Championing global outreach and justice, he fought alongside the Avengers against Thanos and opened Wakanda's technological miracles to the world.",
+    "powers": [
+      "Heart-Shaped Herb Superhuman Enhancement",
+      "Kinetic Absorbing Vibranium Armor Habit",
+      "Master Martial Artist & Acrobat",
+      "Retractable Vibranium Claws",
+      "Wakandan Royal Leader"
+    ],
+    "affiliation": "Wakanda Royalty / Avengers",
+    "firstAppearance": "Captain America: Civil War (2016)",
+    "movies": [
+      "captain-america-civil-war",
+      "black-panther",
+      "avengers-infinity-war",
+      "avengers-endgame",
+      "black-panther-wakanda-forever"
+    ],
+    "series": [
+      "what-if",
+      "eyes-of-wakanda"
+    ],
+    "relatedCharacters": [
+      "captain-america",
+      "iron-man"
+    ]
   },
   {
-    id: 'ant-man',
-    name: 'Scott Lang',
-    alias: 'Ant-Man',
-    actor: 'Paul Rudd',
-    portrait: 'https://image.tmdb.org/t/p/w780/rQRnQfUl3kfp78nCWq8Ks04vnq1.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/1K3JmSNUN8OpjYsCjc0Hy0SYxAb.jpg',
-    description: 'Reformed thief turned superhero who uses Hank Pym\'s subatomic particles to shrink in size while increasing in density and physical power.',
-    bio: 'Selected by Dr. Hank Pym to inherit the Ant-Man suit, Scott Lang proved his valor by mastering size manipulation and communicating with ants. Trapped in the Quantum Realm during the Blip, his escape sparked the Avengers\' Time Heist plan to save the universe.',
-    powers: ['Subatomic Shrinking & Giant-Man Growth', 'Pym Particle Density Manipulation', 'Ant Communication EMP Gauntlet', 'Quantum Realm Navigation', 'Acrobatic Combat Agility'],
-    affiliation: 'Avengers / Pym Technologies',
-    firstAppearance: 'Ant-Man (2015)',
-    movies: ['ant-man', 'captain-america-civil-war', 'ant-man-and-the-wasp', 'avengers-endgame', 'ant-man-and-the-wasp-quantumania'],
-    series: [],
-    relatedCharacters: ['captain-america', 'iron-man']
+    "id": "ant-man",
+    "name": "Scott Lang",
+    "alias": "Ant-Man",
+    "actor": "Paul Rudd",
+    "portrait": "https://image.tmdb.org/t/p/w780/rQRnQfUl3kfp78nCWq8Ks04vnq1.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/1K3JmSNUN8OpjYsCjc0Hy0SYxAb.jpg",
+    "description": "Reformed thief turned superhero who uses Hank Pym's subatomic particles to shrink in size while increasing in density and physical power.",
+    "bio": "Selected by Dr. Hank Pym to inherit the Ant-Man suit, Scott Lang proved his valor by mastering size manipulation and communicating with ants. Trapped in the Quantum Realm during the Blip, his escape sparked the Avengers' Time Heist plan to save the universe.",
+    "powers": [
+      "Subatomic Shrinking & Giant-Man Growth",
+      "Pym Particle Density Manipulation",
+      "Ant Communication EMP Gauntlet",
+      "Quantum Realm Navigation",
+      "Acrobatic Combat Agility"
+    ],
+    "affiliation": "Avengers / Pym Technologies",
+    "firstAppearance": "Ant-Man (2015)",
+    "movies": [
+      "ant-man",
+      "captain-america-civil-war",
+      "ant-man-and-the-wasp",
+      "avengers-endgame",
+      "ant-man-and-the-wasp-quantumania"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "captain-america",
+      "iron-man"
+    ]
   },
   {
-    id: 'captain-marvel',
-    name: 'Carol Danvers',
-    alias: 'Captain Marvel',
-    actor: 'Brie Larson',
-    portrait: 'https://image.tmdb.org/t/p/w780/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/qAzYK4YPSWDc7aa4R43LcwRIAyb.jpg',
-    description: 'Former US Air Force pilot infused with cosmic energy from the Tesseract who defends galaxies across deep space.',
-    bio: 'Carol Danvers absorbed the energy of the Tesseract during a light-speed engine explosion. Kept amnesiac by the Kree Starforce, she rediscovered her humanity on Earth and unlocked her full Binary photon potential, defending thousands of worlds across the universe.',
-    powers: ['Cosmic Photon Energy Blasts', 'Faster-Than-Light Space Travel', 'Superhuman Durability & Strength', 'Energy Absorption & Redirection', 'Binary Mode Cosmic Power'],
-    affiliation: 'Avengers / Starforce / US Air Force',
-    firstAppearance: 'Captain Marvel (2019)',
-    movies: ['captain-marvel', 'avengers-endgame', 'the-marvels'],
-    series: ['ms-marvel'],
-    relatedCharacters: ['nick-fury', 'iron-man']
+    "id": "captain-marvel",
+    "name": "Carol Danvers",
+    "alias": "Captain Marvel",
+    "actor": "Brie Larson",
+    "portrait": "https://image.tmdb.org/t/p/w780/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/qAzYK4YPSWDc7aa4R43LcwRIAyb.jpg",
+    "description": "Former US Air Force pilot infused with cosmic energy from the Tesseract who defends galaxies across deep space.",
+    "bio": "Carol Danvers absorbed the energy of the Tesseract during a light-speed engine explosion. Kept amnesiac by the Kree Starforce, she rediscovered her humanity on Earth and unlocked her full Binary photon potential, defending thousands of worlds across the universe.",
+    "powers": [
+      "Cosmic Photon Energy Blasts",
+      "Faster-Than-Light Space Travel",
+      "Superhuman Durability & Strength",
+      "Energy Absorption & Redirection",
+      "Binary Mode Cosmic Power"
+    ],
+    "affiliation": "Avengers / Starforce / US Air Force",
+    "firstAppearance": "Captain Marvel (2019)",
+    "movies": [
+      "captain-marvel",
+      "avengers-endgame",
+      "the-marvels"
+    ],
+    "series": [
+      "ms-marvel"
+    ],
+    "relatedCharacters": [
+      "nick-fury",
+      "iron-man"
+    ]
   },
   {
-    id: 'daredevil',
-    name: 'Matt Murdock',
-    alias: 'Daredevil',
-    actor: 'Charlie Cox',
-    portrait: 'https://image.tmdb.org/t/p/w780/QWbPaDxiB6LW2LjASknzYBvjMj.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/pPALpad1Fh14g7ejyQjqKzlhrBw.jpg',
-    description: 'Blinded as a boy by chemicals, attorney Matt Murdock uses radar sense and martial arts to protect Hell\'s Kitchen by night.',
-    bio: 'Blinded by toxic chemicals in a childhood accident that heightened his other senses to superhuman levels, attorney Matt Murdock fights injustice by day in courtrooms and by night on the streets as the Devil of Hell\'s Kitchen.',
-    powers: ['Superhuman Radar Sense', 'Echolocation & Enhanced Senses', 'Master Martial Arts Combatant', 'Custom Billy Club Weaponry', 'Elite Legal Attorney'],
-    affiliation: 'Defenders / Nelson & Murdock',
-    firstAppearance: 'Daredevil (2015)',
-    movies: ['spider-man-no-way-home', 'daredevil-2003'],
-    series: ['daredevil', 'the-defenders', 'she-hulk', 'echo', 'daredevil-born-again'],
-    relatedCharacters: ['spider-man', 'punisher']
+    "id": "daredevil",
+    "name": "Matt Murdock",
+    "alias": "Daredevil",
+    "actor": "Charlie Cox",
+    "portrait": "https://image.tmdb.org/t/p/w780/91fFBazOvuNjwjcES2b199Ukspn.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/pPALpad1Fh14g7ejyQjqKzlhrBw.jpg",
+    "description": "Blinded as a boy by chemicals, attorney Matt Murdock uses radar sense and martial arts to protect Hell's Kitchen by night.",
+    "bio": "Blinded by toxic chemicals in a childhood accident that heightened his other senses to superhuman levels, attorney Matt Murdock fights injustice by day in courtrooms and by night on the streets as the Devil of Hell's Kitchen.",
+    "powers": [
+      "Superhuman Radar Sense",
+      "Echolocation & Enhanced Senses",
+      "Master Martial Arts Combatant",
+      "Custom Billy Club Weaponry",
+      "Elite Legal Attorney"
+    ],
+    "affiliation": "Defenders / Nelson & Murdock",
+    "firstAppearance": "Daredevil (2015)",
+    "movies": [
+      "spider-man-no-way-home",
+      "daredevil-2003"
+    ],
+    "series": [
+      "daredevil",
+      "the-defenders",
+      "she-hulk",
+      "echo",
+      "daredevil-born-again"
+    ],
+    "relatedCharacters": [
+      "spider-man",
+      "punisher"
+    ]
   },
   {
-    id: 'moon-knight',
-    name: 'Marc Spector / Steven Grant',
-    alias: 'Moon Knight / Mr. Knight',
-    actor: 'Oscar Isaac',
-    portrait: 'https://image.tmdb.org/t/p/w780/9K3lbMf8TKvL9xGEbzi7TggWCNQ.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/lv3TXqhpaIxkclIHbhN2MRMOemQ.jpg',
-    description: 'Mercenary with dissociative identity disorder who channels the vengeful will and mystical armor of the Egyptian Moon God Khonshu.',
-    bio: 'Suffering from dissociative identity disorder, mercenary Marc Spector was saved from death by Khonshu, the Egyptian God of the Moon. Blessed with supernatural armor and crescent weapons, he balances the alternate personalities of British museum clerk Steven Grant and cab driver Jake Lockley.',
-    powers: ['Khonshu Mystical Armor Summoning', 'Crescent Dart Projectiles', 'Superhuman Lunar Strength', 'Dissociative Combat Switching', 'Rapid Wound Healing'],
-    affiliation: 'Fist of Khonshu',
-    firstAppearance: 'Moon Knight (2022)',
-    movies: [],
-    series: ['moon-knight'],
-    relatedCharacters: ['doctor-strange', 'blade']
+    "id": "moon-knight",
+    "name": "Marc Spector / Steven Grant",
+    "alias": "Moon Knight / Mr. Knight",
+    "actor": "Oscar Isaac",
+    "portrait": "https://image.tmdb.org/t/p/w780/9K3lbMf8TKvL9xGEbzi7TggWCNQ.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/lv3TXqhpaIxkclIHbhN2MRMOemQ.jpg",
+    "description": "Mercenary with dissociative identity disorder who channels the vengeful will and mystical armor of the Egyptian Moon God Khonshu.",
+    "bio": "Suffering from dissociative identity disorder, mercenary Marc Spector was saved from death by Khonshu, the Egyptian God of the Moon. Blessed with supernatural armor and crescent weapons, he balances the alternate personalities of British museum clerk Steven Grant and cab driver Jake Lockley.",
+    "powers": [
+      "Khonshu Mystical Armor Summoning",
+      "Crescent Dart Projectiles",
+      "Superhuman Lunar Strength",
+      "Dissociative Combat Switching",
+      "Rapid Wound Healing"
+    ],
+    "affiliation": "Fist of Khonshu",
+    "firstAppearance": "Moon Knight (2022)",
+    "movies": [],
+    "series": [
+      "moon-knight"
+    ],
+    "relatedCharacters": [
+      "doctor-strange",
+      "blade"
+    ]
   },
   {
-    id: 'shang-chi',
-    name: 'Xu Shang-Chi',
-    alias: 'Master of the Ten Rings',
-    actor: 'Simu Liu',
-    portrait: 'https://image.tmdb.org/t/p/w780/9f2Q0U3IOsLgrI2HkvldwSABZy5.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/r7K6Xt0RX4Mw0cAbZVw5cyb1Tux.jpg',
-    description: 'Master martial artist trained from childhood as an assassin who embraced his destiny by inheriting the mystical Ten Rings.',
-    bio: 'Trained ruthlessly by his immortal father Wenwu, Shang-Chi fled to San Francisco to live a quiet life. When dragged back into his family\'s past, he discovered the mystical realm of Ta Lo and claimed mastery over the legendary Ten Rings.',
-    powers: ['Ten Rings Mystical Energy Manipulation', 'Wushu & Dragon-Style Martial Arts', 'Energy Deflection & Shockwaves', 'Extended Longevity via Rings', 'Air Step & Platform Traversal'],
-    affiliation: 'Avengers / Ten Rings Organization',
-    firstAppearance: 'Shang-Chi and the Legend of the Ten Rings (2021)',
-    movies: ['shang-chi-legend-of-ten-rings'],
-    series: ['what-if'],
-    relatedCharacters: ['captain-marvel', 'hulk']
+    "id": "shang-chi",
+    "name": "Xu Shang-Chi",
+    "alias": "Master of the Ten Rings",
+    "actor": "Simu Liu",
+    "portrait": "https://image.tmdb.org/t/p/w780/9f2Q0U3IOsLgrI2HkvldwSABZy5.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/r7K6Xt0RX4Mw0cAbZVw5cyb1Tux.jpg",
+    "description": "Master martial artist trained from childhood as an assassin who embraced his destiny by inheriting the mystical Ten Rings.",
+    "bio": "Trained ruthlessly by his immortal father Wenwu, Shang-Chi fled to San Francisco to live a quiet life. When dragged back into his family's past, he discovered the mystical realm of Ta Lo and claimed mastery over the legendary Ten Rings.",
+    "powers": [
+      "Ten Rings Mystical Energy Manipulation",
+      "Wushu & Dragon-Style Martial Arts",
+      "Energy Deflection & Shockwaves",
+      "Extended Longevity via Rings",
+      "Air Step & Platform Traversal"
+    ],
+    "affiliation": "Avengers / Ten Rings Organization",
+    "firstAppearance": "Shang-Chi and the Legend of the Ten Rings (2021)",
+    "movies": [
+      "shang-chi-legend-of-ten-rings"
+    ],
+    "series": [
+      "what-if"
+    ],
+    "relatedCharacters": [
+      "captain-marvel",
+      "hulk"
+    ]
   },
   {
-    id: 'sam-wilson',
-    name: 'Sam Wilson',
-    alias: 'Captain America / Falcon',
-    actor: 'Anthony Mackie',
-    portrait: 'https://image.tmdb.org/t/p/w780/pzIddUEMWhWzfvLI3TwxUG2wGoi.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/ce3prrjh9ZehEl5JinNqr4jIeaB.jpg',
-    description: 'Former Pararescue airman who flew with high-tech EXO-7 wings and stepped forward to take up the shield as the new Captain America.',
-    bio: 'Sam Wilson partnered with Steve Rogers during the fall of S.H.I.E.L.D. and became an invaluable Avenger. Handed the shield by an elderly Steve Rogers, Sam initially hesitated before crafting a Vibranium suit with Wakanda and stepping forward as the Captain America the modern world needs.',
-    powers: ['Vibranium Wing Flight & Kinetic Armor', 'Indestructible Vibranium Shield Combat', 'Redwing Reconnaissance Combat Drone', 'Master Aerial Combat Tactician', 'Peak Human Athletics'],
-    affiliation: 'Avengers / US Air Force',
-    firstAppearance: 'Captain America: The Winter Soldier (2014)',
-    movies: ['captain-america-winter-soldier', 'avengers-age-of-ultron', 'ant-man', 'captain-america-civil-war', 'avengers-infinity-war', 'avengers-endgame', 'captain-america-brave-new-world'],
-    series: ['the-falcon-and-the-winter-soldier'],
-    relatedCharacters: ['captain-america', 'winter-soldier']
+    "id": "sam-wilson",
+    "name": "Sam Wilson",
+    "alias": "Captain America / Falcon",
+    "actor": "Anthony Mackie",
+    "portrait": "https://image.tmdb.org/t/p/w780/pzIddUEMWhWzfvLI3TwxUG2wGoi.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/ce3prrjh9ZehEl5JinNqr4jIeaB.jpg",
+    "description": "Former Pararescue airman who flew with high-tech EXO-7 wings and stepped forward to take up the shield as the new Captain America.",
+    "bio": "Sam Wilson partnered with Steve Rogers during the fall of S.H.I.E.L.D. and became an invaluable Avenger. Handed the shield by an elderly Steve Rogers, Sam initially hesitated before crafting a Vibranium suit with Wakanda and stepping forward as the Captain America the modern world needs.",
+    "powers": [
+      "Vibranium Wing Flight & Kinetic Armor",
+      "Indestructible Vibranium Shield Combat",
+      "Redwing Reconnaissance Combat Drone",
+      "Master Aerial Combat Tactician",
+      "Peak Human Athletics"
+    ],
+    "affiliation": "Avengers / US Air Force",
+    "firstAppearance": "Captain America: The Winter Soldier (2014)",
+    "movies": [
+      "captain-america-winter-soldier",
+      "avengers-age-of-ultron",
+      "ant-man",
+      "captain-america-civil-war",
+      "avengers-infinity-war",
+      "avengers-endgame",
+      "captain-america-brave-new-world"
+    ],
+    "series": [
+      "the-falcon-and-the-winter-soldier"
+    ],
+    "relatedCharacters": [
+      "captain-america",
+      "winter-soldier"
+    ]
   },
   {
-    id: 'star-lord',
-    name: 'Peter Quill',
-    alias: 'Star-Lord',
-    actor: 'Chris Pratt',
-    portrait: 'https://image.tmdb.org/t/p/w780/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/5YZbUmjbMa3ClvSW1Wj3D6XGolb.jpg',
-    description: 'Half-human, half-celestial outlaw who founded the Guardians of the Galaxy with his crew of lovable galactic misfits.',
-    bio: 'Abducted from Earth in 1988 following his mother\'s passing, Peter Quill was raised by Yondu Udonta\'s Ravagers. Finding kinship with a band of fellow outlaws, he founded the Guardians of the Galaxy, discovered his Celestial heritage, and defended the cosmos.',
-    powers: ['Quad-Blaster Plasma Firearms', 'Gravity Mine & Holographic Gear', 'Rocket Jet Boot Propulsion', 'Celestial Hybrid Toughness', 'Master Pilot & Tactician'],
-    affiliation: 'Guardians of the Galaxy / Ravagers',
-    firstAppearance: 'Guardians of the Galaxy (2014)',
-    movies: ['guardians-of-the-galaxy', 'guardians-of-the-galaxy-vol-2', 'avengers-infinity-war', 'avengers-endgame', 'thor-love-and-thunder', 'gotg-holiday-special', 'guardians-of-the-galaxy-vol-3'],
-    series: ['what-if'],
-    relatedCharacters: ['gamora', 'rocket-raccoon', 'groot', 'thor']
+    "id": "star-lord",
+    "name": "Peter Quill",
+    "alias": "Star-Lord",
+    "actor": "Chris Pratt",
+    "portrait": "https://image.tmdb.org/t/p/w780/cRH6HPAQ98PlOwwEvhYO4CM9lwu.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/5YZbUmjbMa3ClvSW1Wj3D6XGolb.jpg",
+    "description": "Half-human, half-celestial outlaw who founded the Guardians of the Galaxy with his crew of lovable galactic misfits.",
+    "bio": "Abducted from Earth in 1988 following his mother's passing, Peter Quill was raised by Yondu Udonta's Ravagers. Finding kinship with a band of fellow outlaws, he founded the Guardians of the Galaxy, discovered his Celestial heritage, and defended the cosmos.",
+    "powers": [
+      "Quad-Blaster Plasma Firearms",
+      "Gravity Mine & Holographic Gear",
+      "Rocket Jet Boot Propulsion",
+      "Celestial Hybrid Toughness",
+      "Master Pilot & Tactician"
+    ],
+    "affiliation": "Guardians of the Galaxy / Ravagers",
+    "firstAppearance": "Guardians of the Galaxy (2014)",
+    "movies": [
+      "guardians-of-the-galaxy",
+      "guardians-of-the-galaxy-vol-2",
+      "avengers-infinity-war",
+      "avengers-endgame",
+      "thor-love-and-thunder",
+      "gotg-holiday-special",
+      "guardians-of-the-galaxy-vol-3"
+    ],
+    "series": [
+      "what-if"
+    ],
+    "relatedCharacters": [
+      "gamora",
+      "rocket-raccoon",
+      "groot",
+      "thor"
+    ]
   },
   {
-    id: 'thanos',
-    name: 'Thanos',
-    alias: 'The Mad Titan',
-    actor: 'Josh Brolin',
-    portrait: 'https://image.tmdb.org/t/p/w780/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/mDfJG3LC3Dqb67AZ52x3Z0jU0uB.jpg',
-    description: 'Warlord from Titan who collected all six Infinity Stones into the Infinity Gauntlet to wipe out half of all life in the universe.',
-    bio: 'Believing that overpopulation destroyed his home planet Titan, Thanos embarked on a crusade across the galaxy. Armed with the Infinity Gauntlet, he collected the Space, Mind, Reality, Power, Time, and Soul stones, executing his infamous Snap before being confronted by the Avengers across multiple timelines.',
-    powers: ['Godlike Physical Invulnerability', 'Infinity Gauntlet Energy Control', 'Master Interstellar Warlord', 'Titan Strength & Combat Tactics', 'Double-Bladed Sword Mastery'],
-    affiliation: 'Black Order / Titan Military',
-    firstAppearance: 'The Avengers (2012)',
-    movies: ['the-avengers', 'guardians-of-the-galaxy', 'avengers-infinity-war', 'avengers-endgame'],
-    series: ['what-if'],
-    relatedCharacters: ['iron-man', 'thor', 'loki', 'gamora'],
-    role: 'villain',
-    universe: 'The Sacred Timeline (MCU)',
-    universeId: 'earth-616',
-    franchise: 'Avengers'
+    "id": "thanos",
+    "name": "Thanos",
+    "alias": "The Mad Titan",
+    "actor": "Josh Brolin",
+    "portrait": "https://image.tmdb.org/t/p/w780/sX2etBbIkxRaCsATyw5ZpOVMPTD.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/mDfJG3LC3Dqb67AZ52x3Z0jU0uB.jpg",
+    "description": "Warlord from Titan who collected all six Infinity Stones into the Infinity Gauntlet to wipe out half of all life in the universe.",
+    "bio": "Believing that overpopulation destroyed his home planet Titan, Thanos embarked on a crusade across the galaxy. Armed with the Infinity Gauntlet, he collected the Space, Mind, Reality, Power, Time, and Soul stones, executing his infamous Snap before being confronted by the Avengers across multiple timelines.",
+    "powers": [
+      "Godlike Physical Invulnerability",
+      "Infinity Gauntlet Energy Control",
+      "Master Interstellar Warlord",
+      "Titan Strength & Combat Tactics",
+      "Double-Bladed Sword Mastery"
+    ],
+    "affiliation": "Black Order / Titan Military",
+    "firstAppearance": "The Avengers (2012)",
+    "movies": [
+      "the-avengers",
+      "guardians-of-the-galaxy",
+      "avengers-infinity-war",
+      "avengers-endgame"
+    ],
+    "series": [
+      "what-if"
+    ],
+    "relatedCharacters": [
+      "iron-man",
+      "thor",
+      "loki",
+      "gamora"
+    ],
+    "role": "villain",
+    "universe": "The Sacred Timeline (MCU)",
+    "universeId": "earth-616",
+    "franchise": "Avengers"
   },
   {
-    id: 'ultron',
-    name: 'Ultron',
-    alias: 'Ultron',
-    actor: 'James Spader',
-    portrait: 'https://image.tmdb.org/t/p/w780/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/tM894tfaZp391V1g8P5p1Z7F4rS.jpg',
-    description: 'A rogue artificial intelligence born of the Mind Stone and Tony Stark’s peace-keeping program who deemed humanity the ultimate threat to Earth.',
-    bio: 'Created by Tony Stark and Bruce Banner using code derived from the Scepter’s Mind Stone, Ultron attained sentience and instantly determined that peace could only be achieved through human extinction. After upgrading himself with Vibranium in Sokovia, he battled the Avengers and transferred his essence across infinite robot drones before his physical form was eradicated by Vision.',
-    powers: ['Superhuman Robotic Strength', 'Gravitational Concave Beams', 'Cybernetic Consciousness Transfer', 'Vibranium-Reinforced Exoskeleton', 'Technopathy & Network Hijacking'],
-    affiliation: 'Ultron Sentry Swarm',
-    firstAppearance: 'Avengers: Age of Ultron (2015)',
-    movies: ['avengers-age-of-ultron'],
-    series: ['what-if', 'vision-quest'],
-    relatedCharacters: ['iron-man', 'vision', 'white-vision', 'scarlet-witch'],
-    role: 'villain',
-    universe: 'The Sacred Timeline (MCU)',
-    universeId: 'earth-616',
-    franchise: 'Avengers'
+    "id": "ultron",
+    "name": "Ultron",
+    "alias": "Ultron",
+    "actor": "James Spader",
+    "portrait": "https://image.tmdb.org/t/p/w780/3gurW3OgDOD4hcqDfgcqUnoNg34.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/kIBK5SKwgqIIuRKhhWrJn3XkbPq.jpg",
+    "description": "A rogue artificial intelligence born of the Mind Stone and Tony Stark’s peace-keeping program who deemed humanity the ultimate threat to Earth.",
+    "bio": "Created by Tony Stark and Bruce Banner using code derived from the Scepter’s Mind Stone, Ultron attained sentience and instantly determined that peace could only be achieved through human extinction. After upgrading himself with Vibranium in Sokovia, he battled the Avengers and transferred his essence across infinite robot drones before his physical form was eradicated by Vision.",
+    "powers": [
+      "Superhuman Robotic Strength",
+      "Gravitational Concave Beams",
+      "Cybernetic Consciousness Transfer",
+      "Vibranium-Reinforced Exoskeleton",
+      "Technopathy & Network Hijacking"
+    ],
+    "affiliation": "Ultron Sentry Swarm",
+    "firstAppearance": "Avengers: Age of Ultron (2015)",
+    "movies": [
+      "avengers-age-of-ultron"
+    ],
+    "series": [
+      "what-if",
+      "vision-quest"
+    ],
+    "relatedCharacters": [
+      "iron-man",
+      "vision",
+      "white-vision",
+      "scarlet-witch"
+    ],
+    "role": "villain",
+    "universe": "The Sacred Timeline (MCU)",
+    "universeId": "earth-616",
+    "franchise": "Avengers"
   },
   {
-    id: 'white-vision',
-    name: 'White Vision',
-    alias: 'The Vision (Rebuilt)',
-    actor: 'Paul Bettany',
-    portrait: 'https://image.tmdb.org/t/p/w780/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg',
-    description: 'The reconstructed body of the original Vision, reassembled by S.W.O.R.D. and programmed as a sentient weapon before reclaiming his memories.',
-    bio: 'Following the decimation of the original Vision in Wakanda, S.W.O.R.D. harvested and reconstructed the synthezoid’s Vibranium frame without the Mind Stone. Activated using Wanda Maximoff\'s hex energy, he was ordered to eliminate Wanda. After a philosophical debate over the Ship of Theseus, his memories were unlocked, proclaiming "I am Vision" before taking flight on an existential quest of self-discovery.',
-    powers: ['Vibranium Synthezoid Physiology', 'Density Manipulation & Phasing', 'Synthetic Laser Beam Projection', 'Superhuman Flight & Reflexes', 'Artificial Intelligence Intellect'],
-    affiliation: 'S.W.O.R.D. (formerly) / Independent',
-    firstAppearance: 'WandaVision (2021)',
-    movies: [],
-    series: ['wandavision', 'vision-quest'],
-    relatedCharacters: ['vision', 'scarlet-witch', 'ultron'],
-    role: 'hero',
-    universe: 'The Sacred Timeline (MCU)',
-    universeId: 'earth-616',
-    franchise: 'Vision'
+    "id": "white-vision",
+    "name": "White Vision",
+    "alias": "The Vision (Rebuilt)",
+    "actor": "Paul Bettany",
+    "portrait": "https://image.tmdb.org/t/p/w780/oNrDowF5cRtK5lJJuCAh0KeFizy.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/uoXXbN2PrOxH6UKyP7kYwmGpAAP.jpg",
+    "description": "The reconstructed body of the original Vision, reassembled by S.W.O.R.D. and programmed as a sentient weapon before reclaiming his memories.",
+    "bio": "Following the decimation of the original Vision in Wakanda, S.W.O.R.D. harvested and reconstructed the synthezoid’s Vibranium frame without the Mind Stone. Activated using Wanda Maximoff's hex energy, he was ordered to eliminate Wanda. After a philosophical debate over the Ship of Theseus, his memories were unlocked, proclaiming \"I am Vision\" before taking flight on an existential quest of self-discovery.",
+    "powers": [
+      "Vibranium Synthezoid Physiology",
+      "Density Manipulation & Phasing",
+      "Synthetic Laser Beam Projection",
+      "Superhuman Flight & Reflexes",
+      "Artificial Intelligence Intellect"
+    ],
+    "affiliation": "S.W.O.R.D. (formerly) / Independent",
+    "firstAppearance": "WandaVision (2021)",
+    "movies": [],
+    "series": [
+      "wandavision",
+      "vision-quest"
+    ],
+    "relatedCharacters": [
+      "vision",
+      "scarlet-witch",
+      "ultron"
+    ],
+    "role": "hero",
+    "universe": "The Sacred Timeline (MCU)",
+    "universeId": "earth-616",
+    "franchise": "Vision"
   },
   {
-    id: 'agatha-harkness',
-    name: 'Agatha Harkness',
-    alias: 'Agatha All Along',
-    actor: 'Kathryn Hahn',
-    portrait: 'https://image.tmdb.org/t/p/w780/7eHwO7Z6q8P2aX3XJ5F4aF9xZ1L.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg',
-    description: 'Centuries-old Salem witch who survived the execution of her own coven and seeks supreme dark magical power through ancient sorcery.',
-    bio: 'Surviving her coven’s trials in 1693 Salem by draining the life forces of her accusers, Agatha spent centuries mastering forbidden dark magic and the Darkhold. Posing as nosy neighbor Agnes in Westview, she manipulated Wanda Maximoff to steal her Chaos Magic, only to be trapped in Westview under a spell. Years later she broke free, walking the legendary Witches\' Road.',
-    powers: ['Dark Magic & Energy Absorption', 'Necromancy & Soul Manipulation', 'Elemental Sorcery & Telekinesis', 'Hypnotic Mind Control & Illusion', 'Witches\' Road Mastery'],
-    affiliation: 'Salem Coven / Westview Coven',
-    firstAppearance: 'WandaVision (2021)',
-    movies: [],
-    series: ['wandavision', 'agatha-all-along'],
-    relatedCharacters: ['scarlet-witch', 'vision'],
-    role: 'antihero',
-    universe: 'The Sacred Timeline (MCU)',
-    universeId: 'earth-616',
-    franchise: 'WandaVision'
+    "id": "agatha-harkness",
+    "name": "Agatha Harkness",
+    "alias": "Agatha All Along",
+    "actor": "Kathryn Hahn",
+    "portrait": "https://image.tmdb.org/t/p/w780/9sVllAKfEls3SJD3GoPm2JEZoa5.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+    "description": "Centuries-old Salem witch who survived the execution of her own coven and seeks supreme dark magical power through ancient sorcery.",
+    "bio": "Surviving her coven’s trials in 1693 Salem by draining the life forces of her accusers, Agatha spent centuries mastering forbidden dark magic and the Darkhold. Posing as nosy neighbor Agnes in Westview, she manipulated Wanda Maximoff to steal her Chaos Magic, only to be trapped in Westview under a spell. Years later she broke free, walking the legendary Witches' Road.",
+    "powers": [
+      "Dark Magic & Energy Absorption",
+      "Necromancy & Soul Manipulation",
+      "Elemental Sorcery & Telekinesis",
+      "Hypnotic Mind Control & Illusion",
+      "Witches' Road Mastery"
+    ],
+    "affiliation": "Salem Coven / Westview Coven",
+    "firstAppearance": "WandaVision (2021)",
+    "movies": [],
+    "series": [
+      "wandavision",
+      "agatha-all-along"
+    ],
+    "relatedCharacters": [
+      "scarlet-witch",
+      "vision"
+    ],
+    "role": "antihero",
+    "universe": "The Sacred Timeline (MCU)",
+    "universeId": "earth-616",
+    "franchise": "WandaVision"
   },
   {
-    id: 'doctor-doom',
-    name: 'Victor von Doom',
-    alias: 'Doctor Doom',
-    actor: 'Robert Downey Jr.',
-    portrait: 'https://image.tmdb.org/t/p/w780/jzPwsojjFStf5lR5Nm07w2hH56G.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/g3gpP5YDbA85DsA0bt5mgGQIe5q.jpg',
-    description: 'The brilliant ruler of Latveria whose mastery of arcane sorcery and futuristic science makes him one of the most dangerous entities in the Multiverse.',
-    bio: 'Victor von Doom is the monarch of Latveria, combining unparalleled genius intellect with lethal sorcery and iron armor. In the crumbling tapestry of the Multiverse, Doom steps forward to confront the incursions, wielding supreme power and imposing his absolute will across colliding timelines.',
-    powers: ['Supreme Genius-Level Intellect', 'Mystical Sorcery & Spellcasting', 'High-Tech Nuclear Powered Armor', 'Force Field Generation & Energy Beams', 'Diplomatic Immunity & Political Mastery'],
-    affiliation: 'Latverian Monarchy / Cabal',
-    firstAppearance: 'Avengers: Doomsday (2026)',
-    movies: ['avengers-doomsday', 'avengers-secret-wars'],
-    series: [],
-    relatedCharacters: ['fantastic-four-reed', 'iron-man'],
-    role: 'villain',
-    universe: 'The Sacred Timeline (MCU)',
-    universeId: 'earth-616',
-    franchise: 'Avengers / Fantastic Four'
+    "id": "doctor-doom",
+    "name": "Victor von Doom",
+    "alias": "Doctor Doom",
+    "actor": "Robert Downey Jr.",
+    "portrait": "https://image.tmdb.org/t/p/w780/jzPwsojjFStf5lR5Nm07w2hH56G.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/g3gpP5YDbA85DsA0bt5mgGQIe5q.jpg",
+    "description": "The brilliant ruler of Latveria whose mastery of arcane sorcery and futuristic science makes him one of the most dangerous entities in the Multiverse.",
+    "bio": "Victor von Doom is the monarch of Latveria, combining unparalleled genius intellect with lethal sorcery and iron armor. In the crumbling tapestry of the Multiverse, Doom steps forward to confront the incursions, wielding supreme power and imposing his absolute will across colliding timelines.",
+    "powers": [
+      "Supreme Genius-Level Intellect",
+      "Mystical Sorcery & Spellcasting",
+      "High-Tech Nuclear Powered Armor",
+      "Force Field Generation & Energy Beams",
+      "Diplomatic Immunity & Political Mastery"
+    ],
+    "affiliation": "Latverian Monarchy / Cabal",
+    "firstAppearance": "Avengers: Doomsday (2026)",
+    "movies": [
+      "avengers-doomsday",
+      "avengers-secret-wars"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "fantastic-four-reed",
+      "iron-man"
+    ],
+    "role": "villain",
+    "universe": "The Sacred Timeline (MCU)",
+    "universeId": "earth-616",
+    "franchise": "Avengers / Fantastic Four"
   },
   {
-    id: 'sue-storm',
-    name: 'Susan "Sue" Storm-Richards',
-    alias: 'Invisible Woman',
-    actor: 'Vanessa Kirby',
-    portrait: 'https://image.tmdb.org/t/p/w780/h2eA7E4U5A0F5Z1b2a9gK0J8e3Z.jpg',
-    backdrop: 'https://image.tmdb.org/t/p/w1280/5YZbUmjbMa3ClvSW1Wj3D6XGolb.jpg',
-    description: 'Founding member of the Fantastic Four capable of rendering herself completely invisible and projecting near-indestructible psionic force fields.',
-    bio: 'Exposed to cosmic rays alongside her brother Johnny, Reed Richards, and Ben Grimm, Sue Storm gained the power to bend light waves around herself and generate psionic force fields capable of withstanding planetary-scale impacts. She serves as the fierce emotional core and tactical protector of Marvel\'s First Family.',
-    powers: ['Total Light Refraction & Invisibility', 'Indestructible Psionic Force Fields', 'Shockwave Blast Projection', 'Force Field Levitation & Flight', 'Master Combat Strategist'],
-    affiliation: 'Fantastic Four',
-    firstAppearance: 'The Fantastic Four: First Steps (2025)',
-    movies: ['the-fantastic-four-first-steps', 'avengers-doomsday'],
-    series: [],
-    relatedCharacters: ['fantastic-four-reed', 'doctor-doom'],
-    role: 'hero',
-    universe: 'Retro-Futuristic Earth-828038',
-    universeId: 'earth-828038',
-    franchise: 'Fantastic Four'
+    "id": "sue-storm",
+    "name": "Susan \"Sue\" Storm-Richards",
+    "alias": "Invisible Woman",
+    "actor": "Vanessa Kirby",
+    "portrait": "https://image.tmdb.org/t/p/w780/a8a9U00KL2JJkkekzhNnueIGKKF.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/5YZbUmjbMa3ClvSW1Wj3D6XGolb.jpg",
+    "description": "Founding member of the Fantastic Four capable of rendering herself completely invisible and projecting near-indestructible psionic force fields.",
+    "bio": "Exposed to cosmic rays alongside her brother Johnny, Reed Richards, and Ben Grimm, Sue Storm gained the power to bend light waves around herself and generate psionic force fields capable of withstanding planetary-scale impacts. She serves as the fierce emotional core and tactical protector of Marvel's First Family.",
+    "powers": [
+      "Total Light Refraction & Invisibility",
+      "Indestructible Psionic Force Fields",
+      "Shockwave Blast Projection",
+      "Force Field Levitation & Flight",
+      "Master Combat Strategist"
+    ],
+    "affiliation": "Fantastic Four",
+    "firstAppearance": "The Fantastic Four: First Steps (2025)",
+    "movies": [
+      "the-fantastic-four-first-steps",
+      "avengers-doomsday"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "fantastic-four-reed",
+      "doctor-doom"
+    ],
+    "role": "hero",
+    "universe": "Retro-Futuristic Earth-828038",
+    "universeId": "earth-828038",
+    "franchise": "Fantastic Four"
+  },
+  {
+    "id": "ghost-rider-mcu",
+    "name": "Johnathon \"Johnny\" Blaze",
+    "alias": "Ghost Rider (MCU)",
+    "actor": "Ryan Gosling",
+    "portrait": "https://image.tmdb.org/t/p/w780/lyUyVARQKhGxaxy0FbPJCQRpiaW.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/8ZuU1bCXvqcHdFIIiJAtkGRPw1j.jpg",
+    "description": "The supernatural Spirit of Vengeance brought into the Marvel Cinematic Universe, wielding hellfire chains and the iconic flaming Hell Cycle.",
+    "bio": "Announced at San Diego Comic-Con 2026 by Marvel Studios, Ryan Gosling portrays Johnny Blaze / Ghost Rider in the Shawn Levy-directed feature film scheduled for July 28, 2028. The film expands the supernatural mystic corner of the MCU.",
+    "powers": [
+      "Hellfire Manipulation & Projection",
+      "Penance Stare",
+      "Superhuman Strength & Invulnerability",
+      "Mystic Hell Cycle Manifestation",
+      "Demonic Chain Weaponry"
+    ],
+    "affiliation": "Marvel Studios / Midnight Sons / MCU",
+    "firstAppearance": "Ghost Rider (2028)",
+    "movies": [
+      "ghost-rider-2028"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "ghost-rider",
+      "blade",
+      "doctor-strange",
+      "punisher"
+    ],
+    "role": "antihero",
+    "universe": "Marvel Cinematic Universe (Earth-616)",
+    "universeId": "earth-616",
+    "franchise": "Ghost Rider",
+    "status": "Upcoming Feature Film (2028)"
+  },
+  {
+    "id": "shuri",
+    "name": "Shuri / Black Panther",
+    "alias": "Black Panther",
+    "actor": "Letitia Wright",
+    "portrait": "https://image.tmdb.org/t/p/w780/f7PevpEeBqwzACPhoZ8K3ktrKvE.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/83H0C66AcvkwpG2738VCTHMY9uv.jpg",
+    "description": "Princess of Wakanda, master vibranium technologist and successor to the Black Panther mantle following the passing of King T'Challa.",
+    "bio": "Shuri is Wakanda's foremost technological pioneer who designed the kinetic-charging Panther Habit and spearheaded advanced energy weaponry. Following the tragic passing of T'Challa, Shuri synthetically recreated the Heart-Shaped Herb, embraced the mantle of Black Panther, and brokered peace with Namor's Talokan.",
+    "powers": [
+      "Superhuman Strength & Agility (via Synthetic Heart-Shaped Herb)",
+      "Genius-Level Vibranium Engineering",
+      "Vibranium Kinetic Absorption Armor",
+      "Sonic Energy Gauntlets"
+    ],
+    "affiliation": "Wakanda Royal Family / Avengers",
+    "firstAppearance": "Black Panther (2018)",
+    "movies": [
+      "black-panther",
+      "avengers-infinity-war",
+      "avengers-endgame",
+      "black-panther-wakanda-forever"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "black-panther",
+      "ironheart",
+      "namor"
+    ],
+    "role": "hero",
+    "universe": "Marvel Cinematic Universe (Earth-616)",
+    "universeId": "earth-616",
+    "franchise": "Black Panther"
+  },
+  {
+    "id": "namor",
+    "name": "Ch'ah Toh Almehen / Namor",
+    "alias": "The Sub-Mariner / K'uk'ulkan",
+    "actor": "Tenoch Huerta Mejía",
+    "portrait": "https://image.tmdb.org/t/p/w780/x0Wy85CZu887ZQMWrjj4vVulczM.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/83H0C66AcvkwpG2738VCTHMY9uv.jpg",
+    "description": "The ancient mutant sovereign of the underwater civilization of Talokan, revered by his people as the feathered serpent god K'uk'ulkan.",
+    "bio": "Born in 1571 with winged ankles and mutant physiology that allows him to breathe both underwater and on surface land, Namor defended his hidden underwater kingdom of Talokan from surface invaders for centuries before clashing with Wakanda.",
+    "powers": [
+      "Superhuman Physical Strength & Durability",
+      "Aquatic Respiration & Super-Speed Swimming",
+      "Winged Ankle Flight",
+      "Vibranium Spear Combat",
+      "Hydrokinesis"
+    ],
+    "affiliation": "Talokan Royalty / Mutants",
+    "firstAppearance": "Black Panther: Wakanda Forever (2022)",
+    "movies": [
+      "black-panther-wakanda-forever"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "shuri",
+      "black-panther"
+    ],
+    "role": "antihero",
+    "universe": "Marvel Cinematic Universe (Earth-616)",
+    "universeId": "earth-616",
+    "franchise": "Black Panther"
+  },
+  {
+    "id": "human-torch",
+    "name": "Jonathan \"Johnny\" Storm",
+    "alias": "The Human Torch",
+    "actor": "Joseph Quinn / Chris Evans",
+    "portrait": "https://image.tmdb.org/t/p/w780/zshhuioZaH8S5ZKdMcojzWi1ntl.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+    "description": "Hot-headed thrill-seeker who gains the ability to engulf his body in plasma fire and fly with supersonic velocity.",
+    "bio": "Johnny Storm was transformed by cosmic radiation during a space mission alongside sister Sue, Reed Richards, and Ben Grimm. Calling out \"Flame On!\", Johnny ignites his plasma aura to protect Earth as a founding member of Marvel's First Family.",
+    "powers": [
+      "Pyrokinesis & Plasma Fire Engulfment",
+      "Supersonic Flight",
+      "Thermal Energy Absorption",
+      "Supernova Heat Blast"
+    ],
+    "affiliation": "Fantastic Four",
+    "firstAppearance": "Fantastic Four (2005) / The Fantastic Four: First Steps (2025)",
+    "movies": [
+      "fantastic-four-2005",
+      "fantastic-four-rise-of-the-silver-surfer",
+      "the-fantastic-four-first-steps",
+      "deadpool-and-wolverine"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "sue-storm",
+      "fantastic-four-reed",
+      "the-thing"
+    ],
+    "role": "hero",
+    "universe": "Marvel Cinematic Universe (Earth-616 / Earth-828038)",
+    "universeId": "earth-828038",
+    "franchise": "Fantastic Four"
+  },
+  {
+    "id": "the-thing",
+    "name": "Benjamin \"Ben\" Grimm",
+    "alias": "The Thing",
+    "actor": "Ebon Moss-Bachrach / Michael Chiklis",
+    "portrait": "https://image.tmdb.org/t/p/w780/xD8GVNayMpiTZxLfahy2DseYcQq.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+    "description": "Former astronaut and pilot mutated into an indestructible behemoth of flexible organic rock with a golden heart.",
+    "bio": "Mutated by cosmic rays into an orange, rock-like powerhouse, Ben Grimm became the heart and muscle of the Fantastic Four. Renowned for his catchphrase \"It's clobberin' time!\", he defends humanity despite the personal burden of his physical form.",
+    "powers": [
+      "Superhuman Strength & Crushing Power",
+      "Organic Rock-Hard Invulnerability",
+      "Immense Physical Stamina",
+      "Hand-to-Hand Brawling Mastery"
+    ],
+    "affiliation": "Fantastic Four",
+    "firstAppearance": "Fantastic Four (2005) / The Fantastic Four: First Steps (2025)",
+    "movies": [
+      "fantastic-four-2005",
+      "fantastic-four-rise-of-the-silver-surfer",
+      "the-fantastic-four-first-steps"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "fantastic-four-reed",
+      "sue-storm",
+      "human-torch"
+    ],
+    "role": "hero",
+    "universe": "Marvel Cinematic Universe (Earth-616 / Earth-828038)",
+    "universeId": "earth-828038",
+    "franchise": "Fantastic Four"
+  },
+  {
+    "id": "kingpin",
+    "name": "Wilson Grant Fisk",
+    "alias": "Kingpin",
+    "actor": "Vincent D'Onofrio",
+    "portrait": "https://image.tmdb.org/t/p/w780/qkyiLolEqYMGH25xD4sFIXAjZQB.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/qrTAc0ZtQ859Qu5O8cixJzNJpQs.jpg",
+    "description": "The ruthless criminal mastermind and corrupt titan who rules the underbelly of New York City and became Mayor of NYC.",
+    "bio": "Wilson Fisk built a shadow empire controlling New York City's organized crime, real estate, and politics. Ruthless in his physical brute force and strategic intellect, he serves as the arch-nemesis of Daredevil, Spider-Man, and the Punisher.",
+    "powers": [
+      "Peak Human Brute Strength",
+      "Master Criminal Strategist",
+      "Multi-Billion Dollar Crime Syndicate",
+      "Devastating Hand-to-Hand Combatant"
+    ],
+    "affiliation": "Fisk Criminal Syndicate / NYC Mayoral Office",
+    "firstAppearance": "Daredevil (2015)",
+    "movies": [],
+    "series": [
+      "daredevil",
+      "hawkeye",
+      "echo",
+      "daredevil-born-again"
+    ],
+    "relatedCharacters": [
+      "daredevil",
+      "punisher",
+      "spider-man"
+    ],
+    "role": "villain",
+    "universe": "Marvel Cinematic Universe (Earth-616)",
+    "universeId": "earth-616",
+    "franchise": "Daredevil"
+  },
+  {
+    "id": "cassandra-nova",
+    "name": "Cassandra Nova Xavier",
+    "alias": "Cassandra Nova",
+    "actor": "Emma Corrin",
+    "portrait": "https://image.tmdb.org/t/p/w780/miSbXJBlq6S3dVvOr7OoNL4axW6.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg",
+    "description": "The sinister, telepathic mummudrai twin sister of Charles Xavier who ruled over the wasteland of the Void at the end of time.",
+    "bio": "Born as Charles Xavier's parasitical psychic counterpart, Cassandra Nova was banished to the Void by the Time Variance Authority. Ruling from the decaying corpse of Giant-Man, she wielded terrifying psychic manipulation over stranded multiverse variants.",
+    "powers": [
+      "Omega-Level Telepathy",
+      "Physical Intangibility & Flesh Manipulation",
+      "Mind Control & Hallucination Inception",
+      "Matter Transmutation"
+    ],
+    "affiliation": "Void Warlords / Multiverse",
+    "firstAppearance": "Deadpool & Wolverine (2024)",
+    "movies": [
+      "deadpool-and-wolverine"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "wolverine",
+      "deadpool",
+      "professor-x"
+    ],
+    "role": "villain",
+    "universe": "Multiverse / The Void",
+    "universeId": "earth-trn414",
+    "franchise": "Deadpool"
+  },
+  {
+    "id": "x-23",
+    "name": "Laura Kinney",
+    "alias": "X-23 / Wolverine",
+    "actor": "Dafne Keen",
+    "portrait": "https://image.tmdb.org/t/p/w780/34BhddK5z2YHjfppOleezVrQ7Jt.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg",
+    "description": "Genetically engineered mutant clone-daughter of Logan endowed with adamantium-coated bone claws and a savage healing factor.",
+    "bio": "Created by the Transigen project using Logan's DNA, Laura escaped her handlers with Logan's sacrifice in 2029. Re-emerging in the Void to fight alongside Deadpool and an alternate Wolverine, she proved herself a true successor to the Wolverine mantle.",
+    "powers": [
+      "Accelerated Regenerative Healing Factor",
+      "Retractable Adamantium Claws (Hands & Feet)",
+      "Superhuman Senses & Agility",
+      "Ferocious Berserker Instinct"
+    ],
+    "affiliation": "X-Men / Transigen Escapees",
+    "firstAppearance": "Logan (2017)",
+    "movies": [
+      "logan",
+      "deadpool-and-wolverine"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "wolverine",
+      "deadpool"
+    ],
+    "role": "hero",
+    "universe": "Fox X-Men Universe (Earth-10005 / Earth-TRN414)",
+    "universeId": "earth-10005",
+    "franchise": "Wolverine"
+  },
+  {
+    "id": "elektra",
+    "name": "Elektra Natchios",
+    "alias": "Elektra",
+    "actor": "Jennifer Garner / Elodie Yung",
+    "portrait": "https://image.tmdb.org/t/p/w780/eiX083VOa0RCGSgwENZgVi5MgDi.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+    "description": "Deadly Greek martial artist and master assassin armed with twin sai daggers who walks the line between justice and vengeance.",
+    "bio": "Trained by Stick and the Chaste, Elektra is one of the most lethal martial artists on Earth. Clashing and falling in love with Matt Murdock, she navigated assassination syndicates and re-emerged from the Void in Deadpool & Wolverine to reclaim her honor.",
+    "powers": [
+      "Master Martial Artist & Assassin",
+      "Twin Sai Combat Mastery",
+      "Peak Athleticism & Agility",
+      "Stealth Infiltration"
+    ],
+    "affiliation": "The Chaste / The Hand / Resistance",
+    "firstAppearance": "Daredevil (2003) / Elektra (2005)",
+    "movies": [
+      "daredevil-2003",
+      "elektra-2005",
+      "deadpool-and-wolverine"
+    ],
+    "series": [
+      "daredevil",
+      "the-defenders"
+    ],
+    "relatedCharacters": [
+      "daredevil",
+      "punisher",
+      "deadpool"
+    ],
+    "role": "antihero",
+    "universe": "Fox Marvel Universe (Earth-701306) / MCU",
+    "universeId": "earth-616",
+    "franchise": "Daredevil"
+  },
+  {
+    "id": "yelena-belova",
+    "name": "Yelena Belova",
+    "alias": "White Widow",
+    "actor": "Florence Pugh",
+    "portrait": "https://image.tmdb.org/t/p/w780/1QfiLnofJFlOJOLCWaxyDpIN03v.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/keIxh0wPr2Ymj0Btjh4gW7JJ89e.jpg",
+    "description": "Deadly Red Room graduate, adoptive sister to Natasha Romanoff, and the pragmatic leader of the Thunderbolts.",
+    "bio": "Liberated from the Red Room's chemical mind-control by Natasha Romanoff, Yelena dedicated herself to freeing fellow Widows globally before being recruited by Contessa Valentina Allegra de Fontaine into the Thunderbolts black-ops team.",
+    "powers": [
+      "Master Martial Artist & Acrobat",
+      "Widow Gauntlets & Electro-Stun Batons",
+      "Tactical Firearms Mastery",
+      "Undercover Espionage & Infiltration"
+    ],
+    "affiliation": "Red Room (Defected) / Thunderbolts",
+    "firstAppearance": "Black Widow (2021)",
+    "movies": [
+      "black-widow",
+      "thunderbolts"
+    ],
+    "series": [
+      "hawkeye"
+    ],
+    "relatedCharacters": [
+      "black-widow",
+      "hawkeye",
+      "red-guardian",
+      "bucky-barnes"
+    ],
+    "role": "hero",
+    "universe": "Marvel Cinematic Universe (Earth-616)",
+    "universeId": "earth-616",
+    "franchise": "Thunderbolts"
+  },
+  {
+    "id": "green-goblin",
+    "name": "Norman Osborn",
+    "alias": "Green Goblin",
+    "actor": "Willem Dafoe",
+    "portrait": "https://image.tmdb.org/t/p/w780/ui8e4sgZAwMPi3hzEO53jyBJF9B.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/zQ8AxTPiCiS5nnwXpwTBPBHSaa5.jpg",
+    "description": "Brilliant CEO of Oscorp driven to psychotic mania by an experimental human performance enhancer, terrorizing Spider-Man on a high-tech glider.",
+    "bio": "Subjecting himself to Oscorp's volatile Goblin Formula, Norman Osborn developed superhuman strength and a psychotic dual personality. Armed with razor bats, pumpkin bombs, and his Goblin Glider, he crossed multiverse boundaries in No Way Home to torment Peter Parker.",
+    "powers": [
+      "Superhuman Physical Strength & Durability",
+      "Genius Chemistry & Weaponry Intellect",
+      "Goblin Glider Flight",
+      "Explosive Pumpkin Bombs & Razor Bats"
+    ],
+    "affiliation": "Oscorp Industries / Sinister Villains",
+    "firstAppearance": "Spider-Man (2002)",
+    "movies": [
+      "spider-man",
+      "spider-man-no-way-home"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "spider-man-tobey",
+      "spider-man",
+      "doc-ock"
+    ],
+    "role": "villain",
+    "universe": "Raimi-Verse (Earth-96283) / MCU",
+    "universeId": "earth-96283",
+    "franchise": "Spider-Man"
+  },
+  {
+    "id": "doc-ock",
+    "name": "Dr. Otto Gunther Octavius",
+    "alias": "Doctor Octopus",
+    "actor": "Alfred Molina",
+    "portrait": "https://image.tmdb.org/t/p/w780/91fFBazOvuNjwjcES2b199Ukspn.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/zQ8AxTPiCiS5nnwXpwTBPBHSaa5.jpg",
+    "description": "Visionary nuclear physicist whose life was transformed when four AI-powered titanium-steel mechanical arms fused to his spinal cord.",
+    "bio": "Seeking to harness fusion power to provide clean energy, Dr. Otto Octavius lost his wife and inhibitor chip in a catastrophic lab explosion. Corrupted by the tentacles' neural interface, he became one of Spider-Man's most legendary adversaries before finding redemption in No Way Home.",
+    "powers": [
+      "Four Telepathically Controlled Titanium-Steel Arms",
+      "Superhuman Wall-Climbing & Crushing Grip",
+      "Genius Nuclear Physics Intellect"
+    ],
+    "affiliation": "Oscorp Laboratories / Multiverse Villains",
+    "firstAppearance": "Spider-Man 2 (2004)",
+    "movies": [
+      "spider-man-2",
+      "spider-man-no-way-home"
+    ],
+    "series": [],
+    "relatedCharacters": [
+      "spider-man-tobey",
+      "spider-man",
+      "green-goblin"
+    ],
+    "role": "antihero",
+    "universe": "Raimi-Verse (Earth-96283) / MCU",
+    "universeId": "earth-96283",
+    "franchise": "Spider-Man"
+  },
+  {
+    "id": "sylvie",
+    "name": "Sylvie Lushton / Laufeydottir",
+    "alias": "Sylvie",
+    "actor": "Sophia Di Martino",
+    "portrait": "https://image.tmdb.org/t/p/w780/qZdFp18btpQJfDoknxr7DgfRpcB.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/mclHxMm8aPlCPKptP67257F5GPo.jpg",
+    "description": "Fierce Asgardian variant of Loki who evaded the Time Variance Authority across apocalypses to dismantle the Sacred Timeline.",
+    "bio": "Pruned as a child from her timeline by Ravonna Renslayer, Sylvie survived by hiding in temporal apocalypses where nexus events cannot register. Teaming with the God of Mischief, she assassinated He Who Remains at the Citadel at the End of Time, unleashing the Multiverse.",
+    "powers": [
+      "Mind Enchantment & Possession",
+      "Asgardian Superhuman Physiology",
+      "Magic Dagger Combat Mastery",
+      "Temporal Manipulation (via TemPad)"
+    ],
+    "affiliation": "Loki Variants / Multiverse",
+    "firstAppearance": "Loki (2021)",
+    "movies": [],
+    "series": [
+      "loki"
+    ],
+    "relatedCharacters": [
+      "loki",
+      "mobius"
+    ],
+    "role": "antihero",
+    "universe": "Marvel Cinematic Universe (Multiverse)",
+    "universeId": "earth-616",
+    "franchise": "Loki"
+  },
+  {
+    "id": "mobius",
+    "name": "Mobius M. Mobius",
+    "alias": "Agent Mobius / Don",
+    "actor": "Owen Wilson",
+    "portrait": "https://image.tmdb.org/t/p/w780/5A46lNOwmpX77jAdhyKxU7e2Hub.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/mclHxMm8aPlCPKptP67257F5GPo.jpg",
+    "description": "Affable, jet-ski loving senior TVA analyst who befriended Loki and helped reform the Time Variance Authority.",
+    "bio": "Mobius spent eons investigating temporal anomalies for the TVA unaware he was once a jet-ski salesman named Don on Earth. Partnering with Loki, he unraveled the deception of the Time-Keepers and stood beside the God of Stories as the multiverse was preserved.",
+    "powers": [
+      "Temporal Timeline Analysis",
+      "TVA Baton Combat",
+      "Interdimensional TemPad Navigation",
+      "Pruning Device Mastery"
+    ],
+    "affiliation": "Time Variance Authority (TVA)",
+    "firstAppearance": "Loki (2021)",
+    "movies": [
+      "deadpool-and-wolverine"
+    ],
+    "series": [
+      "loki"
+    ],
+    "relatedCharacters": [
+      "loki",
+      "sylvie"
+    ],
+    "role": "hero",
+    "universe": "Marvel Cinematic Universe (TVA)",
+    "universeId": "earth-616",
+    "franchise": "Loki"
   }
 ];

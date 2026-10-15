@@ -42,7 +42,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 10658,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -111,7 +111,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 8867,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -184,7 +184,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 13995,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -257,7 +257,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 22059,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -330,7 +330,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 26623,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -403,7 +403,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 27460,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -474,7 +474,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 36647,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -544,7 +544,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 36657,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -618,7 +618,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 36586,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "tagline": "Faster. Sharper. Deadlier."
@@ -688,7 +688,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 557,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -755,7 +755,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 9480,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -825,7 +825,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 36658,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -893,7 +893,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 1927,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -960,7 +960,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 7220,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -1028,7 +1028,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 558,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -1100,7 +1100,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 36648,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -1172,7 +1172,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 9947,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -1247,7 +1247,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 18882,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -1315,7 +1315,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 9738,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -1390,7 +1390,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 14609,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -1460,7 +1460,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 36668,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -1534,7 +1534,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 14611,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -1608,7 +1608,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 13647,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -1676,7 +1676,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 1250,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -1744,7 +1744,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 559,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -1814,7 +1814,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 1979,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -1888,7 +1888,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 14830,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -1964,7 +1964,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 1726,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -2039,7 +2039,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 1724,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -2113,7 +2113,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 14613,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "tagline": "The children of heroes past are our only hope for the future!"
@@ -2180,7 +2180,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 13056,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -2255,7 +2255,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 394355,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -2323,7 +2323,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 2080,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -2396,7 +2396,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 30675,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -2472,7 +2472,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 10138,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -2549,7 +2549,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 10195,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -2622,7 +2622,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 63686,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -2690,7 +2690,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 49538,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -2766,7 +2766,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 1771,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -2834,7 +2834,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 71676,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -2913,7 +2913,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 24428,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -2983,7 +2983,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 1930,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -3059,7 +3059,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 68721,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -3127,7 +3127,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 76170,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -3204,7 +3204,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 76338,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -3281,7 +3281,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 100402,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -3351,7 +3351,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 102382,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -3419,7 +3419,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 127585,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -3497,7 +3497,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 118340,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -3578,7 +3578,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 99861,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -3654,7 +3654,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 102899,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -3721,7 +3721,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 166424,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -3789,7 +3789,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 293660,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -3870,7 +3870,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 271110,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -3938,7 +3938,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 246655,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -4015,7 +4015,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 284052,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -4083,7 +4083,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 263115,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -4163,7 +4163,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 283995,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -4239,7 +4239,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 315635,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -4319,7 +4319,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 284053,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -4396,7 +4396,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 284054,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -4477,7 +4477,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 299536,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -4545,7 +4545,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 383498,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -4621,7 +4621,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 363088,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -4688,7 +4688,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 335983,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -4759,7 +4759,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 324857,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -4835,7 +4835,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 299537,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -4915,7 +4915,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 299534,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -4983,7 +4983,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 320288,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -5059,7 +5059,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 429617,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -5126,7 +5126,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 340102,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -5202,7 +5202,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 497698,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -5274,7 +5274,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 566525,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -5342,7 +5342,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 580489,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -5422,7 +5422,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 524434,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -5499,7 +5499,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 634649,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -5567,7 +5567,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 526896,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -5644,7 +5644,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 453395,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -5722,7 +5722,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 616037,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -5799,7 +5799,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 505642,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -5877,7 +5877,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 640146,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -5957,7 +5957,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 447365,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -6028,7 +6028,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 569094,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -6105,7 +6105,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 609681,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -6172,7 +6172,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 634492,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -6251,7 +6251,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 533535,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -6319,7 +6319,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 912649,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -6387,7 +6387,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 539972,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -6463,7 +6463,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 822119,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -6546,7 +6546,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 986056,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -6622,7 +6622,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 617126,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -6699,7 +6699,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 1003596,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -6777,7 +6777,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 969681,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -6854,7 +6854,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 1003598,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -6921,7 +6921,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 76122,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "releaseStatus": "released",
@@ -6986,7 +6986,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 76535,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "releaseStatus": "released",
@@ -7051,7 +7051,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 119569,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "releaseStatus": "released",
@@ -7124,7 +7124,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 211387,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "releaseStatus": "released",
@@ -7197,7 +7197,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 253980,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "releaseStatus": "released",
@@ -7271,7 +7271,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 894205,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "releaseStatus": "released",
@@ -7335,7 +7335,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 774752,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     },
     "releaseStatus": "released",
@@ -7404,7 +7404,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 26881,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -7472,7 +7472,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 26883,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -7538,7 +7538,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 19593,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -7598,7 +7598,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 169934,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -7658,7 +7658,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 230896,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -7719,7 +7719,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 257346,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -7778,7 +7778,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 284274,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -7848,7 +7848,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 372631,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -7906,7 +7906,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 422153,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -7968,7 +7968,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 491633,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -8026,7 +8026,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 576743,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -8084,7 +8084,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 583209,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -8138,7 +8138,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 592687,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -8196,7 +8196,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 592688,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -8253,7 +8253,7 @@ export const MOVIES_DATA: Movie[] = [
     "watchConfig": {
       "tmdbId": 592689,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -8264,10 +8264,14 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2016-08-28",
     "runtime": 4,
     "overview": "While the other Avengers are fighting in Captain America: Civil War, Thor moves to Australia and takes up residence with a flatmate named Darryl Jacobson, attempting to live a normal human life.",
-    "poster": "https://image.tmdb.org/t/p/w780/j8F6N62Vj5lYgLdJSmqKq1tWb7d.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/8Z0q8Jp9dOaU6N7H1r8j2L2p7zE.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/hpHvGuMc46pppwpcW0Xk7eys3L4.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/rmsj3O1e1fFmIKIuFjkN572s7xQ.jpg",
     "rating": 7.4,
-    "genres": ["Comedy", "Fantasy", "Science Fiction"],
+    "genres": [
+      "Comedy",
+      "Fantasy",
+      "Science Fiction"
+    ],
     "director": "Taika Waititi",
     "tagline": "See what Thor was doing during Captain America: Civil War.",
     "studio": "Marvel Studios",
@@ -8289,20 +8293,32 @@ export const MOVIES_DATA: Movie[] = [
     "phase": "Phase 3",
     "saga": "Infinity Saga",
     "cast": [
-      { "name": "Chris Hemsworth", "role": "Thor Odinson" },
-      { "name": "Daley Pearson", "role": "Darryl Jacobson" },
-      { "name": "Mark Ruffalo", "role": "Bruce Banner" }
+      {
+        "name": "Chris Hemsworth",
+        "role": "Thor Odinson"
+      },
+      {
+        "name": "Daley Pearson",
+        "role": "Darryl Jacobson"
+      },
+      {
+        "name": "Mark Ruffalo",
+        "role": "Bruce Banner"
+      }
     ],
-    "characters": ["thor", "hulk"],
-    "tmdbId": 413277,
+    "characters": [
+      "thor",
+      "hulk"
+    ],
+    "tmdbId": 413279,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 413277,
+      "tmdbId": 413279,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -8313,10 +8329,14 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2017-02-14",
     "runtime": 5,
     "overview": "Thor and Darryl continue their domestic partnership in Australia, attempting to negotiate rent and chores while Thor searches for Infinity Stones on Darryl's whiteboard.",
-    "poster": "https://image.tmdb.org/t/p/w780/d3gO1z77OQ4vF9o6Z4L3XvL8J5l.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/8Z0q8Jp9dOaU6N7H1r8j2L2p7zE.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/2jmP71A5Un0jDNqBesDPQSN8hjJ.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cz8m8AS8MOD1x4RAjYgYMHf13xB.jpg",
     "rating": 7.3,
-    "genres": ["Comedy", "Fantasy", "Science Fiction"],
+    "genres": [
+      "Comedy",
+      "Fantasy",
+      "Science Fiction"
+    ],
     "director": "Taika Waititi",
     "tagline": "Rent is due.",
     "studio": "Marvel Studios",
@@ -8338,19 +8358,27 @@ export const MOVIES_DATA: Movie[] = [
     "phase": "Phase 3",
     "saga": "Infinity Saga",
     "cast": [
-      { "name": "Chris Hemsworth", "role": "Thor Odinson" },
-      { "name": "Daley Pearson", "role": "Darryl Jacobson" }
+      {
+        "name": "Chris Hemsworth",
+        "role": "Thor Odinson"
+      },
+      {
+        "name": "Daley Pearson",
+        "role": "Darryl Jacobson"
+      }
     ],
-    "characters": ["thor"],
-    "tmdbId": 441384,
+    "characters": [
+      "thor"
+    ],
+    "tmdbId": 441829,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 441384,
+      "tmdbId": 441829,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -8361,10 +8389,13 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2018-02-20",
     "runtime": 6,
     "overview": "Following Thor's departure from Earth, Darryl relocates to Los Angeles and takes in the eccentric Grandmaster (Jeff Goldblum) as his new roommate.",
-    "poster": "https://image.tmdb.org/t/p/w780/h2eA7E4U5A0F5Z1b2a9gK0J8e3Z.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/8Z0q8Jp9dOaU6N7H1r8j2L2p7zE.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/edroTAeTEM9ILyAnumA0ALxRSne.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/wL56346BF1eMElIGtqWLiILcfbU.jpg",
     "rating": 7.2,
-    "genres": ["Comedy", "Science Fiction"],
+    "genres": [
+      "Comedy",
+      "Science Fiction"
+    ],
     "director": "Taika Waititi",
     "tagline": "A new roommate on Earth.",
     "studio": "Marvel Studios",
@@ -8386,19 +8417,25 @@ export const MOVIES_DATA: Movie[] = [
     "phase": "Phase 3",
     "saga": "Infinity Saga",
     "cast": [
-      { "name": "Jeff Goldblum", "role": "Grandmaster" },
-      { "name": "Daley Pearson", "role": "Darryl Jacobson" }
+      {
+        "name": "Jeff Goldblum",
+        "role": "Grandmaster"
+      },
+      {
+        "name": "Daley Pearson",
+        "role": "Darryl Jacobson"
+      }
     ],
     "characters": [],
-    "tmdbId": 503619,
+    "tmdbId": 505945,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 503619,
+      "tmdbId": 505945,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -8409,10 +8446,13 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2017-03-03",
     "runtime": 4,
     "overview": "Wade Wilson sees an elderly man being mugged in an alleyway and rushes into a nearby phone booth to change into his Deadpool costume, taking far too long as disaster strikes.",
-    "poster": "https://image.tmdb.org/t/p/w780/fSbnbC2XFjQ3G4qC8QzZgQ0gW2p.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/7RyHsO4yDXtBv1zUU3mOGxIjhC8.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/dpHmdsLoKjuGnAhsYI4D65S7wTQ.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/sUELHitVw5U0tOJg0x34wY7eTuh.jpg",
     "rating": 7.7,
-    "genres": ["Action", "Comedy"],
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
     "director": "David Leitch",
     "tagline": "Not all heroes wear spandex quickly.",
     "studio": "20th Century Fox",
@@ -8432,19 +8472,27 @@ export const MOVIES_DATA: Movie[] = [
     "releaseOrder": 99,
     "chronologicalOrder": 999,
     "cast": [
-      { "name": "Ryan Reynolds", "role": "Wade Wilson / Deadpool" },
-      { "name": "Stan Lee", "role": "Himself (Cameo)" }
+      {
+        "name": "Ryan Reynolds",
+        "role": "Wade Wilson / Deadpool"
+      },
+      {
+        "name": "Stan Lee",
+        "role": "Himself (Cameo)"
+      }
     ],
-    "characters": ["deadpool"],
-    "tmdbId": 445030,
+    "characters": [
+      "deadpool"
+    ],
+    "tmdbId": 558144,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 445030,
+      "tmdbId": 558144,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -8452,13 +8500,17 @@ export const MOVIES_DATA: Movie[] = [
     "id": "the-punisher-one-last-kill",
     "title": "The Punisher: One Last Kill",
     "year": 2026,
-    "releaseDate": "2026-07-15",
+    "releaseDate": "2026-05-12",
     "runtime": 10,
-    "overview": "Frank Castle attempts to wash his clothes at a neighborhood laundromat while watching an aggressive street gang terrorize innocent locals, until he can ignore the violence no longer.",
-    "poster": "https://image.tmdb.org/t/p/w780/2u0wzF9vW1O2z7F1wGqE6R8K5rD.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+    "overview": "As Frank Castle searches for meaning beyond revenge, an unexpected force pulls him back into the fight.",
+    "poster": "https://image.tmdb.org/t/p/w780/qQclTgLMDvGBuUBFGHRipxkEwWR.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/qO55CD8tgVL1T4WKn6zYFFiD6lL.jpg",
     "rating": 7.9,
-    "genres": ["Action", "Crime", "Thriller"],
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
     "director": "Phil Joanou",
     "tagline": "Justice is doing the laundry.",
     "studio": "Marvel Knights / Adi Shankar",
@@ -8469,7 +8521,7 @@ export const MOVIES_DATA: Movie[] = [
     "universeId": "standalone-marvel",
     "universeDesignation": "Earth-2004",
     "movieType": "short",
-    "mediaSubtype": "short-film",
+    "mediaSubtype": "special-presentation",
     "mcuRelationship": "legacy",
     "isMcu": false,
     "isAnimation": false,
@@ -8478,19 +8530,27 @@ export const MOVIES_DATA: Movie[] = [
     "releaseOrder": 100,
     "chronologicalOrder": 999,
     "cast": [
-      { "name": "Thomas Jane", "role": "Frank Castle / The Punisher" },
-      { "name": "Ron Perlman", "role": "Big Mike" }
+      {
+        "name": "Thomas Jane",
+        "role": "Frank Castle / The Punisher"
+      },
+      {
+        "name": "Ron Perlman",
+        "role": "Big Mike"
+      }
     ],
-    "characters": ["punisher"],
-    "tmdbId": 119843,
+    "characters": [
+      "punisher"
+    ],
+    "tmdbId": 1439930,
     "isUpcoming": false,
     "isReleased": true,
     "releaseStatus": "released",
     "verificationStatus": "verified",
     "watchConfig": {
-      "tmdbId": 119843,
+      "tmdbId": 1439930,
       "type": "movie",
-      "watchProvider": "screenscape",
+      "watchProvider": "autoembed",
       "language": "eng"
     }
   },
@@ -8498,13 +8558,17 @@ export const MOVIES_DATA: Movie[] = [
     "id": "blade-mcu",
     "title": "Blade",
     "year": 2027,
-    "releaseDate": "2027-11-05",
+    "releaseDate": "TBA",
     "runtime": 130,
-    "overview": "The Daywalker rises in the MCU. Half-human and half-vampire Eric Brooks stalks the occult shadows of the world, waging a relentless war to safeguard humanity from bloodthirsty supernatural legions.",
-    "poster": "https://image.tmdb.org/t/p/w780/e78216rB6bOxs4pY22zfevTqJ2G.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/mDfJG3LC3Dqb67AZ52x3Z0jU0uB.jpg",
-    "rating": 8.0,
-    "genres": ["Action", "Fantasy", "Horror"],
+    "overview": "Marvel Studios feature film reboot of the iconic daywalking vampire hunter Eric Brooks, starring two-time Academy Award winner Mahershala Ali.",
+    "poster": "https://image.tmdb.org/t/p/w780/oWT70TvbsmQaqyphCZpsnQR7R32.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/7NKfxJrQn053UJeLftlx4m4NTzo.jpg",
+    "rating": 8,
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Horror"
+    ],
     "director": "Yann Demange",
     "tagline": "The Daywalker awakens.",
     "studio": "Marvel Studios",
@@ -8526,10 +8590,18 @@ export const MOVIES_DATA: Movie[] = [
     "phase": "Phase 6",
     "saga": "Multiverse Saga",
     "cast": [
-      { "name": "Mahershala Ali", "role": "Eric Brooks / Blade" },
-      { "name": "Delroy Lindo", "role": "Jamal Afari" }
+      {
+        "name": "Mahershala Ali",
+        "role": "Eric Brooks / Blade"
+      },
+      {
+        "name": "Delroy Lindo",
+        "role": "Jamal Afari"
+      }
     ],
-    "characters": ["blade"],
+    "characters": [
+      "blade"
+    ],
     "tmdbId": 617127,
     "isUpcoming": true,
     "isReleased": false,
@@ -8547,7 +8619,11 @@ export const MOVIES_DATA: Movie[] = [
     "poster": "https://image.tmdb.org/t/p/w780/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
     "backdrop": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
     "rating": 7.8,
-    "genres": ["Action", "Science Fiction", "Thriller"],
+    "genres": [
+      "Action",
+      "Science Fiction",
+      "Thriller"
+    ],
     "director": "Marvel Studios",
     "tagline": "Protect the legacy.",
     "studio": "Marvel Studios",
@@ -8569,10 +8645,19 @@ export const MOVIES_DATA: Movie[] = [
     "phase": "Phase 6",
     "saga": "Multiverse Saga",
     "cast": [
-      { "name": "Don Cheadle", "role": "James 'Rhodey' Rhodes / War Machine" },
-      { "name": "Walton Goggins", "role": "Sonny Burch" }
+      {
+        "name": "Don Cheadle",
+        "role": "James 'Rhodey' Rhodes / War Machine"
+      },
+      {
+        "name": "Walton Goggins",
+        "role": "Sonny Burch"
+      }
     ],
-    "characters": ["war-machine", "iron-man"],
+    "characters": [
+      "war-machine",
+      "iron-man"
+    ],
     "tmdbId": 776510,
     "isUpcoming": true,
     "isReleased": false,
@@ -8587,10 +8672,15 @@ export const MOVIES_DATA: Movie[] = [
     "releaseDate": "2027-06-18",
     "runtime": 140,
     "overview": "Miles Morales journeys across the multiverse alongside Gwen Stacy, Peter B. Parker, and an elite coalition of Spider-People to confront the Spot and Earth-42's Prowler, fighting to save every dimension from total dimensional unraveling.",
-    "poster": "https://image.tmdb.org/t/p/w780/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/4HodYYKEIsGOdinkGi2Ucz6X9i0.jpg",
+    "poster": "https://image.tmdb.org/t/p/w780/9KAe39xqyZnv9J4W3DRGdQqX82h.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/fUcT8bcJD3SZsy84Z9QRP6kOS7v.jpg",
     "rating": 8.9,
-    "genres": ["Animation", "Action", "Adventure", "Science Fiction"],
+    "genres": [
+      "Animation",
+      "Action",
+      "Adventure",
+      "Science Fiction"
+    ],
     "director": "Joaquim Dos Santos, Kemp Powers, Justin K. Thompson",
     "tagline": "Beyond every universe.",
     "studio": "Sony Pictures Animation / Columbia Pictures",
@@ -8610,12 +8700,23 @@ export const MOVIES_DATA: Movie[] = [
     "releaseOrder": 103,
     "chronologicalOrder": 999,
     "cast": [
-      { "name": "Shameik Moore", "role": "Miles Morales / Spider-Man (voice)" },
-      { "name": "Hailee Steinfeld", "role": "Gwen Stacy / Spider-Woman (voice)" },
-      { "name": "Oscar Isaac", "role": "Miguel O'Hara / Spider-Man 2099 (voice)" }
+      {
+        "name": "Shameik Moore",
+        "role": "Miles Morales / Spider-Man (voice)"
+      },
+      {
+        "name": "Hailee Steinfeld",
+        "role": "Gwen Stacy / Spider-Woman (voice)"
+      },
+      {
+        "name": "Oscar Isaac",
+        "role": "Miguel O'Hara / Spider-Man 2099 (voice)"
+      }
     ],
-    "characters": ["miles-morales"],
-    "tmdbId": 569094,
+    "characters": [
+      "miles-morales"
+    ],
+    "tmdbId": 911916,
     "isUpcoming": true,
     "isReleased": false,
     "releaseStatus": "upcoming",
@@ -8626,13 +8727,17 @@ export const MOVIES_DATA: Movie[] = [
     "id": "shang-chi-2",
     "title": "Shang-Chi 2",
     "year": 2027,
-    "releaseDate": "2027-10-15",
+    "releaseDate": "TBA",
     "runtime": 135,
-    "overview": "Master of Kung Fu Shang-Chi delves into the ancient origins and beacon signal emitted by the Ten Rings, uncovering cosmic warlords and reality-shattering forces that threaten the Sacred Timeline.",
-    "poster": "https://image.tmdb.org/t/p/w780/1BIoJGKbXjdFDAvUEiA2VHqkK1Z.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/cinER0j629Fl2TC7Kkyq78YX937.jpg",
+    "overview": "The sequel to Shang-Chi and the Legend of the Ten Rings in development at Marvel Studios, directed by Destin Daniel Cretton.",
+    "poster": "https://image.tmdb.org/t/p/w780/9f2Q0U3IOsLgrI2HkvldwSABZy5.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/83H0C66AcvkwpG2738VCTHMY9uv.jpg",
     "rating": 8.1,
-    "genres": ["Action", "Adventure", "Fantasy"],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
     "director": "Destin Daniel Cretton",
     "tagline": "The signal has been answered.",
     "studio": "Marvel Studios",
@@ -8654,11 +8759,22 @@ export const MOVIES_DATA: Movie[] = [
     "phase": "Phase 6",
     "saga": "Multiverse Saga",
     "cast": [
-      { "name": "Simu Liu", "role": "Xu Shang-Chi" },
-      { "name": "Awkwafina", "role": "Katy Chen" },
-      { "name": "Meng'er Zhang", "role": "Xu Xialing" }
+      {
+        "name": "Simu Liu",
+        "role": "Xu Shang-Chi"
+      },
+      {
+        "name": "Awkwafina",
+        "role": "Katy Chen"
+      },
+      {
+        "name": "Meng'er Zhang",
+        "role": "Xu Xialing"
+      }
     ],
-    "characters": ["shang-chi"],
+    "characters": [
+      "shang-chi"
+    ],
     "tmdbId": 897087,
     "isUpcoming": true,
     "isReleased": false,
@@ -8670,13 +8786,17 @@ export const MOVIES_DATA: Movie[] = [
     "id": "x-men-mcu",
     "title": "Marvel Studios' X-Men",
     "year": 2028,
-    "releaseDate": "2028-05-05",
+    "releaseDate": "TBA",
     "runtime": 145,
-    "overview": "Homo Superior steps into the light of the Marvel Cinematic Universe. Professor Charles Xavier brings together a gifted class of mutant youths to protect a world that hates and fears them, while extremist philosophies rise from Genosha.",
-    "poster": "https://image.tmdb.org/t/p/w780/2u0wzF9vW1O2z7F1wGqE6R8K5rD.jpg",
-    "backdrop": "https://image.tmdb.org/t/p/w1280/mDfJG3LC3Dqb67AZ52x3Z0jU0uB.jpg",
+    "overview": "Marvel Studios officially announced live-action reboot integrating mutants and the X-Men directly into the Marvel Cinematic Universe.",
+    "poster": "https://image.tmdb.org/t/p/w780/2HKBc5UiFw8JrruHq8S1Y7TnlW0.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/jIyEmnBrZtl6SEWyBoMO2hZnzMa.jpg",
     "rating": 8.3,
-    "genres": ["Action", "Science Fiction", "Adventure"],
+    "genres": [
+      "Action",
+      "Science Fiction",
+      "Adventure"
+    ],
     "director": "Marvel Studios",
     "tagline": "Evolution begins now.",
     "studio": "Marvel Studios",
@@ -8698,14 +8818,401 @@ export const MOVIES_DATA: Movie[] = [
     "phase": "Phase 6",
     "saga": "Multiverse Saga",
     "cast": [
-      { "name": "Marvel Studios Ensemble", "role": "X-Men" }
+      {
+        "name": "Marvel Studios Ensemble",
+        "role": "X-Men"
+      }
     ],
-    "characters": ["professor-x", "wolverine", "magneto"],
+    "characters": [
+      "professor-x",
+      "wolverine",
+      "magneto"
+    ],
     "tmdbId": 978436,
     "isUpcoming": true,
     "isReleased": false,
     "releaseStatus": "upcoming",
     "upcomingStatus": "announced",
     "verificationStatus": "verified"
+  },
+  {
+    "id": "ghost-rider-2028",
+    "title": "Ghost Rider",
+    "year": 2028,
+    "releaseDate": "2028-07-28",
+    "runtime": 125,
+    "overview": "A feature film set in the Marvel Cinematic Universe (MCU) starring Ryan Gosling as stunt motorcyclist Johnny Blaze, who transforms into the supernatural Spirit of Vengeance to battle demonic forces threatening reality.",
+    "poster": "https://image.tmdb.org/t/p/w780/zgC1zo3lyujoEiIMnUrHltvPmZg.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/8ZuU1bCXvqcHdFIIiJAtkGRPw1j.jpg",
+    "rating": 8.5,
+    "phase": "Phase 6",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Horror"
+    ],
+    "director": "Shawn Levy",
+    "cast": [
+      {
+        "name": "Ryan Gosling",
+        "role": "Johnny Blaze / Ghost Rider"
+      }
+    ],
+    "characters": [
+      "ghost-rider-mcu"
+    ],
+    "releaseOrder": 45,
+    "chronologicalOrder": 45,
+    "tmdbId": 1738010,
+    "watchConfig": {
+      "tmdbId": 1738010,
+      "type": "movie",
+      "watchProvider": "autoembed",
+      "language": "eng"
+    },
+    "tagline": "The Spirit of Vengeance Rises in the MCU.",
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "franchise": "Ghost Rider",
+    "universe": "Marvel Cinematic Universe (Earth-616)",
+    "universeId": "earth-616",
+    "movieType": "live-action",
+    "mediaSubtype": "feature-film",
+    "mcuRelationship": "canon-mcu",
+    "isMcu": true,
+    "isUpcoming": true,
+    "isReleased": false,
+    "releaseStatus": "upcoming",
+    "upcomingStatus": "confirmed",
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "black-panther-3",
+    "title": "Black Panther 3",
+    "year": 2028,
+    "releaseDate": "2028-12-13",
+    "runtime": 135,
+    "overview": "The third installment in Marvel Studios' Black Panther saga in development with director Ryan Coogler, exploring the continued ascension of Wakanda and the legacy of the Panther mantle.",
+    "poster": "https://image.tmdb.org/t/p/w780/zJc9fYZxgq4yzI0Oru2e1Cf3a3V.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/5b8t06v1cTd9H5IgWs6gj6987JM.jpg",
+    "rating": 8,
+    "phase": "Phase 6",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "director": "Ryan Coogler",
+    "cast": [
+      {
+        "name": "Letitia Wright",
+        "role": "Shuri / Black Panther"
+      }
+    ],
+    "characters": [
+      "shuri"
+    ],
+    "releaseOrder": 47,
+    "chronologicalOrder": 47,
+    "tmdbId": 1386618,
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "franchise": "Black Panther",
+    "universe": "Marvel Cinematic Universe (Earth-616)",
+    "universeId": "earth-616",
+    "movieType": "live-action",
+    "mediaSubtype": "feature-film",
+    "isMcu": true,
+    "isUpcoming": true,
+    "isReleased": false,
+    "releaseStatus": "upcoming",
+    "upcomingStatus": "announced"
+  },
+  {
+    "id": "doctor-strange-3",
+    "title": "Doctor Strange 3",
+    "year": 2028,
+    "releaseDate": "TBA",
+    "runtime": 130,
+    "overview": "In development at Marvel Studios; Benedict Cumberbatch returns as Master of the Mystic Arts Dr. Stephen Strange to confront the cosmic incursions threatening the multiverse following the events of Multiverse of Madness.",
+    "poster": "https://image.tmdb.org/t/p/w780/uGBVj3bEbCoZbDjjl9wTxcygko1.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/lv3TXqhpaIxkclIHbhN2MRMOemQ.jpg",
+    "rating": 8,
+    "phase": "Phase 6",
+    "saga": "Multiverse Saga",
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Adventure"
+    ],
+    "director": "Marvel Studios",
+    "cast": [
+      {
+        "name": "Benedict Cumberbatch",
+        "role": "Dr. Stephen Strange / Doctor Strange"
+      }
+    ],
+    "characters": [
+      "doctor-strange"
+    ],
+    "releaseOrder": 48,
+    "chronologicalOrder": 48,
+    "studio": "Marvel Studios",
+    "studioId": "marvel-studios",
+    "franchise": "Doctor Strange",
+    "universe": "Marvel Cinematic Universe (Earth-616)",
+    "universeId": "earth-616",
+    "movieType": "live-action",
+    "mediaSubtype": "feature-film",
+    "isMcu": true,
+    "isUpcoming": true,
+    "isReleased": false,
+    "releaseStatus": "upcoming",
+    "upcomingStatus": "announced"
+  },
+  {
+    "id": "captain-america-1944",
+    "title": "Captain America (1944 Serial)",
+    "year": 1944,
+    "releaseDate": "1944-02-05",
+    "runtime": 243,
+    "overview": "The earliest live-action screen adaptation of a Marvel superhero. District Attorney Grant Gardner suits up as the masked champion Captain America to battle the mysterious Scarab and his deadly Thermal Ray.",
+    "poster": "https://image.tmdb.org/t/p/w780/nBRcChS66NohR3x6KVYMp6Obutt.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+    "rating": 6.2,
+    "genres": [
+      "Action",
+      "Crime",
+      "Sci-Fi"
+    ],
+    "director": "Elmer Clifton, John English",
+    "cast": [
+      {
+        "name": "Dick Purcell",
+        "role": "Grant Gardner / Captain America"
+      },
+      {
+        "name": "Lorna Gray",
+        "role": "Gail Richards"
+      },
+      {
+        "name": "Lionel Atwill",
+        "role": "Dr. Cyrus Maldor / The Scarab"
+      }
+    ],
+    "characters": [
+      "captain-america"
+    ],
+    "releaseOrder": 1,
+    "chronologicalOrder": 1,
+    "tmdbId": 106355,
+    "studio": "Republic Pictures",
+    "studioId": "standalone-marvel",
+    "franchise": "Captain America (1944)",
+    "universe": "Standalone Marvel Universe",
+    "universeId": "standalone-marvel",
+    "movieType": "live-action",
+    "mediaSubtype": "feature-film",
+    "isMcu": false,
+    "isLegacy": true,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "watchConfig": {
+      "tmdbId": 106355,
+      "type": "movie",
+      "watchProvider": "autoembed",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "spider-man-1977",
+    "title": "The Amazing Spider-Man (1977)",
+    "year": 1977,
+    "releaseDate": "1977-09-14",
+    "runtime": 92,
+    "overview": "When an extortionist threatens to force ten people to commit suicide through telepathic mind control, Peter Parker is bitten by a radioactive spider and uses his newfound powers as Spider-Man to stop him.",
+    "poster": "https://image.tmdb.org/t/p/w780/jNxRHZ2cxVkNRtxgHuCtv7GY4JP.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+    "rating": 6.1,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "director": "E.W. Swackhamer",
+    "cast": [
+      {
+        "name": "Nicholas Hammond",
+        "role": "Peter Parker / Spider-Man"
+      },
+      {
+        "name": "David White",
+        "role": "J. Jonah Jameson"
+      }
+    ],
+    "characters": [
+      "spider-man"
+    ],
+    "releaseOrder": 2,
+    "chronologicalOrder": 2,
+    "tmdbId": 225914,
+    "studio": "Columbia Pictures Television",
+    "studioId": "sony-pictures",
+    "franchise": "The Amazing Spider-Man (1977)",
+    "universe": "Earth-730911",
+    "universeId": "standalone-marvel",
+    "movieType": "live-action",
+    "mediaSubtype": "feature-film",
+    "isMcu": false,
+    "isLegacy": true,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "watchConfig": {
+      "tmdbId": 225914,
+      "type": "movie",
+      "watchProvider": "autoembed",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "spider-man-strikes-back-1978",
+    "title": "Spider-Man Strikes Back (1978)",
+    "year": 1978,
+    "releaseDate": "1978-12-21",
+    "runtime": 93,
+    "overview": "At the New York State University, three students inadvertently build an atomic bomb to prove nuclear weapons proliferation dangers. Industrialist White kidnaps them and threatens to detonate the bomb unless Spider-Man intervenes.",
+    "poster": "https://image.tmdb.org/t/p/w780/mwRss4cA5m4fH6izoTwwPfF3ZOU.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+    "rating": 6,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Crime"
+    ],
+    "director": "Ron Satlof",
+    "cast": [
+      {
+        "name": "Nicholas Hammond",
+        "role": "Peter Parker / Spider-Man"
+      },
+      {
+        "name": "Robert F. Simon",
+        "role": "J. Jonah Jameson"
+      }
+    ],
+    "characters": [
+      "spider-man"
+    ],
+    "releaseOrder": 3,
+    "chronologicalOrder": 3,
+    "tmdbId": 225925,
+    "studio": "Columbia Pictures Television",
+    "studioId": "sony-pictures",
+    "franchise": "The Amazing Spider-Man (1977)",
+    "universe": "Earth-730911",
+    "universeId": "standalone-marvel",
+    "movieType": "live-action",
+    "mediaSubtype": "feature-film",
+    "isMcu": false,
+    "isLegacy": true,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "watchConfig": {
+      "tmdbId": 225925,
+      "type": "movie",
+      "watchProvider": "autoembed",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "spider-man-the-dragons-challenge-1980",
+    "title": "Spider-Man: The Dragon's Challenge (1980)",
+    "year": 1980,
+    "releaseDate": "1980-12-05",
+    "runtime": 92,
+    "overview": "Industrialist Min Lo Chan is falsely accused of selling defense secrets during WWII. Spider-Man journeys across Hong Kong to clear his name and battle ruthless triad syndicates.",
+    "poster": "https://image.tmdb.org/t/p/w780/wBmtFmSikG5u08FdGLRsF0Py59V.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+    "rating": 5.9,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Crime"
+    ],
+    "director": "Don McDougall",
+    "cast": [
+      {
+        "name": "Nicholas Hammond",
+        "role": "Peter Parker / Spider-Man"
+      }
+    ],
+    "characters": [
+      "spider-man"
+    ],
+    "releaseOrder": 4,
+    "chronologicalOrder": 4,
+    "tmdbId": 225938,
+    "studio": "Columbia Pictures Television",
+    "studioId": "sony-pictures",
+    "franchise": "The Amazing Spider-Man (1977)",
+    "universe": "Earth-730911",
+    "universeId": "standalone-marvel",
+    "movieType": "live-action",
+    "mediaSubtype": "feature-film",
+    "isMcu": false,
+    "isLegacy": true,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "watchConfig": {
+      "tmdbId": 225938,
+      "type": "movie",
+      "watchProvider": "autoembed",
+      "language": "eng"
+    }
+  },
+  {
+    "id": "japanese-spider-man-1978",
+    "title": "Japanese Spider-Man (Toei 1978)",
+    "year": 1978,
+    "releaseDate": "1978-07-22",
+    "runtime": 24,
+    "overview": "Motorcycle racer Takuya Yamashiro is given spider-powers and the giant robotic combat mecha Leopardon by Garia, the last warrior of Planet Spider, to battle Professor Monster's Iron Cross Army.",
+    "poster": "https://image.tmdb.org/t/p/w780/hi98SQoZgxBMHmWsbhxyh5tNQcB.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg",
+    "rating": 6.9,
+    "genres": [
+      "Action",
+      "Sci-Fi"
+    ],
+    "director": "Koichi Takemoto",
+    "cast": [
+      {
+        "name": "Shinji Todo",
+        "role": "Takuya Yamashiro / Spider-Man"
+      }
+    ],
+    "characters": [],
+    "releaseOrder": 5,
+    "chronologicalOrder": 5,
+    "tmdbId": 438561,
+    "studio": "Toei Company",
+    "studioId": "standalone-marvel",
+    "franchise": "Japanese Spider-Man",
+    "universe": "Earth-51778",
+    "universeId": "standalone-marvel",
+    "movieType": "live-action",
+    "mediaSubtype": "short-film",
+    "isMcu": false,
+    "isLegacy": true,
+    "isReleased": true,
+    "releaseStatus": "released",
+    "watchConfig": {
+      "tmdbId": 438561,
+      "type": "movie",
+      "watchProvider": "autoembed",
+      "language": "eng"
+    }
   }
 ];

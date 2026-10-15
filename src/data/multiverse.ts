@@ -35,7 +35,7 @@ export const STUDIOS_DATA: StudioInfo[] = [
     description: 'Broke new ground in R-rated comic book cinema with the iconic Blade vampire hunter trilogy starring Wesley Snipes.',
     foundedYear: 1967,
     featuredFranchises: ['Blade', 'Blade II', 'Blade: Trinity'],
-    bannerUrl: 'https://image.tmdb.org/t/p/w1280/sw.jpg'
+    bannerUrl: 'https://image.tmdb.org/t/p/w1280/7NKfxJrQn053UJeLftlx4m4NTzo.jpg'
   },
   {
     id: 'universal-pictures',
@@ -62,7 +62,7 @@ export const STUDIOS_DATA: StudioInfo[] = [
     description: 'Creators of legendary animated superhero sagas from the 1990s X-Men and Spider-Man series to X-Men \'97 and What If...?.',
     foundedYear: 2008,
     featuredFranchises: ['X-Men \'97', 'Spider-Man: The Animated Series', 'What If...?', 'The Spectacular Spider-Man', 'X-Men: Evolution'],
-    bannerUrl: 'https://image.tmdb.org/t/p/w1280/cin.jpg'
+    bannerUrl: 'https://image.tmdb.org/t/p/w1280/jIyEmnBrZtl6SEWyBoMO2hZnzMa.jpg'
   },
   {
     id: 'marvel-television',
@@ -137,7 +137,7 @@ export const UNIVERSES_DATA: UniverseInfo[] = [
     description: 'Tim Story\'s vibrant cosmic era featuring Reed Richards, Sue Storm, Johnny Storm (Chris Evans), Ben Grimm, Doctor Doom, and the Silver Surfer.',
     primaryStudio: '20th Century Fox',
     keyHeroes: ['Mister Fantastic', 'Invisible Woman', 'Human Torch', 'The Thing', 'Silver Surfer'],
-    bannerUrl: 'https://image.tmdb.org/t/p/w1280/sw.jpg'
+    bannerUrl: 'https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg'
   },
   {
     id: 'earth-26320',
@@ -146,7 +146,7 @@ export const UNIVERSES_DATA: UniverseInfo[] = [
     description: 'The dark gothic reality where the Daywalker, Blade (Wesley Snipes), wages eternal war against Deacon Frost, the Reapers, and Dracula.',
     primaryStudio: 'New Line Cinema',
     keyHeroes: ['Eric Brooks / Blade', 'Abraham Whistler', 'Abigail Whistler'],
-    bannerUrl: 'https://image.tmdb.org/t/p/w1280/sw.jpg'
+    bannerUrl: 'https://image.tmdb.org/t/p/w1280/7NKfxJrQn053UJeLftlx4m4NTzo.jpg'
   },
   {
     id: 'earth-sv',
@@ -164,7 +164,7 @@ export const UNIVERSES_DATA: UniverseInfo[] = [
     description: 'The beloved animated universe of the 1990s X-Men and Spider-Man series, triumphantly revived in Marvel Studios\' X-Men \'97.',
     primaryStudio: 'Marvel Animation',
     keyHeroes: ['Cyclops', 'Storm', 'Wolverine', 'Jean Grey', 'Beast', 'Gambit', 'Rogue', 'Spider-Man (90s)'],
-    bannerUrl: 'https://image.tmdb.org/t/p/w1280/cin.jpg'
+    bannerUrl: 'https://image.tmdb.org/t/p/w1280/jIyEmnBrZtl6SEWyBoMO2hZnzMa.jpg'
   },
   {
     id: 'marvel-legacy-tv',

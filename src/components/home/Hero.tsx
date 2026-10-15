@@ -3,6 +3,8 @@ import { Play, Plus, Check, Star, Clock, Info } from 'lucide-react';
 import { Movie } from '../../types';
 import { PhaseBadge } from '../ui/PhaseBadge';
 import { useWatchlist } from '../../hooks/useWatchlist';
+import { FALLBACK_BACKDROP } from '../../services/tmdb';
+import { createTitleSpecificBackdrop } from '../../utils/imageFallback';
 
 interface HeroProps {
   movie: Movie;
@@ -20,11 +22,11 @@ export const Hero: React.FC<HeroProps> = ({ movie, onWatch, onSelect }) => {
       {/* Background Image with Dark Cinematic Gradient Overlay & Subtle Parallax */}
       <div className="absolute inset-0 z-0">
         <img
-          src={movie.backdrop || 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1600&auto=format&fit=crop'}
+          src={movie.backdrop || createTitleSpecificBackdrop(movie.title)}
           alt={movie.title}
           onLoad={() => setImgLoaded(true)}
           onError={(e) => {
-            (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1600&auto=format&fit=crop';
+            (e.target as HTMLImageElement).src = createTitleSpecificBackdrop(movie.title);
             setImgLoaded(true);
           }}
           className={`h-full w-full object-cover object-top transition-all duration-1000 transform scale-105 ${

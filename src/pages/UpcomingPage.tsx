@@ -18,6 +18,7 @@ import { PageTransition } from '../components/ui/PageTransition';
 import { useMedia } from '../context/MediaContext';
 import { useWatchlist } from '../hooks/useWatchlist';
 import { FALLBACK_POSTER } from '../services/tmdb';
+import { createTitleSpecificBackdrop, createTitleSpecificPoster } from '../utils/imageFallback';
 
 interface UpcomingPageProps {
   onSelectMovie: (movie: Movie) => void;
@@ -62,7 +63,7 @@ export const UpcomingPage: React.FC<UpcomingPageProps> = ({
 
     // 1. Movies that are upcoming / unreleased
     movies
-      .filter(m => m.isUpcoming || m.releaseStatus === 'upcoming')
+      .filter(m => (m.isUpcoming || m.releaseStatus === 'upcoming') && !m.isReleased)
       .forEach(m => {
         const isAnim = m.isAnimation || m.movieType === 'animation';
         const isSpecial = m.movieType === 'special' || m.mediaSubtype === 'special-presentation';
@@ -90,7 +91,7 @@ export const UpcomingPage: React.FC<UpcomingPageProps> = ({
 
     // 2. Series that are upcoming / unreleased
     series
-      .filter(s => s.releaseStatus === 'upcoming')
+      .filter(s => (s.isUpcoming || s.releaseStatus === 'upcoming') && !s.isReleased)
       .forEach(s => {
         list.push({
           id: s.id,
@@ -257,8 +258,11 @@ export const UpcomingPage: React.FC<UpcomingPageProps> = ({
                   {/* Backdrop banner header */}
                   <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-950">
                     <img
-                      src={item.backdrop || item.poster}
+                      src={item.backdrop || item.poster || createTitleSpecificBackdrop(item.title, item.releaseWindow)}
                       alt={item.title}
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = createTitleSpecificBackdrop(item.title, item.releaseWindow);
+                      }}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-85"
                     />

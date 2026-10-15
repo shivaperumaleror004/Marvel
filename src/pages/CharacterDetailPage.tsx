@@ -7,6 +7,7 @@ import { PageTransition } from '../components/ui/PageTransition';
 import { MovieCard } from '../components/ui/MovieCard';
 import { SeriesCard } from '../components/ui/SeriesCard';
 import { FALLBACK_POSTER } from '../services/tmdb';
+import { createTitleSpecificPoster } from '../utils/imageFallback';
 
 interface CharacterDetailPageProps {
   character: Character;
@@ -132,9 +133,11 @@ export const CharacterDetailPage: React.FC<CharacterDetailPageProps> = ({
             <div className="w-64 sm:w-80 flex-shrink-0 mx-auto md:mx-0 rounded-2xl overflow-hidden border-2 border-red-600 bg-slate-900 shadow-[0_20px_50px_rgba(230,36,41,0.3)]">
               <div className="relative aspect-[3/4] w-full">
                 <img
-                  src={character.portrait || FALLBACK_POSTER}
+                  src={character.portrait || createTitleSpecificPoster(character.alias, 'character', character.name)}
                   alt={character.alias}
-                  onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_POSTER; }}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = createTitleSpecificPoster(character.alias, 'character', character.name);
+                  }}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-3 left-3 bg-red-600 px-2.5 py-1 text-[10px] font-mono font-bold text-white uppercase rounded shadow">

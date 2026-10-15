@@ -27,11 +27,13 @@ export function getTmdbApiEndpoint(): string {
 export const TMDB_BASE_URL = getTmdbApiEndpoint();
 export const TMDB_IMAGE_BASE = 'https://image.tmdb.org/t/p';
 
+import { createTitleSpecificPoster, createTitleSpecificBackdrop } from '../utils/imageFallback';
+
 // Default Fallback Assets (Marvel Cinematic Studio aesthetic)
-export const FALLBACK_POSTER = '/shield-favicon.png';
-export const FALLBACK_BACKDROP = 'https://image.tmdb.org/t/p/w1280/cKvDv2LpwVEqbdXWoQl4XgGN6le.jpg';
-export const FALLBACK_STILL = 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop';
-export const FALLBACK_AVATAR = 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop';
+export const FALLBACK_POSTER = createTitleSpecificPoster('MARVEL ARCHIVE', 'movie', 'OFFICIAL ARTWORK PENDING');
+export const FALLBACK_BACKDROP = createTitleSpecificBackdrop('MARVEL ZERO-G', 'ARCHIVAL RECORD');
+export const FALLBACK_STILL = createTitleSpecificBackdrop('EPISODE STILL', 'MEDIA ARCHIVE');
+export const FALLBACK_AVATAR = createTitleSpecificPoster('HERO DOSSIER', 'character', 'PORTRAIT PENDING');
 
 // In-memory response cache and in-flight request deduplication
 const memoryCache = new Map<string, { data: any; expiry: number }>();
@@ -80,27 +82,27 @@ function setStoredCache(key: string, data: any): void {
 /**
  * Image URL formatters adhering to TMDB sizes
  */
-export function getTmdbPosterUrl(path?: string | null, size: 'w185' | 'w342' | 'w500' | 'original' = 'w500'): string {
-  if (!path) return FALLBACK_POSTER;
-  if (path.startsWith('http')) return path;
+export function getTmdbPosterUrl(path?: string | null, size: 'w185' | 'w342' | 'w500' | 'original' = 'w500', title?: string): string {
+  if (!path) return title ? createTitleSpecificPoster(title, 'movie') : FALLBACK_POSTER;
+  if (path.startsWith('http') || path.startsWith('data:')) return path;
   return `${TMDB_IMAGE_BASE}/${size}${path}`;
 }
 
-export function getTmdbBackdropUrl(path?: string | null, size: 'w780' | 'w1280' | 'original' = 'w1280'): string {
-  if (!path) return FALLBACK_BACKDROP;
-  if (path.startsWith('http')) return path;
+export function getTmdbBackdropUrl(path?: string | null, size: 'w780' | 'w1280' | 'original' = 'w1280', title?: string): string {
+  if (!path) return title ? createTitleSpecificBackdrop(title) : FALLBACK_BACKDROP;
+  if (path.startsWith('http') || path.startsWith('data:')) return path;
   return `${TMDB_IMAGE_BASE}/${size}${path}`;
 }
 
-export function getTmdbStillUrl(path?: string | null, size: 'w300' | 'original' = 'w300'): string {
-  if (!path) return FALLBACK_STILL;
-  if (path.startsWith('http')) return path;
+export function getTmdbStillUrl(path?: string | null, size: 'w300' | 'original' = 'w300', title?: string): string {
+  if (!path) return title ? createTitleSpecificBackdrop(title, 'EPISODE STILL') : FALLBACK_STILL;
+  if (path.startsWith('http') || path.startsWith('data:')) return path;
   return `${TMDB_IMAGE_BASE}/${size}${path}`;
 }
 
-export function getTmdbProfileUrl(path?: string | null, size: 'w185' | 'w300' | 'original' = 'w185'): string {
-  if (!path) return FALLBACK_AVATAR;
-  if (path.startsWith('http')) return path;
+export function getTmdbProfileUrl(path?: string | null, size: 'w185' | 'w300' | 'original' = 'w185', name?: string): string {
+  if (!path) return name ? createTitleSpecificPoster(name, 'character', 'PORTRAIT PENDING') : FALLBACK_AVATAR;
+  if (path.startsWith('http') || path.startsWith('data:')) return path;
   return `${TMDB_IMAGE_BASE}/${size}${path}`;
 }
 

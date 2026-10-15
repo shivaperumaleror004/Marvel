@@ -2,6 +2,64 @@ import type { TimelineNode, Movie, Series, Phase, Saga, Continuity, TimelineMedi
 
 const MCU_TIMELINE_RAW: TimelineNode[] = [
   {
+    "id": "the-punisher-one-last-kill",
+    "title": "The Punisher: One Last Kill",
+    "type": "special",
+    "phase": "Phase 5",
+    "saga": "Multiverse Saga",
+    "continuity": "Sacred Timeline",
+    "year": 2026,
+    "releaseDate": "2026-05-12",
+    "releaseOrder": 55,
+    "chronologicalOrder": 55,
+    "tmdbId": 1439930,
+    "poster": "https://image.tmdb.org/t/p/w780/qQclTgLMDvGBuUBFGHRipxkEwWR.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/qO55CD8tgVL1T4WKn6zYFFiD6lL.jpg",
+    "overview": "As Frank Castle searches for meaning beyond revenge, an unexpected force pulls him back into the fight.",
+    "tagline": "Revenge has a final price.",
+    "rating": 8.1,
+    "timelineNotes": "Special Presentation following Frank Castle's journey in the criminal underbelly.",
+    "characters": ["punisher"],
+    "cast": [
+      {
+        "name": "Jon Bernthal",
+        "role": "Frank Castle / The Punisher"
+      }
+    ],
+    "autoEmbedAvailable": true,
+    "screenScapeAvailable": true,
+    "isUpcoming": false
+  },
+  {
+    "id": "ghost-rider-2028",
+    "title": "Ghost Rider",
+    "type": "movie",
+    "phase": "Phase 6",
+    "saga": "Multiverse Saga",
+    "continuity": "Sacred Timeline",
+    "year": 2028,
+    "releaseDate": "2028-07-28",
+    "releaseOrder": 65,
+    "chronologicalOrder": 65,
+    "tmdbId": 1738010,
+    "poster": "https://image.tmdb.org/t/p/w780/zgC1zo3lyujoEiIMnUrHltvPmZg.jpg",
+    "backdrop": "https://image.tmdb.org/t/p/w1280/8ZuU1bCXvqcHdFIIiJAtkGRPw1j.jpg",
+    "overview": "A feature film set in the Marvel Cinematic Universe (MCU) starring Ryan Gosling as stunt motorcyclist Johnny Blaze, who transforms into the supernatural Spirit of Vengeance.",
+    "tagline": "The Spirit of Vengeance Rises in the MCU.",
+    "rating": 8.5,
+    "timelineNotes": "Marvel Studios supernatural production directed by Shawn Levy starring Ryan Gosling.",
+    "characters": ["ghost-rider-mcu"],
+    "cast": [
+      {
+        "name": "Ryan Gosling",
+        "role": "Johnny Blaze / Ghost Rider"
+      }
+    ],
+    "autoEmbedAvailable": false,
+    "screenScapeAvailable": false,
+    "isUpcoming": true
+  },
+  {
     "id": "eyes-of-wakanda",
     "title": "Eyes of Wakanda",
     "type": "series",
@@ -29,6 +87,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "M'Baku (Voice)"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -79,6 +138,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Colonel Chester Phillips"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -118,6 +178,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "John Flynn"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -168,6 +229,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Maria Rambeau"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -214,6 +276,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Lt. Col. James Rhodes"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -264,6 +327,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Justin Hammer"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -309,6 +373,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "General Thaddeus Ross"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -360,6 +425,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Clint Barton / Hawkeye"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -425,6 +491,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Nick Fury"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -472,6 +539,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Malekith"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -518,6 +586,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Trevor Slattery"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -569,6 +638,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Alexander Pierce"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -621,6 +691,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Rocket (Voice)"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -675,6 +746,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Mantis"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -708,6 +780,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Rocket (Voice)"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -771,6 +844,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Ultron (Voice)"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -817,6 +891,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Darren Cross / Yellowjacket"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -876,6 +951,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Peter Parker / Spider-Man"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -922,6 +998,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Melina Vostokoff"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -973,6 +1050,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Shuri"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1023,6 +1101,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Michelle Jones (MJ)"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1074,6 +1153,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "The Ancient One"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1131,6 +1211,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Grandmaster"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1177,6 +1258,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Janet van Dyne"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1240,6 +1322,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Peter Parker / Spider-Man"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1302,6 +1385,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Scott Lang / Ant-Man"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1349,6 +1433,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "He Who Remains"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1391,6 +1476,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Star-Lord T'Challa (Voice)"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1439,6 +1525,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Monica Rambeau"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1486,6 +1573,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Baron Helmut Zemo"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1537,6 +1625,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Ying Nan"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1591,6 +1680,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Kingo"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1637,6 +1727,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Michelle Jones (MJ)"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1696,6 +1787,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Peter Parker / Spider-Man"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1743,6 +1835,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Wilson Fisk / Kingpin"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1786,6 +1879,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Layla El-Faouly / Scarlet Scarab"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1837,6 +1931,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Professor Charles Xavier"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1879,6 +1974,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Nakia Bahadir"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1931,6 +2027,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Zeus"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -1971,6 +2068,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Verussa Bloodstone"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -2017,6 +2115,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Himself"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -2068,6 +2167,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Okoye"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -2120,6 +2220,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Dr. Hank Pym"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -2174,6 +2275,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Adam Warlock"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -2226,6 +2328,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Sonya Falsworth"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -2277,6 +2380,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Nick Fury"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -2325,6 +2429,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Mobius M. Mobius"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -2368,6 +2473,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Kahhori (Voice)"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -2409,6 +2515,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Matt Murdock / Daredevil"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -2461,6 +2568,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Jennifer Kale"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -2499,6 +2607,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Sam Wilson (Voice)"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -2551,6 +2660,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Foggy Nelson"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -2601,6 +2711,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Seth Voelker / Sidewinder"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": false
   },
@@ -2658,6 +2769,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Bob / Sentry"
       }
     ],
+    "autoEmbedAvailable": false,
     "screenScapeAvailable": false,
     "isUpcoming": false
   },
@@ -2695,6 +2807,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Wilson Fisk / Kingpin"
       }
     ],
+    "autoEmbedAvailable": false,
     "screenScapeAvailable": false,
     "isUpcoming": true
   },
@@ -2735,6 +2848,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Joe McGillicuddy"
       }
     ],
+    "autoEmbedAvailable": false,
     "screenScapeAvailable": false,
     "isUpcoming": false
   },
@@ -2776,6 +2890,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Eric Williams / Grim Reaper"
       }
     ],
+    "autoEmbedAvailable": false,
     "screenScapeAvailable": false,
     "isUpcoming": false
   },
@@ -2831,6 +2946,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Shalla-Bal / Silver Surfer"
       }
     ],
+    "autoEmbedAvailable": false,
     "screenScapeAvailable": false,
     "isUpcoming": false
   },
@@ -2879,6 +2995,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Bruce Banner / Hulk"
       }
     ],
+    "autoEmbedAvailable": true,
     "screenScapeAvailable": true,
     "isUpcoming": true
   },
@@ -2930,6 +3047,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Yelena Belova"
       }
     ],
+    "autoEmbedAvailable": false,
     "screenScapeAvailable": false,
     "isUpcoming": true
   },
@@ -2977,6 +3095,7 @@ const MCU_TIMELINE_RAW: TimelineNode[] = [
         "role": "Loki / God of Stories"
       }
     ],
+    "autoEmbedAvailable": false,
     "screenScapeAvailable": false,
     "isUpcoming": true
   }
