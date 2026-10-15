@@ -1,13 +1,13 @@
-import React from 'react';
-import { ArrowLeft, Shield, Zap, Film, Tv, Users, Star } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowLeft, Shield, Zap, Film, Tv, Users } from 'lucide-react';
 import { Character, Movie, Series } from '../types';
 import { MOVIES_DATA } from '../data/movies';
 import { SERIES_DATA } from '../data/series';
 import { CHARACTERS_DATA } from '../data/characters';
 import { PageTransition } from '../components/ui/PageTransition';
 import { MovieCard } from '../components/ui/MovieCard';
-
-import { FALLBACK_POSTER, FALLBACK_BACKDROP } from '../services/tmdb';
+import { SeriesCard } from '../components/ui/SeriesCard';
+import { FALLBACK_POSTER } from '../services/tmdb';
 
 interface CharacterDetailPageProps {
   character: Character;
@@ -15,6 +15,8 @@ interface CharacterDetailPageProps {
   onSelectMovie: (movie: Movie) => void;
   onWatchMovie: (movie: Movie) => void;
   onSelectCharacter: (character: Character) => void;
+  onSelectSeries?: (series: Series) => void;
+  onWatchSeries?: (series: Series) => void;
 }
 
 export const CharacterDetailPage: React.FC<CharacterDetailPageProps> = ({
@@ -22,22 +24,45 @@ export const CharacterDetailPage: React.FC<CharacterDetailPageProps> = ({
   onBack,
   onSelectMovie,
   onWatchMovie,
-  onSelectCharacter
+  onSelectCharacter,
+  onSelectSeries,
+  onWatchSeries
 }) => {
   const appearedMovies = MOVIES_DATA.filter(m => character.movies.includes(m.id));
   const appearedSeries = SERIES_DATA.filter(s => character.series.includes(s.id));
   const relatedChars = CHARACTERS_DATA.filter(c => character.relatedCharacters.includes(c.id));
 
+  // Determine the best backdrop: character's own backdrop -> first appeared movie/series backdrop -> character portrait
+  const characterMovieBackdrop =
+    appearedMovies.find(m => m.backdrop && !m.backdrop.includes('cKvDv2LpwVEqbdXWoQl4XgGN6le'))?.backdrop ||
+    appearedSeries.find(s => s.backdrop)?.backdrop;
+
+  const primaryBackdrop = character.backdrop || characterMovieBackdrop || character.portrait;
+  const [currentBackdrop, setCurrentBackdrop] = useState<string>(primaryBackdrop);
+
+  useEffect(() => {
+    setCurrentBackdrop(character.backdrop || characterMovieBackdrop || character.portrait);
+  }, [character, characterMovieBackdrop]);
+
+  const handleBackdropError = () => {
+    // If the provided backdrop failed, fall back to the movie they appeared in, or their portrait
+    if (currentBackdrop !== characterMovieBackdrop && characterMovieBackdrop) {
+      setCurrentBackdrop(characterMovieBackdrop);
+    } else if (currentBackdrop !== character.portrait && character.portrait) {
+      setCurrentBackdrop(character.portrait);
+    }
+  };
+
   return (
     <PageTransition>
       <div className="min-h-screen bg-slate-950 pb-16">
         {/* Backdrop Header */}
-        <div className="relative min-h-[45vh] lg:min-h-[55vh] w-full overflow-hidden">
+        <div className="relative min-h-[48vh] lg:min-h-[58vh] w-full overflow-hidden bg-slate-950">
           <img
-            src={character.backdrop || FALLBACK_BACKDROP}
+            src={currentBackdrop}
             alt={character.alias}
-            onError={(e) => { (e.target as HTMLImageElement).src = FALLBACK_BACKDROP; }}
-            className="h-full w-full object-cover object-top opacity-35"
+            onError={handleBackdropError}
+            className="h-full w-full object-cover object-top opacity-35 filter brightness-90"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
           <div className="absolute inset-0 halftone-overlay opacity-30 pointer-events-none" />
@@ -45,7 +70,7 @@ export const CharacterDetailPage: React.FC<CharacterDetailPageProps> = ({
           {/* Back Button */}
           <button
             onClick={onBack}
-            className="absolute top-6 left-4 sm:left-8 z-20 flex items-center gap-2 rounded-xl bg-black/60 border border-white/20 px-4 py-2 text-xs font-mono font-bold text-gray-200 backdrop-blur-md hover:bg-white/10 hover:text-white transition-all active:scale-95"
+            className="absolute top-6 left-4 sm:left-8 z-20 flex items-center gap-2 rounded-xl bg-black/60 border border-white/20 px-4 py-2 text-xs font-mono font-bold text-gray-200 backdrop-blur-md hover:bg-white/10 hover:text-white transition-all active:scale-95 shadow-lg"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>BACK TO HEROES</span>
@@ -103,7 +128,7 @@ export const CharacterDetailPage: React.FC<CharacterDetailPageProps> = ({
                   <p className="text-xs font-bold text-white">{character.affiliation}</p>
                 </div>
                 <div className="p-3 rounded-xl bg-slate-900 border border-white/10 space-y-1">
-                  <span className="text-[10px] font-mono text-gray-400 uppercase">FIRST MCU APPEARANCE</span>
+                  <span className="text-[10px] font-mono text-gray-400 uppercase">FIRST MARVEL APPEARANCE</span>
                   <p className="text-xs font-bold text-red-400">{character.firstAppearance}</p>
                 </div>
               </div>
@@ -132,7 +157,7 @@ export const CharacterDetailPage: React.FC<CharacterDetailPageProps> = ({
               <div className="flex items-center gap-2">
                 <Film className="w-5 h-5 text-red-500" />
                 <h3 className="text-xl font-extrabold text-white uppercase tracking-wider">
-                  Movie Appearances ({appearedMovies.length})
+                  Cinematic Movie Appearances ({appearedMovies.length})
                 </h3>
               </div>
 
@@ -143,6 +168,29 @@ export const CharacterDetailPage: React.FC<CharacterDetailPageProps> = ({
                     movie={m}
                     onSelect={onSelectMovie}
                     onWatch={onWatchMovie}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Television & Streaming Series Appearances */}
+          {appearedSeries.length > 0 && (
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Tv className="w-5 h-5 text-red-500" />
+                <h3 className="text-xl font-extrabold text-white uppercase tracking-wider">
+                  Television & Streaming Series ({appearedSeries.length})
+                </h3>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                {appearedSeries.map(s => (
+                  <SeriesCard
+                    key={s.id}
+                    series={s}
+                    onSelect={onSelectSeries || (() => {})}
+                    onWatch={onWatchSeries || (() => {})}
                   />
                 ))}
               </div>

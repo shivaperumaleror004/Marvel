@@ -432,6 +432,8 @@ function MarvelHubContent() {
             onSelectMovie={handleSelectMovie}
             onWatchMovie={handleWatchMovie}
             onSelectCharacter={handleSelectCharacter}
+            onSelectSeries={handleSelectSeries}
+            onWatchSeries={handleWatchSeries}
           />
         )}
 

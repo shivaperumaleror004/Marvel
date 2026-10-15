@@ -10,6 +10,7 @@ import { ContinueWatchingRow } from '../components/home/ContinueWatchingRow';
 import { PageTransition } from '../components/ui/PageTransition';
 import { isMarvelContent } from '../utils/marvelWhitelist';
 import { FALLBACK_POSTER } from '../services/tmdb';
+import { formatExactTime } from '../utils/timeFormat';
 
 interface MyListPageProps {
   onSelectMovie: (movie: Movie) => void;
@@ -269,7 +270,7 @@ export const MyListPage: React.FC<MyListPageProps> = ({
                             />
                           </div>
                           <div className="flex items-center justify-between text-[10px] font-mono text-gray-400">
-                            <span>{formatTime(item.currentTime)} / {formatTime(item.duration)}</span>
+                            <span>{formatExactTime(item.currentTime)} / {formatExactTime(item.duration)}</span>
                             <span>{formatDate(item.lastWatched)}</span>
                           </div>
                         </div>

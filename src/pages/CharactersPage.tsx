@@ -9,13 +9,14 @@ interface CharactersPageProps {
   onSelectCharacter: (character: Character) => void;
 }
 
-type CharacterCategory = 'all' | 'avengers' | 'cosmic' | 'street' | 'mystic';
+type CharacterCategory = 'all' | 'avengers' | 'xmen' | 'cosmic' | 'street' | 'mystic';
 
 const CATEGORIES: { id: CharacterCategory; label: string; icon: React.FC<{ className?: string }> }[] = [
   { id: 'all', label: 'All Dossiers', icon: Users },
   { id: 'avengers', label: 'Avengers', icon: Shield },
-  { id: 'cosmic', label: 'Cosmic & Multiverse', icon: Sparkles },
-  { id: 'street', label: 'Street-Level Vigilantes', icon: Flame },
+  { id: 'xmen', label: 'X-Men & Mutants', icon: Zap },
+  { id: 'street', label: 'Street Vigilantes', icon: Flame },
+  { id: 'cosmic', label: 'Cosmic & Guardians', icon: Sparkles },
   { id: 'mystic', label: 'Mystic & Supernatural', icon: Eye }
 ];
 
@@ -27,16 +28,32 @@ export const CharactersPage: React.FC<CharactersPageProps> = ({ onSelectCharacte
     return CHARACTERS_DATA.filter(c => {
       // Category filter
       if (selectedCategory === 'avengers') {
-        const isAvenger = c.affiliation.toLowerCase().includes('avenger') || ['iron-man', 'captain-america', 'thor', 'hulk', 'black-widow', 'hawkeye', 'spider-man', 'sam-wilson', 'ant-man', 'captain-marvel'].includes(c.id);
+        const isAvenger =
+          c.affiliation.toLowerCase().includes('avenger') ||
+          ['iron-man', 'captain-america', 'thor', 'hulk', 'black-widow', 'hawkeye', 'spider-man', 'sam-wilson', 'ant-man', 'captain-marvel', 'war-machine', 'vision', 'winter-soldier'].includes(c.id);
         if (!isAvenger) return false;
+      } else if (selectedCategory === 'xmen') {
+        const isXmen =
+          c.affiliation.toLowerCase().includes('x-men') ||
+          c.affiliation.toLowerCase().includes('mutant') ||
+          ['wolverine', 'deadpool', 'professor-x', 'magneto'].includes(c.id);
+        if (!isXmen) return false;
       } else if (selectedCategory === 'cosmic') {
-        const isCosmic = ['thor', 'loki', 'star-lord', 'thanos', 'deadpool', 'wolverine', 'captain-marvel'].includes(c.id) || c.powers.some(p => p.toLowerCase().includes('cosmic') || p.toLowerCase().includes('space') || p.toLowerCase().includes('multiverse'));
+        const isCosmic =
+          ['thor', 'loki', 'star-lord', 'thanos', 'captain-marvel', 'rocket-raccoon', 'groot', 'gamora'].includes(c.id) ||
+          c.affiliation.toLowerCase().includes('guardians') ||
+          c.powers.some(p => p.toLowerCase().includes('cosmic') || p.toLowerCase().includes('space') || p.toLowerCase().includes('multiverse'));
         if (!isCosmic) return false;
       } else if (selectedCategory === 'street') {
-        const isStreet = ['spider-man', 'daredevil', 'hawkeye', 'sam-wilson'].includes(c.id);
+        const isStreet =
+          ['spider-man', 'spider-man-tobey', 'spider-man-andrew', 'miles-morales', 'daredevil', 'punisher', 'blade', 'ghost-rider', 'venom', 'hawkeye', 'sam-wilson'].includes(c.id) ||
+          c.affiliation.toLowerCase().includes('vigilante') ||
+          c.affiliation.toLowerCase().includes('defenders');
         if (!isStreet) return false;
       } else if (selectedCategory === 'mystic') {
-        const isMystic = ['doctor-strange', 'scarlet-witch', 'moon-knight', 'loki', 'shang-chi'].includes(c.id) || c.powers.some(p => p.toLowerCase().includes('magic') || p.toLowerCase().includes('mystic'));
+        const isMystic =
+          ['doctor-strange', 'scarlet-witch', 'moon-knight', 'loki', 'shang-chi', 'ghost-rider', 'blade', 'fantastic-four-reed'].includes(c.id) ||
+          c.powers.some(p => p.toLowerCase().includes('magic') || p.toLowerCase().includes('mystic') || p.toLowerCase().includes('chaos'));
         if (!isMystic) return false;
       }
 

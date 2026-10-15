@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   Play,
   RotateCcw,
@@ -11,7 +11,11 @@ import {
   ArrowLeft,
   Settings as SettingsIcon,
   Check,
-  ListVideo
+  ListVideo,
+  Clock,
+  Sliders,
+  FastForward,
+  Rewind
 } from 'lucide-react';
 import type { Movie, Series, Episode } from '../../types';
 import { MOVIES_DATA } from '../../data/movies';
@@ -20,6 +24,7 @@ import { resolveWatchUrl } from '../../services/watchSourceBuilder';
 import { fetchCompleteSeasonEpisodes } from '../../services/tmdb';
 import { useWatchProgress } from '../../hooks/useWatchProgress';
 import { useSettings } from '../../hooks/useSettings';
+import { formatExactTime, formatHumanDuration, formatRemainingTime, parseTimeToSeconds } from '../../utils/timeFormat';
 
 export interface WatchPlayerProps {
   mediaType: 'movie' | 'series';
@@ -115,9 +120,25 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
   const savedProgress = getProgress(targetId);
   const initialTime = savedProgress ? savedProgress.currentTime : 0;
 
+  // Active watch time state
+  const [currentWatchedTime, setCurrentWatchedTime] = useState<number>(initialTime);
+  const [customInputTime, setCustomInputTime] = useState<string>('');
+  const [showTimeEditor, setShowTimeEditor] = useState<boolean>(false);
+
+  // Sync when targetId changes
+  useEffect(() => {
+    const existing = getProgress(targetId);
+    setCurrentWatchedTime(existing ? existing.currentTime : 0);
+  }, [targetId]);
+
+  // Total duration in seconds
+  const duration = mediaType === 'movie'
+    ? (movie?.runtime ? movie.runtime * 60 : 7200)
+    : (activeEpisode?.runtime ? activeEpisode.runtime * 60 : 2700);
+
   // Player state
   const [isIframeLoaded, setIsIframeLoaded] = useState(false);
-  const [isPlayerActive, setIsPlayerActive] = useState(true); // Active when watch page opened
+  const [isPlayerActive, setIsPlayerActive] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -132,7 +153,8 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
       type: 'movie',
       tmdbId,
       watchConfig: movie.watchConfig,
-      customSourceOverride: customOverride
+      customSourceOverride: customOverride,
+      time: currentWatchedTime > 0 ? currentWatchedTime : undefined
     });
   } else if (mediaType === 'series' && series && activeEpisode) {
     tmdbId = activeEpisode.episodeWatchConfig?.tmdbId || series.watchConfig?.tmdbId || series.tmdbId;
@@ -145,18 +167,14 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
       episode: activeEpisode.episodeNumber,
       watchConfig: series.watchConfig,
       episodeWatchConfig: activeEpisode.episodeWatchConfig,
-      customSourceOverride: customOverride
+      customSourceOverride: customOverride,
+      time: currentWatchedTime > 0 ? currentWatchedTime : undefined
     });
   }
 
-  // Immediate and periodic watch progress recorder for embedded frame
-  useEffect(() => {
+  // Save progress helper
+  const saveProgress = useCallback((newTime: number) => {
     if (!targetId) return;
-
-    const duration = mediaType === 'movie'
-      ? (movie?.runtime ? movie.runtime * 60 : 7200)
-      : (activeEpisode?.runtime ? activeEpisode.runtime * 60 : 2700);
-
     const title = mediaType === 'movie' ? (movie?.title || 'Marvel Movie') : (series?.title || 'Marvel Series');
     const subtitle = mediaType === 'series' && activeEpisode
       ? `S${activeEpisode.seasonNumber}:E${activeEpisode.episodeNumber} • ${activeEpisode.title}`
@@ -168,13 +186,6 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
       ? (movie?.backdrop || movie?.poster || '')
       : (series?.backdrop || activeEpisode?.still || series?.poster || '');
 
-    // Record immediately so it appears right away in watch history
-    let currentWatchedTime = initialTime && initialTime > 0 ? initialTime : 60;
-    const existing = getProgress(targetId);
-    if (existing && existing.currentTime > currentWatchedTime) {
-      currentWatchedTime = existing.currentTime;
-    }
-
     updateProgress({
       id: targetId,
       mediaId: mediaType === 'movie' ? (movie?.id || '') : (series?.id || ''),
@@ -184,33 +195,66 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
       episodeNumber: activeEpisode?.episodeNumber,
       title,
       subtitle,
-      currentTime: currentWatchedTime,
+      currentTime: Math.min(duration, Math.max(0, newTime)),
       duration,
       poster,
       backdrop
     });
+  }, [targetId, mediaType, movie, series, activeEpisode, duration, updateProgress]);
 
-    // Increment watch timer every 10 seconds while on the player
+  // Listen to postMessage from embedded players (ScreenScape, VidSrc, Plyr, JWPlayer, etc.)
+  useEffect(() => {
+    const handlePlayerMessage = (event: MessageEvent) => {
+      try {
+        let payload = event.data;
+        if (typeof payload === 'string') {
+          try { payload = JSON.parse(payload); } catch {}
+        }
+        if (payload && typeof payload === 'object') {
+          const streamTime = payload.currentTime ?? payload.time ?? payload.position;
+          if (typeof streamTime === 'number' && streamTime >= 0) {
+            setCurrentWatchedTime(streamTime);
+            saveProgress(streamTime);
+          }
+        }
+      } catch {}
+    };
+
+    window.addEventListener('message', handlePlayerMessage);
+    return () => window.removeEventListener('message', handlePlayerMessage);
+  }, [saveProgress]);
+
+  // Periodic watch progress accumulator while stream is actively running
+  useEffect(() => {
+    if (!isPlayerActive || !isIframeLoaded) return;
+
     const interval = setInterval(() => {
-      currentWatchedTime = Math.min(duration, currentWatchedTime + 10);
-      updateProgress({
-        id: targetId,
-        mediaId: mediaType === 'movie' ? (movie?.id || '') : (series?.id || ''),
-        mediaType,
-        seriesId: series?.id,
-        seasonNumber: activeEpisode?.seasonNumber,
-        episodeNumber: activeEpisode?.episodeNumber,
-        title,
-        subtitle,
-        currentTime: currentWatchedTime,
-        duration,
-        poster,
-        backdrop
+      setCurrentWatchedTime(prev => {
+        const nextTime = Math.min(duration, prev + 10);
+        saveProgress(nextTime);
+        return nextTime;
       });
     }, 10000);
 
     return () => clearInterval(interval);
-  }, [targetId, mediaType, movie, series, activeEpisode, initialTime]);
+  }, [isPlayerActive, isIframeLoaded, duration, saveProgress]);
+
+  // Manual Seek / Time adjustment handler
+  const handleSeek = (newTime: number) => {
+    const clamped = Math.min(duration, Math.max(0, newTime));
+    setCurrentWatchedTime(clamped);
+    saveProgress(clamped);
+  };
+
+  // Manual Exact Timestamp Submit
+  const handleApplyCustomTime = () => {
+    const parsed = parseTimeToSeconds(customInputTime);
+    if (parsed !== null && parsed >= 0) {
+      handleSeek(parsed);
+      setShowTimeEditor(false);
+      setCustomInputTime('');
+    }
+  };
 
   const activeEpisodes = seasonEpisodes.length > 0 ? seasonEpisodes : (currentSeason?.episodes || []);
 
@@ -224,7 +268,6 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
       setIsIframeLoaded(false);
       if (onSelectEpisode) onSelectEpisode(series, prevEp);
     } else {
-      // Find previous season
       const prevSeason = series.seasons.find(s => s.seasonNumber === activeSeasonNum - 1);
       if (prevSeason && prevSeason.episodes.length > 0) {
         const lastEpOfPrevSeason = prevSeason.episodes[prevSeason.episodes.length - 1];
@@ -245,7 +288,6 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
       setIsIframeLoaded(false);
       if (onSelectEpisode) onSelectEpisode(series, nextEp);
     } else {
-      // Find next season
       const nextSeason = series.seasons.find(s => s.seasonNumber === activeSeasonNum + 1);
       if (nextSeason && nextSeason.episodes.length > 0) {
         const firstEpOfNextSeason = nextSeason.episodes[0];
@@ -269,18 +311,6 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
     }
   };
 
-  // Format seconds to mm:ss / hh:mm:ss
-  const formatTime = (seconds: number) => {
-    if (isNaN(seconds) || seconds <= 0) return '00:00';
-    const h = Math.floor(seconds / 3600);
-    const m = Math.floor((seconds % 3600) / 60);
-    const s = Math.floor(seconds % 60);
-    if (h > 0) {
-      return `${h}:${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
-    }
-    return `${m}:${s < 10 ? '0' : ''}${s}`;
-  };
-
   const titleText = mediaType === 'movie' ? movie?.title : series?.title;
   const subtitleText = mediaType === 'series' && activeEpisode
     ? `Season ${activeEpisode.seasonNumber} • Episode ${activeEpisode.episodeNumber}: ${activeEpisode.title}`
@@ -290,8 +320,8 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
     ? (movie?.backdrop || movie?.poster)
     : (activeEpisode?.still || series?.backdrop || series?.poster);
 
-  // Check if source is missing or invalid
   const isSourceUnavailable = !resolvedWatchUrl || (tmdbId && tmdbId <= 0);
+  const currentPercentage = duration > 0 ? Math.min(100, Math.round((currentWatchedTime / duration) * 100)) : 0;
 
   return (
     <div className="w-full space-y-4">
@@ -326,7 +356,6 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
         {/* Season & Episode Switcher Controls */}
         {mediaType === 'series' && series && (
           <div className="flex flex-wrap items-center gap-2">
-            {/* Season Selector Dropdown */}
             {series.seasons.length > 1 && (
               <div className="flex items-center gap-1.5 bg-black/60 border border-white/15 rounded-xl px-3 py-1.5">
                 <Tv className="w-3.5 h-3.5 text-red-500" />
@@ -348,7 +377,6 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
               </div>
             )}
 
-            {/* Episode Selector Dropdown */}
             {activeEpisodes.length > 0 && (
               <div className="flex items-center gap-1.5 bg-black/60 border border-white/15 rounded-xl px-3 py-1.5">
                 <ListVideo className="w-3.5 h-3.5 text-red-500" />
@@ -374,7 +402,6 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
               </div>
             )}
 
-            {/* Prev/Next Episode Quick Nav Buttons */}
             <div className="flex items-center gap-1">
               <button
                 onClick={handlePrevEpisode}
@@ -400,7 +427,6 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
         ref={containerRef}
         className="relative aspect-video w-full rounded-2xl overflow-hidden border border-white/15 bg-black shadow-[0_20px_50px_rgba(0,0,0,0.8)] group select-none"
       >
-        {/* Source Unavailable Clean Fallback */}
         {isSourceUnavailable ? (
           <div className="absolute inset-0 z-30 bg-slate-950/95 flex flex-col items-center justify-center p-6 text-center space-y-5">
             {posterImg && (
@@ -433,7 +459,6 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
           </div>
         ) : (
           <>
-            {/* Cinematic Loading Overlay */}
             {!isIframeLoaded && (
               <div className="absolute inset-0 z-20 bg-slate-950 flex flex-col items-center justify-center p-6 text-center space-y-4">
                 {posterImg && (
@@ -455,6 +480,11 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
                     <h3 className="text-lg font-black text-white drop-shadow-md">
                       Loading Cinematic Player...
                     </h3>
+                    {currentWatchedTime > 0 && (
+                      <p className="text-xs font-mono text-emerald-400 drop-shadow">
+                        Resuming from {formatExactTime(currentWatchedTime)}
+                      </p>
+                    )}
                     {subtitleText && (
                       <p className="text-xs font-mono text-gray-300 drop-shadow">{subtitleText}</p>
                     )}
@@ -463,10 +493,9 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
               </div>
             )}
 
-            {/* Embedded ScreenScape Provider Iframe */}
             {isPlayerActive && (
               <iframe
-                key={resolvedWatchUrl}
+                key={`${resolvedWatchUrl}_${currentWatchedTime}`}
                 src={resolvedWatchUrl}
                 title={titleText || 'Marvel Player'}
                 className={`h-full w-full border-0 transition-opacity duration-700 ${
@@ -480,7 +509,6 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
               />
             )}
 
-            {/* Fullscreen Overlay Button */}
             <div className="absolute top-4 right-4 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <button
                 onClick={toggleFullscreen}
@@ -494,6 +522,125 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
         )}
       </div>
 
+      {/* Interactive Exact Watch Progress & Scrubber Controller */}
+      <div className="rounded-2xl border border-white/10 bg-slate-900/80 p-4 space-y-3 backdrop-blur-md shadow-xl">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <Clock className="w-4 h-4 text-red-500" />
+            <span className="text-xs font-mono font-bold text-gray-300">
+              EXACT TIMECODE:
+            </span>
+            <span className="text-xs font-mono font-bold text-white bg-black/60 px-2 py-0.5 rounded border border-white/10">
+              {formatExactTime(currentWatchedTime)}
+            </span>
+            <span className="text-gray-500 text-xs">/</span>
+            <span className="text-xs font-mono text-gray-400">
+              {formatExactTime(duration)}
+            </span>
+            <span className="text-[11px] font-mono text-red-400 font-bold ml-1">
+              ({currentPercentage}% • {formatRemainingTime(currentWatchedTime, duration)})
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            {/* Quick jump buttons */}
+            <div className="flex items-center gap-1 bg-black/50 p-1 rounded-xl border border-white/10">
+              <button
+                onClick={() => handleSeek(currentWatchedTime - 300)}
+                title="Rewind 5 minutes"
+                className="px-2 py-1 rounded-lg text-[10px] font-mono font-bold text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-0.5"
+              >
+                <Rewind className="w-3 h-3" />
+                -5m
+              </button>
+              <button
+                onClick={() => handleSeek(currentWatchedTime - 60)}
+                title="Rewind 1 minute"
+                className="px-2 py-1 rounded-lg text-[10px] font-mono font-bold text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
+              >
+                -1m
+              </button>
+              <button
+                onClick={() => handleSeek(currentWatchedTime + 60)}
+                title="Fast-forward 1 minute"
+                className="px-2 py-1 rounded-lg text-[10px] font-mono font-bold text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
+              >
+                +1m
+              </button>
+              <button
+                onClick={() => handleSeek(currentWatchedTime + 300)}
+                title="Fast-forward 5 minutes"
+                className="px-2 py-1 rounded-lg text-[10px] font-mono font-bold text-gray-300 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-0.5"
+              >
+                +5m
+                <FastForward className="w-3 h-3" />
+              </button>
+            </div>
+
+            {/* Direct Timestamp Input Toggle */}
+            <button
+              onClick={() => {
+                setShowTimeEditor(!showTimeEditor);
+                setCustomInputTime(formatExactTime(currentWatchedTime));
+              }}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-red-600 border border-white/10 text-xs font-mono font-bold text-gray-200 hover:text-white transition-all shadow"
+            >
+              <Sliders className="w-3.5 h-3.5" />
+              <span>SET TIME</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Precise Scrubber Range Bar */}
+        <div className="space-y-1">
+          <input
+            type="range"
+            min="0"
+            max={duration || 7200}
+            step="1"
+            value={currentWatchedTime}
+            onChange={(e) => handleSeek(parseInt(e.target.value, 10))}
+            className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-red-600 focus:outline-none"
+          />
+          <div className="flex justify-between text-[10px] font-mono text-gray-500">
+            <span>00:00:00</span>
+            <div className="flex gap-4">
+              <button onClick={() => handleSeek(duration * 0.25)} className="hover:text-red-400">25%</button>
+              <button onClick={() => handleSeek(duration * 0.5)} className="hover:text-red-400">50%</button>
+              <button onClick={() => handleSeek(duration * 0.75)} className="hover:text-red-400">75%</button>
+            </div>
+            <span>{formatExactTime(duration)}</span>
+          </div>
+        </div>
+
+        {/* Custom Exact Timestamp Editor Drawer */}
+        {showTimeEditor && (
+          <div className="pt-2 border-t border-white/10 flex flex-wrap items-center gap-2">
+            <span className="text-xs font-mono text-gray-400">Type exact timestamp:</span>
+            <input
+              type="text"
+              value={customInputTime}
+              onChange={(e) => setCustomInputTime(e.target.value)}
+              placeholder="e.g. 00:45:00 or 1h 20m"
+              className="bg-black/60 border border-white/20 rounded-lg px-3 py-1.5 text-xs font-mono text-white focus:outline-none focus:border-red-500 w-44"
+            />
+            <button
+              onClick={handleApplyCustomTime}
+              className="px-3.5 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-mono font-bold text-xs flex items-center gap-1 shadow"
+            >
+              <Check className="w-3 h-3" />
+              APPLY & SYNC
+            </button>
+            <button
+              onClick={() => setShowTimeEditor(false)}
+              className="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-gray-300 text-xs"
+            >
+              CANCEL
+            </button>
+          </div>
+        )}
+      </div>
+
       {/* Bottom Information & Resume Bar */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-slate-900/60 border border-white/10 rounded-2xl p-5 backdrop-blur-md">
         <div className="space-y-1 max-w-2xl">
@@ -502,7 +649,7 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
             {savedProgress && savedProgress.currentTime > 0 && (
               <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-emerald-950/80 border border-emerald-600/50 text-[10px] font-mono font-bold text-emerald-400">
                 <Check className="w-3 h-3" />
-                <span>SAVED PROGRESS ({savedProgress.percentage}%)</span>
+                <span>SAVED ({formatExactTime(savedProgress.currentTime)})</span>
               </span>
             )}
           </div>
@@ -523,19 +670,20 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
               className="flex-1 sm:flex-initial flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-4 py-2.5 text-xs font-mono font-bold text-white shadow-lg transition-all active:scale-95"
             >
               <RotateCcw className="w-4 h-4" />
-              <span>RESUME ({formatTime(savedProgress.currentTime)})</span>
+              <span>RESUME ({formatExactTime(savedProgress.currentTime)})</span>
             </button>
           )}
 
           <button
             onClick={() => {
+              handleSeek(0);
               setIsIframeLoaded(false);
               setIsPlayerActive(true);
             }}
             className="flex-1 sm:flex-initial flex items-center justify-center gap-2 rounded-xl bg-red-600 hover:bg-red-500 px-5 py-2.5 text-xs font-mono font-bold text-white shadow-lg transition-all active:scale-95"
           >
             <Play className="w-4 h-4 fill-current" />
-            <span>WATCH NOW</span>
+            <span>START OVER</span>
           </button>
         </div>
       </div>

@@ -18,6 +18,7 @@ import { PhaseBadge } from '../components/ui/PhaseBadge';
 import { RatingBadge } from '../components/ui/RatingBadge';
 import { useWatchlist } from '../hooks/useWatchlist';
 import { useWatchProgress } from '../hooks/useWatchProgress';
+import { formatExactTime } from '../utils/timeFormat';
 import { PageTransition } from '../components/ui/PageTransition';
 import { useMedia } from '../context/MediaContext';
 import {
@@ -338,7 +339,7 @@ export const SeriesDetailPage: React.FC<SeriesDetailPageProps> = ({
                         {progress && progress.percentage > 0 && (
                           <div className="pt-1 flex items-center gap-2 text-xs font-mono text-red-400 font-semibold">
                             <RotateCcw className="w-3 h-3" />
-                            <span>Watched {progress.percentage}% (Resume at {formatTime(progress.currentTime)})</span>
+                            <span>Watched {progress.percentage}% (Resume at {formatExactTime(progress.currentTime)})</span>
                           </div>
                         )}
                       </div>
