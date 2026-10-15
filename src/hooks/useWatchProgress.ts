@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import type { WatchProgress } from '../types';
 
 const STORAGE_KEY = 'marvel_watch_hub_progress';
@@ -37,47 +37,66 @@ export function useWatchProgress() {
     }
   }, [progressList]);
 
-  const updateProgress = (item: Omit<WatchProgress, 'lastWatched' | 'percentage'>) => {
-    const percentage = item.duration > 0 ? Math.min(100, Math.round((item.currentTime / item.duration) * 100)) : 0;
+  const updateProgress = useCallback((item: Omit<WatchProgress, 'lastWatched' | 'percentage'>) => {
+    const rawPercent = item.duration > 0 ? (item.currentTime / item.duration) * 100 : 0;
+    // If user has watched at least 5 seconds, guarantee at least 1% so it doesn't get dropped
+    const percentage = item.currentTime >= 5
+      ? Math.max(1, Math.min(100, Math.round(rawPercent)))
+      : Math.min(100, Math.round(rawPercent));
+
     const updatedItem: WatchProgress = {
       ...item,
       percentage,
       lastWatched: new Date().toISOString()
     };
 
-    setProgressList(prev => ({
-      ...prev,
-      [item.id]: updatedItem
-    }));
-  };
+    setProgressList(prev => {
+      const existing = prev[item.id];
+      // Skip state update if the change is negligible (< 1 second) to prevent re-render cascades
+      if (existing && Math.abs(existing.currentTime - item.currentTime) < 1 && existing.duration === item.duration) {
+        return prev;
+      }
+      return {
+        ...prev,
+        [item.id]: updatedItem
+      };
+    });
+  }, []);
 
-  const getProgress = (id: string): WatchProgress | undefined => {
+  const getProgress = useCallback((id: string): WatchProgress | undefined => {
     return progressList[id];
-  };
+  }, [progressList]);
 
-  const removeFromHistory = (id: string) => {
+  const removeFromHistory = useCallback((id: string) => {
     setProgressList(prev => {
       const updated = { ...prev };
       delete updated[id];
       return updated;
     });
-  };
+  }, []);
 
-  const clearHistory = () => {
+  const clearHistory = useCallback(() => {
     setProgressList({});
     try {
       localStorage.removeItem(STORAGE_KEY);
     } catch {}
-  };
+  }, []);
 
   // Full watch history sorted by most recent
-  const watchHistory = Object.values(progressList)
-    .filter(item => item && item.title)
-    .sort((a, b) => new Date(b.lastWatched).getTime() - new Date(a.lastWatched).getTime());
+  const watchHistory = useMemo(() => {
+    return Object.values(progressList)
+      .filter(item => item && item.title)
+      .sort((a, b) => new Date(b.lastWatched).getTime() - new Date(a.lastWatched).getTime());
+  }, [progressList]);
 
-  // In-progress items for Continue Watching shelf (< 95% and > 0%)
-  const sortedContinueWatching = watchHistory
-    .filter(item => item.percentage < 95 && item.percentage > 0);
+  // In-progress items for Continue Watching shelf (< 95% and >= 5s watched)
+  const sortedContinueWatching = useMemo(() => {
+    return watchHistory.filter(item => {
+      const isFinished = item.percentage >= 95 || (item.duration > 0 && item.currentTime >= item.duration * 0.95);
+      const hasStarted = item.currentTime >= 5;
+      return hasStarted && !isFinished;
+    });
+  }, [watchHistory]);
 
   return {
     progressList,

@@ -30,6 +30,8 @@ const PageLoadingFallback: React.FC = () => (
 
 import { Movie, Series, Episode, Character, TimelineNode, WatchProgress } from './types';
 import { MediaProvider, useMedia } from './context/MediaContext';
+import { MOVIES_DATA } from './data/movies';
+import { SERIES_DATA } from './data/series';
 
 function MarvelHubContent() {
   const { movies, series: seriesList } = useMedia();
@@ -290,19 +292,58 @@ function MarvelHubContent() {
 
   const handleResumeProgress = (progress: WatchProgress) => {
     if (progress.mediaType === 'movie') {
-      const movie = movies.find(m => m.id === progress.mediaId);
+      const movie = movies.find(m => m.id === progress.mediaId)
+        || MOVIES_DATA.find(m => m.id === progress.mediaId)
+        || {
+          id: progress.mediaId,
+          title: progress.title,
+          year: new Date().getFullYear(),
+          releaseDate: '',
+          runtime: Math.round(progress.duration / 60) || 120,
+          overview: '',
+          poster: progress.poster || '',
+          backdrop: progress.backdrop || progress.poster || '',
+          rating: 7.5,
+          genres: ['Action', 'Sci-Fi'],
+          director: 'Marvel Studios',
+          cast: [],
+          characters: [],
+          releaseOrder: 999,
+          chronologicalOrder: 999,
+          tmdbId: parseInt(progress.mediaId, 10) || undefined,
+          watchConfig: {
+            tmdbId: parseInt(progress.mediaId, 10) || 0,
+            type: 'movie',
+            watchProvider: 'screenscape',
+            language: 'eng'
+          }
+        };
       if (movie) handleWatchMovie(movie);
     } else if (progress.mediaType === 'series' && progress.seriesId) {
-      const series = seriesList.find(s => s.id === progress.seriesId);
+      const series = seriesList.find(s => s.id === progress.seriesId)
+        || SERIES_DATA.find(s => s.id === progress.seriesId);
       if (series) {
+        const seasonNum = progress.seasonNumber || 1;
+        const epNum = progress.episodeNumber || 1;
         const episode = series.seasons
-          .find(s => s.seasonNumber === progress.seasonNumber)
-          ?.episodes.find(e => e.episodeNumber === progress.episodeNumber);
-        if (episode) {
-          handleWatchEpisode(series, episode);
-        } else {
-          handleSelectSeries(series);
-        }
+          .find(s => s.seasonNumber === seasonNum)
+          ?.episodes.find(e => e.episodeNumber === epNum)
+          || {
+            id: `${series.id}_s${seasonNum}_e${epNum}`,
+            seasonNumber: seasonNum,
+            episodeNumber: epNum,
+            title: progress.subtitle || `Episode ${epNum}`,
+            runtime: Math.round(progress.duration / 60) || 45,
+            overview: '',
+            still: progress.poster || progress.backdrop || '',
+            airDate: '',
+            episodeWatchConfig: {
+              season: seasonNum,
+              episode: epNum,
+              tmdbId: series.watchConfig?.tmdbId || series.tmdbId
+            }
+          };
+        handleWatchEpisode(series, episode);
       }
     }
   };

@@ -139,11 +139,14 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
     ? (movie?.runtime ? movie.runtime * 60 : 7200)
     : (activeEpisode?.runtime ? activeEpisode.runtime * 60 : 2700);
 
-  // Player state
+  // Player state & refs
   const [isIframeLoaded, setIsIframeLoaded] = useState(false);
   const [isPlayerActive, setIsPlayerActive] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const hasReceivedEmbedTime = useRef<boolean>(false);
+  const isPlaying = useRef<boolean>(true);
 
   // Resolve watch configuration and URL
   let resolvedWatchUrl = '';
@@ -205,7 +208,56 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
     });
   }, [targetId, mediaType, movie, series, activeEpisode, duration, updateProgress]);
 
-  // Listen to postMessage from embedded players (ScreenScape, VidSrc, Plyr, JWPlayer, etc.)
+  // Send ScreenScape SET_PROGRESS command to embedded player
+  const sendSetProgress = useCallback((seconds: number) => {
+    if (!iframeRef.current?.contentWindow || !tmdbId || seconds < 0) return;
+    try {
+      const s = mediaType === 'series' && activeEpisode ? activeEpisode.seasonNumber : undefined;
+      const e = mediaType === 'series' && activeEpisode ? activeEpisode.episodeNumber : undefined;
+      const payload = {
+        tmdbId,
+        progressSeconds: Math.floor(seconds),
+        season: s,
+        episode: e
+      };
+      iframeRef.current.contentWindow.postMessage({
+        type: 'SCREENSCAPE_SET_PROGRESS',
+        requestId: `set-prog-${Date.now()}`,
+        payload
+      }, '*');
+      iframeRef.current.contentWindow.postMessage({
+        type: 'VIDPLUS_SET_PROGRESS',
+        requestId: `vidplus-set-${Date.now()}`,
+        payload
+      }, '*');
+    } catch {}
+  }, [tmdbId, mediaType, activeEpisode]);
+
+  // Send ScreenScape GET_PROGRESS query to embedded player
+  const sendGetProgress = useCallback(() => {
+    if (!iframeRef.current?.contentWindow || !tmdbId || !isIframeLoaded) return;
+    try {
+      const s = mediaType === 'series' && activeEpisode ? activeEpisode.seasonNumber : undefined;
+      const e = mediaType === 'series' && activeEpisode ? activeEpisode.episodeNumber : undefined;
+      const payload = {
+        tmdbId,
+        season: s,
+        episode: e
+      };
+      iframeRef.current.contentWindow.postMessage({
+        type: 'SCREENSCAPE_GET_PROGRESS',
+        requestId: `get-prog-${Date.now()}`,
+        payload
+      }, '*');
+      iframeRef.current.contentWindow.postMessage({
+        type: 'VIDPLUS_GET_PROGRESS',
+        requestId: `vidplus-get-${Date.now()}`,
+        payload
+      }, '*');
+    } catch {}
+  }, [tmdbId, isIframeLoaded, mediaType, activeEpisode]);
+
+  // Listen to postMessage from embedded players (ScreenScape, VidPlus, Plyr, JWPlayer, etc.)
   useEffect(() => {
     const handlePlayerMessage = (event: MessageEvent) => {
       try {
@@ -213,40 +265,92 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
         if (typeof payload === 'string') {
           try { payload = JSON.parse(payload); } catch {}
         }
-        if (payload && typeof payload === 'object') {
-          const streamTime = payload.currentTime ?? payload.time ?? payload.position;
-          if (typeof streamTime === 'number' && streamTime >= 0) {
-            setCurrentWatchedTime(streamTime);
-            saveProgress(streamTime);
+        if (!payload || typeof payload !== 'object') return;
+
+        // 1. ScreenScape & VidPlus official progress responses
+        if (payload.type === 'SCREENSCAPE_PROGRESS_RESPONSE' || payload.type === 'VIDPLUS_PROGRESS_RESPONSE') {
+          const sec = payload.progressSeconds;
+          if (typeof sec === 'number' && Number.isFinite(sec) && sec > 0) {
+            hasReceivedEmbedTime.current = true;
+            const clamped = Math.min(duration, Math.floor(sec));
+            setCurrentWatchedTime(clamped);
+            saveProgress(clamped);
           }
+          return;
+        }
+
+        // 2. Embed ready event -> push saved progress so the player resumes exactly where user left off
+        if (payload.type === 'SCREENSCAPE_EMBED_READY' || payload.type === 'VIDPLUS_EMBED_READY') {
+          if (currentWatchedTime > 0) {
+            sendSetProgress(currentWatchedTime);
+          }
+          return;
+        }
+
+        // 3. Play / Pause status detection
+        if (payload.event === 'pause' || payload.type === 'pause' || payload.status === 'paused') {
+          isPlaying.current = false;
+        } else if (payload.event === 'play' || payload.type === 'play' || payload.status === 'playing') {
+          isPlaying.current = true;
+        }
+
+        // 4. Common HTML5 / JWPlayer / PlayerJS / Plyr / VidSrc message formats
+        let streamTime: number | undefined;
+        if (typeof payload.currentTime === 'number') streamTime = payload.currentTime;
+        else if (typeof payload.time === 'number') streamTime = payload.time;
+        else if (typeof payload.position === 'number') streamTime = payload.position;
+        else if (typeof payload.data?.currentTime === 'number') streamTime = payload.data.currentTime;
+        else if (typeof payload.data?.time === 'number') streamTime = payload.data.time;
+        else if (typeof payload.data?.position === 'number') streamTime = payload.data.position;
+        else if (payload.event === 'time' && typeof payload.data === 'number') streamTime = payload.data;
+        else if (payload.event === 'timeupdate' && typeof payload.data === 'number') streamTime = payload.data;
+
+        if (typeof streamTime === 'number' && Number.isFinite(streamTime) && streamTime >= 0) {
+          hasReceivedEmbedTime.current = true;
+          const clamped = Math.min(duration, Math.floor(streamTime));
+          setCurrentWatchedTime(clamped);
+          saveProgress(clamped);
         }
       } catch {}
     };
 
     window.addEventListener('message', handlePlayerMessage);
     return () => window.removeEventListener('message', handlePlayerMessage);
-  }, [saveProgress]);
+  }, [duration, currentWatchedTime, sendSetProgress, saveProgress]);
 
-  // Periodic watch progress accumulator while stream is actively running
+  // Periodic watch progress polling and synchronized accumulator
   useEffect(() => {
     if (!isPlayerActive || !isIframeLoaded) return;
 
+    // Send immediate sync when player mounts / loads
+    if (initialSeekTime > 0) {
+      sendSetProgress(initialSeekTime);
+    }
+    sendGetProgress();
+
     const interval = setInterval(() => {
-      setCurrentWatchedTime(prev => {
-        const nextTime = Math.min(duration, prev + 10);
-        saveProgress(nextTime);
-        return nextTime;
-      });
-    }, 10000);
+      // Query player for exact playback timestamp
+      sendGetProgress();
+
+      // If embed does not provide progress via postMessage and document is active, fallback increment
+      if (!hasReceivedEmbedTime.current && isPlaying.current && !document.hidden) {
+        setCurrentWatchedTime(prev => {
+          const nextTime = Math.min(duration, prev + 3);
+          saveProgress(nextTime);
+          return nextTime;
+        });
+      }
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, [isPlayerActive, isIframeLoaded, duration, saveProgress]);
+  }, [isPlayerActive, isIframeLoaded, duration, initialSeekTime, sendGetProgress, sendSetProgress, saveProgress]);
 
   // Manual Seek / Time adjustment handler
   const handleSeek = (newTime: number) => {
     const clamped = Math.min(duration, Math.max(0, newTime));
     setCurrentWatchedTime(clamped);
     saveProgress(clamped);
+    sendSetProgress(clamped);
   };
 
   // Manual Exact Timestamp Submit
@@ -498,6 +602,7 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
 
             {isPlayerActive && (
               <iframe
+                ref={iframeRef}
                 key={targetId}
                 src={resolvedWatchUrl}
                 title={titleText || 'Marvel Player'}
@@ -505,10 +610,16 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
                   isIframeLoaded ? 'opacity-100' : 'opacity-0'
                 }`}
                 loading="lazy"
-                onLoad={() => setIsIframeLoaded(true)}
+                onLoad={() => {
+                  setIsIframeLoaded(true);
+                  if (initialSeekTime > 0) {
+                    sendSetProgress(initialSeekTime);
+                  }
+                  sendGetProgress();
+                }}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                 referrerPolicy="strict-origin-when-cross-origin"
-                sandbox="allow-scripts allow-same-origin allow-presentation allow-forms"
+                sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-presentation allow-downloads"
               />
             )}
 
@@ -667,8 +778,7 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
           {savedProgress && savedProgress.currentTime > 0 && (
             <button
               onClick={() => {
-                setIsIframeLoaded(false);
-                setIsPlayerActive(true);
+                handleSeek(savedProgress.currentTime);
               }}
               className="flex-1 sm:flex-initial flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-4 py-2.5 text-xs font-mono font-bold text-white shadow-lg transition-all active:scale-95"
             >
@@ -680,8 +790,6 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
           <button
             onClick={() => {
               handleSeek(0);
-              setIsIframeLoaded(false);
-              setIsPlayerActive(true);
             }}
             className="flex-1 sm:flex-initial flex items-center justify-center gap-2 rounded-xl bg-red-600 hover:bg-red-500 px-5 py-2.5 text-xs font-mono font-bold text-white shadow-lg transition-all active:scale-95"
           >
