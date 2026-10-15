@@ -619,7 +619,6 @@ export const WatchPlayer: React.FC<WatchPlayerProps> = ({
                 }}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                 referrerPolicy="strict-origin-when-cross-origin"
-                sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-presentation allow-downloads"
               />
             )}
 
