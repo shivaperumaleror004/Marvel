@@ -274,6 +274,7 @@ export type TimelineNode = {
   characters?: string[];
   cast?: CastMember[];
   screenScapeAvailable: boolean;
+  autoEmbedAvailable?: boolean;
   isUpcoming?: boolean;
   studio?: string;
   studioId?: StudioId;

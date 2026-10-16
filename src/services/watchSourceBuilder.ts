@@ -67,7 +67,7 @@ export function resolveWatchUrl(params: {
   const language = params.watchConfig?.language || params.episodeWatchConfig?.language || DEFAULT_LANGUAGE;
   const hostDomain = params.watchConfig?.hostDomain || DEFAULT_SCREENSCAPE_HOST;
 
-  if (provider === 'screenscape' || provider === 'default' || !provider) {
+  if (provider === 'screenscape' || provider === 'autoembed' || provider === 'default' || !provider) {
     if (params.type === 'movie') {
       return buildMovieWatchUrl(tmdbId, { hostDomain, language, time: params.time });
     } else {
